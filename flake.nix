@@ -12,8 +12,7 @@
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     nix-index-database.url = "github:Mic92/nix-index-database";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-#    nixpkgs.url = "github:NixOS/nixpkgs/2be777b47fa533d3ac07bf40c49a3eda014546da";
-    nixpkgs.url = "github:NixOS/nixpkgs/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     srvos.inputs.nixpkgs.follows = "nixpkgs";
     srvos.url = "github:numtide/srvos";
     systems.url = "github:nix-systems/default-linux";
@@ -36,5 +35,4 @@
 
       perSystem.treefmt.imports = [ ./treefmt.nix ];
     };
-
 }
