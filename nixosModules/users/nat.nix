@@ -11,7 +11,8 @@
     ];
     packages = with pkgs; lib.optionals config.services.xserver.enable [
       # Desktop software
-      discord
+      (discord-canary.override { withOpenASAR = true; })
+      inputs.self.packages.${pkgs.system}.krisp-patch
       qbittorrent
       tdesktop
 

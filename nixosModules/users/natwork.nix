@@ -18,12 +18,12 @@
   systemd.tmpfiles.rules = [ "d /home/natwork 0700 natwork users - -" ];
 
   home-manager.users.natwork = { ... }: {
-     imports = [                                                                                                                                                                                                                                                                          
-       inputs.nix-index-database.hmModules.nix-index                                                                                                                                                                                                                                      
-     ] ++ lib.optionals config.services.xserver.enable [                                                                                                                                                                                                                                  
-       ./dconf.nix                                                                                                                                                                                                                                                                        
-       ./mpv.nix                                                                                                                                                                                                                                                                          
-     ];                                                                                                                                                                                                                                                                                   
+    imports = [
+      inputs.nix-index-database.hmModules.nix-index
+    ] ++ lib.optionals config.services.xserver.enable [
+      ./dconf.nix
+      ./mpv.nix
+    ];
 
     home.stateVersion = "22.11";
   };

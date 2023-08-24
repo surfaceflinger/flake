@@ -40,7 +40,7 @@
     # Media
     krita
     lollypop
-    mpv
+    (mpv.override { scripts = [ mpvScripts.inhibit-gnome mpvScripts.quality-menu mpvScripts.mpris ]; })
     yt-dlp
   ];
 

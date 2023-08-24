@@ -4,6 +4,7 @@
       # re-export our packages
       inherit (pkgs)
         anime4k
+        krisp-patch
         timedoctor-desktop
         ;
     };
@@ -22,10 +23,7 @@
   flake.overlays.default = _final: prev: {
     # Custom packages
     anime4k = prev.callPackage ./anime4k { };
+    krisp-patch = prev.callPackage ./krisp-patch { };
     timedoctor-desktop = prev.callPackage ./timedoctor-desktop { };
-    # Overrides
-    discord = prev.discord.override { withOpenASAR = true; };
-    google-chrome = prev.google-chrome.override { commandLineArgs = "--enable-features=WebUIDarkMode --force-dark-mode"; };
-    mpv = prev.wrapMpv prev.mpv-unwrapped { scripts = [ prev.mpvScripts.inhibit-gnome prev.mpvScripts.quality-menu prev.mpvScripts.mpris ]; };
   };
 }
