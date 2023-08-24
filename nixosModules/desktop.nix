@@ -13,8 +13,6 @@
     ./waydroid.nix
   ];
 
-  networking.networkmanager.enable = true;
-
   services.avahi = {
     enable = true;
     publish = {
