@@ -16,5 +16,8 @@
     checkReversePath = "loose";
   };
 
-  services.tailscale.enable = true;
+  services.tailscale = {
+    enable = true;
+    useRoutingFeatures = "both";
+  };
 }
