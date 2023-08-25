@@ -16,7 +16,7 @@
     syntaxHighlighting.enable = true;
     vteIntegration = true;
     shellInit = ''
-      touch "$HOME/.config/zsh/history"
+      mkdir -p "$HOME/.config/zsh" && touch "$HOME/.config/zsh/history"
       zsh-newuser-install () {}
       lk () {cd "$(${pkgs.walk}/bin/walk "$@")"}
     '';

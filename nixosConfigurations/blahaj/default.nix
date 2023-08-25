@@ -1,6 +1,5 @@
 { config
 , inputs
-, pkgs
 , ...
 }: {
   imports = [
@@ -28,6 +27,9 @@
     kernelModules = [ "kvm-intel" "8821cu" ];
   };
 
+  # PCIe Passthrough
+  boot.extraModprobeConfig = "options vfio-pci ids=8086:0412,8086:8c20";
+
   # Power management
   boot.kernelParams = [ "intel_pstate=disable" ];
   powerManagement.cpuFreqGovernor = "performance";
@@ -36,10 +38,4 @@
     coreOffset = -80;
     uncoreOffset = -170;
   };
-
-
-  # MERKUSYS wifi dongle workaround
-  services.udev.extraRules = ''
-    ATTR{idVendor}=="0bda", ATTR{idProduct}=="1a2b", RUN+="${pkgs.usb-modeswitch}/bin/usb_modeswitch -K -v 0bda -p 1a2b"
-  '';
 }

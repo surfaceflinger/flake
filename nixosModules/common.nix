@@ -43,7 +43,7 @@
 
   # sudo
   security.sudo = {
-    wheelNeedsPassword = lib.mkOverride 10 false;
+    wheelNeedsPassword = lib.mkOverride 10 true;
     execWheelOnly = true;
     extraConfig = ''
       Defaults lecture = never
