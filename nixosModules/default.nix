@@ -8,5 +8,6 @@
     natwork = ./users/natwork.nix;
     server = ./server.nix;
     virtualisation = ./virtualisation.nix;
+    impermanence = ./impermanence.nix;
   };
 }

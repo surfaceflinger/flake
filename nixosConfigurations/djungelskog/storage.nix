@@ -1,16 +1,4 @@
 _: {
-  environment.persistence."/persist" = {
-    hideMounts = true;
-    files = [
-      "/etc/machine-id"
-      "/etc/ssh/ssh_host_ed25519_key"
-      "/etc/ssh/ssh_host_ed25519_key.pub"
-    ];
-    directories = [
-      "/etc/NetworkManager/system-connections"
-    ];
-  };
-
   boot.supportedFilesystems = [ "zfs" ];
   networking.hostId = "40762f1f";
 
@@ -28,7 +16,6 @@ _: {
   fileSystems."/persist" = {
     device = "djungelskog/NixOS/persist";
     fsType = "zfs";
-    neededForBoot = true;
   };
 
   fileSystems."/boot" = {

@@ -1,9 +1,9 @@
 { inputs, ... }: {
   imports = [
-    inputs.impermanence.nixosModule
     inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t440p
     inputs.nixpkgs.nixosModules.notDetected
+    inputs.self.nixosModules.impermanence
     inputs.self.nixosModules.laptop
     inputs.self.nixosModules.nat
     ./storage.nix

@@ -3,13 +3,13 @@
 , ...
 }: {
   imports = [
-    inputs.impermanence.nixosModule
     inputs.nixos-hardware.nixosModules.common-cpu-intel-cpu-only
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     inputs.nixos-hardware.nixosModules.common-pc
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.nixpkgs.nixosModules.notDetected
     inputs.self.nixosModules.desktop
+    inputs.self.nixosModules.impermanence
     inputs.self.nixosModules.nat
     inputs.self.nixosModules.natwork
     inputs.self.nixosModules.virtualisation

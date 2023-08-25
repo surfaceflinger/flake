@@ -1,17 +1,4 @@
 _: {
-  environment.persistence."/persist" = {
-    hideMounts = true;
-    files = [
-      "/etc/machine-id"
-      "/etc/ssh/ssh_host_ed25519_key"
-      "/etc/ssh/ssh_host_ed25519_key.pub"
-    ];
-    directories = [
-      "/etc/NetworkManager/system-connections"
-      "/var/cache/minidlna"
-    ];
-  };
-
   boot.supportedFilesystems = [ "zfs" ];
   networking.hostId = "b84cacfe";
 
@@ -29,7 +16,6 @@ _: {
   fileSystems."/persist" = {
     device = "blahaj/NixOS/persist";
     fsType = "zfs";
-    neededForBoot = true;
   };
 
   fileSystems."/boot" = {

@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{ config, inputs, lib, ... }: {
   imports = [
     inputs.srvos.nixosModules.desktop
     ./bluetooth.nix
@@ -18,6 +18,8 @@
     firewallBackend = "nftables";
     wifi.backend = "iwd";
   };
+  environment.persistence."/persist".directories = lib.mkIf config.ephemereal.enable [ "/etc/NetworkManager/system-connections" ];
+
   hardware.usb-modeswitch.enable = true;
 
   networking.wireless.iwd.settings.General.AddressRandomization = "disabled";

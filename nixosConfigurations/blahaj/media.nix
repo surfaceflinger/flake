@@ -9,6 +9,8 @@
     };
   };
 
+  environment.persistence."/persist".directories = [ "/var/cache/minidlna" ];
+
   services.darkhttpd = {
     enable = true;
     port = 9090;
