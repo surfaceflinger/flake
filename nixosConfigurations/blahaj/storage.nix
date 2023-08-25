@@ -13,6 +13,11 @@ _: {
     fsType = "zfs";
   };
 
+  fileSystems."/etc/ssh" = {
+    device = "blahaj/NixOS/etc/ssh";
+    fsType = "zfs";
+  };
+
   fileSystems."/persist" = {
     device = "blahaj/NixOS/persist";
     fsType = "zfs";
