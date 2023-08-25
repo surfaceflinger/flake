@@ -2,31 +2,24 @@
 , pkgs
 , inputs
 , modulesPath
-, lib
 , ...
 }: {
   imports = [
     "${modulesPath}/profiles/qemu-guest.nix"
+    ./adguard.nix
+    ./storage.nix
     inputs.agenix.nixosModules.default
+    inputs.self.nixosModules.impermanence
     inputs.self.nixosModules.nat
     inputs.self.nixosModules.server
     inputs.xkomhotshot.nixosModules.default
-    ./storage.nix
-    ./adguard.nix
-    ./quassel.nix
   ];
 
   # Hostname
   networking.hostName = "blavingad";
 
   # Bootloader/Kernel/Modules
-  boot = {
-    loader.systemd-boot.configurationLimit = lib.mkForce 1;
-    initrd = {
-      availableKernelModules = [ "ata_piix" "uhci_hcd" "xen_blkfront" ];
-      kernelModules = [ "nvme" ];
-    };
-  };
+  boot.initrd.availableKernelModules = [ "xhci_pci" "virtio_pci" "virtio_scsi" "usbhid" "sr_mod" ];
 
   # Other software
   environment.systemPackages = with pkgs; [ ArchiSteamFarm ];
@@ -37,7 +30,4 @@
     enable = true;
     environmentFile = config.age.secrets.xkomhotshot.path;
   };
-
-  # workaround NixOS/nix#8502
-  services.logrotate.checkConfig = false;
 }

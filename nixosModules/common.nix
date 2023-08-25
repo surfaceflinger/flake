@@ -40,6 +40,7 @@
   # Override srvos changes
   programs.vim.defaultEditor = false;
   boot.initrd.systemd.enable = false;
+  services.cloud-init.enable = false;
 
   # sudo
   security.sudo = {

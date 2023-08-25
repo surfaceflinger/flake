@@ -8,7 +8,6 @@ in
     kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
     kernelParams = [
       "amd_iommu=on"
-      "efi=disable_early_pci_dma"
       "intel_iommu=on"
       "iommu=pt"
     ];

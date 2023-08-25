@@ -16,11 +16,10 @@ in
       modules = [ ./djungelskog ];
     };
     blavingad = nixosSystem {
-      # VPS / Oracle Cloud
+      # CAX31 Hetzner
       system = "aarch64-linux";
       modules = [ ./blavingad ];
     };
-
   };
 
   # This is the flake that contains the home-manager configuration

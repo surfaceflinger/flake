@@ -1,11 +1,9 @@
-{ lib, ... }: {
-  services.resolved.enable = false;
-
+{ ... }: {
   services.adguardhome = {
     enable = true;
     mutableSettings = false;
     settings = {
-      bind_host = lib.mkForce "0.0.0.0";
+      bind_hosts = [ "100.68.177.59" ];
       users = [
         {
           name = "nat";
@@ -14,7 +12,7 @@
       ];
       dns = {
         port = 53;
-        bind_host = "0.0.0.0";
+        bind_hosts = [ "100.68.177.59" ];
         enable_dnssec = true;
         ratelimit = 0;
         statistics_interval = 0;
