@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, lib, ... }:
 {
   imports = [
     inputs.home-manager.nixosModules.default
@@ -8,7 +8,6 @@
     ./networking.nix
     ./nix.nix
     ./system-packages.nix
-    ./virtualization.nix
     ./zfs.nix
     ./zsh.nix
   ];
@@ -41,6 +40,15 @@
   # Override srvos changes
   programs.vim.defaultEditor = false;
   boot.initrd.systemd.enable = false;
+
+  # sudo
+  security.sudo = {
+    wheelNeedsPassword = lib.mkOverride 10 false;
+    execWheelOnly = true;
+    extraConfig = ''
+      Defaults lecture = never
+    '';
+  };
 
   # Configure home-manager
   home-manager.extraSpecialArgs.inputs = inputs; # forward the inputs

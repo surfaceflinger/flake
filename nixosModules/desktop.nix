@@ -13,6 +13,12 @@
     ./waydroid.nix
   ];
 
+  networking.networkmanager = {
+    enable = true;
+    firewallBackend = "nftables";
+    wifi.backend = "iwd";
+  };
+
   services.avahi = {
     enable = true;
     publish = {

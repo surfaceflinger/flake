@@ -16,8 +16,9 @@
     syntaxHighlighting.enable = true;
     vteIntegration = true;
     shellInit = ''
+      touch "$HOME/.config/zsh/history"
       zsh-newuser-install () {}
-      lk () {cd "$(${pkgs.llama} "$@")"}
+      lk () {cd "$(${pkgs.walk}/bin/walk "$@")"}
     '';
     promptInit = ''
       unsetopt PROMPT_SP # Disable empty line before first prompt

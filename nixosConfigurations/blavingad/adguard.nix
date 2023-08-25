@@ -1,4 +1,6 @@
 { lib, ... }: {
+  services.resolved.enable = false;
+
   services.adguardhome = {
     enable = true;
     mutableSettings = false;
