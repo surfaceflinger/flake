@@ -16,6 +16,12 @@ _: {
   fileSystems."/nix" = {
     device = "blavingad/NixOS/nix";
     fsType = "zfs";
+    neededForBoot = true;
+  };
+
+  fileSystems."/etc/ssh" = {
+    device = "blavingad/NixOS/etc/ssh";
+    fsType = "zfs";
   };
 
   fileSystems."/persist" = {
