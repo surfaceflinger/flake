@@ -16,6 +16,12 @@
       qbittorrent
       tdesktop
 
+      # Crypto
+      electrum
+      electrum-ltc
+      ledger-live-desktop
+      monero-gui
+
       # Gaming
       bottles
       gamescope

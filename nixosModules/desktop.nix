@@ -24,6 +24,8 @@
 
   networking.wireless.iwd.settings.General.AddressRandomization = "disabled";
 
+  hardware.ledger.enable = true;
+
   services.avahi = {
     enable = true;
     publish = {
