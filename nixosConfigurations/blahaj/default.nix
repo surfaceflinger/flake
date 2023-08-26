@@ -9,7 +9,6 @@
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.nixpkgs.nixosModules.notDetected
     inputs.self.nixosModules.desktop
-    inputs.self.nixosModules.impermanence
     inputs.self.nixosModules.nat
     inputs.self.nixosModules.natwork
     inputs.self.nixosModules.virtualisation

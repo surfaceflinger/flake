@@ -2,6 +2,8 @@ _: {
   boot.supportedFilesystems = [ "zfs" ];
   networking.hostId = "0f8a54ac";
 
+  ephemereal.enable = true;
+
   fileSystems."/boot" = {
     device = "/dev/sda1";
     fsType = "vfat";
@@ -16,7 +18,6 @@ _: {
   fileSystems."/nix" = {
     device = "blavingad/NixOS/nix";
     fsType = "zfs";
-    neededForBoot = true;
   };
 
   fileSystems."/etc/ssh" = {

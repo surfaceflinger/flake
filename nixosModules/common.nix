@@ -3,7 +3,9 @@
   imports = [
     inputs.home-manager.nixosModules.default
     inputs.srvos.nixosModules.common
+    ./agenix.nix
     ./boot.nix
+    ./impermanence.nix
     ./nano.nix
     ./networking.nix
     ./nix.nix

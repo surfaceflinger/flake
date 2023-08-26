@@ -8,8 +8,6 @@
     "${modulesPath}/profiles/qemu-guest.nix"
     ./adguard.nix
     ./storage.nix
-    inputs.agenix.nixosModules.default
-    inputs.self.nixosModules.impermanence
     inputs.self.nixosModules.nat
     inputs.self.nixosModules.server
     inputs.xkomhotshot.nixosModules.default

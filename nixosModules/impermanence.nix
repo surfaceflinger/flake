@@ -2,15 +2,13 @@
 
   imports = [ inputs.impermanence.nixosModule ];
 
-  options.ephemereal.enable = lib.mkEnableOption "Enables impermanence and sets up few things to make it work" // { default = true; };
+  options.ephemereal.enable = lib.mkEnableOption "Enables impermanence and sets up few things to make it work" // { default = false; };
 
-  config.environment.persistence."/persist" = {
-    hideMounts = true;
-    files = [
-      "/etc/machine-id"
-    ];
+  config = lib.mkIf config.ephemereal.enable {
+    fileSystems."/persist".neededForBoot = true;
+    environment.persistence."/persist" = {
+      hideMounts = true;
+      files = [ "/etc/machine-id" ];
+    };
   };
-
-  config.fileSystems."/persist".neededForBoot = true;
-  config.fileSystems."/etc/ssh".neededForBoot = true;
 }
