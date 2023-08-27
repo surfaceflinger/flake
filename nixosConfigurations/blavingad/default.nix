@@ -7,6 +7,7 @@
   imports = [
     "${modulesPath}/profiles/qemu-guest.nix"
     ./adguard.nix
+    ./monero.nix
     ./storage.nix
     inputs.self.nixosModules.nat
     inputs.self.nixosModules.server
