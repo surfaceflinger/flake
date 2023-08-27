@@ -5,6 +5,7 @@
     inputs.srvos.nixosModules.common
     ./agenix.nix
     ./boot.nix
+    ./hardening.nix
     ./impermanence.nix
     ./nano.nix
     ./networking.nix

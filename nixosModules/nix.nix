@@ -3,14 +3,11 @@
   nixpkgs.config.allowUnfree = true;
 
   nix = {
+    settings.auto-optimise-store = true;
     gc = {
       automatic = true;
       dates = "weekly";
       options = "--delete-older-than 7d";
-    };
-    settings = {
-      auto-optimise-store = true;
-      trusted-users = [ "root" "@wheel" ];
     };
     extraOptions = ''                                                                                                                                                                                                                                                                    
        experimental-features = nix-command flakes ca-derivations                                                                                                                                                                                                                          
