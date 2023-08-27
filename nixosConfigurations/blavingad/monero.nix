@@ -6,14 +6,13 @@ _: {
       address = "0.0.0.0";
     };
     limits = {
+      download = 524288;
       threads = 4;
-      upload = 65536;
+      upload = 524288;
     };
     extraConfig = ''
       confirm-external-bind=true
       in-peers=1024
-      limit-rate-down=524288
-      limit-rate-up=524288
       no-igd=true
       out-peers=64
       prune-blockchain=true
