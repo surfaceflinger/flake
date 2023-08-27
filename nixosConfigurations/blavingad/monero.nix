@@ -12,6 +12,8 @@ _: {
     };
     extraConfig = ''
       confirm-external-bind=true
+      db-sync-mode=safe
+      enforce-dns-checkpointing=1
       in-peers=1024
       no-igd=true
       out-peers=64

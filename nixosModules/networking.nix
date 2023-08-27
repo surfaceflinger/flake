@@ -1,5 +1,7 @@
-{ config, ... }: {
-  systemd.network.networks."10-eth-dhcp" = {
+{ config, lib, ... }: {
+  imports = [ ./hetzner.nix ];
+
+  systemd.network.networks."10-eth-dhcp" = lib.mkIf (!config.modules.hetzner.wan.enable) {
     matchConfig.Type = "ether";
     networkConfig = {
       DHCP = "yes";
