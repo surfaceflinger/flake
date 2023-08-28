@@ -7,7 +7,6 @@ _: {
   services.caddy = {
     enable = true;
     email = "ssl@nekopon.pl";
-    virtualHosts."blahaj.pl".extraConfig = "redir https://nekopon.pl";
     virtualHosts."natalia.ovh".extraConfig = "redir https://nekopon.pl";
     virtualHosts."nekopon.pl".extraConfig = ''
       route {

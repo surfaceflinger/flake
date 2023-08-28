@@ -7,6 +7,7 @@
   imports = [
     "${modulesPath}/profiles/qemu-guest.nix"
     ./dns.nix
+    ./microbin.nix
     ./monero.nix
     ./soju.nix
     ./storage.nix
