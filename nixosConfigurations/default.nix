@@ -15,6 +15,11 @@ in
       system = "x86_64-linux";
       modules = [ ./djungelskog ];
     };
+    knorrig = nixosSystem {
+      # Laptop / HP 15s-eq3205nw
+      system = "x86_64-linux";
+      modules = [ ./knorrig ];
+    };
     blavingad = nixosSystem {
       # CAX31 Hetzner
       system = "aarch64-linux";

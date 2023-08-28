@@ -1,0 +1,21 @@
+{ inputs, ... }: {
+  imports = [
+    inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
+    inputs.nixos-hardware.nixosModules.common-gpu-amd
+    inputs.nixos-hardware.nixosModules.common-pc-laptop
+    inputs.nixos-hardware.nixosModules.common-pc-laptop-acpi_call
+    inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
+    inputs.nixpkgs.nixosModules.notDetected
+    inputs.self.nixosModules.laptop
+    inputs.self.nixosModules.nat
+    inputs.self.nixosModules.natwork
+    ./storage.nix
+  ];
+
+  # Hostname
+  networking.hostName = "knorrig";
+
+  # Bootloader/Kernel/Modules
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" ];
+  boot.kernelModules = [ "kvm-amd" ];
+}
