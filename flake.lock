@@ -176,11 +176,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1693238334,
-        "narHash": "sha256-CpGwZnhBgFdqqKVJJ+sFJsA4ssroq961jTPmCzteW5U=",
+        "lastModified": 1693240109,
+        "narHash": "sha256-r7hb1mbcTvI5TesSFFV6bIuPX5HWSlAr+zWJIfPCAgQ=",
         "owner": "surfaceflinger",
         "repo": "nixpkgs",
-        "rev": "d15cc61334837ef24743e978c8ea7f18e15ed0f3",
+        "rev": "2959acade61bd0042225c56271f242f20c24af52",
         "type": "github"
       },
       "original": {
