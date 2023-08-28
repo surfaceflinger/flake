@@ -62,4 +62,5 @@
 
   services.power-profiles-daemon.enable = false;
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+  programs.gamemode.enable = true;
 }
