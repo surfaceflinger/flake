@@ -13,7 +13,7 @@
     ./storage.nix
     ./www.nix
     inputs.self.nixosModules.nat
-    inputs.self.nixosModules.server
+    inputs.self.nixosModules.vps
     inputs.xkomhotshot.nixosModules.default
   ];
 
