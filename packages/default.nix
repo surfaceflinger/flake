@@ -5,7 +5,6 @@
       inherit (pkgs)
         anime4k
         krisp-patch
-        timedoctor-desktop
         ;
     };
     # make pkgs available to all `perSystem` functions
@@ -24,6 +23,5 @@
     # Custom packages
     anime4k = prev.callPackage ./anime4k { };
     krisp-patch = prev.callPackage ./krisp-patch { };
-    timedoctor-desktop = prev.callPackage ./timedoctor-desktop { };
   };
 }

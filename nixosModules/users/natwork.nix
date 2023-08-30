@@ -11,7 +11,7 @@
     ]
     ++ lib.optionals config.services.xserver.enable [
       slack
-      inputs.self.packages.${pkgs.system}.timedoctor-desktop
+      timedoctor-desktop
     ];
   };
 
