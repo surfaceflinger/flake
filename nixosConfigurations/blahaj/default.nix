@@ -37,4 +37,18 @@
     coreOffset = -80;
     uncoreOffset = -170;
   };
+
+  # Fixup volume
+  environment.etc."wireplumber/main.lua.d/80-blahaj.lua".text = ''
+    table.insert (alsa_monitor.rules, {
+      matches = {
+        {
+          { "device.name", "matches", "alsa_card.*" },
+        },
+      },
+      apply_properties = {
+        ["api.alsa.soft-mixer"] = true,
+      },
+    })
+  '';
 }

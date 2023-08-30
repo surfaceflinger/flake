@@ -1,6 +1,6 @@
 _: {
   hardware.pulseaudio.enable = false;
-  environment.etc."wireplumber/main.lua.d/99-nat.lua".text = ''
+  environment.etc."wireplumber/main.lua.d/99-resample.lua".text = ''
     table.insert (alsa_monitor.rules, {
       matches = {
         {
@@ -12,17 +12,6 @@ _: {
       },
       apply_properties = {
         ["resample.quality"] = 10,
-      },
-    })
-
-    table.insert (alsa_monitor.rules, {
-      matches = {
-        {
-          { "device.name", "matches", "alsa_card.*" },
-        },
-      },
-      apply_properties = {
-        ["api.alsa.soft-mixer"] = true,
       },
     })
   '';
