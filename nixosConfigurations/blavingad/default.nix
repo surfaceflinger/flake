@@ -40,4 +40,10 @@
     enable = true;
     environmentFile = config.age.secrets.xkomhotshot.path;
   };
+
+  # TOR Snowflake proxy
+  services.snowflake-proxy = {
+    enable = true;
+    capacity = 100;
+  };
 }
