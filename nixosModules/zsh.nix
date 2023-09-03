@@ -15,6 +15,12 @@
     histSize = 10000000;
     syntaxHighlighting.enable = true;
     vteIntegration = true;
+    shellAliases = {
+      awsume = ". ${pkgs.awsume}/bin/awsume";
+      cat = "${pkgs.bat}/bin/bat";
+      grep = "${pkgs.ripgrep}/bin/rg";
+      ls = "${pkgs.exa}/bin/exa";
+    };
     shellInit = ''
       mkdir -p "$HOME/.config/zsh" && touch "$HOME/.config/zsh/history"
       zsh-newuser-install () {}

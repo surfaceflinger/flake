@@ -9,9 +9,6 @@
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
-    extraOptions = ''                                                                                                                                                                                                                                                                    
-       experimental-features = nix-command flakes ca-derivations                                                                                                                                                                                                                          
-     '';
     registry.nixpkgs.flake = inputs.nixpkgs;
   };
   environment.etc."nix/inputs/nixpkgs".source = inputs.nixpkgs.outPath;

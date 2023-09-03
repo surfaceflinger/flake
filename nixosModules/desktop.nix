@@ -10,7 +10,6 @@
     ./pipewire.nix
     ./printing.nix
     ./steam.nix
-    ./waydroid.nix
   ];
 
   networking.networkmanager = {
