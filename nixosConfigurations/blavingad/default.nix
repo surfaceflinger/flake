@@ -41,6 +41,13 @@
     environmentFile = config.age.secrets.xkomhotshot.path;
   };
 
+  # swift secret
+  age.secrets.googlebackup = {
+    file = ../../secrets/googlebackup.age;
+    mode = "500";
+    owner = "nat";
+  };
+
   # TOR Snowflake proxy
   services.snowflake-proxy = {
     enable = true;

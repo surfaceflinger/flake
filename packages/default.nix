@@ -5,6 +5,7 @@
       inherit (pkgs)
         anime4k
         krisp-patch
+        swift-backup
         ;
     };
     # make pkgs available to all `perSystem` functions
@@ -23,5 +24,6 @@
     # Custom packages
     anime4k = prev.callPackage ./anime4k { };
     krisp-patch = prev.callPackage ./krisp-patch { };
+    swift-backup = prev.callPackage ./swift-backup { };
   };
 }

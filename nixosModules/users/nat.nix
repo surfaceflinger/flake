@@ -10,7 +10,9 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKLC2drRTlZnQILQ/SdoZVC+Zw1SK2+L9czCHuMNBzd6 nat@djungelskog"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPCkLPQTcoK0dAOvRT2tyZObxF6BfacmAkeHQxhHV3ZU nat@knorrig"
     ];
-    packages = with pkgs; lib.optionals config.services.xserver.enable [
+    packages = with pkgs; [
+      inputs.self.packages.${pkgs.system}.swift-backup
+    ] ++ lib.optionals config.services.xserver.enable [
       # Desktop software
       (discord-canary.override { withOpenASAR = true; })
       inputs.self.packages.${pkgs.system}.krisp-patch
