@@ -12,16 +12,9 @@
     ./steam.nix
   ];
 
-  networking.networkmanager = {
-    enable = true;
-    firewallBackend = "nftables";
-    wifi.backend = "iwd";
-  };
+  networking.networkmanager.enable = true;
   environment.persistence."/persist".directories = lib.mkIf config.ephemereal.enable [ "/etc/NetworkManager/system-connections" ];
-
   hardware.usb-modeswitch.enable = true;
-
-  networking.wireless.iwd.settings.General.AddressRandomization = "disabled";
 
   hardware.ledger.enable = true;
 
