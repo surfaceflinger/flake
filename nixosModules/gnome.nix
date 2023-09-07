@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }: {
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
@@ -53,6 +53,7 @@
   fonts = {
     packages = with pkgs; [
       cascadia-code # S-tier font for terminal
+      inputs.google-sans-nix.packages."${pkgs.system}".default
       noto-fonts
       noto-fonts-cjk
       noto-fonts-cjk-sans

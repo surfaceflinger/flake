@@ -40,6 +40,8 @@ with lib.hm.gvariant;
     "org/gnome/desktop/interface" = {
       clock-show-weekday = true;
       color-scheme = "prefer-dark";
+      document-font-name = "Google Sans 11";
+      font-name = "Google Sans 11";
       gtk-theme = "adw-gtk3-dark";
       show-battery-percentage = true;
     };
@@ -73,6 +75,7 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/wm/preferences" = {
       resize-with-right-button = true;
+      titlebar-font = "Google Sans Bold 11";
     };
 
     "org/gnome/mutter" = {
