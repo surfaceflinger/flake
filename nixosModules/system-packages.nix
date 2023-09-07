@@ -10,8 +10,10 @@
     ncdu
     nixpkgs-fmt
     p7zip
+    rage
     ripgrep
     screen
+    signify
     tree
     wget
 
