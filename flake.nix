@@ -6,6 +6,8 @@
     agenix.url = "github:ryantm/agenix";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    google-sans-nix.inputs.nixpkgs.follows = "nixpkgs";
+    google-sans-nix.url = "github:surfaceflinger/google-sans-nix";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     impermanence.url = "github:nix-community/impermanence";
