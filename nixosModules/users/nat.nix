@@ -5,7 +5,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "libvirtd" "networkmanager" "adbusers" ];
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA3qUEH9FtVeyUTTYTIXfKXnKtmw6mRX9g/Xo3/iKfwp termux@panther"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDn8HsKgSJJzxAvKdkEJRYLLOVv9NCWohhd/EKkPjsjq termius@panther"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGeYYGkVH8pPo1f769OHYn6Vga6wnhftJA6w2IJADzgs nat@blahaj"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKLC2drRTlZnQILQ/SdoZVC+Zw1SK2+L9czCHuMNBzd6 nat@djungelskog"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPCkLPQTcoK0dAOvRT2tyZObxF6BfacmAkeHQxhHV3ZU nat@knorrig"
