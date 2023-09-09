@@ -28,7 +28,6 @@
 
       # Gaming
       bottles
-      gamescope
       jazz2
       lunar-client
       prismlauncher
