@@ -19,7 +19,7 @@
       awsume = ". ${pkgs.awsume}/bin/awsume";
       cat = "${pkgs.bat}/bin/bat";
       grep = "${pkgs.ripgrep}/bin/rg";
-      ls = "${pkgs.exa}/bin/exa";
+      ls = "${pkgs.eza}/bin/eza";
     };
     shellInit = ''
       mkdir -p "$HOME/.config/zsh" && touch "$HOME/.config/zsh/history"
