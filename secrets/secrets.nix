@@ -5,4 +5,5 @@ in
 {
   "xkomhotshot.age".publicKeys = [ host-blavingad user-nat-blahaj ];
   "googlebackup.age".publicKeys = [ host-blavingad user-nat-blahaj ];
+  "vaultwarden.age".publicKeys = [ host-blavingad user-nat-blahaj ];
 }

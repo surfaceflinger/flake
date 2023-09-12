@@ -11,6 +11,7 @@
     ./monero.nix
     ./soju.nix
     ./storage.nix
+    ./vaultwarden.nix
     ./www.nix
     inputs.self.nixosModules.nat
     inputs.self.nixosModules.vps

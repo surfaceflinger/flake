@@ -27,8 +27,6 @@ _: {
       file_server
     }
 
-    reverse_proxy http://127.0.0.1:9595 {
-      header_up Host {upstream_hostport}
-    }
+    reverse_proxy http://127.0.0.1:9595
   '';
 }
