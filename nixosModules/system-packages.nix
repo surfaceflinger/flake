@@ -28,6 +28,7 @@
     # Networking
     bind
     nload
+    nmap
     whois
   ] ++ lib.optionals config.services.xserver.enable [
     # Desktop software
