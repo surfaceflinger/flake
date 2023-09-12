@@ -4,6 +4,7 @@
       # re-export our packages
       inherit (pkgs)
         anime4k
+        gpucache
         krisp-patch
         swift-backup
         ;
@@ -23,6 +24,7 @@
   flake.overlays.default = _final: prev: {
     # Custom packages
     anime4k = prev.callPackage ./anime4k { };
+    gpucache = prev.callPackage ./gpucache { };
     krisp-patch = prev.callPackage ./krisp-patch { };
     swift-backup = prev.callPackage ./swift-backup { };
   };

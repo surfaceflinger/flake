@@ -48,12 +48,15 @@
 
     # Theming
     adw-gtk3
+
+    # Tool to fix Mesa 23.0+ trolls
+    inputs.self.packages.${pkgs.system}.gpucache
   ];
 
   fonts = {
     packages = with pkgs; [
       cascadia-code # S-tier font for terminal
-      inputs.google-sans-nix.packages."${pkgs.system}".default
+      inputs.google-sans-nix.packages.${pkgs.system}.default
       noto-fonts
       noto-fonts-cjk
       noto-fonts-cjk-sans

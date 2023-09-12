@@ -11,7 +11,7 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPCkLPQTcoK0dAOvRT2tyZObxF6BfacmAkeHQxhHV3ZU nat@knorrig"
     ];
     packages = with pkgs; [
-      inputs.agenix.packages."${pkgs.system}".default
+      inputs.agenix.packages.${pkgs.system}.default
       inputs.self.packages.${pkgs.system}.swift-backup
     ] ++ lib.optionals config.services.xserver.enable [
       # Desktop software
