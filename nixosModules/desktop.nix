@@ -12,17 +12,7 @@
     ./steam.nix
   ];
 
-  networking.networkmanager.enable = true;
-  environment.persistence."/persist".directories = lib.mkIf config.ephemereal.enable [ "/etc/NetworkManager/system-connections" ];
+  time.timeZone = "Europe/Warsaw";
   hardware.usb-modeswitch.enable = true;
-
   hardware.ledger.enable = true;
-
-  services.avahi = {
-    enable = true;
-    publish = {
-      enable = true;
-      userServices = true;
-    };
-  };
 }

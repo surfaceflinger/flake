@@ -1,4 +1,4 @@
-{ inputs, lib, ... }:
+{ config, inputs, lib, ... }:
 {
   imports = [
     inputs.home-manager.nixosModules.default
@@ -20,7 +20,25 @@
   # Regional
   i18n.defaultLocale = "en_US.UTF-8";
   console.keyMap = "pl";
-  time.timeZone = "Europe/Warsaw";
+
+  # Time
+  services.chrony = {
+    enable = true;
+    enableNTS = true;
+    extraConfig = ''
+      rtcautotrim 30
+      rtcfile ${config.services.chrony.directory}/chrony.rtc
+    '';
+  };
+  networking.timeServers = [
+    "time.cloudflare.com"
+    "virginia.time.system76.com"
+    "ptbtime1.ptb.de"
+    "ntppool1.time.nl"
+    "ntp.3eck.net"
+    "ntp.trifence.ch"
+    "ntp.zeitgitter.net"
+  ];
 
   # Disable coredumps
   security.pam.loginLimits = [
