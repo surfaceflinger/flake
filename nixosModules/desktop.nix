@@ -1,4 +1,4 @@
-{ config, inputs, lib, ... }: {
+{ inputs, ... }: {
   imports = [
     inputs.srvos.nixosModules.desktop
     ./bluetooth.nix
