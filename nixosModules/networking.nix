@@ -31,6 +31,7 @@
     '';
   };
   environment.persistence."/persist".directories = lib.mkIf (config.networking.networkmanager.enable && config.ephemereal.enable) [ "/etc/NetworkManager/system-connections" ];
+  hardware.usb-modeswitch.enable = config.networking.networkmanager.enable;
 
   services.avahi = {
     enable = config.services.xserver.enable;

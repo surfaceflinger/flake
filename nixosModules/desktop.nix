@@ -13,6 +13,5 @@
   ];
 
   time.timeZone = "Europe/Warsaw";
-  hardware.usb-modeswitch.enable = true;
   hardware.ledger.enable = true;
 }
