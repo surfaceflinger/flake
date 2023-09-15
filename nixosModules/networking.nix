@@ -18,7 +18,6 @@
   networking.networkmanager = {
     enable = config.services.xserver.enable;
     dns = lib.mkForce "none";
-    enableFccUnlock = true;
     firewallBackend = "nftables";
     wifi = {
       backend = "iwd";
