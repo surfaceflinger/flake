@@ -2,8 +2,10 @@
   # Other software
   environment.systemPackages = with pkgs; [
     # CLI/TUI tools
+    bat
     binwalk
     deadnix
+    eza
     file
     magic-wormhole-rs
     nano

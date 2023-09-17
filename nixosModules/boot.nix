@@ -17,7 +17,7 @@ in
   boot.loader = {
     # The number of seconds for user intervention before the default boot option is selected.
     timeout = lib.mkDefault 3;
-    efi.canTouchEfiVariables = hasEfi;
+    efi.canTouchEfiVariables = false;
     grub = {
       enable = lib.mkDefault (!hasEfi);
       efiSupport = lib.mkDefault false;

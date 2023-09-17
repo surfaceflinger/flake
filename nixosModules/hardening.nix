@@ -113,7 +113,7 @@
     # vivid driver is only useful for testing purposes and has been the cause
     # of privilege escalation vulnerabilities
     "vivid"
-    # Disable Thunderbolt and FireWire to prevent DMA attacks
+    # Disable FireWire to prevent DMA attacks
     "firewire-core"
   ];
 }

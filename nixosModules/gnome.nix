@@ -8,7 +8,6 @@
   # Debloat
   environment.gnome.excludePackages =
     (with pkgs; [
-      gnome-connections
       gnome-console
       gnome-photos
       gnome-text-editor
@@ -21,10 +20,11 @@
       cheese
       epiphany
       evince
-      gedit
+      geary
       gnome-characters
       gnome-clocks
       gnome-contacts
+      gnome-disk-utility
       gnome-font-viewer
       gnome-logs
       gnome-maps
@@ -34,6 +34,7 @@
       gnome-system-monitor
       gnome-themes-extra
       gnome-weather
+      seahorse
       simple-scan
       totem
       yelp
