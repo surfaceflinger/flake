@@ -16,12 +16,9 @@ _: {
   };
 
   services.caddy.virtualHosts."blahaj.pl".extraConfig = ''
-    @replaceAssets {
-      path /static/logo.png
-      path /static/water.css
-    }
+    @replacePaths { path_regexp /static/(logo.png|water.css) }
 
-    handle @replaceAssets {
+    handle @replacePaths {
       rewrite /static/logo.png ${./blahaj.png}
       rewrite /static/water.css ${./water.css}
       file_server
