@@ -28,7 +28,7 @@
       bottles
       jazz2
       lunar-client
-      prismlauncher
+      (inputs.prismlauncher.packages.${pkgs.system}.prismlauncher.override { glfw = glfw-wayland-minecraft; jdk17 = graalvm17-ce; })
     ];
   };
 
