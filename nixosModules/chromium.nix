@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    google-chrome-beta
+    google-chrome
   ];
 
   programs.chromium = {
