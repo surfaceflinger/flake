@@ -4,7 +4,6 @@
     inputs.home-manager.nixosModules.default
     ./agenix.nix
     ./boot.nix
-    ./hardening.nix
     ./impermanence.nix
     ./nano.nix
     ./networking.nix

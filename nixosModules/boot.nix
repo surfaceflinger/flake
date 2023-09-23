@@ -5,7 +5,6 @@ in
 {
   # Kernel
   boot = {
-    kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
     kernelParams = [
       "amd_iommu=on"
       "intel_iommu=on"
