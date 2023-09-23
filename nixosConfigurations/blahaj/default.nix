@@ -26,9 +26,6 @@
     kernelModules = [ "kvm-intel" "8821cu" ];
   };
 
-  # PCIe Passthrough
-  boot.extraModprobeConfig = "options vfio-pci ids=8086:0412,8086:8c20";
-
   # Power management
   boot.kernelParams = [ "intel_pstate=disable" ];
   powerManagement.cpuFreqGovernor = "performance";
