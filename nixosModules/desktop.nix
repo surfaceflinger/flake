@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{ inputs, pkgs, ... }: {
   imports = [
     inputs.srvos.nixosModules.desktop
     ./bluetooth.nix
@@ -14,4 +14,5 @@
 
   time.timeZone = "Europe/Warsaw";
   hardware.ledger.enable = true;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod;
 }

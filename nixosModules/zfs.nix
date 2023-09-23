@@ -7,14 +7,5 @@
     environment.systemPackages = [
       pkgs.zfs-prune-snapshots
     ];
-
-    boot.kernelPackages = (pkgs.zfsUnstable.override {
-      removeLinuxDRM = pkgs.hostPlatform.isAarch64;
-    }).latestCompatibleLinuxPackages;
-
-    boot.zfs = {
-      removeLinuxDRM = lib.mkDefault pkgs.hostPlatform.isAarch64;
-      enableUnstable = true;
-    };
   };
 }
