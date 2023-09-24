@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 let
   hasEfi = (config.fileSystems."/boot".fsType or "") == "vfat";
 in

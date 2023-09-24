@@ -1,18 +1,18 @@
 _: {
   services.microbin = {
     enable = true;
-    urls.publicPath = "https://blahaj.pl/";
-    port = 9595;
-    footer.text = "Report illegal content to bin@nekopon.pl; Code: https://github.com/surfaceflinger/flake";
-    header.title = "BlahajBin";
-    burn.enable = true;
-    qr = true;
-    disableFileUpload = true;
-    encryption = {
-      clientSide = true;
-      serverSide = true;
+    settings = {
+      MICROBIN_PUBLIC_PATH = "https://blahaj.pl/";
+      MICROBIN_PORT = 9595;
+      MICROBIN_FOOTER_TEXT = "Report illegal content to bin@nekopon.pl; Code: https://github.com/surfaceflinger/flake";
+      MICROBIN_TITLE = "BlahajBin";
+      MICROBIN_ENABLE_BURN_AFTER = true;
+      MICROBIN_QR = true;
+      MICROBIN_NO_FILE_UPLOAD = true;
+      MICROBIN_ENCRYPTION_CLIENT_SIDE = true;
+      MICROBIN_ENCRYPTION_SERVER_SIDE = true;
+      MICROBIN_LIST_SERVER = false;
     };
-    listServer = true;
   };
 
   services.caddy.virtualHosts."blahaj.pl".extraConfig = ''

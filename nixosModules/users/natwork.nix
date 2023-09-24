@@ -3,7 +3,7 @@
     uid = 1112;
     initialHashedPassword = "$6$L/BOe/brf592ULhC$aoO9LPG6YoTlqOoJYh588S1vq7ejtuTY.myBiBt638.zo4IzpmiadnYKlg4xGV.x6NgOBZaSyCzNzzHLUjQq9/";
     isNormalUser = true;
-    extraGroups = [ "networkmanager" ];
+    extraGroups = [ "audio" "networkmanager" ];
     packages = with pkgs; [
       # work
       awscli2

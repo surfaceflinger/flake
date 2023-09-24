@@ -3,7 +3,7 @@
     uid = 1111;
     initialHashedPassword = "$6$lR2ORA5b3eQUIqWN$W0RFJ7/5jWfajKZl2CfSwp5/BmUIzuS5OnRvksaUWmN575fubdRMybKDAFKKDnh67k6z39qjNlMLiI/drslNv1";
     isNormalUser = true;
-    extraGroups = [ "wheel" "libvirtd" "networkmanager" "adbusers" ];
+    extraGroups = [ "audio" "wheel" "libvirtd" "networkmanager" "adbusers" ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDn8HsKgSJJzxAvKdkEJRYLLOVv9NCWohhd/EKkPjsjq termius@panther"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGeYYGkVH8pPo1f769OHYn6Vga6wnhftJA6w2IJADzgs nat@blahaj"
