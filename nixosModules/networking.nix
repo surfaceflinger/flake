@@ -19,7 +19,6 @@
     enable = config.services.xserver.enable;
     dns = lib.mkForce "none";
     wifi = {
-      backend = "iwd";
       powersave = false;
       scanRandMacAddress = false;
     };
