@@ -6,7 +6,6 @@
         anime4k
         gpucache
         krisp-patch
-        noise-suppression-for-voice
         swift-backup
         ;
     };
@@ -27,7 +26,6 @@
     anime4k = prev.callPackage ./anime4k { };
     gpucache = prev.callPackage ./gpucache { };
     krisp-patch = prev.callPackage ./krisp-patch { };
-    noise-suppression-for-voice = prev.callPackage ./noise-suppression-for-voice { };
     swift-backup = prev.callPackage ./swift-backup { };
   };
 }

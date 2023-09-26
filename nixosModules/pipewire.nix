@@ -42,11 +42,12 @@
         "client"
         "jack"
         "pipewire-pulse"
+        "pipewire"
       ]
   );
+
   realtimeLimitUS = 5000000;
   in {
-
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   systemd.services.rtkit-daemon.serviceConfig.ExecStart = [
@@ -63,49 +64,5 @@
     wireplumber.enable = true;
   };
 
-  environment.etc =
-    rtprioConf
-    // resampleQualityConf
-    // {
-      "pipewire/pipewire.conf.d/noise-cancelling.conf".text = builtins.toJSON {
-        "context.modules" = [
-          {
-            name = "libpipewire-module-filter-chain";
-            args = {
-              "node.name" = "rnnoise_source";
-              "node.description" = "Noise Canceling source";
-              "media.name" = "Noise Canceling source";
-              "filter.graph" = {
-                nodes = [
-                  {
-                    type = "ladspa";
-                    name = "rnnoise";
-                    plugin = "${inputs.self.packages.${pkgs.system}.noise-suppression-for-voice}/lib/ladspa/librnnoise_ladspa.so";
-                    label = "noise_suppressor_stereo";
-                    control = {
-                      "VAD Threshold (%)" = 50.0;
-                    };
-                  }
-                ];
-              };
-              "capture.props" = {
-                "node.passive" = true;
-              };
-              "playback.props" = {
-                "media.class" = "Audio/Source";
-              };
-            };
-          }
-        ];
-      };
-
-      "wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
-        bluez_monitor.properties = {
-        	["bluez5.enable-sbc-xq"] = true,
-        	["bluez5.enable-msbc"] = true,
-        	["bluez5.enable-hw-volume"] = true,
-        	["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
-        }
-      '';
-    };
+  environment.etc = rtprioConf // resampleQualityConf;
 }

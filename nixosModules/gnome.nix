@@ -43,6 +43,7 @@
   # Other software
   environment.systemPackages = with pkgs; [
     # GNOME
+    gnomeExtensions.appindicator
     gnomeExtensions.user-themes
     gnome.gnome-session
     blackbox-terminal

@@ -22,6 +22,7 @@
       inputs.nix-index-database.hmModules.nix-index
     ] ++ lib.optionals config.services.xserver.enable [
       ./dconf.nix
+      ./easyeffects.nix
       ./mpv.nix
     ];
 
