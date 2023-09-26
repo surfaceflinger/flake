@@ -1,6 +1,6 @@
 # sauce: https://github.com/xddxdd/nixos-config/blob/master/nixos/client-components/pipewire.nix
-{ inputs, lib, pkgs, ... }:
-  let
+{ lib, pkgs, ... }:
+let
   rtprioConf = builtins.listToAttrs (
     builtins.map
       (n:
@@ -47,7 +47,8 @@
   );
 
   realtimeLimitUS = 5000000;
-  in {
+in
+{
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   systemd.services.rtkit-daemon.serviceConfig.ExecStart = [
