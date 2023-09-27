@@ -15,8 +15,8 @@
       inputs.self.packages.${pkgs.system}.swift-backup
     ] ++ lib.optionals config.services.xserver.enable [
       # Desktop software
-      (discord-canary.override { withOpenASAR = true; })
-      inputs.self.packages.${pkgs.system}.krisp-patch
+      armcord
+      #inputs.self.packages.${pkgs.system}.krisp-patch
       qbittorrent
       tdesktop
 
@@ -32,16 +32,14 @@
     ];
   };
 
-  systemd.tmpfiles.rules = [ "d /home/nat 0700 nat users - -" ];
-
   home-manager.users.nat = { ... }: {
-    imports = [
-      inputs.nix-index-database.hmModules.nix-index
-    ] ++ lib.optionals config.services.xserver.enable [
-      ./dconf.nix
-      ./easyeffects.nix
-      ./mpv.nix
-    ];
+    imports = [ ./modules/common.nix ];
+
+    home.sessionVariables = {
+      XDG_SESSION_TYPE = "wayland";
+      NIXOS_OZONE_WL = "1";
+      MOZ_ENABLE_WAYLAND = "1";
+    };
 
     programs.git = {
       enable = true;
@@ -59,6 +57,5 @@
       };
     };
 
-    home.stateVersion = "22.11";
   };
 }

@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, lib, ... }: {
+{ config, pkgs, lib, ... }: {
   users.users.natwork = {
     uid = 1112;
     initialHashedPassword = "$6$L/BOe/brf592ULhC$aoO9LPG6YoTlqOoJYh588S1vq7ejtuTY.myBiBt638.zo4IzpmiadnYKlg4xGV.x6NgOBZaSyCzNzzHLUjQq9/";
@@ -15,18 +15,8 @@
     ];
   };
 
-  systemd.tmpfiles.rules = [ "d /home/natwork 0700 natwork users - -" ];
-
   home-manager.users.natwork = { ... }: {
-    imports = [
-      inputs.nix-index-database.hmModules.nix-index
-    ] ++ lib.optionals config.services.xserver.enable [
-      ./dconf.nix
-      ./easyeffects.nix
-      ./mpv.nix
-    ];
-
-    home.stateVersion = "22.11";
+    imports = [ ./modules/common.nix ];
   };
 
   nix.settings.trusted-users = [ "natwork" ];

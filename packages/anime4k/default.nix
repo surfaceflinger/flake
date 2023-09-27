@@ -12,6 +12,6 @@ stdenv.mkDerivation rec {
   };
 
   installPhase = ''
-    find . -type f -iname '*.glsl' -exec install -Dm 644 {} -t $out/usr/share/shaders/ \;
+    find . -type f -iname '*.glsl' -exec install -Dm 644 {} -t $out \;
   '';
 }
