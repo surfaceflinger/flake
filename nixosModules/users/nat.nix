@@ -25,7 +25,6 @@
       monero-gui
 
       # Gaming
-      bottles
       jazz2
       lunar-client
       (inputs.prismlauncher.packages.${pkgs.system}.prismlauncher.override { glfw = glfw-wayland-minecraft; })

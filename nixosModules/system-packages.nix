@@ -3,15 +3,13 @@
   environment.systemPackages = with pkgs; [
     # CLI/TUI tools
     bat
-    binwalk
     deadnix
     eza
     file
-    magic-wormhole-rs
     nano
     ncdu
     nixpkgs-fmt
-    p7zip
+    ouch
     rage
     ripgrep
     screen
@@ -21,24 +19,22 @@
 
     # System utilities
     config.boot.kernelPackages.cpupower
-    hyfetch
     lm_sensors
     pciutils
     psmisc
     usbutils
+    zenith
 
-    # Networking
-    bind
-    nload
-    nmap
-    whois
+    # Network
+    doggo
+    inetutils
+    magic-wormhole-rs
+    rustscan
   ] ++ lib.optionals config.services.xserver.enable [
     # Desktop software
     burpsuite
     gnome-feeds
     halloy
-    pavucontrol
-    tor-browser-bundle-bin
     vscode
     xfce.mousepad
 
@@ -52,7 +48,6 @@
   programs = {
     adb.enable = config.services.xserver.enable;
     git.enable = true;
-    htop.enable = true;
     gnupg.agent.enable = true;
   };
 }
