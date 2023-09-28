@@ -12,8 +12,8 @@
     inputs.self.nixosModules.nat
     inputs.self.nixosModules.natwork
     inputs.self.nixosModules.virtualisation
-    ./media.nix
     ./storage.nix
+    ./media.nix
   ];
 
   # Hostname

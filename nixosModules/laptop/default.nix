@@ -1,6 +1,6 @@
-{ ... }: {
+{ inputs, ... }: {
   imports = [
-    ./desktop.nix
+    inputs.self.nixosModules.desktop
   ];
 
   services.tlp = {

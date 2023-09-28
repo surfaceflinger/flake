@@ -1,8 +1,8 @@
 { inputs, lib, pkgs, ... }: {
   imports = [
+    inputs.self.nixosModules.common
+    inputs.self.nixosModules.hardening
     inputs.srvos.nixosModules.server
-    ./common.nix
-    ./hardening.nix
   ];
 
   environment.memoryAllocator.provider = lib.mkForce "jemalloc";

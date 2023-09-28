@@ -16,7 +16,7 @@
   };
 
   home-manager.users.natwork = { ... }: {
-    imports = [ ./modules/common.nix ];
+    imports = [ ./hmModules/common.nix ];
   };
 
   nix.settings.trusted-users = [ "natwork" ];

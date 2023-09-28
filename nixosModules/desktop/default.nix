@@ -1,12 +1,12 @@
 { inputs, pkgs, ... }: {
   imports = [
+    inputs.self.nixosModules.common
+    inputs.self.nixosModules.mitigations-off
     inputs.srvos.nixosModules.desktop
     ./bluetooth.nix
     ./chromium.nix
-    ./common.nix
     ./gnome.nix
     ./logitech.nix
-    ./mitigations-off.nix
     ./pipewire.nix
     ./printing.nix
     ./steam.nix

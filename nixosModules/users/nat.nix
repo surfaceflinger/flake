@@ -32,7 +32,7 @@
   };
 
   home-manager.users.nat = { ... }: {
-    imports = [ ./modules/common.nix ];
+    imports = [ ./hmModules/common.nix ];
 
     home.sessionVariables = {
       XDG_SESSION_TYPE = "wayland";
