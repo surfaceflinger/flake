@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }: {
+{ config, inputs, pkgs, lib, ... }: {
   users.users.natwork = {
     uid = 1112;
     initialHashedPassword = "$6$L/BOe/brf592ULhC$aoO9LPG6YoTlqOoJYh588S1vq7ejtuTY.myBiBt638.zo4IzpmiadnYKlg4xGV.x6NgOBZaSyCzNzzHLUjQq9/";
@@ -11,7 +11,7 @@
     ]
     ++ lib.optionals config.services.xserver.enable [
       slack
-      timedoctor-desktop
+      inputs.self.packages."${pkgs.system}".timedoctor-desktop
     ];
   };
 
