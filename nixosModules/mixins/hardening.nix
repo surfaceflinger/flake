@@ -3,6 +3,9 @@
     (modulesPath + "/profiles/hardened.nix")
   ];
 
+  # Fixup for building
+  services.logrotate.checkConfig = false;
+
   nix.settings.allowed-users = [ "@wheel" "root" ];
   environment.memoryAllocator.provider = "libc";
   security = {
