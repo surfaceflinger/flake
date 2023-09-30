@@ -7,6 +7,7 @@
         gpucache
         krisp-patch
         swift-backup
+        timedoctor-desktop
         ;
     };
     # make pkgs available to all `perSystem` functions
@@ -27,5 +28,6 @@
     gpucache = prev.callPackage ./gpucache { };
     krisp-patch = prev.callPackage ./krisp-patch { };
     swift-backup = prev.callPackage ./swift-backup { };
+    timedoctor-desktop = prev.callPackage ./timedoctor-desktop { };
   };
 }
