@@ -8,6 +8,9 @@
       # work
       awscli2
       awsume
+      goaccess
+      k9s
+      kubernetes
     ]
     ++ lib.optionals config.services.xserver.enable [
       slack
