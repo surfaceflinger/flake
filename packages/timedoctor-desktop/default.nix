@@ -18,6 +18,10 @@ appimageTools.wrapType2 rec {
   inherit pname version src;
 
   extraBwrapArgs = [
+    "--tmpfs /dev"
+    "--dev-bind /dev/null /dev/null"
+    "--dev-bind /dev/shm /dev/shm"
+    "--dev-bind /dev/urandom /dev/urandom"
     "--tmpfs /boot"
     "--tmpfs /home"
     "--bind $HOME/.config/Time\\ Doctor $HOME/.config/Time\\ Doctor"
@@ -27,6 +31,7 @@ appimageTools.wrapType2 rec {
     "--tmpfs /var"
     "--tmpfs /vol"
     "--unshare-pid"
+    "--setenv LD_PRELOAD ${graphene-hardened-malloc}/lib/libhardened_malloc.so"
   ];
 
   extraInstallCommands = ''
@@ -37,8 +42,8 @@ appimageTools.wrapType2 rec {
       --replace 'Exec=AppRun' 'Exec=timedoctor-desktop'
     source "${makeWrapper}/nix-support/setup-hook"
     wrapProgram "$out/bin/timedoctor-desktop" \
-      --add-flags "--disable-gpu-sandbox" \
-      --prefix LD_PRELOAD : "${graphene-hardened-malloc}/lib/libhardened_malloc.so";
+      --add-flags "--disable-gpu --disable-accelerated-video-encode --disable-features=VizDisplayCompositor" \
+      --add-flags "--js-flags=--jitless"
   '';
 
   extraPkgs = _: with _; [
