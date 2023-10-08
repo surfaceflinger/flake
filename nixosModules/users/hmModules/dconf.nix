@@ -10,19 +10,9 @@ with lib.hm.gvariant;
       floating-controls = false;
       font = "Cascadia Code PL 11";
       headerbar-drag-area = true;
-      pretty = false;
+      pretty = true;
       show-headerbar = true;
       theme-dark = "Adwaita Dark";
-    };
-
-    "org/gnome/Lollypop" = {
-      hd-artwork = true;
-      import-advanced-artist-tags = true;
-      network-access = false;
-      replay-gain = "album";
-      show-compilations = false;
-      show-sidebar-labels = true;
-      transitions = false;
     };
 
     "org/gnome/desktop/app-folders" = {

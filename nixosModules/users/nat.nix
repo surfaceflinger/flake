@@ -15,7 +15,7 @@
       inputs.self.packages.${pkgs.system}.swift-backup
     ] ++ lib.optionals config.services.xserver.enable [
       # Desktop software
-      armcord
+      discord
       #inputs.self.packages.${pkgs.system}.krisp-patch
       qbittorrent
       tdesktop
@@ -33,12 +33,6 @@
 
   home-manager.users.nat = { ... }: {
     imports = [ ./hmModules/common.nix ];
-
-    home.sessionVariables = {
-      XDG_SESSION_TYPE = "wayland";
-      NIXOS_OZONE_WL = "1";
-      MOZ_ENABLE_WAYLAND = "1";
-    };
 
     programs.git = {
       enable = true;
