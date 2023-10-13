@@ -18,12 +18,11 @@
     wget
 
     # System utilities
+    bottom
     config.boot.kernelPackages.cpupower
-    lm_sensors
     pciutils
     psmisc
     usbutils
-    zenith
 
     # Network
     doggo
@@ -32,7 +31,6 @@
     rustscan
   ] ++ lib.optionals config.services.xserver.enable [
     # Desktop software
-    burpsuite
     gnome-feeds
     halloy
     vscode

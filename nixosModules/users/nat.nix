@@ -15,8 +15,8 @@
       inputs.self.packages.${pkgs.system}.swift-backup
     ] ++ lib.optionals config.services.xserver.enable [
       # Desktop software
+      burpsuite
       (discord.override { withOpenASAR = true; })
-      #inputs.self.packages.${pkgs.system}.krisp-patch
       qbittorrent
       tdesktop
 
