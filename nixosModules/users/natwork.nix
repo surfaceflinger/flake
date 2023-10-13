@@ -13,8 +13,9 @@
       kubernetes
     ]
     ++ lib.optionals config.services.xserver.enable [
-      slack
+      bitwarden
       inputs.self.packages."${pkgs.system}".timedoctor-desktop
+      slack
     ];
   };
 

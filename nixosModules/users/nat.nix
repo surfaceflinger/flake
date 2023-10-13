@@ -17,8 +17,8 @@
       # Desktop software
       burpsuite
       (discord.override { withOpenASAR = true; })
-      qbittorrent
       tdesktop
+      transmission_4-gtk
 
       # Crypto
       ledger-live-desktop
