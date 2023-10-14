@@ -27,7 +27,7 @@
       # Gaming
       jazz2
       lunar-client
-      (inputs.prismlauncher.packages.${pkgs.system}.prismlauncher.override { glfw = glfw-wayland-minecraft; })
+      (prismlauncher.override { glfw = glfw-wayland-minecraft; })
     ];
   };
 
