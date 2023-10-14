@@ -21,6 +21,7 @@
     bottom
     config.boot.kernelPackages.cpupower
     pciutils
+    pfetch-rs
     psmisc
     usbutils
 
