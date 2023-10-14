@@ -56,13 +56,14 @@
   ];
 
   fonts = {
+    fontconfig.defaultFonts = {
+      monospace = [ "Cascadia Code PL" ];
+      sansSerif = [ "IBM Plex Sans" ];
+      serif = [ "IBM Plex Serif" ];
+    };
     packages = with pkgs; [
-      cascadia-code # S-tier font for terminal
-      inputs.google-sans-nix.packages.${pkgs.system}.default
-      noto-fonts
-      noto-fonts-cjk
-      noto-fonts-cjk-sans
-      noto-fonts-extra
+      cascadia-code
+      ibm-plex
     ];
   };
 
