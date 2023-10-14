@@ -32,6 +32,7 @@
     rustscan
   ] ++ lib.optionals config.services.xserver.enable [
     # Desktop software
+    amberol
     gnome-feeds
     halloy
     vscode

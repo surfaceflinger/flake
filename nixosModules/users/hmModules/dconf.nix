@@ -5,6 +5,11 @@ with lib.hm.gvariant;
 
 {
   dconf.settings = {
+    "io/bassi/Amberol" = {
+      background-play = false;
+      replay-gain = "track";
+    };
+  
     "com/raggesilver/BlackBox" = {
       context-aware-header-bar = false;
       floating-controls = false;
@@ -93,7 +98,7 @@ with lib.hm.gvariant;
       app-picker-layout = [ "" ];
       disable-extension-version-validation = true;
       enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "user-theme@gnome-shell-extensions.gcampax.github.com" ];
-      favorite-apps = [ "org.gnome.Nautilus.desktop" "com.raggesilver.BlackBox.desktop" "google-chrome.desktop" "google-chrome-beta.desktop" "google-chrome-unstable.desktop" "org.telegram.desktop.desktop" "discord.desktop" "discord-canary.desktop" "armcord.desktop" "slack.desktop" "timedoctor-desktop.desktop" "org.gnome.Geary.desktop" "org.gnome.Lollypop.desktop" "code.desktop" "org.gabmus.gfeeds.desktop" "org.prismlauncher.PrismLauncher.desktop" "lunar-client.desktop" "steam.desktop" "pavucontrol.desktop" "com.github.wwmm.easyeffects.desktop" "virt-manager.desktop" "transmission-gtk.desktop" "org.qbittorrent.qBittorrent.desktop" "ledger-live-desktop.desktop" "bitwarden.desktop" ];
+      favorite-apps = [ "org.gnome.Nautilus.desktop" "com.raggesilver.BlackBox.desktop" "google-chrome.desktop" "google-chrome-beta.desktop" "google-chrome-unstable.desktop" "org.telegram.desktop.desktop" "discord.desktop" "discord-canary.desktop" "armcord.desktop" "slack.desktop" "timedoctor-desktop.desktop" "org.gnome.Geary.desktop" "org.gnome.Lollypop.desktop" "io.bassi.Amberol.desktop" "code.desktop" "org.gabmus.gfeeds.desktop" "org.prismlauncher.PrismLauncher.desktop" "lunar-client.desktop" "steam.desktop" "pavucontrol.desktop" "com.github.wwmm.easyeffects.desktop" "virt-manager.desktop" "transmission-gtk.desktop" "org.qbittorrent.qBittorrent.desktop" "ledger-live-desktop.desktop" "bitwarden.desktop" ];
     };
 
     "org/gnome/shell/extensions/appindicator" = {
