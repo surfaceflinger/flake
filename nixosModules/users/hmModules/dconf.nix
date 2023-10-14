@@ -38,6 +38,7 @@ with lib.hm.gvariant;
       document-font-name = "IBM Plex Serif 11";
       font-name = "IBM Plex Sans 11";
       gtk-theme = "adw-gtk3-dark";
+      icon-theme = "Papirus";
       monospace-font-name = "IBM Plex Mono 11";
       show-battery-percentage = true;
     };

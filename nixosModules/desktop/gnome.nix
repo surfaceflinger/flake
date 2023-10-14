@@ -50,6 +50,7 @@
 
     # Theming
     adw-gtk3
+    papirus-icon-theme
 
     # Tool to fix Mesa 23.0+ trolls
     inputs.self.packages.${pkgs.system}.gpucache
