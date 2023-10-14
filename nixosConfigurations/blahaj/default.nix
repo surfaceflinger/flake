@@ -10,7 +10,6 @@
     inputs.nixpkgs.nixosModules.notDetected
     inputs.self.nixosModules.desktop
     inputs.self.nixosModules.nat
-    inputs.self.nixosModules.natwork
     inputs.self.nixosModules.virtualisation
     ./storage.nix
     ./media.nix
