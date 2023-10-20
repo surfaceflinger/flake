@@ -6,15 +6,40 @@
   programs.chromium = {
     enable = true;
     extensions = [
-      # Manifest version in parenthesis
-      "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock Origin (2)
-      "dneaehbmnbhcippjikoajpoabadpodje" # Old Reddit Redirect (2)
-      "edibdbjcniadpccecjdfdjjppcpchdlm" # I still don't care about cookies (3)
-      "gebbhagfogifgggkldgodflihgfeippi" # Return YouTube dislike (3)
-      "lckanjgmijmafbedllaakclkaicjfmnk" # ClearURLs (2)
-      "mnjggcdmjocbbbhaepdhchncahnbgone" # SponsorBlock for YouTube (2)
-      "nngceckbapebfimnlniiiahkandclblb" # Bitwarden (3)
-      "omkfmpieigblcllmkgbflkikinpkodlk" # enhanced-h264ify (2)
+      "blipmdconlkpinefehnmjammfjpmpbjk" # Lighthouse
+      "cankofcoohmbhfpcemhmaaeennfbnmgp" # Netflix 1080p
+      "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock Origin
+      "dneaehbmnbhcippjikoajpoabadpodje" # Old Reddit Redirect
+      "edibdbjcniadpccecjdfdjjppcpchdlm" # I still don't care about cookies
+      "emffkefkbkpkgpdeeooapgaicgmcbolj" # Wikiwand
+      "enamippconapkdmgfgjchkhakpfinmaj" # DeArrow
+      "gebbhagfogifgggkldgodflihgfeippi" # Return YouTube dislike
+      "ghbmnnjooekpmoecnnnilnnbdlolhkhi" # Google Docs Offline
+      "hlepfoohegkhhmjieoechaddaejaokhf" # Refined GitHub
+      "icallnadddjmdinamnolclfjanhfoafe" # FastForward
+      "ipdchdaimepggclpjanobgdahjflhedd" # AWS Dark
+      "lckanjgmijmafbedllaakclkaicjfmnk" # ClearURLs
+      "mnjggcdmjocbbbhaepdhchncahnbgone" # SponsorBlock for YouTube
+      "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
     ];
+    extraOpts = {
+      "AutofillAddressEnabled" = false;
+      "AutofillCreditCardEnabled" = false;
+      "BlockThirdPartyCookies" = true;
+      "CloudPrintProxyEnabled" = false;
+      "HistoryClustersVisible" = false;
+      "MetricsReportingEnabled" = false;
+      "NetworkPredictionOptions" = 2;
+      "PasswordManagerEnabled" = false;
+      "PaymentMethodQueryEnabled" = false;
+      "PrivacySandboxAdMeasurementEnabled" = false;
+      "PrivacySandboxAdTopicsEnabled" = false;
+      "PrivacySandboxPromptEnabled" = false;
+      "PrivacySandboxSiteEnabledAdsEnabled" = false;
+      "SafeBrowsingProtectionLevel" = 0;
+      "SearchSuggestEnabled" = false;
+      "SpellCheckServiceEnabled" = false;
+      "SSLErrorOverrideAllowed" = true;
+    };
   };
 }
