@@ -10,8 +10,8 @@
       options = "--delete-older-than 7d";
     };
     registry.nixpkgs.flake = inputs.nixpkgs;
+    nixPath = ["nixpkgs=flake:nixpkgs"];
   };
-  environment.etc."nix/inputs/nixpkgs".source = inputs.nixpkgs.outPath;
 
   system.stateVersion = "22.11";
 }
