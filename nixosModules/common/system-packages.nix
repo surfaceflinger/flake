@@ -26,7 +26,7 @@
     usbutils
 
     # Network
-    doggo
+    #doggo
     inetutils
     magic-wormhole-rs
     rustscan
