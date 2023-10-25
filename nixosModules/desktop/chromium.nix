@@ -8,8 +8,10 @@
     extensions = [
       "blipmdconlkpinefehnmjammfjpmpbjk" # Lighthouse
       "cankofcoohmbhfpcemhmaaeennfbnmgp" # Netflix 1080p
+      "chklaanhfefbnpoihckbnefhakgolnmc" # JSONVue
       "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock Origin
       "dneaehbmnbhcippjikoajpoabadpodje" # Old Reddit Redirect
+      "dnhpnfgdlenaccegplpojghhmaamnnfp" # Augmented Steam
       "edibdbjcniadpccecjdfdjjppcpchdlm" # I still don't care about cookies
       "emffkefkbkpkgpdeeooapgaicgmcbolj" # Wikiwand
       "enamippconapkdmgfgjchkhakpfinmaj" # DeArrow
@@ -20,7 +22,10 @@
       "ipdchdaimepggclpjanobgdahjflhedd" # AWS Dark
       "lckanjgmijmafbedllaakclkaicjfmnk" # ClearURLs
       "mnjggcdmjocbbbhaepdhchncahnbgone" # SponsorBlock for YouTube
+      "ndpmhjnlfkgfalaieeneneenijondgag" # YouTube Anti Translate
       "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
+      "ohnjgmpcibpbafdlkimncjhflgedgpam" # 4chan X
+      "pampamgoihgcedonnphgehgondkhikel" # DotGit
     ];
     extraOpts = {
       "AutofillAddressEnabled" = false;
