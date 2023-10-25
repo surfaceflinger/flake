@@ -1,4 +1,6 @@
-_: {
+{ pkgs, ... }: {
+  environment.systemPackages = with pkgs; [ steamguard-cli ];
+
   programs.gamescope = {
     enable = true;
     capSysNice = true;
