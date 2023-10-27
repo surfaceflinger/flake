@@ -1,17 +1,18 @@
 { config, lib, ... }: {
   imports = [ ./hetzner.nix ];
 
+  networking.useNetworkd = true;
   systemd.network.networks."10-eth-dhcp" = lib.mkIf (!config.modules.hetzner.wan.enable) {
     # Match every ether type
     matchConfig.Type = "ether";
     # These are usually managed by VPNs, Hypervisors etc.
     matchConfig.Driver = "!tun";
     matchConfig.Name = "!veth* !vnet*";
-    # Enable DHCP and RA
+    # Enable DHCP and routing
     networkConfig = {
       DHCP = "yes";
-      IPv6AcceptRA = true;
       IPForward = "yes";
+      IPv6PrivacyExtensions = "kernel";
     };
   };
 
@@ -23,6 +24,9 @@
       scanRandMacAddress = false;
     };
     extraConfig = ''
+      [connection]
+      ipv6.ip6-privacy=2
+
       [main]
       rc-manager=unmanaged
     '';
@@ -38,7 +42,6 @@
     };
   };
 
-  networking.useNetworkd = true;
   services.resolved = {
     enable = true;
     dnssec = "true";

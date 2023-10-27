@@ -11,7 +11,6 @@
     fileSystems."/persist".neededForBoot = true;
     environment.persistence."/persist" = {
       hideMounts = true;
-      files = [ "/etc/machine-id" ];
     };
   };
 }

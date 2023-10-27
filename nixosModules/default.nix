@@ -9,7 +9,6 @@
     vps = ./vps;
 
     # Mixins
-    hardening = ./mixins/hardening.nix;
     mitigations-off = ./mixins/mitigations-off.nix;
     virtualisation = ./mixins/virtualisation.nix;
 

@@ -9,7 +9,7 @@ with lib.hm.gvariant;
       background-play = false;
       replay-gain = "track";
     };
-  
+
     "com/raggesilver/BlackBox" = {
       context-aware-header-bar = false;
       floating-controls = false;

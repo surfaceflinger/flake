@@ -4,12 +4,12 @@
     inputs.home-manager.nixosModules.default
     ./agenix.nix
     ./boot.nix
+    ./hardening.nix
     ./impermanence.nix
     ./nano.nix
     ./networking.nix
     ./nix.nix
     ./system-packages.nix
-    ./zfs.nix
     ./zsh.nix
   ];
 
@@ -39,17 +39,6 @@
     "ntp.zeitgitter.net"
   ];
 
-  # Disable coredumps
-  security.pam.loginLimits = [
-    {
-      domain = "*";
-      item = "core";
-      type = "hard";
-      value = "0";
-    }
-  ];
-  systemd.coredump.enable = false;
-
   # SSH everywhere
   services.openssh.enable = true;
 
@@ -67,6 +56,7 @@
     execWheelOnly = true;
     extraConfig = ''
       Defaults lecture = never
+      Defaults use_pty
     '';
   };
 

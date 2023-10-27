@@ -1,10 +1,7 @@
-{ inputs, lib, pkgs, ... }: {
+{ inputs, ... }: {
   imports = [
     inputs.self.nixosModules.common
-    inputs.self.nixosModules.hardening
     inputs.srvos.nixosModules.server
+    ./hardening.nix
   ];
-
-  environment.memoryAllocator.provider = lib.mkForce "jemalloc";
-  boot.kernelPackages = pkgs.linuxPackages_hardened;
 }
