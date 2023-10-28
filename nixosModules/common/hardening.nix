@@ -91,6 +91,9 @@
     "syskernel.core_pattern" = "|/bin/false";
     "fs.suid_dumpable" = 0;
 
+    # Disable legacy TIOCSTI
+    "dev.tty.legacy_tiocsti" = 0;
+
     # Prevent SYN flood attacks
     "net.ipv4.tcp_syncookies" = 1;
 

@@ -8,7 +8,8 @@ in
     kernelParams = [
       "amd_iommu=on"
       "intel_iommu=on"
-      "iommu=on"
+      "iommu=force"
+      "iommu.strict=1"
     ];
   };
 

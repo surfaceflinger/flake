@@ -9,6 +9,7 @@
     ./nano.nix
     ./networking.nix
     ./nix.nix
+    ./openssh.nix
     ./system-packages.nix
     ./zsh.nix
   ];
@@ -38,9 +39,6 @@
     "ntp.trifence.ch"
     "ntp.zeitgitter.net"
   ];
-
-  # SSH everywhere
-  services.openssh.enable = true;
 
   # firmware updates
   services.fwupd.enable = true;
