@@ -5,7 +5,6 @@ _: {
     enable = true;
     rpc = {
       restricted = true;
-      address = "0.0.0.0";
       port = 18089;
     };
     limits = {
@@ -25,6 +24,7 @@ _: {
       p2p-bind-port=18080
       p2p-use-ipv6=true
       prune-blockchain=true
+      rpc-bind-ipv6-address=::
       sync-pruned-blocks=true
     '';
   };

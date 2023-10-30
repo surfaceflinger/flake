@@ -15,10 +15,10 @@
       PASSWORD_ITERATIONS = 600000;
       DOMAIN = "https://vault.nekopon.pl";
       EMERGENCY_ACCESS_ALLOWED = false;
-      ROCKET_ADDRESS = "127.0.0.1";
+      ROCKET_ADDRESS = "::1";
       ROCKET_PORT = 9500;
       WEBSOCKET_ENABLED = true;
-      WEBSOCKET_ADDRESS = "127.0.0.1";
+      WEBSOCKET_ADDRESS = "::1";
       WEBSOCKET_PORT = 9501;
       PUSH_ENABLED = true;
       SMTP_HOST = "smtp.postmarkapp.com";
@@ -40,8 +40,8 @@
       -Last-Modified
     }
 
-    reverse_proxy /notifications/hub/negotiate 127.0.0.1:9500
-    reverse_proxy /notifications/hub 127.0.0.1:9501
-    reverse_proxy 127.0.0.1:9500 { header_up X-Real-IP {remote_host} }
+    reverse_proxy /notifications/hub/negotiate [::1]:9500
+    reverse_proxy /notifications/hub [::1]:9501
+    reverse_proxy [::1]:9500 { header_up X-Real-IP {remote_host} }
   '';
 }

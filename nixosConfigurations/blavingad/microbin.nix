@@ -2,7 +2,7 @@ _: {
   services.microbin = {
     enable = true;
     settings = {
-      MICROBIN_BIND = "127.0.0.1";
+      MICROBIN_BIND = "::1";
       MICROBIN_ENABLE_BURN_AFTER = true;
       MICROBIN_ENCRYPTION_CLIENT_SIDE = true;
       MICROBIN_ENCRYPTION_SERVER_SIDE = true;
@@ -25,6 +25,6 @@ _: {
       file_server
     }
 
-    reverse_proxy http://127.0.0.1:9595
+    reverse_proxy http://[::1]:9595
   '';
 }

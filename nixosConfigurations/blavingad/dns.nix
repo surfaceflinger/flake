@@ -17,7 +17,7 @@
       hide-trustanchor = true;
       hide-version = true;
       infra-cache-slabs = 4;
-      interface = "127.0.0.1";
+      interface = "::1";
       key-cache-slabs = 8;
       msg-cache-slabs = 8;
       neg-cache-size = "4m";
@@ -60,12 +60,12 @@
   services.blocky = {
     enable = true;
     settings = {
-      bootstrapDns = [{ upstream = "127.0.0.1:5335"; }];
+      bootstrapDns = [{ upstream = "[::1]:5335"; }];
       ede.enable = true;
-      ports.dns = [ "100.68.177.59:53" ];
+      ports.dns = [ "[fd7a:115c:a1e0:ab12:4843:cd96:6244:b13b]:53" ];
       startVerifyUpstream = true;
       upstreams = {
-        groups.default = [ "127.0.0.1:5335" ];
+        groups.default = [ "[::1]:5335" ];
         timeout = "5s";
       };
       blocking = {
