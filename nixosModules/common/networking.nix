@@ -1,8 +1,9 @@
 { config, lib, ... }: {
-  imports = [ ./hetzner.nix ];
+  # Enable systemd-networkd instead of NixOS scripts
+  networking.useNetworkd = lib.mkDefault true;
 
-  networking.useNetworkd = true;
-  systemd.network.networks."10-eth-dhcp" = lib.mkIf (!config.modules.hetzner.wan.enable) {
+  # Enable DHCP on all physical ethernet interfaces
+  systemd.network.networks."10-eth-dhcp" = lib.mkIf (!config.services.cloud-init.network.enable) {
     # Match every ether type
     matchConfig.Type = "ether";
     # These are usually managed by VPNs, Hypervisors etc.
@@ -16,6 +17,7 @@
     };
   };
 
+  # Desktop networking
   networking.networkmanager = {
     enable = config.services.xserver.enable;
     dns = lib.mkForce "none";
@@ -34,6 +36,7 @@
   environment.persistence."/persist".directories = lib.mkIf (config.networking.networkmanager.enable && config.ephemereal) [ "/etc/NetworkManager/system-connections" ];
   hardware.usb-modeswitch.enable = config.networking.networkmanager.enable;
 
+  # mDNS
   services.avahi = {
     enable = config.services.xserver.enable;
     publish = {
@@ -42,6 +45,7 @@
     };
   };
 
+  # DNS
   services.resolved = {
     enable = true;
     dnssec = "true";
@@ -61,13 +65,8 @@
     ];
   };
 
-  networking.firewall = {
-    allowedTCPPorts = [ ];
-    allowedUDPPorts = [ config.services.tailscale.port ];
-    trustedInterfaces = [ "tailscale0" ];
-    checkReversePath = "loose";
-  };
-
+  # Tailscale
+  networking.firewall.trustedInterfaces = [ "tailscale0" ];
   services.tailscale = {
     enable = true;
     useRoutingFeatures = "both";

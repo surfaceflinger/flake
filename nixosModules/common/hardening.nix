@@ -1,30 +1,12 @@
-{ config, pkgs, ... }: {
+{ ... }: {
   # Fixup for building
   services.logrotate.checkConfig = false;
 
   # Restrict Nix users
   nix.settings.allowed-users = [ "@wheel" "root" ];
 
-  # Linux Kernel Runtime Guard and jitterentropy
-  boot = {
-    extraModulePackages = [
-      (config.boot.kernelPackages.lkrg.overrideAttrs (old: rec {
-        version = "0.9.7";
-        src = pkgs.fetchFromGitHub {
-          owner = "lkrg-org";
-          repo = "lkrg";
-          rev = "v${version}";
-          hash = "sha256-96ubxSc1JcvwYFC273gp9RHlu3+wFbKW3j1vThkNm5w=";
-        };
-        patches = [ ./lkrg.patch ];
-        meta = {
-          inherit (old) meta;
-          broken = false;
-        };
-      }))
-    ];
-    initrd.kernelModules = [ "lkrg" "jitterentropy_rng" ];
-  };
+  # jitterentropy
+  boot.initrd.kernelModules = [ "jitterentropy_rng" ];
   services.jitterentropy-rngd.enable = true;
 
   # Block root login
@@ -36,6 +18,8 @@
   # Restrict /boot access
   fileSystems."/boot".options = [ "umask=0077" ];
 
+  security.protectKernelImage = true;
+  boot.consoleLogLevel = 0;
   boot.kernel.sysctl = {
     "kernel.kptr_restrict" = 2;
 
@@ -56,9 +40,6 @@
 
     # Restrict userfaultfd()
     "vm.unprivileged_userfaultfd" = 0;
-
-    # Disable kexec
-    "kernel.kexec_load_disabled" = 1;
 
     # CAP_PERFMON
     "kernel.perf_event_paranoid" = 3;
@@ -142,6 +123,14 @@
   };
 
   boot.kernelParams = [
+    # Enable full strict iommu
+    "amd_iommu=on"
+    "intel_iommu=on"
+    "iommu=force"
+    "iommu.passthrough=0"
+    "iommu.strict=1"
+    "efi=disable_early_pci_dma"
+
     # Disable slab merging which significantly increases the difficulty of heap
     # exploitation by preventing overwriting objects from merged caches and by
     # making it harder to influence slab cache layout
@@ -177,10 +166,10 @@
     # These parameters prevent information leaks during boot and must be used
     # in combination with the kernel.printk
     "quiet"
-    "loglevel=0"
 
-    # Disable CPU RDRAND
+    # Disable CPU RDRAND and random seed sourced from bootloader
     "random.trust_cpu=off"
+    "random.trust_bootloader=off"
 
     # We're waiting for complete Secure Boot support in nixpkgs :)
     # "lockdown=confidentiality";

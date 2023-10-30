@@ -27,6 +27,9 @@
       lk () {cd "$(${pkgs.walk}/bin/walk "$@")"}
     '';
     promptInit = ''
+      # Fixup for cloud-init sourced hostname
+      HOST=$(${pkgs.inetutils}/bin/hostname)
+
       unsetopt PROMPT_SP # Disable empty line before first prompt
       autoload -U colors && colors # Enable colors
       stty stop undef # Disable ctrl-s to freeze terminal.

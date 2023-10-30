@@ -1,4 +1,4 @@
-{ config, inputs, lib, ... }:
+{ inputs, lib, ... }:
 {
   imports = [
     inputs.home-manager.nixosModules.default
@@ -26,8 +26,13 @@
     enable = true;
     enableNTS = true;
     extraConfig = ''
-      rtcautotrim 30
-      rtcfile ${config.services.chrony.directory}/chrony.rtc
+      authselectmode require
+      cmdport 0
+      dscp 46
+      leapsectz right/UTC
+      makestep 1.0 3
+      minsources 2
+      rtcsync
     '';
   };
   networking.timeServers = [
@@ -45,8 +50,13 @@
 
   # Override srvos changes
   programs.vim.defaultEditor = false;
-  boot.initrd.systemd.enable = false;
-  services.cloud-init.enable = false;
+
+  # Configure cloud-init (where needed)
+  systemd.tmpfiles.rules = [ "R /var/lib/cloud" ];
+  services.cloud-init.settings = {
+    ssh_deletekeys = false;
+    random_seed.file = "/dev/null";
+  };
 
   # sudo
   security.sudo = {

@@ -48,6 +48,7 @@ appimageTools.wrapType2 rec {
 
   extraPkgs = _: with _; [
     (libjpeg.override { enableJpeg8 = true; })
+    lz4
   ];
 
   meta = with lib; {
