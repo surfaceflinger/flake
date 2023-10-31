@@ -25,6 +25,7 @@ _: {
       p2p-use-ipv6=true
       prune-blockchain=true
       rpc-bind-ipv6-address=::
+      rpc-use-ipv6=true
       sync-pruned-blocks=true
     '';
   };
