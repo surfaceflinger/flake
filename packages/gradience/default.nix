@@ -53,8 +53,9 @@ python3Packages.buildPythonApplication rec {
   ];
 
   meta = with lib; {
-    homepage = "https://github.com/GradienceTeam/Gradience";
     description = "Customize libadwaita and GTK3 apps (with adw-gtk3)";
+    homepage = "https://github.com/GradienceTeam/Gradience";
     license = licenses.gpl3Plus;
+    mainProgram = "gradience";
   };
 }
