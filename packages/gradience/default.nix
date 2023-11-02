@@ -24,6 +24,11 @@ python3Packages.buildPythonApplication rec {
     fetchSubmodules = true;
   };
 
+  patches = [
+    ./shell-settings.patch
+    ./assert-write-permissions-on-gnome-shell-copy.patch
+  ];
+
   format = "other";
 
   nativeBuildInputs = [
