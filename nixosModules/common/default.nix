@@ -11,6 +11,7 @@
     ./nix.nix
     ./openssh.nix
     ./system-packages.nix
+    ./zfs.nix
     ./zsh.nix
   ];
 
