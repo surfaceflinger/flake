@@ -5,6 +5,7 @@
       inherit (pkgs)
         anime4k
         gpucache
+        gradience
         krisp-patch
         swift-backup
         timedoctor-desktop
@@ -26,6 +27,7 @@
     # Custom packages
     anime4k = prev.callPackage ./anime4k { };
     gpucache = prev.callPackage ./gpucache { };
+    gradience = prev.callPackage ./gradience { };
     krisp-patch = prev.callPackage ./krisp-patch { };
     swift-backup = prev.callPackage ./swift-backup { };
     timedoctor-desktop = prev.callPackage ./timedoctor-desktop { };
