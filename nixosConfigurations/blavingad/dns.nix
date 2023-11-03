@@ -3,10 +3,10 @@
     enable = true;
     enableRootTrustAnchor = true;
     resolveLocalQueries = false;
-    package = pkgs.unbound-full;
     settings.server = {
       aggressive-nsec = true;
-      cache-min-ttl = 300;
+      cache-max-ttl = 86400;
+      cache-min-ttl = 3600;
       deny-any = true;
       edns-buffer-size = 1232;
       fast-server-permil = 750;
@@ -16,27 +16,26 @@
       hide-identity = true;
       hide-trustanchor = true;
       hide-version = true;
-      infra-cache-slabs = 4;
+      infra-cache-numhosts = 100000;
+      infra-cache-slabs = 8;
       interface = "::1";
       key-cache-slabs = 8;
       msg-cache-slabs = 8;
-      neg-cache-size = "4m";
+      neg-cache-size = "128m";
       num-queries-per-thread = 4096;
       num-threads = 4;
-      outgoing-range = 8192;
+      outgoing-range = 32768;
       port = 5335;
       prefer-ip6 = true;
       prefetch-key = true;
       prefetch = true;
       qname-minimisation = true;
-      rrset-cache-size = "8m";
-      rrset-cache-slabs = 4;
-      serve-expired = true;
-      serve-expired-ttl = 86400;
-      serve-expired-ttl-reset = true;
-      so-rcvbuf = "4m";
-      so-sndbuf = "4m";
+      rrset-cache-size = "256m";
+      rrset-cache-slabs = 8;
+      so-rcvbuf = "32m";
+      so-sndbuf = "32m";
       target-fetch-policy = "\"0 0 0 0 0\"";
+      unwanted-reply-threshold = 10000;
       use-caps-for-id = false;
       verbosity = 0;
       private-address = [
@@ -63,7 +62,6 @@
       bootstrapDns = [{ upstream = "[::1]:5335"; }];
       ede.enable = true;
       ports.dns = [ "[fd7a:115c:a1e0:ab12:4843:cd96:6244:b13b]:53" ];
-      startVerifyUpstream = true;
       upstreams = {
         groups.default = [ "[::1]:5335" ];
         timeout = "5s";
@@ -113,6 +111,6 @@
     };
   };
 
-  boot.kernel.sysctl."net.core.rmem_max" = 4194304;
-  boot.kernel.sysctl."net.core.wmem_max" = 4194304;
+  boot.kernel.sysctl."net.core.rmem_max" = 33554432;
+  boot.kernel.sysctl."net.core.wmem_max" = 33554432;
 }

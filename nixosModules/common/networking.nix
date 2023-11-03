@@ -1,6 +1,9 @@
 { config, lib, ... }: {
   # Enable systemd-networkd instead of NixOS scripts
-  networking.useNetworkd = lib.mkDefault true;
+  networking = {
+    useDHCP = lib.mkForce false;
+    useNetworkd = lib.mkForce true;
+  };
 
   # Enable DHCP on all physical ethernet interfaces
   systemd.network.networks."10-eth-dhcp" = lib.mkIf (!config.services.cloud-init.network.enable) {
@@ -20,17 +23,9 @@
   # Desktop networking
   networking.networkmanager = {
     enable = config.services.xserver.enable;
-    dns = lib.mkForce "none";
-    wifi = {
-      powersave = false;
-      scanRandMacAddress = false;
-    };
     extraConfig = ''
       [connection]
       ipv6.ip6-privacy=2
-
-      [main]
-      rc-manager=unmanaged
     '';
   };
   environment.persistence."/persist".directories = lib.mkIf (config.networking.networkmanager.enable && config.ephemereal) [ "/etc/NetworkManager/system-connections" ];
@@ -49,6 +44,7 @@
   services.resolved = {
     enable = true;
     dnssec = "true";
+    llmnr = "false";
     fallbackDns = [
       "1.0.0.1#cloudflare-dns.com"
       "1.1.1.1#cloudflare-dns.com"
@@ -63,12 +59,18 @@
       "2620:fe::11#dns11.quad9.net"
       "2620:fe::fe:11#dns11.quad9.net"
     ];
+    extraConfig = ''
+      [Resolve]
+      MulticastDNS=false
+      DNSOverTLS=opportunistic
+    '';
   };
 
   # Tailscale
-  networking.firewall.trustedInterfaces = [ "tailscale0" ];
+  networking.firewall.trustedInterfaces = [ config.services.tailscale.interfaceName ];
   services.tailscale = {
     enable = true;
+    openFirewall = true;
     useRoutingFeatures = "both";
   };
 }
