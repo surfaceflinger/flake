@@ -15,11 +15,16 @@
     histSize = 10000000;
     syntaxHighlighting.enable = true;
     vteIntegration = true;
-    shellAliases = {
+    shellAliases = rec {
       awsume = ". ${pkgs.awsume}/bin/awsume";
       cat = "${pkgs.bat}/bin/bat";
       grep = "${pkgs.ripgrep}/bin/rg";
-      ls = "${pkgs.eza}/bin/eza";
+      ls = "${pkgs.eza}/bin/eza --color=auto --group-directories-first --classify";
+      lst = "${ls} --tree";
+      la = "${ls} --all";
+      ll = "${ls} --all --long --header --group";
+      llt = "${ll} --tree";
+      tree = "${ls} --tree";
     };
     shellInit = ''
       mkdir -p "$HOME/.config/zsh" && touch "$HOME/.config/zsh/history"
@@ -30,7 +35,7 @@
       # Fixup for cloud-init sourced hostname
       HOST=$(${pkgs.inetutils}/bin/hostname)
 
-      unsetopt PROMPT_SP # Disable empty line before first prompt
+      unsetopt PROMPT_SP # Disable empty line before first prompt (BlackBox bug?)
       autoload -U colors && colors # Enable colors
       stty stop undef # Disable ctrl-s to freeze terminal.
 
@@ -45,13 +50,17 @@
       zstyle ':vcs_info:git:*' formats 'on %b '
       precmd() {
         vcs_info
-        BASE="%F{147}%n@%m %f[%F{219}%~%f] %F{34}$vcs_info_msg_0_%f"
-        case $TERM in
-        xterm*)
-          PS1='$BASE✨ ';;
-        *)
-          PS1='$BASE%# ';;
-        esac
+        BASE="%F{blue}%n@%m %f[%F{white}%~%f] %F{green}$vcs_info_msg_0_%f"
+        if [[ $UID -eq 0 ]]; then
+          PS1="%F{red}%n@%m %f[%F{white}%~%f] %F{green}$vcs_info_msg_0_%f%# "
+        else
+          case $TERM in
+          xterm*)
+            PS1='$BASE✨ ';;
+          *)
+            PS1='$BASE%# ';;
+          esac
+        fi
       }
 
       echo -ne '\e[5 q' # Use beam shape cursor on startup.

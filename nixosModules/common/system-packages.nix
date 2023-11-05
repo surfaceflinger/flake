@@ -14,7 +14,6 @@
     ripgrep
     screen
     signify
-    tree
     wget
 
     # System utilities
