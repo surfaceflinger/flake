@@ -50,9 +50,9 @@
       zstyle ':vcs_info:git:*' formats 'on %b '
       precmd() {
         vcs_info
-        BASE="%F{blue}%n@%m %f[%F{white}%~%f] %F{green}$vcs_info_msg_0_%f"
+        BASE="%F{bg-blue}%n@%m %f[%F{white}%~%f] %F{green}$vcs_info_msg_0_%f"
         if [[ $UID -eq 0 ]]; then
-          PS1="%F{red}%n@%m %f[%F{white}%~%f] %F{green}$vcs_info_msg_0_%f%# "
+          PS1="%F{bg-red}%n@%m %f[%F{white}%~%f] %F{green}$vcs_info_msg_0_%f%# "
         else
           case $TERM in
           xterm*)

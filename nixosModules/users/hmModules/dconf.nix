@@ -17,7 +17,6 @@ with lib.hm.gvariant;
       headerbar-drag-area = true;
       pretty = true;
       show-headerbar = true;
-      theme-dark = "Adwaita Dark";
     };
 
     "org/gnome/desktop/app-folders" = {
