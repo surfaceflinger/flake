@@ -6,10 +6,8 @@
   programs.chromium = {
     enable = true;
     extensions = [
-      "ajhmfdgkijocedmfjonnpjfojldioehi" # Privacy Pass
       "blipmdconlkpinefehnmjammfjpmpbjk" # Lighthouse
       "cankofcoohmbhfpcemhmaaeennfbnmgp" # Netflix 1080p
-      "chklaanhfefbnpoihckbnefhakgolnmc" # JSONVue
       "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock Origin
       "dneaehbmnbhcippjikoajpoabadpodje" # Old Reddit Redirect
       "dnhpnfgdlenaccegplpojghhmaamnnfp" # Augmented Steam
