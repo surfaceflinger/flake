@@ -1,4 +1,4 @@
-{ inputs, lib, ... }:
+{ inputs, lib, pkgs, ... }:
 {
   imports = [
     inputs.home-manager.nixosModules.default
@@ -59,15 +59,24 @@
     random_seed.file = "/dev/null";
   };
 
-  # sudo
-  security.sudo = {
-    wheelNeedsPassword = lib.mkOverride 10 true;
-    execWheelOnly = true;
-    extraConfig = ''
-      Defaults lecture = never
-      Defaults use_pty
-    '';
+  # doas
+  security = {
+    sudo.enable = lib.mkForce false;
+    doas = {
+      enable = true;
+      extraRules = [
+        {
+          users = [ "root" ];
+          groups = [ "wheel" ];
+          keepEnv = true;
+          persist = true;
+        }
+      ];
+    };
   };
+  environment.systemPackages = with pkgs; [
+    (pkgs.writeScriptBin "sudo" ''exec doas "$@"'')
+  ];
 
   # Configure home-manager
   home-manager.extraSpecialArgs.inputs = inputs; # forward the inputs
