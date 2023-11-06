@@ -77,8 +77,8 @@
   boot.kernelModules = [ "tcp_bbr" ];
   boot.kernel.sysctl = {
     # BBR (v1 or v3 depends on if we use stock or something fancier like xanmod)
-    "net.ipv4.tcp_congestion_control" = "bbr";
-    "net.core.default_qdisc" = "cake";
+    "net.ipv4.tcp_congestion_control" = lib.mkForce "bbr";
+    "net.core.default_qdisc" = lib.mkForce "cake";
 
     "net.core.netdev_max_backlog" = 16384;
     "net.core.somaxconn" = 8192;
