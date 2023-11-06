@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ ... }: {
   services.unbound = {
     enable = true;
     enableRootTrustAnchor = true;
@@ -32,8 +32,8 @@
       qname-minimisation = true;
       rrset-cache-size = "256m";
       rrset-cache-slabs = 8;
-      so-rcvbuf = "32m";
-      so-sndbuf = "32m";
+      so-rcvbuf = "16m";
+      so-sndbuf = "16m";
       target-fetch-policy = "\"0 0 0 0 0\"";
       unwanted-reply-threshold = 10000;
       use-caps-for-id = false;
@@ -110,7 +110,4 @@
       };
     };
   };
-
-  boot.kernel.sysctl."net.core.rmem_max" = 33554432;
-  boot.kernel.sysctl."net.core.wmem_max" = 33554432;
 }
