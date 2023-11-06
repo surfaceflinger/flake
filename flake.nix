@@ -16,7 +16,7 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     srvos.inputs.nixpkgs.follows = "nixpkgs";
-    srvos.url = "github:numtide/srvos";
+    srvos.url = "github:nix-community/srvos";
     systems.url = "github:nix-systems/default-linux";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
     treefmt-nix.url = "github:numtide/treefmt-nix";
