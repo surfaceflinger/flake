@@ -14,5 +14,7 @@
 
   time.timeZone = "Europe/Warsaw";
   hardware.ledger.enable = true;
-  boot.kernelPackages = pkgs.linuxPackages_xanmod;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  chaotic.hdr.enable = true;
+  chaotic.mesa-git.enable	= true;
 }

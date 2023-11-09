@@ -1,6 +1,7 @@
 { inputs, lib, pkgs, ... }:
 {
   imports = [
+    inputs.chaotic.nixosModules.default
     inputs.home-manager.nixosModules.default
     ./agenix.nix
     ./boot.nix

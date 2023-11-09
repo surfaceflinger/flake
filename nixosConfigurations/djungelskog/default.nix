@@ -17,6 +17,9 @@
     kernelModules = [ "kvm-intel" "cpufreq_schedutil" "cpufreq_conservative" ];
   };
 
+  # mesa-git
+  chaotic.mesa-git.extraPackages = with pkgs; [ vaapiIntel libvdpau-va-gl intel-media-driver ];
+
   # Power management
   boot = {
     kernelParams = [ "intel_pstate=disable" ];

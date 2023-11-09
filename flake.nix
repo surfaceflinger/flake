@@ -1,9 +1,26 @@
 {
   description = "nat's nix flake (:";
 
+  nixConfig = {
+    extra-substituters = [
+      "https://cache.garnix.io"
+      "https://nix-community.cachix.org"
+      "https://numtide.cachix.org"
+      "https://nyx.chaotic.cx/"
+    ];
+    extra-trusted-public-keys = [
+      "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+      "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE="
+      "nyx.chaotic.cx-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
+    ];
+  };
+
   inputs = {
     agenix.inputs.nixpkgs.follows = "nixpkgs";
     agenix.url = "github:ryantm/agenix";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     conduit.inputs.nixpkgs.follows = "nixpkgs";
     conduit.url = "gitlab:famedly/conduit";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -14,7 +31,7 @@
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     nix-index-database.url = "github:Mic92/nix-index-database";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:surfaceflinger/nixpkgs/hardened-malloc-light";
     srvos.inputs.nixpkgs.follows = "nixpkgs";
     srvos.url = "github:nix-community/srvos";
     systems.url = "github:nix-systems/default-linux";

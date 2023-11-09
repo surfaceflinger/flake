@@ -17,7 +17,7 @@
       # Desktop software
       burpsuite
       (discord.override { withOpenASAR = true; })
-      tdesktop
+      telegram-desktop_git
       transmission_4-gtk
 
       # Crypto

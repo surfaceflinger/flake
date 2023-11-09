@@ -96,9 +96,6 @@
     "net.ipv4.conf.all.send_redirects" = 0;
     "net.ipv4.conf.default.send_redirects" = 0;
 
-    # Disable all ICMP requests
-    "net.ipv4.icmp_echo_ignore_all" = 1;
-
     # Disable source routing
     "net.ipv4.conf.all.accept_source_route" = 0;
     "net.ipv4.conf.default.accept_source_route" = 0;
