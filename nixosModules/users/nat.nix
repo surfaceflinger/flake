@@ -21,8 +21,8 @@
       transmission_4-gtk
 
       # Crypto
+      feather
       ledger-live-desktop
-      monero-gui
 
       # Gaming
       jazz2
