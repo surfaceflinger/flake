@@ -26,8 +26,7 @@
   };
 
   # Power management
-  boot.kernelParams = [ "intel_pstate=disable" ];
-  powerManagement.cpuFreqGovernor = "performance";
+  boot.kernelParams = [ "intel_pstate=active" ];
   services.undervolt = {
     enable = true;
     coreOffset = -80;

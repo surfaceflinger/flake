@@ -9,6 +9,7 @@
       "blipmdconlkpinefehnmjammfjpmpbjk" # Lighthouse
       "cankofcoohmbhfpcemhmaaeennfbnmgp" # Netflix 1080p
       "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock Origin
+      "dgcfkhmmpcmkikfmonjcalnjcmjcjjdn" # CurlWget
       "dneaehbmnbhcippjikoajpoabadpodje" # Old Reddit Redirect
       "dnhpnfgdlenaccegplpojghhmaamnnfp" # Augmented Steam
       "donbcfbmhbcapadipfkeojnmajbakjdc" # ruffle.rs
