@@ -1,6 +1,6 @@
-{ inputs, ... }: {
+{ inputs, lib, ... }: {
   imports = [
-    inputs.self.nixosModules.mitigations-off
     inputs.self.nixosModules.server
   ];
+  hardware.enableAllFirmware = lib.mkForce false;
 }

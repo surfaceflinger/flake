@@ -46,7 +46,7 @@
 
     # The SysRq key exposes a lot of potentially dangerous debugging functionality
     # to unprivileged users
-    "kernel.sysrq" = 4;
+    "kernel.sysrq" = 0;
 
     # Restrict usage of ptrace to only processes with the CAP_SYS_PTRACE
     # capability
@@ -74,49 +74,6 @@
 
     # Disable legacy TIOCSTI
     "dev.tty.legacy_tiocsti" = 0;
-
-    # Prevent SYN flood attacks
-    "net.ipv4.tcp_syncookies" = 1;
-
-    # Protect against time-wait assassination by dropping RST packets for sockets
-    # in the time-wait state
-    "net.ipv4.tcp_rfc1337" = 1;
-
-    # Packet source validation
-    "net.ipv4.conf.all.rp_filter" = 1;
-    "net.ipv4.conf.default.rp_filter" = 1;
-
-    # Disable accepting ICMP redirects
-    "net.ipv4.conf.all.accept_redirects" = 0;
-    "net.ipv4.conf.default.accept_redirects" = 0;
-    "net.ipv4.conf.all.secure_redirects" = 0;
-    "net.ipv4.conf.default.secure_redirects" = 0;
-    "net.ipv6.conf.all.accept_redirects" = 0;
-    "net.ipv6.conf.default.accept_redirects" = 0;
-    "net.ipv4.conf.all.send_redirects" = 0;
-    "net.ipv4.conf.default.send_redirects" = 0;
-
-    # Disable source routing
-    "net.ipv4.conf.all.accept_source_route" = 0;
-    "net.ipv4.conf.default.accept_source_route" = 0;
-    "net.ipv6.conf.all.accept_source_route" = 0;
-    "net.ipv6.conf.default.accept_source_route" = 0;
-
-    # Disable accepting IPv6 router advertisements
-    "net.ipv6.conf.all.accept_ra" = 0;
-    "net.ipv6.default.accept_ra" = 0;
-
-    # IPv6 privacy extensions
-    "net.ipv6.conf.all.use_tempaddr" = 2;
-
-    # Disable TCP SACK. SACK is commonly exploited and unnecessary for many
-    # circumstances so it should be disabled if you don't require it
-    "net.ipv4.tcp_sack" = 0;
-    "net.ipv4.tcp_dsack" = 0;
-    "net.ipv4.tcp_fack" = 0;
-
-    # Avoid leaking system time with TCP timestamps
-    "net.ipv4.tcp_timestamps" = 0;
   };
 
   boot.kernelParams = [

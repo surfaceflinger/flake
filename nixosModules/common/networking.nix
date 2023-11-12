@@ -59,7 +59,6 @@
       "2620:fe::fe:11#dns11.quad9.net"
     ];
     extraConfig = ''
-      [Resolve]
       MulticastDNS=false
       DNSOverTLS=opportunistic
     '';
@@ -79,6 +78,10 @@
     # BBR (v1 or v3 depends on if we use stock or something fancier like xanmod)
     "net.ipv4.tcp_congestion_control" = lib.mkForce "bbr";
     "net.core.default_qdisc" = lib.mkForce "cake";
+
+    # nonlocal bind, helps some "race conditions" with services hosted on vpns etc.
+    "net.ipv4.ip_nonlocal_bind" = 1;
+    "net.ipv6.ip_nonlocal_bind" = 1;
 
     "net.core.netdev_max_backlog" = 16384;
     "net.core.somaxconn" = 8192;
@@ -105,6 +108,50 @@
     "net.ipv4.tcp_keepalive_intvl" = 10;
     "net.ipv4.tcp_keepalive_probes" = 6;
 
+    # MTU probing
     "net.ipv4.tcp_mtu_probing" = 1;
+
+    # Prevent SYN flood attacks
+    "net.ipv4.tcp_syncookies" = 1;
+
+    # Protect against time-wait assassination by dropping RST packets for sockets
+    # in the time-wait state
+    "net.ipv4.tcp_rfc1337" = 1;
+
+    # Packet source validation
+    "net.ipv4.conf.all.rp_filter" = 1;
+    "net.ipv4.conf.default.rp_filter" = 1;
+
+    # Disable accepting ICMP redirects
+    "net.ipv4.conf.all.accept_redirects" = 0;
+    "net.ipv4.conf.default.accept_redirects" = 0;
+    "net.ipv4.conf.all.secure_redirects" = 0;
+    "net.ipv4.conf.default.secure_redirects" = 0;
+    "net.ipv6.conf.all.accept_redirects" = 0;
+    "net.ipv6.conf.default.accept_redirects" = 0;
+    "net.ipv4.conf.all.send_redirects" = 0;
+    "net.ipv4.conf.default.send_redirects" = 0;
+
+    # Disable source routing
+    "net.ipv4.conf.all.accept_source_route" = 0;
+    "net.ipv4.conf.default.accept_source_route" = 0;
+    "net.ipv6.conf.all.accept_source_route" = 0;
+    "net.ipv6.conf.default.accept_source_route" = 0;
+
+    # Disable accepting IPv6 router advertisements
+    "net.ipv6.conf.all.accept_ra" = 0;
+    "net.ipv6.default.accept_ra" = 0;
+
+    # IPv6 privacy extensions
+    "net.ipv6.conf.all.use_tempaddr" = 2;
+
+    # Disable TCP SACK. SACK is commonly exploited and unnecessary for many
+    # circumstances so it should be disabled if you don't require it
+    "net.ipv4.tcp_sack" = 0;
+    "net.ipv4.tcp_dsack" = 0;
+    "net.ipv4.tcp_fack" = 0;
+
+    # Avoid leaking system time with TCP timestamps
+    "net.ipv4.tcp_timestamps" = 0;
   };
 }
