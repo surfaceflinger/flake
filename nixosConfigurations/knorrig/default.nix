@@ -5,7 +5,6 @@
     inputs.nixos-hardware.nixosModules.common-pc-laptop
     inputs.nixos-hardware.nixosModules.common-pc-laptop-acpi_call
     inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
-    inputs.nixpkgs.nixosModules.notDetected
     inputs.self.nixosModules.laptop
     inputs.self.nixosModules.nat
     inputs.self.nixosModules.natwork

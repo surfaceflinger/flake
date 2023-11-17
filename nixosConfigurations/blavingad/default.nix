@@ -4,6 +4,10 @@
 , ...
 }: {
   imports = [
+    inputs.self.nixosModules.nat
+    inputs.self.nixosModules.vps
+    inputs.srvos.nixosModules.hardware-hetzner-cloud-arm
+    inputs.xkomhotshot.nixosModules.default
     ./dns.nix
     ./matrix.nix
     ./microbin.nix
@@ -12,10 +16,6 @@
     ./storage.nix
     ./vaultwarden.nix
     ./www.nix
-    inputs.self.nixosModules.nat
-    inputs.self.nixosModules.vps
-    inputs.srvos.nixosModules.hardware-hetzner-cloud-arm
-    inputs.xkomhotshot.nixosModules.default
   ];
 
   # Networking

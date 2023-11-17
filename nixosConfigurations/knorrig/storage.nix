@@ -4,6 +4,8 @@ _: {
 
   ephemereal = true;
 
+  zramSwap.writebackDevice = "/dev/zvol/knorrig/zramwriteback";
+
   fileSystems."/" = {
     device = "none";
     fsType = "tmpfs";

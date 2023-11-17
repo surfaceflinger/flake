@@ -78,7 +78,7 @@
 
   boot.kernelParams = [
     # Enable full strict iommu
-    "amd_iommu=on"
+    "amd_iommu=force_isolation"
     "intel_iommu=on"
     "iommu=force"
     "iommu.passthrough=0"
@@ -124,6 +124,9 @@
     # Disable CPU RDRAND and random seed sourced from bootloader
     "random.trust_cpu=off"
     "random.trust_bootloader=off"
+
+    # Why would you?
+    "nohibernate"
 
     # We're waiting for complete Secure Boot support in nixpkgs :)
     # "lockdown=confidentiality";

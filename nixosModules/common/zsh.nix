@@ -4,17 +4,17 @@
 
   programs.zsh = {
     enable = true;
+    enableCompletion = true;
+    histFile = "$HOME/.config/zsh/history";
+    histSize = 10000000;
+    syntaxHighlighting.enable = true;
+    vteIntegration = true;
     setOptions = [
       "autocd" # Automatically cd into typed directory
       "globdots" # Include hidden files in auto/tab complete
       "interactive_comments" # Comments in the shell
       "prompt_subst" # Substitution in the prompt
     ];
-    enableCompletion = false;
-    histFile = "$HOME/.config/zsh/history";
-    histSize = 10000000;
-    syntaxHighlighting.enable = true;
-    vteIntegration = true;
     shellAliases = rec {
       awsume = ". ${pkgs.awsume}/bin/awsume";
       cat = "${pkgs.bat}/bin/bat";
@@ -32,35 +32,45 @@
       lk () {cd "$(${pkgs.walk}/bin/walk "$@")"}
     '';
     promptInit = ''
-      # Fixup for cloud-init sourced hostname
-      HOST=$(${pkgs.inetutils}/bin/hostname)
-
-      unsetopt PROMPT_SP # Disable empty line before first prompt (BlackBox bug?)
       autoload -U colors && colors # Enable colors
+      HOST=$(${pkgs.inetutils}/bin/hostname) # Fixup for cloud-init sourced hostname
       stty stop undef # Disable ctrl-s to freeze terminal.
+      unsetopt PROMPT_SP # Disable empty line before first prompt (BlackBox bug?)
+      zstyle ':completion:*' menu select # select-style completions
 
-      # auto/tab complete
-      autoload -U compinit
-      zstyle ':completion:*' menu select
-      zmodload zsh/complist
-      compinit
-
-      # Setup prompt with git integration
+      # Setup prompt with git and awsume integration
       autoload -Uz vcs_info
-      zstyle ':vcs_info:git:*' formats 'on %b '
       precmd() {
-        vcs_info
-        BASE="%F{bg-blue}%n@%m %f[%F{white}%~%f] %F{green}$vcs_info_msg_0_%f"
-        if [[ $UID -eq 0 ]]; then
-          PS1="%F{bg-red}%n@%m %f[%F{white}%~%f] %F{green}$vcs_info_msg_0_%f%# "
-        else
+          # Setup colors
+          local awsume_info
+          local awsume_info_color="%F{153}"
+          local userhost_color="%F{183}"
+          local dir_color="%F{225}"
+          local prompt_symbol="✨"
+          local vcs_info_color="%F{190}"
+
+          if [[ $UID -eq 0 ]]; then
+              userhost_color="%F{161}"
+              prompt_symbol="😾"
+          fi
+
+          # Setup awsume + vcs
+          if [[ -n "$AWSUME_PROFILE" ]]; then
+              awsume_info="$awsume_info_color☁️  $AWSUME_PROFILE%f "
+          fi
+          zstyle ":vcs_info:git:*" formats "''${vcs_info_color}🌸 %b%f "
+          vcs_info
+
+          # Setup prompt
+          local BASE="$userhost_color%n@%m %f[$dir_color%~%f] $vcs_info_msg_0_$awsume_info"
+
+          # Don't use colors/emojis on dumb terminals
           case $TERM in
           xterm*)
-            PS1='$BASE✨ ';;
+              PS1="$BASE$prompt_symbol ";;
           *)
-            PS1='$BASE%# ';;
+              PS1=$(echo "$BASE%# " | tr -cd "[:print:]");
           esac
-        fi
       }
 
       echo -ne '\e[5 q' # Use beam shape cursor on startup.

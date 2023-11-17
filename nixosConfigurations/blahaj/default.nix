@@ -7,7 +7,6 @@
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     inputs.nixos-hardware.nixosModules.common-pc
     inputs.nixos-hardware.nixosModules.common-pc-ssd
-    inputs.nixpkgs.nixosModules.notDetected
     inputs.self.nixosModules.desktop
     inputs.self.nixosModules.nat
     inputs.self.nixosModules.virtualisation
@@ -26,7 +25,8 @@
   };
 
   # Power management
-  boot.kernelParams = [ "intel_pstate=active" ];
+  boot.kernelParams = [ "intel_pstate=passive" ];
+  powerManagement.cpuFreqGovernor = "schedutil";
   services.undervolt = {
     enable = true;
     coreOffset = -80;
