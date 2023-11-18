@@ -8,7 +8,9 @@
       # work
       awscli2
       awsume
+      eksctl
       goaccess
+      google-cloud-sdk
       k9s
       kubernetes
     ]
