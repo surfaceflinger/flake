@@ -9,7 +9,6 @@ _: {
       leapsectz right/UTC
       makestep 1.0 3
       minsources 2
-      rtcsync
     '';
   };
   networking.timeServers = [
