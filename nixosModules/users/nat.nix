@@ -41,6 +41,7 @@
           format = "ssh";
           ssh.defaultKeyCommand = "ssh-add -L";
         };
+        init.defaultBranch = "main";
         pull.rebase = true;
       };
     };
