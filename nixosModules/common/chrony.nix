@@ -3,12 +3,13 @@ _: {
     enable = true;
     enableNTS = true;
     extraConfig = ''
-      authselectmode require
+      authselectmode prefer
       cmdport 0
       dscp 46
       leapsectz right/UTC
       makestep 1.0 3
       minsources 2
+      nocerttimecheck 1
     '';
   };
   networking.timeServers = [
