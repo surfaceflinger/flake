@@ -4,4 +4,6 @@
     inputs.srvos.nixosModules.server
     ./hardening.nix
   ];
+
+  environment.memoryAllocator.provider = "mimalloc";
 }
