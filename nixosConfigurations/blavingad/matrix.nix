@@ -3,7 +3,7 @@ let
   server_name = "nekopon.pl";
   matrix_hostname = "matrix.${server_name}";
 
-  conf = {
+  elementConf = {
     default_server_config = {
       "m.homeserver" = {
         base_url = "https://${matrix_hostname}:443";
@@ -11,6 +11,11 @@ let
       };
     };
     show_labs_settings = true;
+  };
+
+  cinnyConf = {
+    defaultHomeserver = 0;
+    homeserverList = [ server_name ];
   };
 in
 {
@@ -53,6 +58,24 @@ in
       X-Robots-Tag "none"
     }
 
-    file_server { root ${pkgs.element-web.override { inherit conf; }} }
+    file_server { root ${pkgs.element-web.override { inherit elementConf; }} }
+  '';
+
+  services.caddy.virtualHosts."cinny.${server_name}".extraConfig = ''
+    header {
+      Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+      X-Content-Type-Options "nosniff"
+      Referrer-Policy "no-referrer"
+      Cross-Origin-Opener-Policy "same-origin"
+      Cross-Origin-Embedder-Policy "require-corp"
+      Origin-Agent-Cluster "?1"
+      Permissions-Policy "interest-cohort=()"
+      Cross-Origin-Resource-Policy "cross-origin"
+      Content-Security-Policy "font-src 'self'; manifest-src 'self'; object-src 'none'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; frame-ancestors 'self'"
+      X-Frame-Options "SAMEORIGIN"
+      X-Robots-Tag "none"
+    }
+
+    file_server { root ${pkgs.cinny.override { inherit cinnyConf; }} }
   '';
 }

@@ -49,6 +49,7 @@
       systems = import systems;
 
       imports = [
+        ./hmModules
         ./nixosConfigurations
         ./nixosModules
         ./packages

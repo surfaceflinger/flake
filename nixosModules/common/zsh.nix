@@ -4,7 +4,6 @@
 
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
     histFile = "$HOME/.config/zsh/history";
     histSize = 10000000;
     syntaxHighlighting.enable = true;

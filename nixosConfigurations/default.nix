@@ -27,7 +27,6 @@ in
     };
   };
 
-  # This is the flake that contains the home-manager configuration
   perSystem = { pkgs, lib, system, ... }:
     let
       # Only check the configurations for the current system

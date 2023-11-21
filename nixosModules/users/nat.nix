@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, lib, ... }: {
+{ config, inputs, lib, pkgs, ... }: {
   users.users.nat = {
     uid = 1111;
     initialHashedPassword = "$6$lR2ORA5b3eQUIqWN$W0RFJ7/5jWfajKZl2CfSwp5/BmUIzuS5OnRvksaUWmN575fubdRMybKDAFKKDnh67k6z39qjNlMLiI/drslNv1";
@@ -12,7 +12,7 @@
       # Desktop software
       burpsuite
       (discord.override { withOpenASAR = true; })
-      telegram-desktop_git
+      telegram-desktop
       transmission_4-gtk
 
       # Crypto
@@ -27,23 +27,11 @@
   };
 
   home-manager.users.nat = { ... }: {
-    imports = [ ./hmModules/common.nix ];
+    imports = [ inputs.self.homeManagerModules.common ];
 
     programs.git = {
-      enable = true;
       userEmail = "nat@nekopon.pl";
       userName = "nat";
-      extraConfig = {
-        tag.gpgsign = true;
-        core.editor = with pkgs; (lib.getExe nano);
-        commit.gpgsign = true;
-        gpg = {
-          format = "ssh";
-          ssh.defaultKeyCommand = "ssh-add -L";
-        };
-        init.defaultBranch = "main";
-        pull.rebase = true;
-      };
     };
   };
 }

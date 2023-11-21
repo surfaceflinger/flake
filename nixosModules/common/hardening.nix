@@ -12,9 +12,6 @@
   # Block root login
   environment.etc.securetty.text = "";
 
-  # Whonix machine-id
-  environment.etc.machine-id.text = "b08dfa6083e7567a1921a715000001fb";
-
   # Restrict /boot access
   fileSystems."/boot".options = [ "umask=0077" ];
 
@@ -127,6 +124,9 @@
 
     # Why would you?
     "nohibernate"
+
+    # Whonix machine-id
+    "systemd.machine_id=b08dfa6083e7567a1921a715000001fb"
 
     # We're waiting for complete Secure Boot support in nixpkgs :)
     # "lockdown=confidentiality";

@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ inputs, ... }: {
   imports = [
     inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t440p
@@ -16,9 +16,6 @@
     initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usb_storage" "sd_mod" "sr_mod" "rtsx_pci_sdmmc" ];
     kernelModules = [ "kvm-intel" ];
   };
-
-  # mesa-git
-  chaotic.mesa-git.extraPackages = with pkgs; [ vaapiIntel libvdpau-va-gl intel-media-driver ];
 
   # Power management
   boot.kernelParams = [ "intel_pstate=active" ];

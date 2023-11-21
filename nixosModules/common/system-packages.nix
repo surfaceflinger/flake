@@ -26,6 +26,7 @@
 
     # Network
     doggo
+    goaccess
     inetutils
     magic-wormhole-rs
     rustscan

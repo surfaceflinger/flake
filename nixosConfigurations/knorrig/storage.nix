@@ -1,10 +1,26 @@
-_: {
+{ pkgs, ... }: {
   boot.supportedFilesystems = [ "zfs" ];
   networking.hostId = "b897eda4";
 
   ephemereal = true;
 
   zramSwap.writebackDevice = "/dev/zvol/knorrig/zramwriteback";
+  systemd.services.zramwriteback-enable =
+    let
+      script = pkgs.writeScript "zramwriteback-enable" ''
+        #!/usr/bin/env sh
+        echo all > /sys/block/zram0/idle
+        echo idle > /sys/block/zram0/writeback
+      '';
+    in
+    {
+      wantedBy = [ "multi-user.target" ];
+      after = [ "systemd-zram-setup@zram0.service" ];
+      serviceConfig = {
+        Type = "oneshot";
+        ExecStart = "${script}";
+      };
+    };
 
   fileSystems."/" = {
     device = "none";

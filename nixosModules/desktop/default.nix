@@ -14,5 +14,4 @@
   time.timeZone = "Europe/Warsaw";
   hardware.ledger.enable = true;
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
-  chaotic.mesa-git.enable = true;
 }
