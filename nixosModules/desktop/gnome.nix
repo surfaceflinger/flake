@@ -50,11 +50,17 @@
     blackbox-terminal
 
     # Theming
-    adw-gtk3
+    graphite-gtk-theme
     papirus-icon-theme
 
     # Tool to fix Mesa 23.0+ trolls
     inputs.self.packages.${pkgs.system}.gpucache
+  ];
+
+  nixpkgs.overlays = [
+    (_final: prev: {
+      graphite-gtk-theme = (prev.graphite-gtk-theme.override { themeVariants = [ "pink" ]; colorVariants = [ "dark" ]; tweaks = [ "nord" "normal" "rimless" "darker" ]; });
+    })
   ];
 
   fonts = {

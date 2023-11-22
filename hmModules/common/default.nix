@@ -4,7 +4,7 @@
     inputs.nix-index-database.hmModules.nix-index
     ./nix.nix
   ] ++ lib.optionals osConfig.services.xserver.enable [
-    ./dconf.nix
+    ./gtk.nix
     ./easyeffects.nix
     ./mpv.nix
   ];

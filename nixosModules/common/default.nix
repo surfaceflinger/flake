@@ -1,11 +1,11 @@
-{ inputs, lib, pkgs, ... }:
+{ inputs, ... }:
 {
   imports = [
-    inputs.chaotic.nixosModules.default
     inputs.home-manager.nixosModules.default
     ./agenix.nix
     ./boot.nix
     ./chrony.nix
+    ./doas.nix
     ./hardening.nix
     ./impermanence.nix
     ./nano.nix
@@ -30,31 +30,19 @@
   # Override srvos changes
   programs.vim.defaultEditor = false;
 
-  # Configure cloud-init (where needed)
+  # Configure cloud-init (enabled where needed)
   systemd.tmpfiles.rules = [ "R /var/lib/cloud" ];
   services.cloud-init.settings = {
     ssh_deletekeys = false;
     random_seed.file = "/dev/null";
   };
 
-  # doas
-  security = {
-    sudo.enable = lib.mkForce false;
-    doas = {
-      enable = true;
-      extraRules = [
-        {
-          users = [ "root" ];
-          groups = [ "wheel" ];
-          keepEnv = true;
-          persist = true;
-        }
-      ];
-    };
+  # Virtual memory
+  boot.kernel.sysctl = {
+    "vm.dirty_background_ratio" = 3;
+    "vm.dirty_ratio" = 10;
+    "vm.vfs_cache_pressure" = 50;
   };
-  environment.systemPackages = with pkgs; [
-    (pkgs.writeScriptBin "sudo" ''exec doas "$@"'')
-  ];
 
   # Configure home-manager
   home-manager.extraSpecialArgs.inputs = inputs; # forward the inputs

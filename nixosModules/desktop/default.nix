@@ -13,5 +13,5 @@
 
   time.timeZone = "Europe/Warsaw";
   hardware.ledger.enable = true;
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  boot.kernelPackages = pkgs.linuxPackages_6_6;
 }
