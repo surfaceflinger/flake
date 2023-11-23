@@ -59,7 +59,7 @@
 
   nixpkgs.overlays = [
     (_final: prev: {
-      graphite-gtk-theme = (prev.graphite-gtk-theme.override { themeVariants = [ "pink" ]; colorVariants = [ "dark" ]; tweaks = [ "nord" "normal" "rimless" "darker" ]; });
+      graphite-gtk-theme = (prev.graphite-gtk-theme.override { themeVariants = [ "pink" ]; colorVariants = [ "dark" ]; tweaks = [ "darker" "normal" "rimless" ]; });
     })
   ];
 

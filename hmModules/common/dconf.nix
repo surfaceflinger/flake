@@ -36,7 +36,7 @@ with lib.hm.gvariant;
       color-scheme = "prefer-dark";
       document-font-name = "IBM Plex Serif 11";
       font-name = "IBM Plex Sans 11";
-      gtk-theme = "Graphite-pink-Dark-nord";
+      gtk-theme = "Graphite-pink-Dark";
       icon-theme = "Papirus";
       monospace-font-name = "IBM Plex Mono 11";
       show-battery-percentage = true;
@@ -104,6 +104,10 @@ with lib.hm.gvariant;
 
     "org/gnome/shell/extensions/appindicator" = {
       icon-saturation = 1.0;
+    };
+
+    "org/gnome/shell/extensions/user-theme" = {
+      name = "Graphite-pink-Dark";
     };
 
     "org/gnome/tweaks" = {

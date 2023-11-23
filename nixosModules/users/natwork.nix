@@ -14,6 +14,7 @@
       kubernetes
     ]
     ++ lib.optionals config.services.xserver.enable [
+      beekeeper-studio
       bitwarden
       freerdp
       inputs.self.packages.${pkgs.system}.timedoctor-desktop
