@@ -9,9 +9,11 @@
       inputs.agenix.packages.${pkgs.system}.default
       inputs.self.packages.${pkgs.system}.swift-backup
     ] ++ lib.optionals config.services.xserver.enable [
-      # Desktop software
+      # Random desktop software
       burpsuite
       (discord.override { withOpenASAR = true; })
+      fractal
+      newsflash
       telegram-desktop
       transmission_4-gtk
 

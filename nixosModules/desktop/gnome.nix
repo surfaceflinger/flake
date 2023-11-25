@@ -34,7 +34,6 @@
       gnome-software
       gnome-system-monitor
       gnome-themes-extra
-      gnome-weather
       seahorse
       simple-scan
       totem
@@ -45,22 +44,17 @@
   environment.systemPackages = with pkgs; [
     # GNOME
     gnomeExtensions.appindicator
+    gnomeExtensions.caffeine
     gnomeExtensions.user-themes
     gnome.gnome-session
     blackbox-terminal
 
     # Theming
-    graphite-gtk-theme
+    adw-gtk3
     papirus-icon-theme
 
     # Tool to fix Mesa 23.0+ trolls
     inputs.self.packages.${pkgs.system}.gpucache
-  ];
-
-  nixpkgs.overlays = [
-    (_final: prev: {
-      graphite-gtk-theme = (prev.graphite-gtk-theme.override { themeVariants = [ "pink" ]; colorVariants = [ "dark" ]; tweaks = [ "darker" "normal" "rimless" ]; });
-    })
   ];
 
   fonts = {
@@ -71,9 +65,9 @@
     };
     packages = with pkgs; [
       cascadia-code
-      ibm-plex
     ];
   };
+
 
   services.power-profiles-daemon.enable = false;
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];

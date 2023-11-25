@@ -6,16 +6,13 @@ with lib.hm.gvariant;
 {
   dconf.settings = {
     "io/bassi/Amberol" = {
-      background-play = false;
       replay-gain = "track";
     };
 
     "com/raggesilver/BlackBox" = {
-      context-aware-header-bar = false;
-      floating-controls = false;
       font = "Cascadia Code PL 11";
       headerbar-drag-area = true;
-      pretty = true;
+      pretty = false;
       show-headerbar = true;
     };
 
@@ -34,11 +31,8 @@ with lib.hm.gvariant;
     "org/gnome/desktop/interface" = {
       clock-show-weekday = true;
       color-scheme = "prefer-dark";
-      document-font-name = "IBM Plex Serif 11";
-      font-name = "IBM Plex Sans 11";
-      gtk-theme = "Graphite-pink-Dark";
+      gtk-theme = "adw-gtk3-dark";
       icon-theme = "Papirus";
-      monospace-font-name = "IBM Plex Mono 11";
       show-battery-percentage = true;
     };
 
@@ -71,12 +65,19 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/wm/preferences" = {
       resize-with-right-button = true;
-      titlebar-font = "IBM Plex Sans Bold 11";
+    };
+
+    "org/gnome/GWeather4" = {
+      temperature-unit = "centigrade";
     };
 
     "org/gnome/mutter" = {
       dynamic-workspaces = true;
       edge-tiling = true;
+    };
+
+    "org/gnome/nautilus/icon-view" = {
+      captions = [ "date_modified" "size" "none" ];
     };
 
     "org/gnome/settings-daemon/plugins/color" = {
@@ -97,17 +98,21 @@ with lib.hm.gvariant;
 
     "org/gnome/shell" = {
       app-picker-layout = [ "" ];
-      disable-extension-version-validation = true;
-      enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "user-theme@gnome-shell-extensions.gcampax.github.com" ];
-      favorite-apps = [ "org.gnome.Nautilus.desktop" "com.raggesilver.BlackBox.desktop" "google-chrome.desktop" "google-chrome-beta.desktop" "google-chrome-unstable.desktop" "org.telegram.desktop.desktop" "discord.desktop" "discord-canary.desktop" "armcord.desktop" "slack.desktop" "timedoctor-desktop.desktop" "org.gnome.Geary.desktop" "org.gnome.Lollypop.desktop" "io.bassi.Amberol.desktop" "code.desktop" "org.gabmus.gfeeds.desktop" "org.prismlauncher.PrismLauncher.desktop" "lunar-client.desktop" "steam.desktop" "pavucontrol.desktop" "com.github.wwmm.easyeffects.desktop" "virt-manager.desktop" "transmission-gtk.desktop" "org.qbittorrent.qBittorrent.desktop" "ledger-live-desktop.desktop" "bitwarden.desktop" ];
+      enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "caffeine@patapon.info" "user-theme@gnome-shell-extensions.gcampax.github.com" ];
+      favorite-apps = [ "org.gnome.Nautilus.desktop" "com.raggesilver.BlackBox.desktop" "google-chrome.desktop" "google-chrome-beta.desktop" "google-chrome-unstable.desktop" "org.telegram.desktop.desktop" "discord.desktop" "discord-canary.desktop" "armcord.desktop" "slack.desktop" "org.gnome.Fractal.desktop" "org.squidowl.halloy.desktop" "timedoctor-desktop.desktop" "org.gnome.Geary.desktop" "org.gnome.Lollypop.desktop" "io.bassi.Amberol.desktop" "code.desktop" "io.gitlab.news_flash.NewsFlash.desktop" "org.gabmus.gfeeds.desktop" "org.prismlauncher.PrismLauncher.desktop" "lunar-client.desktop" "steam.desktop" "pavucontrol.desktop" "com.github.wwmm.easyeffects.desktop" "virt-manager.desktop" "transmission-gtk.desktop" "org.qbittorrent.qBittorrent.desktop" "ledger-live-desktop.desktop" "bitwarden.desktop" ];
     };
 
     "org/gnome/shell/extensions/appindicator" = {
       icon-saturation = 1.0;
     };
 
+    "org/gnome/shell/extensions/caffeine" = {
+      screen-blank = "always";
+      show-notifications = false;
+    };
+
     "org/gnome/shell/extensions/user-theme" = {
-      name = "Graphite-pink-Dark";
+      name = "gradience-shell";
     };
 
     "org/gnome/tweaks" = {

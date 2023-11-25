@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ lib, pkgs, ... }: {
   boot.supportedFilesystems = [ "zfs" ];
   networking.hostId = "b897eda4";
 
@@ -8,7 +8,7 @@
   systemd.services.zramwriteback-enable =
     let
       script = pkgs.writeScript "zramwriteback-enable" ''
-        #!/usr/bin/env sh
+        #!${lib.getExe pkgs.bash}
         echo all > /sys/block/zram0/idle
         echo idle > /sys/block/zram0/writeback
       '';

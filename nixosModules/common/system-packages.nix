@@ -2,19 +2,22 @@
   # Other software
   environment.systemPackages = with pkgs; [
     # CLI/TUI tools
+    _7zz
     bat
     deadnix
     eza
     file
+    libarchive
     nano
     ncdu
     nixpkgs-fmt
-    ouch
     rage
     ripgrep
     screen
+    shellcheck
     signify
     wget
+    (writeScriptBin "7z" ''exec 7zz "$@"'')
 
     # System utilities
     bottom
@@ -33,7 +36,6 @@
   ] ++ lib.optionals config.services.xserver.enable [
     # Desktop software
     amberol
-    gnome-feeds
     halloy
     vscode
     xfce.mousepad

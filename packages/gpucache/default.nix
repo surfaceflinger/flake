@@ -1,6 +1,6 @@
 { writeShellApplication }:
 
-writeShellApplication rec {
+writeShellApplication {
   name = "gpucache";
 
   text = ''

@@ -2,7 +2,7 @@
   system.activationScripts.zfsAccurateHoleReporting = {
     text = ''
     '';
-    deps = [];
+    deps = [ ];
   };
 
   boot.postBootCommands = lib.optionalString (config.boot.zfs.enabled) ''

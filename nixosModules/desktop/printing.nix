@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ lib, pkgs, config, ... }: {
   services.printing = {
     enable = true;
     webInterface = false;
@@ -6,11 +6,9 @@
   };
 
   # fix for resolving printers through mdns/avahi
-  services.avahi.nssmdns = false;
-  system.nssModules = with pkgs.lib; optional (!config.services.avahi.nssmdns) pkgs.nssmdns;
-  system.nssDatabases.hosts = with pkgs.lib;
-    optionals (!config.services.avahi.nssmdns) (mkMerge [
-      (mkOrder 900 [ "mdns4_minimal [NOTFOUND=return]" ]) # must be before resolve
-      (mkOrder 1501 [ "mdns4" ]) # 1501 to ensure it's after dns
-    ]);
+  system.nssModules = lib.optional (!config.services.avahi.nssmdns) pkgs.nssmdns;
+  system.nssDatabases.hosts = with lib; optionals (!config.services.avahi.nssmdns) (mkMerge [
+    (mkBefore [ "mdns4_minimal [NOTFOUND=return]" ]) # before resolve
+    (mkAfter [ "mdns4" ]) # after dns
+  ]);
 }

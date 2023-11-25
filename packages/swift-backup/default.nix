@@ -3,7 +3,7 @@
 , rage
 }:
 
-writeShellApplication rec {
+writeShellApplication {
   name = "swift-backup";
 
   runtimeInputs = [ python-swiftclient rage ];
