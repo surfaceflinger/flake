@@ -1,4 +1,5 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, ... }:
+{
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
@@ -8,37 +9,41 @@
 
   # Debloat
   environment.gnome.excludePackages =
-    (with pkgs; [
-      gnome-console
-      gnome-photos
-      gnome-text-editor
-      gnome-tour
-      gnome-user-docs
-      orca
-    ])
-    ++ (with pkgs.gnome; [
-      baobab
-      cheese
-      epiphany
-      evince
-      geary
-      gnome-characters
-      gnome-clocks
-      gnome-contacts
-      gnome-disk-utility
-      gnome-font-viewer
-      gnome-logs
-      gnome-maps
-      gnome-music
-      gnome-shell-extensions
-      gnome-software
-      gnome-system-monitor
-      gnome-themes-extra
-      seahorse
-      simple-scan
-      totem
-      yelp
-    ]);
+    (
+      with pkgs; [
+        gnome-console
+        gnome-photos
+        gnome-text-editor
+        gnome-tour
+        gnome-user-docs
+        orca
+      ]
+    )
+    ++ (
+      with pkgs.gnome; [
+        baobab
+        cheese
+        epiphany
+        evince
+        geary
+        gnome-characters
+        gnome-clocks
+        gnome-contacts
+        gnome-disk-utility
+        gnome-font-viewer
+        gnome-logs
+        gnome-maps
+        gnome-music
+        gnome-shell-extensions
+        gnome-software
+        gnome-system-monitor
+        gnome-themes-extra
+        seahorse
+        simple-scan
+        totem
+        yelp
+      ]
+    );
 
   # Other software
   environment.systemPackages = with pkgs; [
@@ -63,11 +68,8 @@
       sansSerif = [ "IBM Plex Sans" ];
       serif = [ "IBM Plex Serif" ];
     };
-    packages = with pkgs; [
-      cascadia-code
-    ];
+    packages = with pkgs; [ cascadia-code ];
   };
-
 
   services.power-profiles-daemon.enable = false;
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];

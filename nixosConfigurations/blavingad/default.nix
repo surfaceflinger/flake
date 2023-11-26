@@ -1,8 +1,10 @@
-{ config
-, pkgs
-, inputs
-, ...
-}: {
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+{
   imports = [
     inputs.self.nixosModules.nat
     inputs.self.nixosModules.vps

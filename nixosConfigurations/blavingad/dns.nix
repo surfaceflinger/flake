@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   services.unbound = {
     enable = true;
     enableRootTrustAnchor = true;
@@ -34,7 +35,7 @@
       rrset-cache-slabs = 8;
       so-rcvbuf = "16m";
       so-sndbuf = "16m";
-      target-fetch-policy = "\"0 0 0 0 0\"";
+      target-fetch-policy = ''"0 0 0 0 0"'';
       unwanted-reply-threshold = 10000;
       use-caps-for-id = false;
       verbosity = 0;
@@ -59,7 +60,7 @@
   services.blocky = {
     enable = true;
     settings = {
-      bootstrapDns = [{ upstream = "[::1]:5335"; }];
+      bootstrapDns = [ { upstream = "[::1]:5335"; } ];
       ede.enable = true;
       ports.dns = [ "[fd7a:115c:a1e0:ab12:4843:cd96:6244:b13b]:53" ];
       upstreams = {

@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   environment.shells = [ pkgs.zsh ];
   users.defaultUserShell = pkgs.zsh;
 

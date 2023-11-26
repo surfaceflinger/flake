@@ -1,4 +1,5 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, ... }:
+{
   imports = [
     inputs.self.nixosModules.common
     inputs.srvos.nixosModules.desktop

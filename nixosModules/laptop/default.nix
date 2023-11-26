@@ -1,7 +1,6 @@
-{ inputs, ... }: {
-  imports = [
-    inputs.self.nixosModules.desktop
-  ];
+{ inputs, ... }:
+{
+  imports = [ inputs.self.nixosModules.desktop ];
 
   services.tlp = {
     settings = {

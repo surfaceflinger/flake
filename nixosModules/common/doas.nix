@@ -15,7 +15,5 @@
       ];
     };
   };
-  environment.systemPackages = with pkgs; [
-    (pkgs.writeScriptBin "sudo" ''exec doas "$@"'')
-  ];
+  environment.systemPackages = with pkgs; [ (pkgs.writeScriptBin "sudo" ''exec doas "$@"'') ];
 }

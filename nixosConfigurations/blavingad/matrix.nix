@@ -1,4 +1,9 @@
-{ config, inputs, pkgs, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 let
   server_name = "nekopon.pl";
   matrix_hostname = "matrix.${server_name}";
@@ -21,7 +26,15 @@ in
       inherit server_name;
       database_backend = "rocksdb";
       allow_registration = false;
-      trusted_servers = [ "matrix.org" "nixos.org" "nixos.dev" "monero.social" "grapheneos.org" "nerdsin.space" "midov.pl" ];
+      trusted_servers = [
+        "matrix.org"
+        "nixos.org"
+        "nixos.dev"
+        "monero.social"
+        "grapheneos.org"
+        "nerdsin.space"
+        "midov.pl"
+      ];
       enable_lightning_bolt = false;
     };
   };

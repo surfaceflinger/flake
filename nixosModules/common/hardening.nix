@@ -1,9 +1,13 @@
-{ ... }: {
+{ ... }:
+{
   # Fixup for building
   services.logrotate.checkConfig = false;
 
   # Restrict Nix users
-  nix.settings.allowed-users = [ "@wheel" "root" ];
+  nix.settings.allowed-users = [
+    "@wheel"
+    "root"
+  ];
 
   # jitterentropy
   boot.initrd.kernelModules = [ "jitterentropy_rng" ];

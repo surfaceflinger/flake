@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   services.minidlna = {
     enable = true;
     openFirewall = true;
@@ -25,5 +26,4 @@
     "d /vol/ikea/Media 0755 nat root - -"
     "d /vol/ikea/Media/Videos 0755 nat root - -"
   ];
-
 }

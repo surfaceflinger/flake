@@ -25,7 +25,12 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/input-sources" = {
-      sources = [ (mkTuple [ "xkb" "pl" ]) ];
+      sources = [
+        (mkTuple [
+          "xkb"
+          "pl"
+        ])
+      ];
     };
 
     "org/gnome/desktop/interface" = {
@@ -77,7 +82,11 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/nautilus/icon-view" = {
-      captions = [ "date_modified" "size" "none" ];
+      captions = [
+        "date_modified"
+        "size"
+        "none"
+      ];
     };
 
     "org/gnome/settings-daemon/plugins/color" = {
@@ -86,7 +95,9 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
-      custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" ];
+      custom-keybindings = [
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+      ];
       mic-mute = [ "<Control>m" ];
     };
 
@@ -98,8 +109,42 @@ with lib.hm.gvariant;
 
     "org/gnome/shell" = {
       app-picker-layout = [ "" ];
-      enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "caffeine@patapon.info" "user-theme@gnome-shell-extensions.gcampax.github.com" ];
-      favorite-apps = [ "org.gnome.Nautilus.desktop" "com.raggesilver.BlackBox.desktop" "google-chrome.desktop" "google-chrome-beta.desktop" "google-chrome-unstable.desktop" "org.telegram.desktop.desktop" "discord.desktop" "discord-canary.desktop" "armcord.desktop" "slack.desktop" "org.gnome.Fractal.desktop" "org.squidowl.halloy.desktop" "timedoctor-desktop.desktop" "org.gnome.Geary.desktop" "org.gnome.Lollypop.desktop" "io.bassi.Amberol.desktop" "code.desktop" "io.gitlab.news_flash.NewsFlash.desktop" "org.gabmus.gfeeds.desktop" "org.prismlauncher.PrismLauncher.desktop" "lunar-client.desktop" "steam.desktop" "pavucontrol.desktop" "com.github.wwmm.easyeffects.desktop" "virt-manager.desktop" "transmission-gtk.desktop" "org.qbittorrent.qBittorrent.desktop" "ledger-live-desktop.desktop" "bitwarden.desktop" ];
+      enabled-extensions = [
+        "appindicatorsupport@rgcjonas.gmail.com"
+        "caffeine@patapon.info"
+        "user-theme@gnome-shell-extensions.gcampax.github.com"
+      ];
+      favorite-apps = [
+        "org.gnome.Nautilus.desktop"
+        "com.raggesilver.BlackBox.desktop"
+        "google-chrome.desktop"
+        "google-chrome-beta.desktop"
+        "google-chrome-unstable.desktop"
+        "org.telegram.desktop.desktop"
+        "discord.desktop"
+        "discord-canary.desktop"
+        "armcord.desktop"
+        "slack.desktop"
+        "org.gnome.Fractal.desktop"
+        "org.squidowl.halloy.desktop"
+        "timedoctor-desktop.desktop"
+        "org.gnome.Geary.desktop"
+        "org.gnome.Lollypop.desktop"
+        "io.bassi.Amberol.desktop"
+        "code.desktop"
+        "io.gitlab.news_flash.NewsFlash.desktop"
+        "org.gabmus.gfeeds.desktop"
+        "org.prismlauncher.PrismLauncher.desktop"
+        "lunar-client.desktop"
+        "steam.desktop"
+        "pavucontrol.desktop"
+        "com.github.wwmm.easyeffects.desktop"
+        "virt-manager.desktop"
+        "transmission-gtk.desktop"
+        "org.qbittorrent.qBittorrent.desktop"
+        "ledger-live-desktop.desktop"
+        "bitwarden.desktop"
+      ];
     };
 
     "org/gnome/shell/extensions/appindicator" = {
@@ -124,8 +169,14 @@ with lib.hm.gvariant;
     };
 
     "org/virt-manager/virt-manager/connections" = {
-      autoconnect = [ "qemu:///system" "lxc:///" ];
-      uris = [ "lxc:///" "qemu:///system" ];
+      autoconnect = [
+        "qemu:///system"
+        "lxc:///"
+      ];
+      uris = [
+        "lxc:///"
+        "qemu:///system"
+      ];
     };
 
     "org/virt-manager/virt-manager/console" = {
@@ -137,6 +188,5 @@ with lib.hm.gvariant;
       cpu-default = "host-passthrough";
       graphics-type = "system";
     };
-
   };
 }

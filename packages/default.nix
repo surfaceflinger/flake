@@ -1,28 +1,29 @@
-{ self, inputs, ... }: {
-  perSystem = { system, pkgs, ... }: {
-    packages = {
-      # re-export our packages
-      inherit (pkgs)
-        anime4k
-        gnome-weather-set
-        gpucache
-        gradience
-        krisp-patch
-        swift-backup
-        timedoctor-desktop
+{ self, inputs, ... }:
+{
+  perSystem =
+    { system, pkgs, ... }:
+    {
+      packages = {
+        # re-export our packages
+        inherit (pkgs)
+          anime4k
+          gnome-weather-set
+          gpucache
+          gradience
+          krisp-patch
+          swift-backup
+          timedoctor-desktop
         ;
-    };
-    # make pkgs available to all `perSystem` functions
-    _module.args.pkgs = import inputs.nixpkgs {
-      inherit system;
-      config = {
-        allowUnfree = true;
       };
-      overlays = [
-        self.overlays.default
-      ];
+      # make pkgs available to all `perSystem` functions
+      _module.args.pkgs = import inputs.nixpkgs {
+        inherit system;
+        config = {
+          allowUnfree = true;
+        };
+        overlays = [ self.overlays.default ];
+      };
     };
-  };
 
   flake.overlays.default = _final: prev: {
     # Custom packages

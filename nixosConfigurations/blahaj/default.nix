@@ -1,7 +1,5 @@
-{ config
-, inputs
-, ...
-}: {
+{ config, inputs, ... }:
+{
   imports = [
     inputs.nixos-hardware.nixosModules.common-cpu-intel-cpu-only
     inputs.nixos-hardware.nixosModules.common-gpu-amd
@@ -20,8 +18,18 @@
   # Bootloader/Kernel/Modules
   boot = {
     extraModulePackages = [ config.boot.kernelPackages.rtl8821cu ];
-    initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-    kernelModules = [ "kvm-intel" "8821cu" ];
+    initrd.availableKernelModules = [
+      "xhci_pci"
+      "ehci_pci"
+      "ahci"
+      "usbhid"
+      "usb_storage"
+      "sd_mod"
+    ];
+    kernelModules = [
+      "kvm-intel"
+      "8821cu"
+    ];
   };
 
   # Power management

@@ -1,7 +1,15 @@
 { self, inputs, ... }:
 let
-  nixosSystem = args:
-    inputs.nixpkgs.lib.nixosSystem ({ specialArgs = { inherit inputs; }; } // args);
+  nixosSystem =
+    args:
+    inputs.nixpkgs.lib.nixosSystem (
+      {
+        specialArgs = {
+          inherit inputs;
+        };
+      }
+      // args
+    );
 in
 {
   flake.nixosConfigurations = {
@@ -27,7 +35,13 @@ in
     };
   };
 
-  perSystem = { pkgs, lib, system, ... }:
+  perSystem =
+    {
+      pkgs,
+      lib,
+      system,
+      ...
+    }:
     let
       # Only check the configurations for the current system
       sysConfigs = lib.filterAttrs (_name: value: value.pkgs.system == system) self.nixosConfigurations;
@@ -42,6 +56,12 @@ in
       '';
 
       # Add all the nixos configurations to the checks
-      checks = lib.mapAttrs' (name: value: { name = "nixos-toplevel-${name}"; value = value.config.system.build.toplevel; }) sysConfigs;
+      checks =
+        lib.mapAttrs'
+          (name: value: {
+            name = "nixos-toplevel-${name}";
+            value = value.config.system.build.toplevel;
+          })
+          sysConfigs;
     };
 }

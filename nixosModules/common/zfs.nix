@@ -1,7 +1,12 @@
-{ config, lib, pkgs, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   system.activationScripts.zfsAccurateHoleReporting = {
-    text = ''
-    '';
+    text = "";
     deps = [ ];
   };
 

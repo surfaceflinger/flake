@@ -3,7 +3,8 @@
 let
   rtprioConf = builtins.listToAttrs (
     builtins.map
-      (n:
+      (
+        n:
         lib.nameValuePair "pipewire/${n}.conf.d/rtprio.conf" {
           text = builtins.toJSON {
             "context.modules" = [
@@ -15,11 +16,15 @@ let
                   "rt.time.soft" = realtimeLimitUS;
                   "rt.time.hard" = realtimeLimitUS;
                 };
-                flags = [ "ifexists" "nofail" ];
+                flags = [
+                  "ifexists"
+                  "nofail"
+                ];
               }
             ];
           };
-        })
+        }
+      )
       [
         "client-rt"
         "client"
@@ -31,12 +36,12 @@ let
 
   resampleQualityConf = builtins.listToAttrs (
     builtins.map
-      (n:
+      (
+        n:
         lib.nameValuePair "pipewire/${n}.conf.d/resample-quality.conf" {
-          text = builtins.toJSON {
-            "stream.properties"."resample.quality" = 10;
-          };
-        })
+          text = builtins.toJSON { "stream.properties"."resample.quality" = 10; };
+        }
+      )
       [
         "client-rt"
         "client"

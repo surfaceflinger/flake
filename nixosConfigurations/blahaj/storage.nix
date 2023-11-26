@@ -7,7 +7,11 @@ _: {
   fileSystems."/" = {
     device = "none";
     fsType = "tmpfs";
-    options = [ "defaults" "size=2G" "mode=755" ];
+    options = [
+      "defaults"
+      "size=2G"
+      "mode=755"
+    ];
   };
 
   fileSystems."/nix" = {
@@ -37,7 +41,5 @@ _: {
     neededForBoot = true;
   };
 
-  systemd.tmpfiles.rules = [
-    "d /vol/Games 0700 nat users - -"
-  ];
+  systemd.tmpfiles.rules = [ "d /vol/Games 0700 nat users - -" ];
 }

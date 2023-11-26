@@ -39,7 +39,8 @@
     xkomhotshot.url = "github:surfaceflinger/xkomhotshot";
   };
 
-  outputs = inputs @ { flake-parts, systems, ... }:
+  outputs =
+    inputs@{ flake-parts, systems, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = import systems;
 

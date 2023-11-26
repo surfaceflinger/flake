@@ -1,7 +1,7 @@
-{ config, pkgs, ... }: {
-  environment.systemPackages = with pkgs; lib.optionals config.services.xserver.enable [
-    virt-manager
-  ];
+{ config, pkgs, ... }:
+{
+  environment.systemPackages =
+    with pkgs; lib.optionals config.services.xserver.enable [ virt-manager ];
 
   virtualisation = {
     spiceUSBRedirection.enable = config.services.xserver.enable;
@@ -20,5 +20,10 @@
     options kvm ignore_msrs=1
   '';
 
-  boot.kernelModules = [ "vfio" "vfio_iommu_type1" "vfio_pci" "vfio_virqfd" ];
+  boot.kernelModules = [
+    "vfio"
+    "vfio_iommu_type1"
+    "vfio_pci"
+    "vfio_virqfd"
+  ];
 }

@@ -1,12 +1,16 @@
-{ writeShellApplication
-, python-swiftclient
-, rage
+{
+  writeShellApplication,
+  python-swiftclient,
+  rage,
 }:
 
 writeShellApplication {
   name = "swift-backup";
 
-  runtimeInputs = [ python-swiftclient rage ];
+  runtimeInputs = [
+    python-swiftclient
+    rage
+  ];
 
   text = ''
     FILENAME="$(date +'%Y-%m-%d_%H-%M-%S').age"
