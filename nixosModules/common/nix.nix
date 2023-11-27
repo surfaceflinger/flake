@@ -9,7 +9,10 @@
   nixpkgs.config.allowUnfree = true;
 
   nix = {
-    registry.nixpkgs.flake = inputs.nixpkgs;
+    registry = {
+      nixpkgs.flake = inputs.nixpkgs;
+      self.flake = inputs.self;
+    };
     nixPath = [ "nixpkgs=flake:nixpkgs" ];
     gc = {
       automatic = true;
