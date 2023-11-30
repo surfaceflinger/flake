@@ -18,13 +18,15 @@
     packages =
       with pkgs;
       [
-        # work
         awscli2
         awsume
         eksctl
         google-cloud-sdk
         k9s
         kubernetes
+        kubernetes-helm
+        linkerd
+        step-cli
       ]
       ++ lib.optionals config.services.xserver.enable [
         beekeeper-studio
