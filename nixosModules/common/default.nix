@@ -14,11 +14,9 @@
     ./openssh.nix
     ./system-packages.nix
     ./zfs.nix
+    ./zram.nix
     ./zsh.nix
   ];
-
-  # zram
-  zramSwap.enable = true;
 
   # Regional
   i18n.defaultLocale = "en_US.UTF-8";
