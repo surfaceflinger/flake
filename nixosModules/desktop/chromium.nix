@@ -24,8 +24,6 @@
       "lckanjgmijmafbedllaakclkaicjfmnk" # ClearURLs
       "ldpochfccmkkmhdbclfhpagapcfdljkj" # Decentraleyes
       "mnjggcdmjocbbbhaepdhchncahnbgone" # SponsorBlock for YouTube
-      "mpbjkejclgfgadiemmefgebjfooflfhl" # Buster
-      "ndpmhjnlfkgfalaieeneneenijondgag" # YouTube Anti Translate
       "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
       "ohnjgmpcibpbafdlkimncjhflgedgpam" # 4chan X
       "pampamgoihgcedonnphgehgondkhikel" # DotGit
@@ -35,6 +33,7 @@
       "AutofillAddressEnabled" = false;
       "AutofillCreditCardEnabled" = false;
       "BlockThirdPartyCookies" = true;
+      "BuiltInDnsClientEnabled" = false;
       "CloudPrintProxyEnabled" = false;
       "ExtensionInstallBlocklist" = [ "*" ];
       "HistoryClustersVisible" = false;
