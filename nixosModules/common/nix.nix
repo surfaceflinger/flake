@@ -9,6 +9,7 @@
   nixpkgs.config.allowUnfree = true;
 
   nix = {
+    checkConfig = false;
     registry = {
       nixpkgs.flake = inputs.nixpkgs;
       self.flake = inputs.self;
