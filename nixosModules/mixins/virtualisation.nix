@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 {
-  environment.systemPackages =
-    with pkgs; lib.optionals config.services.xserver.enable [ virt-manager ];
+  environment.systemPackages = with pkgs; lib.optionals config.services.xserver.enable [ virt-manager ];
 
   virtualisation = {
     spiceUSBRedirection.enable = config.services.xserver.enable;

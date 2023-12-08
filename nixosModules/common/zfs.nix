@@ -1,8 +1,7 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
+{ config
+, lib
+, pkgs
+, ...
 }:
 {
   boot.postBootCommands = lib.optionalString (config.boot.zfs.enabled) ''

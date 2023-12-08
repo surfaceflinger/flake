@@ -1,16 +1,16 @@
-{
-  blueprint-compiler,
-  desktop-file-utils,
-  fetchFromGitHub,
-  lib,
-  libadwaita,
-  libportal-gtk4,
-  libsoup_3,
-  meson,
-  ninja,
-  pkg-config,
-  python3Packages,
-  wrapGAppsHook4,
+{ blueprint-compiler
+, desktop-file-utils
+, fetchFromGitHub
+, lib
+, libadwaita
+, libportal-gtk4
+, libsoup_3
+, meson
+, ninja
+, pkg-config
+, python3Packages
+, wrapGAppsHook4
+,
 }:
 
 python3Packages.buildPythonApplication rec {

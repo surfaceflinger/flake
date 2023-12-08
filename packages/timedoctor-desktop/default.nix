@@ -1,9 +1,9 @@
-{
-  appimageTools,
-  fetchurl,
-  graphene-hardened-malloc,
-  lib,
-  makeWrapper,
+{ appimageTools
+, fetchurl
+, graphene-hardened-malloc
+, lib
+, makeWrapper
+,
 }:
 let
   pname = "timedoctor-desktop";
@@ -49,10 +49,10 @@ appimageTools.wrapType2 rec {
 
   extraPkgs =
     _:
-    with _; [
-      (libjpeg.override { enableJpeg8 = true; })
-      lz4
-    ];
+      with _; [
+        (libjpeg.override { enableJpeg8 = true; })
+        lz4
+      ];
 
   meta = with lib; {
     description = "Employee time tracking software (Time Doctor Classic)";

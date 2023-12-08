@@ -1,9 +1,9 @@
-{
-  bc,
-  curl,
-  dconf,
-  jq,
-  writeShellApplication,
+{ bc
+, curl
+, dconf
+, jq
+, writeShellApplication
+,
 }:
 
 writeShellApplication {

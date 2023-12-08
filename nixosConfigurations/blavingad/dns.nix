@@ -60,7 +60,7 @@
   services.blocky = {
     enable = true;
     settings = {
-      bootstrapDns = [ { upstream = "[::1]:5335"; } ];
+      bootstrapDns = [{ upstream = "[::1]:5335"; }];
       ede.enable = true;
       ports.dns = [ "[fd7a:115c:a1e0:ab12:4843:cd96:6244:b13b]:53" ];
       upstreams = {

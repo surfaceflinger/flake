@@ -13,7 +13,7 @@
           krisp-patch
           swift-backup
           timedoctor-desktop
-        ;
+          ;
       };
       # make pkgs available to all `perSystem` functions
       _module.args.pkgs = import inputs.nixpkgs {

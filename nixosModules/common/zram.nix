@@ -1,5 +1,4 @@
-_:
-{
+_: {
   zramSwap.enable = true;
   boot.kernel.sysctl = {
     "vm.page-cluster" = 0;

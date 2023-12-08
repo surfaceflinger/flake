@@ -1,8 +1,7 @@
-{
-  config,
-  inputs,
-  pkgs,
-  ...
+{ config
+, inputs
+, pkgs
+, ...
 }:
 let
   server_name = "nekopon.pl";
@@ -24,8 +23,15 @@ in
     package = inputs.conduit.packages.${pkgs.system}.default;
     settings.global = {
       inherit server_name;
-      database_backend = "rocksdb";
+      allow_device_name_federation = true;
+      allow_incoming_presence = true;
+      allow_local_presence = true;
+      allow_outgoing_presence = true;
+      allow_public_room_directory_over_federation = true;
       allow_registration = false;
+      database_backend = "rocksdb";
+      enable_lightning_bolt = false;
+      zstd_compression = true;
       trusted_servers = [
         "matrix.org"
         "nixos.org"
@@ -35,7 +41,6 @@ in
         "nerdsin.space"
         "midov.pl"
       ];
-      enable_lightning_bolt = false;
     };
   };
 
@@ -66,6 +71,6 @@ in
       X-Robots-Tag "none"
     }
 
-    file_server { root ${pkgs.element-web.override { inherit conf; }} }
+    file_server { root ${pkgs.element-web.override {inherit conf;}} }
   '';
 }

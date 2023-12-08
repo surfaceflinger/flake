@@ -1,9 +1,8 @@
-{
-  config,
-  inputs,
-  pkgs,
-  lib,
-  ...
+{ config
+, inputs
+, pkgs
+, lib
+, ...
 }:
 {
   users.users.natwork = {
