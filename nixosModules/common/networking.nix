@@ -37,6 +37,7 @@
   # mDNS
   services.avahi = {
     enable = config.services.xserver.enable;
+    nssmdns4 = true;
     publish = {
       enable = true;
       userServices = true;
