@@ -6,5 +6,5 @@
     ./hardening.nix
   ];
 
-  environment.memoryAllocator.provider = "mimalloc";
+  environment.memoryAllocator.provider = "jemalloc";
 }

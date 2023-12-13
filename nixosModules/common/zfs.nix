@@ -9,4 +9,6 @@
     echo Mounting all zfs filesystems
     ${pkgs.zfs}/bin/zfs mount -a
   '';
+
+  boot.zfs.removeLinuxDRM = pkgs.hostPlatform.isAarch64;
 }
