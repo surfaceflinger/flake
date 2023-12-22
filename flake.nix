@@ -20,7 +20,7 @@
     agenix.inputs.nixpkgs.follows = "nixpkgs";
     agenix.url = "github:ryantm/agenix";
     conduit.inputs.nixpkgs.follows = "nixpkgs";
-    conduit.url = "gitlab:girlbossceo/conduwuit/next";
+    conduit.url = "gitlab:girlbossceo/conduwuit/main";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
     flake-parts.url = "github:hercules-ci/flake-parts";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
