@@ -29,7 +29,7 @@
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     nix-index-database.url = "github:Mic92/nix-index-database";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixpkgs.url = "github:NixOS/nixpkgs/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     srvos.inputs.nixpkgs.follows = "nixpkgs";
     srvos.url = "github:nix-community/srvos";
     systems.url = "github:nix-systems/default-linux";
