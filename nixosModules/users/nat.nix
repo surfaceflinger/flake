@@ -10,11 +10,12 @@
     initialHashedPassword = "$6$lR2ORA5b3eQUIqWN$W0RFJ7/5jWfajKZl2CfSwp5/BmUIzuS5OnRvksaUWmN575fubdRMybKDAFKKDnh67k6z39qjNlMLiI/drslNv1";
     isNormalUser = true;
     extraGroups = [
+      "adbusers"
       "audio"
-      "wheel"
+      "corectrl"
       "libvirtd"
       "networkmanager"
-      "adbusers"
+      "wheel"
     ];
     openssh.authorizedKeys.keys = lib.strings.splitString "\n" (builtins.readFile ./nat.keys);
     packages =

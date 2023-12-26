@@ -33,13 +33,19 @@
   };
 
   # Power management
-  boot.kernelParams = [ "intel_pstate=passive" ];
+  boot.kernelParams = [ "intel_pstate=passive" "i915.modeset=0" ];
   powerManagement.cpuFreqGovernor = "schedutil";
   services.undervolt = {
     enable = true;
     coreOffset = -80;
     uncoreOffset = -170;
   };
+
+  programs.corectrl = {
+    enable = true;
+    gpuOverclock.enable = true;
+  };
+  
 
   # Fixup volume
   environment.etc."wireplumber/main.lua.d/80-blahaj.lua".text = ''
