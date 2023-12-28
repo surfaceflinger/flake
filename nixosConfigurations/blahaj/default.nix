@@ -1,7 +1,7 @@
 { config, inputs, ... }:
 {
   imports = [
-    inputs.nixos-hardware.nixosModules.common-cpu-intel-cpu-only
+    inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     inputs.nixos-hardware.nixosModules.common-pc
     inputs.nixos-hardware.nixosModules.common-pc-ssd
@@ -17,35 +17,29 @@
 
   # Bootloader/Kernel/Modules
   boot = {
-    extraModulePackages = [ config.boot.kernelPackages.rtl8821cu ];
     initrd.availableKernelModules = [
-      "xhci_pci"
-      "ehci_pci"
       "ahci"
-      "usbhid"
-      "usb_storage"
+      "nvme"
       "sd_mod"
+      "usbhid"
+      "xhci_pci"
     ];
     kernelModules = [
-      "kvm-intel"
-      "8821cu"
+      "kvm-amd"
     ];
   };
 
-  # Power management
-  boot.kernelParams = [ "intel_pstate=passive" "i915.modeset=0" ];
-  powerManagement.cpuFreqGovernor = "schedutil";
-  services.undervolt = {
-    enable = true;
-    coreOffset = -80;
-    uncoreOffset = -170;
-  };
-
+  # GPU OC
   programs.corectrl = {
     enable = true;
     gpuOverclock.enable = true;
   };
-  
+
+  # OpenRGB
+  services.hardware.openrgb = {
+    enable = true;
+    motherboard = "amd";
+  };
 
   # Fixup volume
   environment.etc."wireplumber/main.lua.d/80-blahaj.lua".text = ''

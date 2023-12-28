@@ -4,21 +4,22 @@
 
 ```
 zpool create -f \
-  -o ashift=12 \
-  -o autotrim=on \
   -O acltype=posixacl \
-  -O relatime=on \
-  -O xattr=sa \
-  -O dnodesize=auto \
-  -O normalization=formD \
-  -O utf8only=on \
-  -O devices=off \
+  -o ashift=13 \
+  -O atime=off \
+  -o autotrim=on \
+  -O canmount=off \
+  -O checksum=blake3 \
   -O compression=lz4 \
+  -O devices=off \
+  -O dnodesize=auto \
   -O encryption=aes-256-gcm \
   -O keyformat=passphrase \
   -O keylocation=prompt \
-  -R /mnt \
   -O mountpoint=none \
+  -O normalization=formD \
+  -O xattr=sa \
+  -R /mnt \
   blahaj \
   /dev/disk/by-id/ata-CT250MX500SSD1_2141E5D95F83-part2 /dev/disk/by-id/ata-CT250MX500SSD1_2141E5D95F96
 ```

@@ -14,7 +14,7 @@ in
 {
   flake.nixosConfigurations = {
     blahaj = nixosSystem {
-      # Desktop / Dell Optiplex 9020
+      # Desktop / X570 Pro4
       system = "x86_64-linux";
       modules = [ ./blahaj ];
     };

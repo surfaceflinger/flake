@@ -12,4 +12,8 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
+
+  hardware.steam-hardware.enable = true;
+
+  services.udev.packages = with pkgs; [ game-devices-udev-rules ];
 }

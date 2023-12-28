@@ -4,6 +4,16 @@ _: {
 
   ephemereal = true;
 
+  # I use the same passphrase for all zpools so let's import all of them at once
+  # then execute zfs load-key -a and feed the passphrase to it with yes
+  # Otherwise I have to type the same (quite long) thing multiple times.
+  boot.initrd.postDeviceCommands = ''
+    zpool import -a
+    read -s -p "Enter passphrase for zpools: " zfspassphrase
+    yes "$zfspassphrase" | zfs load-key -a
+    unset zfspassphrase
+  '';
+
   fileSystems."/" = {
     device = "none";
     fsType = "tmpfs";
@@ -30,15 +40,8 @@ _: {
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/4B56-046D";
+    device = "/dev/disk/by-uuid/FBE5-64E3";
     fsType = "vfat";
-  };
-
-  # Add some dataset from secondary HDD as neededForBoot so the entire pool gets activated in Stage 1.
-  fileSystems."/vol/ikea/Other" = {
-    device = "ikea/Other";
-    fsType = "zfs";
-    neededForBoot = true;
   };
 
   systemd.tmpfiles.rules = [ "d /vol/Games 0700 nat users - -" ];
