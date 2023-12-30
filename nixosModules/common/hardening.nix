@@ -51,7 +51,7 @@
 
     # Restrict usage of ptrace to only processes with the CAP_SYS_PTRACE
     # capability
-    "kernel.yama.ptrace_scope" = 3;
+    "kernel.yama.ptrace_scope" = 1;
 
     # Increase bits of entropy used for mmap ASLR
     "vm.mmap_rnd_bits" = 32;
