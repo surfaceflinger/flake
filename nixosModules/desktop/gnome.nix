@@ -48,11 +48,12 @@
   # Other software
   environment.systemPackages = with pkgs; [
     # GNOME
+    blackbox-terminal
     gnomeExtensions.appindicator
     gnomeExtensions.caffeine
     gnomeExtensions.user-themes
     gnome.gnome-session
-    blackbox-terminal
+    gnome.gnome-tweaks
 
     # Theming
     adw-gtk3

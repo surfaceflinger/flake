@@ -18,6 +18,7 @@
       nano
       ncdu
       nixpkgs-fmt
+      ouch
       rage
       ripgrep
       screen
@@ -58,6 +59,13 @@
         ];
       })
       yt-dlp
+
+      # System utilities
+      glxinfo
+      libva-utils
+      (nvtop.override { nvidia = false; })
+      pavucontrol
+      radeontop
     ];
 
   programs = {
