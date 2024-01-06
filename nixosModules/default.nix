@@ -9,6 +9,7 @@
     vps = ./vps;
 
     # Mixins
+    gaming = ./mixins/gaming.nix
     mitigations-off = ./mixins/mitigations-off.nix;
     virtualisation = ./mixins/virtualisation.nix;
 

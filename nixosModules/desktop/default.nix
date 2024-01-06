@@ -9,7 +9,6 @@
     ./logitech.nix
     ./pipewire.nix
     ./printing.nix
-    ./steam.nix
   ];
 
   time.timeZone = "Europe/Warsaw";

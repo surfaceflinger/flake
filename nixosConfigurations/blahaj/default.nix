@@ -6,6 +6,7 @@
     inputs.nixos-hardware.nixosModules.common-pc
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.self.nixosModules.desktop
+    inputs.self.nixosModules.gaming
     inputs.self.nixosModules.nat
     inputs.self.nixosModules.virtualisation
     ./storage.nix
