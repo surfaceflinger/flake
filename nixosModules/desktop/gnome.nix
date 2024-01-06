@@ -50,6 +50,7 @@
     # GNOME
     blackbox-terminal
     gnomeExtensions.appindicator
+    gnomeExtensions.auto-move-windows
     gnomeExtensions.caffeine
     gnomeExtensions.user-themes
     gnome.gnome-session

@@ -109,6 +109,7 @@ with lib.hm.gvariant;
       app-picker-layout = [ "" ];
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
+        "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
         "caffeine@patapon.info"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
       ];
@@ -147,6 +148,10 @@ with lib.hm.gvariant;
 
     "org/gnome/shell/extensions/appindicator" = {
       icon-saturation = 1.0;
+    };
+
+    "org/gnome/shell/extensions/auto-move-windows" = {
+      application-list = [ "discord.desktop:1" "org.telegram.desktop.desktop:1" "google-chrome.desktop:2" "org.prismlauncher.PrismLauncher.desktop:3" "steam.desktop:4" ];
     };
 
     "org/gnome/shell/extensions/caffeine" = {
