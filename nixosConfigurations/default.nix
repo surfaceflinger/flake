@@ -33,6 +33,11 @@ in
       system = "aarch64-linux";
       modules = [ ./blavingad ];
     };
+    work-vm = nixosSystem {
+      # QEMU x86-64
+      system = "x86_64-linux";
+      modules = [ ./work-vm ];
+    };
   };
 
   perSystem =
