@@ -14,6 +14,7 @@
       deadnix
       eza
       file
+      jq
       libarchive
       nano
       ncdu
@@ -24,7 +25,9 @@
       screen
       shellcheck
       signify
+      unrar
       wget
+      yq
       (writeScriptBin "7z" ''exec 7zz "$@"'')
 
       # System utilities
