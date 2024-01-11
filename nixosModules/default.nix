@@ -10,6 +10,7 @@
 
     # Mixins
     gaming = ./mixins/gaming.nix;
+    iwlwifi = ./mixins/iwlwifi.nix;
     mitigations-off = ./mixins/mitigations-off.nix;
     virtualisation = ./mixins/virtualisation.nix;
 
