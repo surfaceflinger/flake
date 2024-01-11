@@ -36,11 +36,6 @@
         # Crypto
         feather
         ledger-live-desktop
-
-        # Gaming
-        jazz2
-        lunar-client
-        (prismlauncher.override { glfw = glfw-wayland-minecraft; })
       ];
   };
 

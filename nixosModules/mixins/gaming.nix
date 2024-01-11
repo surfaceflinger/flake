@@ -1,7 +1,14 @@
 { pkgs, ... }:
 {
-  # 2FA
-  environment.systemPackages = with pkgs; [ steamguard-cli ];
+  # packs
+  environment.systemPackages = with pkgs; [
+    jazz2 # I maintain this, ok?
+    lunar-client # Minecraft with spyware
+    mangohud # temps etc
+    pcsx2 # PS2 emu
+    (prismlauncher.override { glfw = glfw-wayland-minecraft; }) # Minecraft
+    steamguard-cli # Steam MFA
+  ];
 
   # Gamescope
   programs.gamescope = {
