@@ -19,6 +19,7 @@
       nano
       ncdu
       nixpkgs-fmt
+      nix-tree
       ouch
       rage
       ripgrep
