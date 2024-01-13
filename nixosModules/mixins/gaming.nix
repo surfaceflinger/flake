@@ -1,5 +1,9 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
+  imports = [
+    inputs.nyx.nixosModules.steam-compat-tools
+  ];
+
   # packs
   environment.systemPackages = with pkgs; [
     jazz2 # I maintain this, ok?
@@ -23,6 +27,12 @@
     gamescopeSession.enable = true;
     remotePlay.openFirewall = true;
   };
+
+  # Proton GE + luxtorpeda
+  chaotic.steam.extraCompatPackages	= with inputs.nyx.packages.${pkgs.system}; [
+    luxtorpeda
+    proton-ge-custom
+  ];
 
   # Controller rules
   hardware.steam-hardware.enable = true;
