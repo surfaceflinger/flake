@@ -48,7 +48,7 @@
     table.insert (alsa_monitor.rules, {
       matches = {
         {
-          { "device.name", "matches", "alsa_card.*" },
+          { "device.name", "matches", "alsa_card.usb-Superlux_digit_Superlux_E205U-00" },
         },
       },
       apply_properties = {
