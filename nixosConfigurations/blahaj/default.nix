@@ -1,4 +1,4 @@
-{ config, inputs, ... }:
+{ config, inputs, lib, pkgs, ... }:
 {
   imports = [
     inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
@@ -29,6 +29,7 @@
     kernelModules = [
       "kvm-amd"
     ];
+    kernelPackages = lib.mkForce inputs.nyx.packages.${pkgs.system}.linuxPackages_cachyos-lto;
   };
 
   # GPU OC
