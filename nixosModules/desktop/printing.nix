@@ -1,7 +1,4 @@
-{ lib
-, pkgs
-, config
-, ...
+{ ...
 }:
 {
   services.printing = {

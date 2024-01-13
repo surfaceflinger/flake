@@ -29,7 +29,7 @@
   };
 
   # Proton GE + luxtorpeda
-  chaotic.steam.extraCompatPackages	= with inputs.nyx.packages.${pkgs.system}; [
+  chaotic.steam.extraCompatPackages = with inputs.nyx.packages.${pkgs.system}; [
     luxtorpeda
     proton-ge-custom
   ];
