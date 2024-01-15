@@ -34,7 +34,6 @@
     nyx.url = "github:chaotic-cx/nyx";
     srvos.inputs.nixpkgs.follows = "nixpkgs";
     srvos.url = "github:nix-community/srvos";
-    systems.url = "github:nix-systems/default-linux";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
     treefmt-nix.url = "github:numtide/treefmt-nix";
     xkomhotshot.inputs.nixpkgs.follows = "nixpkgs";
@@ -44,7 +43,7 @@
   outputs =
     inputs@{ flake-parts, systems, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = import systems;
+      systems = [ "aarch64-linux" "x86_64-linux" ];
 
       imports = [
         ./hmModules
