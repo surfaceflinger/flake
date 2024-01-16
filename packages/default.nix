@@ -6,7 +6,7 @@
       packages = {
         # re-export our packages
         inherit (pkgs)
-          anime4k
+          gnome-gravatar
           gnome-weather-set
           gpucache
           gradience
@@ -27,7 +27,7 @@
 
   flake.overlays.default = _final: prev: {
     # Custom packages
-    anime4k = prev.callPackage ./anime4k { };
+    gnome-gravatar = prev.callPackage ./gnome-gravatar { };
     gnome-weather-set = prev.callPackage ./gnome-weather-set { };
     gpucache = prev.callPackage ./gpucache { };
     gradience = prev.callPackage ./gradience { };
