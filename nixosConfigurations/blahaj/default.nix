@@ -29,7 +29,6 @@
     kernelModules = [
       "kvm-amd"
     ];
-    kernelPackages = lib.mkForce inputs.nyx.packages.${pkgs.system}.linuxPackages_cachyos;
   };
 
   # GPU OC
