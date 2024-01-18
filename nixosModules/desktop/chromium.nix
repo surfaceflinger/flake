@@ -1,6 +1,8 @@
-{ pkgs, ... }:
+{ inputs, lib, pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [ google-chrome ];
+  environment.systemPackages = [
+    (inputs.chrome.packages.${pkgs.system}.google-chrome.overrideAttrs (attrs: { meta = attrs.meta // { license = lib.licenses.free; }; }))
+  ];
 
   programs.chromium = {
     enable = true;
