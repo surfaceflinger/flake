@@ -4,13 +4,15 @@ _: {
   services.monero = {
     enable = true;
     rpc = {
-      restricted = true;
+      address = "0.0.0.0";
       port = 18089;
+      restricted = true;
     };
     limits = {
-      download = 524288;
+      download = 1048576;
+      syncSize = 500;
       threads = 4;
-      upload = 524288;
+      upload = 1048576;
     };
     extraConfig = ''
       confirm-external-bind=true
@@ -18,10 +20,7 @@ _: {
       enforce-dns-checkpointing=1
       in-peers=1024
       no-igd=true
-      out-peers=64
-      p2p-bind-ip=0.0.0.0
-      p2p-bind-ipv6-address=::
-      p2p-bind-port=18080
+      out-peers=128
       p2p-use-ipv6=true
       prune-blockchain=true
       rpc-bind-ipv6-address=::
