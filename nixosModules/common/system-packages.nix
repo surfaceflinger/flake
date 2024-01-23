@@ -10,11 +10,12 @@
     [
       # CLI/TUI tools
       _7zz
+      abduco
       bat
       deadnix
       eza
       file
-      jq
+      gojq
       libarchive
       nano
       ncdu
@@ -23,13 +24,11 @@
       ouch
       rage
       ripgrep
-      screen
       shellcheck
-      signify
-      unrar
       wget
-      yq
       (writeScriptBin "7z" ''exec 7zz "$@"'')
+      (writeScriptBin "jq" ''exec gojq "$@"'')
+      yq
 
       # System utilities
       bottom
@@ -50,7 +49,6 @@
       # Desktop software
       amberol
       halloy
-      vscode
       xfce.mousepad
 
       # Media
@@ -69,7 +67,6 @@
       libva-utils
       (nvtop.override { nvidia = false; })
       pavucontrol
-      radeontop
     ];
 
   programs = {

@@ -27,11 +27,11 @@
       ++ lib.optionals config.services.xserver.enable [
         # Random desktop software
         burpsuite
-        (discord.override { withOpenASAR = true; })
         fractal
         newsflash
         telegram-desktop
         transmission_4-gtk
+        vesktop
 
         # Crypto
         feather

@@ -122,6 +122,7 @@ with lib.hm.gvariant;
         "org.telegram.desktop.desktop"
         "discord.desktop"
         "discord-canary.desktop"
+        "vesktop.desktop"
         "armcord.desktop"
         "slack.desktop"
         "org.gnome.Fractal.desktop"
