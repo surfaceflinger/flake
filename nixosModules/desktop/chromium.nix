@@ -1,7 +1,7 @@
-{ inputs, lib, pkgs, ... }:
+{ pkgs, ... }:
 {
   environment.systemPackages = [
-    (inputs.chrome.packages.${pkgs.system}.google-chrome.overrideAttrs (attrs: { meta = attrs.meta // { license = lib.licenses.free; }; }))
+    pkgs.google-chrome
   ];
 
   programs.chromium = {

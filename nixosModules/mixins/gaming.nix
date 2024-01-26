@@ -9,7 +9,7 @@
     jazz2 # I maintain this, ok?
     lunar-client # Minecraft with spyware
     mangohud # temps etc
-    pcsx2 # PS2 emu
+    #pcsx2 # PS2 emu
     (prismlauncher.override { glfw = glfw-wayland-minecraft; }) # Minecraft
     steamguard-cli # Steam MFA
   ];

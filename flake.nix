@@ -19,8 +19,6 @@
   inputs = {
     agenix.inputs.nixpkgs.follows = "nixpkgs";
     agenix.url = "github:ryantm/agenix";
-    chrome.inputs.nixpkgs.follows = "nixpkgs";
-    chrome.url = "github:r-k-b/browser-previews";
     conduit.inputs.nixpkgs.follows = "nixpkgs";
     conduit.url = "gitlab:girlbossceo/conduwuit/main";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
