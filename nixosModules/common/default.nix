@@ -31,7 +31,6 @@
   # Configure cloud-init (enabled where needed)
   systemd.tmpfiles.rules = [ "R /var/lib/cloud" ];
   services.cloud-init.settings = {
-    ssh_deletekeys = false;
     random_seed.file = "/dev/null";
   };
 
