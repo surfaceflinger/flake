@@ -20,11 +20,13 @@
         awscli2
         awsume
         eksctl
+        gnumake
         google-cloud-sdk
         k9s
         kubernetes
         kubernetes-helm
         linkerd
+        ssm-session-manager-plugin
         step-cli
       ]
       ++ lib.optionals config.services.xserver.enable [
