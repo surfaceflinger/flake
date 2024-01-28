@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ lib, ... }:
 let
   resampleQualityConf = builtins.listToAttrs (
     builtins.map
