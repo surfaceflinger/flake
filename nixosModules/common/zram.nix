@@ -1,5 +1,9 @@
 _: {
-  zramSwap.enable = true;
+  zramSwap = {
+    enable = true;
+    memoryMax = 17179869184;
+  };
+
   boot.kernel.sysctl = {
     "vm.page-cluster" = 0;
     "vm.swappiness" = 180;

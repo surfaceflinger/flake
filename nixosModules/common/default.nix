@@ -36,8 +36,9 @@
 
   # Virtual memory
   boot.kernel.sysctl = {
-    "vm.dirty_background_ratio" = 3;
-    "vm.dirty_ratio" = 10;
+    "vm.dirty_background_bytes" = 134217728;
+    "vm.dirty_bytes" = 268435456;
+    "vm.max_map_count" = 2147483642;
     "vm.vfs_cache_pressure" = 50;
   };
 
