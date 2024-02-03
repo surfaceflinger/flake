@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ config, inputs, lib, ... }:
 {
   imports = [
     inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
@@ -29,12 +29,8 @@
     kernelModules = [
       "kvm-amd"
     ];
-  };
-
-  # GPU OC
-  programs.corectrl = {
-    enable = true;
-    gpuOverclock.enable = true;
+    zfs.enableUnstable = true;
+    kernelPackages = lib.mkForce config.boot.zfs.package.latestCompatibleLinuxPackages;
   };
 
   # OpenRGB

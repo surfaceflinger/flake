@@ -1,7 +1,12 @@
 { pkgs, ... }:
 {
   environment.systemPackages = [
-    pkgs.google-chrome
+    (pkgs.google-chrome.override {
+      commandLineArgs = [
+        "--enable-features=UseOzonePlatform,VaapiVideoEncoder"
+        "--ozone-platform-hint=auto"
+      ];
+    })
   ];
 
   programs.chromium = {
