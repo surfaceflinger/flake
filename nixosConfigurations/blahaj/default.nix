@@ -1,4 +1,4 @@
-{ config, inputs, lib, ... }:
+{ config, inputs, lib, pkgs, ... }:
 {
   imports = [
     inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
@@ -33,11 +33,23 @@
     kernelPackages = lib.mkForce config.boot.zfs.package.latestCompatibleLinuxPackages;
   };
 
+  # need this for correct gpu work (maxing out at 220W TDP so let's max out the power limit:3)
+  programs.corectrl = {
+    enable = true;
+    gpuOverclock.enable = true;
+  };
+
+  # rx7800xt is still pretty much fucked in latest mainline and default 165hz is flickering
+  boot.kernelParams = [ "video=2560x1440@144" ];
+
   # OpenRGB
   services.hardware.openrgb = {
     enable = true;
     motherboard = "amd";
   };
+
+  # OBS with GStreamer
+  environment.systemPackages = [ (pkgs.wrapOBS { plugins = [ pkgs.obs-studio-plugins.obs-vaapi ]; }) ];
 
   # Fixup volume
   environment.etc."wireplumber/main.lua.d/80-blahaj.lua".text = ''
