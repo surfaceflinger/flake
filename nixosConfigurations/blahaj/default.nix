@@ -49,7 +49,7 @@
   };
 
   # OBS with GStreamer
-  environment.systemPackages = [ (pkgs.wrapOBS { plugins = [ pkgs.obs-studio-plugins.obs-vaapi ]; }) ];
+  environment.systemPackages = [ (pkgs.wrapOBS { plugins = with pkgs.obs-studio-plugins; [ obs-vaapi obs-vkcapture ]; }) pkgs.obs-studio-plugins.obs-vkcapture ];
 
   # Fixup volume
   environment.etc."wireplumber/main.lua.d/80-blahaj.lua".text = ''
