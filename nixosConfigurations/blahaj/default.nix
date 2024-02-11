@@ -48,8 +48,11 @@
     motherboard = "amd";
   };
 
-  # OBS with GStreamer
+  # OBS with GStreamer and vkcapture
   environment.systemPackages = [ (pkgs.wrapOBS { plugins = with pkgs.obs-studio-plugins; [ obs-vaapi obs-vkcapture ]; }) pkgs.obs-studio-plugins.obs-vkcapture ];
+
+  # GNOME VRR
+  nixpkgs.overlays = [ inputs.coturnix.overlays.gnome-vrr ];
 
   # Fixup volume
   environment.etc."wireplumber/main.lua.d/80-blahaj.lua".text = ''
