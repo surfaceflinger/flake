@@ -18,28 +18,30 @@
 
   inputs = {
     agenix.inputs.nixpkgs.follows = "nixpkgs";
-    agenix.url = "github:ryantm/agenix";
+    agenix.url = "github:ryantm/agenix/main";
     conduit.inputs.nixpkgs.follows = "nixpkgs";
     conduit.url = "gitlab:girlbossceo/conduwuit/main";
     coturnix.inputs.nixpkgs.follows = "nixpkgs";
-    coturnix.url = "github:soupglasses/coturnix";
+    coturnix.url = "github:soupglasses/coturnix/main";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
-    flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-parts.url = "github:hercules-ci/flake-parts/main";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager.url = "github:nix-community/home-manager";
-    impermanence.url = "github:nix-community/impermanence";
+    home-manager.url = "github:nix-community/home-manager/master";
+    impermanence.url = "github:nix-community/impermanence/master";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
-    nix-index-database.url = "github:Mic92/nix-index-database";
+    nix-index-database.url = "github:nix-community/nix-index-database/main";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "github:NixOS/nixpkgs/master";
     nyx.inputs.nixpkgs.follows = "nixpkgs";
-    nyx.url = "github:chaotic-cx/nyx";
+    nyx.url = "github:chaotic-cx/nyx/main";
+    ollama.inputs.nixpkgs.follows = "nixpkgs";
+    ollama.url = "github:abysssol/ollama-flake/master";
     srvos.inputs.nixpkgs.follows = "nixpkgs";
-    srvos.url = "github:nix-community/srvos";
+    srvos.url = "github:nix-community/srvos/main";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
-    treefmt-nix.url = "github:numtide/treefmt-nix";
+    treefmt-nix.url = "github:numtide/treefmt-nix/main";
     xkomhotshot.inputs.nixpkgs.follows = "nixpkgs";
-    xkomhotshot.url = "github:surfaceflinger/xkomhotshot";
+    xkomhotshot.url = "github:surfaceflinger/xkomhotshot/master";
   };
 
   outputs =

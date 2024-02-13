@@ -34,6 +34,7 @@
   };
 
   # need this for correct gpu work (maxing out at 220W TDP so let's max out the power limit:3)
+  # also undervolt
   programs.corectrl = {
     enable = true;
     gpuOverclock.enable = true;
@@ -46,6 +47,12 @@
   services.hardware.openrgb = {
     enable = true;
     motherboard = "amd";
+  };
+
+  # ollama
+  services.ollama = {
+    enable = true;
+    package = inputs.ollama.packages.${pkgs.system}.rocm;
   };
 
   # OBS with GStreamer and vkcapture
