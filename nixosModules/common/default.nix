@@ -42,6 +42,9 @@
     "vm.vfs_cache_pressure" = 50;
   };
 
+  # Reliability, Availability and Serviceability
+  hardware.rasdaemon.enable = true;
+
   # Configure home-manager
   home-manager.extraSpecialArgs.inputs = inputs; # forward the inputs
   home-manager.useGlobalPkgs = true; # don't create another instance of nixpkgs
