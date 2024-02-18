@@ -4,6 +4,13 @@
     inputs.nyx.nixosModules.steam-compat-tools
   ];
 
+  boot.kernelParams = [
+    # Remove artificial penalties for split locks, which is useful for games run
+    # through Proton.
+    # https://www.phoronix.com/news/Linux-Splitlock-Hurts-Gaming
+    "split_lock_detect=off"
+  ];
+
   # packs
   environment.systemPackages = with pkgs; [
     jazz2 # I maintain this, ok?

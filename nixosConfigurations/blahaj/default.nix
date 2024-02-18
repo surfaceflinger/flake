@@ -30,7 +30,7 @@
       "kvm-amd"
     ];
     zfs.enableUnstable = true;
-    kernelPackages = lib.mkForce config.boot.zfs.package.latestCompatibleLinuxPackages;
+    kernelPackages = lib.mkForce pkgs.linuxPackages_zen;
   };
 
   # need this for correct gpu work (maxing out at 220W TDP so let's max out the power limit:3)
