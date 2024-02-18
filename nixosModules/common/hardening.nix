@@ -99,10 +99,6 @@
     # making it harder to influence slab cache layout
     "slab_nomerge"
 
-    # Disable debugfs which exposes a lot of sensitive information about the
-    # kernel
-    "debugfs=off"
-
     # Zeroing of memory during allocation and free time
     "init_on_alloc=1"
     "init_on_free=1"
