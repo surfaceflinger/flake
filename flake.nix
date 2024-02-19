@@ -31,10 +31,9 @@
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     nix-index-database.url = "github:nix-community/nix-index-database/main";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/master";
     nyx.inputs.nixpkgs.follows = "nixpkgs";
     nyx.url = "github:chaotic-cx/nyx/main";
-    ollama.url = "github:abysssol/ollama-flake/master";
     srvos.inputs.nixpkgs.follows = "nixpkgs";
     srvos.url = "github:nix-community/srvos/main";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";

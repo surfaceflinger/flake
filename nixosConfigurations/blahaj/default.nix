@@ -52,7 +52,7 @@
   # ollama
   services.ollama = {
     enable = true;
-    package = inputs.ollama.packages.${pkgs.system}.rocm;
+    package = pkgs.ollama.override { enableRocm = true; };
   };
 
   # OBS with GStreamer and vkcapture
