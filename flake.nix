@@ -34,7 +34,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nyx.inputs.nixpkgs.follows = "nixpkgs";
     nyx.url = "github:chaotic-cx/nyx/main";
-    ollama.inputs.nixpkgs.follows = "nixpkgs";
     ollama.url = "github:abysssol/ollama-flake/master";
     srvos.inputs.nixpkgs.follows = "nixpkgs";
     srvos.url = "github:nix-community/srvos/main";
