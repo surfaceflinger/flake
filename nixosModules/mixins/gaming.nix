@@ -1,8 +1,6 @@
 { inputs, pkgs, ... }:
 {
-  imports = [
-    inputs.nyx.nixosModules.steam-compat-tools
-  ];
+  imports = [ inputs.nyx.nixosModules.steam-compat-tools ];
 
   boot.kernelParams = [
     # Remove artificial penalties for split locks, which is useful for games run

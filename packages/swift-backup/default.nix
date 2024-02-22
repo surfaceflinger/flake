@@ -1,7 +1,7 @@
-{ writeShellApplication
-, python-swiftclient
-, rage
-,
+{
+  writeShellApplication,
+  python-swiftclient,
+  rage,
 }:
 
 writeShellApplication {

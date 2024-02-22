@@ -4,14 +4,16 @@
     enable = true;
     enableRootTrustAnchor = true;
     resolveLocalQueries = false;
-    settings.forward-zone = [{
-      name = ".";
-      forward-tls-upstream = true;
-      forward-addr = [
-        "194.242.2.4@853#base.dns.mullvad.net"
-        "2a07:e340::4@853#base.dns.mullvad.net"
-      ];
-    }];
+    settings.forward-zone = [
+      {
+        name = ".";
+        forward-tls-upstream = true;
+        forward-addr = [
+          "194.242.2.4@853#base.dns.mullvad.net"
+          "2a07:e340::4@853#base.dns.mullvad.net"
+        ];
+      }
+    ];
     settings.server = {
       deny-any = true;
       ede-serve-expired = true;

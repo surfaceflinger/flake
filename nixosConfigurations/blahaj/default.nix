@@ -1,4 +1,10 @@
-{ config, inputs, lib, pkgs, ... }:
+{
+  config,
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 {
   imports = [
     inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
@@ -26,9 +32,7 @@
       "usbhid"
       "xhci_pci"
     ];
-    kernelModules = [
-      "kvm-amd"
-    ];
+    kernelModules = [ "kvm-amd" ];
     zfs.enableUnstable = true;
     kernelPackages = lib.mkForce config.boot.zfs.package.latestCompatibleLinuxPackages;
   };
@@ -56,7 +60,15 @@
   };
 
   # OBS with GStreamer and vkcapture
-  environment.systemPackages = [ (pkgs.wrapOBS { plugins = with pkgs.obs-studio-plugins; [ obs-vaapi obs-vkcapture ]; }) pkgs.obs-studio-plugins.obs-vkcapture ];
+  environment.systemPackages = [
+    (pkgs.wrapOBS {
+      plugins = with pkgs.obs-studio-plugins; [
+        obs-vaapi
+        obs-vkcapture
+      ];
+    })
+    pkgs.obs-studio-plugins.obs-vkcapture
+  ];
 
   # GNOME VRR
   # nixpkgs.overlays = [ inputs.coturnix.overlays.gnome-vrr ];

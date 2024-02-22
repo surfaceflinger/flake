@@ -1,7 +1,8 @@
-{ inputs
-, lib
-, osConfig
-, ...
+{
+  inputs,
+  lib,
+  osConfig,
+  ...
 }:
 {
   imports =

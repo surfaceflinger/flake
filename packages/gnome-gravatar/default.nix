@@ -1,6 +1,4 @@
-{ curl
-, writeShellApplication
-}:
+{ curl, writeShellApplication }:
 
 writeShellApplication {
   name = "gnome-gravatar";

@@ -14,7 +14,10 @@ _: {
   #    unset zfspassphrase
   #  '';
 
-  boot.zfs.extraPools = [ "smolhaj" "ikea" ];
+  boot.zfs.extraPools = [
+    "smolhaj"
+    "ikea"
+  ];
 
   fileSystems."/" = {
     device = "none";

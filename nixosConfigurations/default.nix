@@ -41,10 +41,11 @@ in
   };
 
   perSystem =
-    { pkgs
-    , lib
-    , system
-    , ...
+    {
+      pkgs,
+      lib,
+      system,
+      ...
     }:
     let
       # Only check the configurations for the current system

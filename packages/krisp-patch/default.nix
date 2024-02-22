@@ -1,7 +1,7 @@
-{ writeShellApplication
-, rizin
-, discord-canary
-,
+{
+  writeShellApplication,
+  rizin,
+  discord-canary,
 }:
 
 writeShellApplication {

@@ -1,7 +1,8 @@
-{ config
-, inputs
-, pkgs
-, ...
+{
+  config,
+  inputs,
+  pkgs,
+  ...
 }:
 let
   server_name = "nekopon.pl";
@@ -71,6 +72,6 @@ in
       X-Robots-Tag "none"
     }
 
-    file_server { root ${pkgs.element-web.override {inherit conf;}} }
+    file_server { root ${pkgs.element-web.override { inherit conf; }} }
   '';
 }

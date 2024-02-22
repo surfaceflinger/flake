@@ -1,8 +1,9 @@
-{ config
-, inputs
-, pkgs
-, lib
-, ...
+{
+  config,
+  inputs,
+  pkgs,
+  lib,
+  ...
 }:
 {
   users.users.natwork = {
@@ -38,7 +39,11 @@
       ];
   };
 
-  home-manager.users.natwork = { ... }: { imports = [ inputs.self.homeManagerModules.common ]; };
+  home-manager.users.natwork =
+    { ... }:
+    {
+      imports = [ inputs.self.homeManagerModules.common ];
+    };
 
   nix.settings.trusted-users = [ "natwork" ];
   nixpkgs.config.permittedInsecurePackages = [ "timedoctor-desktop-3.12.16" ];

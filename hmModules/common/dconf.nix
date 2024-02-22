@@ -95,7 +95,9 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
-      custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" ];
+      custom-keybindings = [
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+      ];
       mic-mute = [ "<Control>m" ];
     };
 
@@ -152,7 +154,13 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/shell/extensions/auto-move-windows" = {
-      application-list = [ "discord.desktop:1" "org.telegram.desktop.desktop:1" "google-chrome.desktop:2" "org.prismlauncher.PrismLauncher.desktop:3" "steam.desktop:4" ];
+      application-list = [
+        "discord.desktop:1"
+        "org.telegram.desktop.desktop:1"
+        "google-chrome.desktop:2"
+        "org.prismlauncher.PrismLauncher.desktop:3"
+        "steam.desktop:4"
+      ];
     };
 
     "org/gnome/shell/extensions/caffeine" = {
