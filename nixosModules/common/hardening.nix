@@ -30,9 +30,6 @@
     # Prevent boot console kernel log information leaks
     "kernel.printk" = "3 3 3 3";
 
-    # Disable kexec
-    "kernel.kexec_load_disabled" = 1;
-
     # Restrict eBPF memes
     "kernel.unprivileged_bpf_disabled" = 1;
     "net.core.bpf_jit_harden" = 2;
@@ -79,7 +76,7 @@
     # Disable core dumps
     "fs.suid_dumpable" = 0;
     "kernel.core_uses_pid" = 1;
-    "syskernel.core_pattern" = "|/bin/false";
+    "kernel.core_pattern" = "|/bin/false";
 
     # Disable legacy TIOCSTI
     "dev.tty.legacy_tiocsti" = 0;
@@ -180,7 +177,6 @@
     "jffs2"
     "hfs"
     "hfsplus"
-    "udf"
 
     # Disable uncommon network file systems to reduce attack surface
     "cifs"
@@ -215,7 +211,6 @@
     "asus_acpi"
     "snd_pcsp"
     "pcspkr"
-    "amd76x_edac"
 
     # Blacklist automatic loading of framebuffer drivers
     "aty128fb"
