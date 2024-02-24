@@ -22,12 +22,8 @@
       cheese
       epiphany
       evince
-      geary
-      gnome-characters
       gnome-clocks
-      gnome-contacts
       gnome-disk-utility
-      gnome-font-viewer
       gnome-logs
       gnome-maps
       gnome-music
@@ -35,8 +31,6 @@
       gnome-software
       gnome-system-monitor
       gnome-themes-extra
-      seahorse
-      simple-scan
       totem
       yelp
     ]);
