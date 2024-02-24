@@ -20,6 +20,7 @@
       "dnhpnfgdlenaccegplpojghhmaamnnfp" # Augmented Steam
       "donbcfbmhbcapadipfkeojnmajbakjdc" # ruffle.rs
       "edibdbjcniadpccecjdfdjjppcpchdlm" # I still don't care about cookies
+      "eimadpbcbfnmbkopoojfekhnkhdbieeh" # Dark Reader
       "emffkefkbkpkgpdeeooapgaicgmcbolj" # Wikiwand
       "enamippconapkdmgfgjchkhakpfinmaj" # DeArrow
       "gebbhagfogifgggkldgodflihgfeippi" # Return YouTube dislike
