@@ -20,8 +20,8 @@
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
+    optimise.automatic = true;
     settings = {
-      auto-optimise-store = true;
       extra-substituters = [
         "https://nix-community.cachix.org"
         "https://numtide.cachix.org"
