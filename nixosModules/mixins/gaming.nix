@@ -17,6 +17,7 @@
     #pcsx2 # PS2 emu
     (prismlauncher.override { glfw = glfw-wayland-minecraft; }) # Minecraft
     steamguard-cli # Steam MFA
+    steamtinkerlaunch
   ];
 
   # Gamescope
@@ -36,7 +37,6 @@
   # Proton GE + luxtorpeda
   chaotic.steam.extraCompatPackages = with inputs.nyx.packages.${pkgs.system}; [
     luxtorpeda
-    pkgs.steamtinkerlaunch
     proton-ge-custom
   ];
 
