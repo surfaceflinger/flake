@@ -36,6 +36,7 @@
   # Proton GE + luxtorpeda
   chaotic.steam.extraCompatPackages = with inputs.nyx.packages.${pkgs.system}; [
     luxtorpeda
+    pkgs.steamtinkerlaunch
     proton-ge-custom
   ];
 
