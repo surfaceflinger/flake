@@ -56,7 +56,7 @@
   # ollama
   services.ollama = {
     enable = true;
-    package = pkgs.ollama.override { enableRocm = true; };
+    package = pkgs.ollama.override { acceleration = "rocm"; };
   };
 
   # OBS with GStreamer and vkcapture
