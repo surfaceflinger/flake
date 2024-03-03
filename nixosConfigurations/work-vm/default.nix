@@ -1,4 +1,9 @@
-{ inputs, modulesPath, pkgs, ... }:
+{
+  inputs,
+  modulesPath,
+  pkgs,
+  ...
+}:
 {
   imports = [
     "${modulesPath}/profiles/qemu-guest.nix"
@@ -27,7 +32,10 @@
     spice-webdavd.enable = true;
   };
 
-  users.users.natwork.extraGroups = [ "podman" "wheel" ];
+  users.users.natwork.extraGroups = [
+    "podman"
+    "wheel"
+  ];
 
   virtualisation.podman = {
     enable = true;

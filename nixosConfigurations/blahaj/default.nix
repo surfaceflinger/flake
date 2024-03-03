@@ -33,7 +33,7 @@
       "xhci_pci"
     ];
     kernelModules = [ "kvm-amd" ];
-    zfs.enableUnstable = true;
+    zfs.package = pkgs.zfs_unstable;
     kernelPackages = lib.mkForce config.boot.zfs.package.latestCompatibleLinuxPackages;
   };
 
@@ -70,6 +70,16 @@
     pkgs.obs-studio-plugins.obs-vkcapture
   ];
 
-  # GNOME VRR
-  # nixpkgs.overlays = [ inputs.coturnix.overlays.gnome-vrr ];
+  # Higher framerate in QEMU
+  nixpkgs.overlays = with pkgs; [
+    (_self: super: {
+      qemu_kvm = super.qemu_kvm.overrideAttrs (oldAttrs: {
+        postPatch =
+          oldAttrs.postPatch
+          + ''
+            sed -i 's/GUI_REFRESH_INTERVAL_DEFAULT    30/GUI_REFRESH_INTERVAL_DEFAULT 13/g' include/ui/console.h
+          '';
+      });
+    })
+  ];
 }

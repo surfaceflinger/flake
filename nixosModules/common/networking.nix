@@ -29,9 +29,9 @@
       ipv6.ip6-privacy=2
     '';
   };
-  environment.persistence."/persist".directories =
-    lib.mkIf (config.networking.networkmanager.enable && config.ephemereal)
-      [ "/etc/NetworkManager/system-connections" ];
+  environment.persistence."/persist".directories = lib.mkIf (
+    config.networking.networkmanager.enable && config.ephemereal
+  ) [ "/etc/NetworkManager/system-connections" ];
   hardware.usb-modeswitch.enable = config.networking.networkmanager.enable;
 
   # mDNS

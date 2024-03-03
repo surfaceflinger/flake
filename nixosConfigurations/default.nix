@@ -61,12 +61,9 @@ in
       '';
 
       # Add all the nixos configurations to the checks
-      checks =
-        lib.mapAttrs'
-          (name: value: {
-            name = "nixos-toplevel-${name}";
-            value = value.config.system.build.toplevel;
-          })
-          sysConfigs;
+      checks = lib.mapAttrs' (name: value: {
+        name = "nixos-toplevel-${name}";
+        value = value.config.system.build.toplevel;
+      }) sysConfigs;
     };
 }
