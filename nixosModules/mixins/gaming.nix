@@ -15,7 +15,13 @@
     lunar-client # Minecraft with spyware
     mangohud # temps etc
     #pcsx2 # PS2 emu
-    (prismlauncher.override { glfw = glfw-wayland-minecraft; }) # Minecraft
+    (prismlauncher.override {
+      glfw = glfw-wayland-minecraft;
+      jdks = [
+        temurin-bin-8
+        temurin-bin-21
+      ];
+    }) # Minecraft
     steamguard-cli # Steam MFA
     steamtinkerlaunch
   ];
