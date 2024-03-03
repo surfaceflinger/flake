@@ -1,4 +1,4 @@
-{ inputs, modulesPath, ... }:
+{ inputs, modulesPath, pkgs, ... }:
 {
   imports = [
     "${modulesPath}/profiles/qemu-guest.nix"
@@ -27,5 +27,14 @@
     spice-webdavd.enable = true;
   };
 
-  users.users.natwork.extraGroups = [ "wheel" ];
+  users.users.natwork.extraGroups = [ "podman" "wheel" ];
+
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+    autoPrune.enable = true;
+    dockerSocket.enable = true;
+  };
+
+  environment.systemPackages = with pkgs; [ buildah ];
 }
