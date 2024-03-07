@@ -5,7 +5,6 @@ _: {
     openFirewall = true;
     settings = {
       Ciphers = [
-        "chacha20-poly1305@openssh.com"
         "aes256-gcm@openssh.com"
         "aes128-gcm@openssh.com"
       ];
@@ -16,7 +15,6 @@ _: {
         "curve25519-sha256@libssh.org"
         "diffie-hellman-group16-sha512"
         "diffie-hellman-group18-sha512"
-        "diffie-hellman-group14-sha256"
       ];
       Macs = [
         "hmac-sha2-256-etm@openssh.com"
