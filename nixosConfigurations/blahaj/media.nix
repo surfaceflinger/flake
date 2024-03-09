@@ -12,13 +12,14 @@
 
   environment.persistence."/persist".directories = [ "/var/cache/minidlna" ];
 
-  services.darkhttpd = {
+  services.caddy = {
     enable = true;
-    port = 9090;
-    address = "all";
-    rootDir = "/vol/ikea/Media/Videos/";
+    virtualHosts.":9090".extraConfig = ''
+      root * /vol/ikea/Media/Videos/
+      file_server browse
+    '';
   };
-  networking.firewall.allowedTCPPorts = [ config.services.darkhttpd.port ];
+  networking.firewall.allowedTCPPorts = [ 9090 ];
 
   # Allow both darkhttpd and minidlna to see media files.
   systemd.tmpfiles.rules = [
