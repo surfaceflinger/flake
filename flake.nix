@@ -28,10 +28,12 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager/master";
     impermanence.url = "github:nix-community/impermanence/master";
+    nix-gaming.inputs.nixpkgs.follows = "nixpkgs";
+    nix-gaming.url = "github:fufexan/nix-gaming/master";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     nix-index-database.url = "github:nix-community/nix-index-database/main";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixpkgs.url = "github:NixOS/nixpkgs/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     nyx.inputs.nixpkgs.follows = "nixpkgs";
     nyx.url = "github:chaotic-cx/nyx/main";
     srvos.inputs.nixpkgs.follows = "nixpkgs";

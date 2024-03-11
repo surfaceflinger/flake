@@ -23,7 +23,7 @@
 
   # Desktop networking
   networking.networkmanager = {
-    enable = config.services.xserver.enable;
+    inherit (config.services.xserver) enable;
     extraConfig = ''
       [connection]
       ipv6.ip6-privacy=2
@@ -36,7 +36,7 @@
 
   # mDNS
   services.avahi = {
-    enable = config.services.xserver.enable;
+    inherit (config.services.xserver) enable;
     nssmdns4 = true;
     publish = {
       enable = true;

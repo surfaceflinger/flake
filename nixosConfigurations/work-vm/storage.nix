@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   boot.supportedFilesystems = [ "zfs" ];
   boot.zfs.devNodes = "/dev/disk/by-partuuid";
   networking.hostId = "e5ef2880";

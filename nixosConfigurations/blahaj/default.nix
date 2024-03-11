@@ -6,20 +6,18 @@
 }:
 {
   imports = [
+    ./audio.nix
     inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     inputs.nixos-hardware.nixosModules.common-pc
     inputs.nixos-hardware.nixosModules.common-pc-ssd
-    inputs.nyx.nixosModules.nyx-overlay
-    inputs.nyx.nixosModules.nyx-cache
-    inputs.nyx.nixosModules.mesa-git
     inputs.self.nixosModules.desktop
     inputs.self.nixosModules.gaming
     inputs.self.nixosModules.iwlwifi
     inputs.self.nixosModules.nat
     inputs.self.nixosModules.virtualisation
-    ./storage.nix
     ./media.nix
+    ./storage.nix
   ];
 
   # Hostname
@@ -35,8 +33,8 @@
       "xhci_pci"
     ];
     kernelModules = [ "kvm-amd" ];
-    zfs.package = inputs.nyx.packages.${pkgs.system}.zfs_cachyos;
-    kernelPackages = lib.mkForce inputs.nyx.packages.${pkgs.system}.linuxPackages_cachyos;
+    zfs.package = pkgs.zfs_unstable;
+    kernelPackages = lib.mkForce pkgs.linuxPackages_xanmod_latest;
   };
 
   # need this for correct gpu work (maxing out at 220W TDP so let's max out the power limit:3)
@@ -84,16 +82,4 @@
       });
     })
   ];
-
-  # mesa-git
-  chaotic.mesa-git = {
-    enable = true;
-    fallbackSpecialisation = true;
-    extraPackages = with pkgs; [
-      rocm-opencl-icd
-      rocm-opencl-runtime
-      rocmPackages.clr
-      rocmPackages.clr.icd
-    ];
-  };
 }

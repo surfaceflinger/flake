@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   # Fixup for building
   services.logrotate.checkConfig = false;
 

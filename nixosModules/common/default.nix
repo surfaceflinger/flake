@@ -44,6 +44,9 @@
 
   # Reliability, Availability and Serviceability
   hardware.rasdaemon.enable = true;
+  nixpkgs.overlays = [
+    (_final: _prev: { inherit (inputs.self.packages.${_final.stdenv.system}) rasdaemon; })
+  ];
 
   # Configure home-manager
   home-manager.extraSpecialArgs.inputs = inputs; # forward the inputs

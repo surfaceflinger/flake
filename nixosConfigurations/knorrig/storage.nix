@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   boot.supportedFilesystems = [ "zfs" ];
   networking.hostId = "b897eda4";
 

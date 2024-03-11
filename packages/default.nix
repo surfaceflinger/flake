@@ -11,6 +11,7 @@
           gpucache
           gradience
           krisp-patch
+          rasdaemon
           swift-backup
           timedoctor-desktop
           ;
@@ -32,6 +33,7 @@
     gpucache = prev.callPackage ./gpucache { };
     gradience = prev.callPackage ./gradience { };
     krisp-patch = prev.callPackage ./krisp-patch { };
+    rasdaemon = prev.callPackage ./rasdaemon { };
     swift-backup = prev.callPackage ./swift-backup { };
     timedoctor-desktop = prev.callPackage ./timedoctor-desktop { };
   };

@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   flake.nixosModules = {
     # Presets
     common = ./common;
