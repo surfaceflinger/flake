@@ -10,6 +10,7 @@
     inputs.self.nixosModules.vps
     inputs.srvos.nixosModules.hardware-hetzner-cloud-arm
     inputs.xkomhotshot.nixosModules.default
+    ./gotosocial.nix
     ./matrix.nix
     ./microbin.nix
     ./monero.nix
