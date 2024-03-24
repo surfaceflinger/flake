@@ -12,7 +12,6 @@
     checkConfig = false;
     registry = {
       nixpkgs.flake = inputs.nixpkgs;
-      nyx.flake = inputs.nyx;
       self.flake = inputs.self;
     };
     nixPath = [ "nixpkgs=flake:nixpkgs" ];

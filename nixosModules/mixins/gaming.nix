@@ -1,7 +1,5 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 {
-  imports = [ inputs.nyx.nixosModules.steam-compat-tools ];
-
   boot.kernelParams = [
     # Remove artificial penalties for split locks, which is useful for games run
     # through Proton.
@@ -36,15 +34,12 @@
   programs.steam = {
     enable = true;
     dedicatedServer.openFirewall = true;
+    extest.enable = true;
     gamescopeSession.enable = true;
+    localNetworkGameTransfers.openFirewall = true;
     remotePlay.openFirewall = true;
+    extraCompatPackages = [ pkgs.proton-ge-bin ];
   };
-
-  # Proton GE + luxtorpeda
-  chaotic.steam.extraCompatPackages = with inputs.nyx.packages.${pkgs.system}; [
-    luxtorpeda
-    proton-ge-custom
-  ];
 
   # Controller rules
   hardware.steam-hardware.enable = true;

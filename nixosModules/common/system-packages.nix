@@ -66,7 +66,7 @@
       # System utilities
       glxinfo
       libva-utils
-      (nvtop.override { nvidia = false; })
+      (nvtopPackages.full.override { nvidia = false; })
       pavucontrol
     ];
 
