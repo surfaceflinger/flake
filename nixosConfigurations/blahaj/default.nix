@@ -1,4 +1,5 @@
 {
+  config,
   inputs,
   lib,
   pkgs,
@@ -34,7 +35,7 @@
     ];
     kernelModules = [ "kvm-amd" ];
     zfs.package = pkgs.zfs_unstable;
-    kernelPackages = lib.mkForce pkgs.linuxPackages_xanmod_latest;
+    kernelPackages = lib.mkForce config.boot.zfs.package.latestCompatibleLinuxPackages;
   };
 
   # need this for correct gpu work (maxing out at 220W TDP so let's max out the power limit:3)
