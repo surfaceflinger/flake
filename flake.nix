@@ -21,8 +21,6 @@
     agenix.url = "github:ryantm/agenix/main";
     conduit.inputs.nixpkgs.follows = "nixpkgs";
     conduit.url = "gitlab:girlbossceo/conduwuit/main";
-    coturnix.inputs.nixpkgs.follows = "nixpkgs";
-    coturnix.url = "github:soupglasses/coturnix/main";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
     flake-parts.url = "github:hercules-ci/flake-parts/main";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -34,8 +32,6 @@
     nix-index-database.url = "github:nix-community/nix-index-database/main";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nyx.inputs.nixpkgs.follows = "nixpkgs";
-    nyx.url = "github:chaotic-cx/nyx/main";
     srvos.inputs.nixpkgs.follows = "nixpkgs";
     srvos.url = "github:nix-community/srvos/main";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
