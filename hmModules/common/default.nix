@@ -12,6 +12,7 @@
       ./nix.nix
     ]
     ++ lib.optionals osConfig.services.xserver.enable [
+      ./amberol.nix
       ./gtk.nix
       ./easyeffects.nix
       ./mpv.nix

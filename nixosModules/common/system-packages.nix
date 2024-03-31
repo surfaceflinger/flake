@@ -48,7 +48,6 @@
     ]
     ++ lib.optionals config.services.xserver.enable [
       # Desktop software
-      amberol
       halloy
       xfce.mousepad
 
