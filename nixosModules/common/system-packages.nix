@@ -29,7 +29,7 @@
       shellcheck
       wget
       (writeScriptBin "7z" ''exec 7zz "$@"'')
-      (writeScriptBin "goto-nix" ''cd $(nix build -L --print-out-paths --no-link "$@".out)'')
+      (writeScriptBin "goto-nix" ''cd $(nix build -L --print-out-paths --no-link "$@".out) && $SHELL'')
       (writeScriptBin "jq" ''exec gojq "$@"'')
       yq
 

@@ -68,7 +68,10 @@
       sansSerif = [ "IBM Plex Sans" ];
       serif = [ "IBM Plex Serif" ];
     };
-    packages = with pkgs; [ cascadia-code ibm-plex ];
+    packages = with pkgs; [
+      cascadia-code
+      ibm-plex
+    ];
   };
 
   services.power-profiles-daemon.enable = false;
