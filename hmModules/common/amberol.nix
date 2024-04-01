@@ -1,4 +1,1 @@
-_:
-{
-  services.amberol.enable = true;
-}
+_: { services.amberol.enable = true; }
