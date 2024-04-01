@@ -5,10 +5,6 @@ with lib.hm.gvariant;
 
 {
   dconf.settings = {
-    "io/bassi/Amberol" = {
-      replay-gain = "track";
-    };
-
     "com/raggesilver/BlackBox" = {
       font = "Cascadia Code PL 11";
       headerbar-drag-area = true;
@@ -129,6 +125,7 @@ with lib.hm.gvariant;
         "slack.desktop"
         "org.gnome.Fractal.desktop"
         "org.squidowl.halloy.desktop"
+        "dev.geopjr.Tuba.desktop"
         "timedoctor-desktop.desktop"
         "org.gnome.Geary.desktop"
         "org.gnome.Lollypop.desktop"
@@ -144,7 +141,6 @@ with lib.hm.gvariant;
         "virt-manager.desktop"
         "transmission-gtk.desktop"
         "org.qbittorrent.qBittorrent.desktop"
-        "ledger-live-desktop.desktop"
         "bitwarden.desktop"
       ];
     };
@@ -155,10 +151,13 @@ with lib.hm.gvariant;
 
     "org/gnome/shell/extensions/auto-move-windows" = {
       application-list = [
+        "bitwarden.desktop:1"
         "discord.desktop:1"
         "org.telegram.desktop.desktop:1"
         "google-chrome.desktop:2"
         "org.prismlauncher.PrismLauncher.desktop:3"
+        "slack.desktop:3"
+        "timedoctor-desktop.desktop:3"
         "steam.desktop:4"
       ];
     };

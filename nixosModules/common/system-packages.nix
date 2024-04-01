@@ -17,6 +17,7 @@
       eza
       file
       gojq
+      ipgrep
       libarchive
       nano
       ncdu
@@ -28,6 +29,7 @@
       shellcheck
       wget
       (writeScriptBin "7z" ''exec 7zz "$@"'')
+      (writeScriptBin "goto-nix" ''cd $(nix build -L --print-out-paths --no-link "$@".out)'')
       (writeScriptBin "jq" ''exec gojq "$@"'')
       yq
 
@@ -48,8 +50,10 @@
     ]
     ++ lib.optionals config.services.xserver.enable [
       # Desktop software
-      halloy
-      xfce.mousepad
+      curtail
+      gnome-obfuscate
+      lorem
+      warp
 
       # Media
       krita

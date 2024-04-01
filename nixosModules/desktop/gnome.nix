@@ -12,7 +12,6 @@
     (with pkgs; [
       gnome-console
       gnome-photos
-      gnome-text-editor
       gnome-tour
       gnome-user-docs
       orca
@@ -55,6 +54,12 @@
 
     # Fetch gravatar and install as ~/.face
     inputs.self.packages.${pkgs.system}.gnome-gravatar
+
+    # The way Weather works in GNOME is terrible :(
+    inputs.self.packages.${pkgs.system}.gnome-weather-set
+
+    # show dconf nicely
+    (pkgs.writeScriptBin "dconf-dump" ''exec dconf dump / | bat -l toml'')
   ];
 
   fonts = {
@@ -63,7 +68,7 @@
       sansSerif = [ "IBM Plex Sans" ];
       serif = [ "IBM Plex Serif" ];
     };
-    packages = with pkgs; [ cascadia-code ];
+    packages = with pkgs; [ cascadia-code ibm-plex ];
   };
 
   services.power-profiles-daemon.enable = false;

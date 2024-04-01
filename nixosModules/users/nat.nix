@@ -28,10 +28,14 @@
       ++ lib.optionals config.services.xserver.enable [
         # Random desktop software
         burpsuite
+        diebahn
         fractal
+        gnome-podcasts
+        halloy
         newsflash
         telegram-desktop
         transmission_4-gtk
+        tuba
         vesktop
 
         # Crypto
