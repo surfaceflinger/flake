@@ -30,6 +30,8 @@
     nix-index-database.url = "github:nix-community/nix-index-database/main";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
+    schizofox.inputs.nixpkgs.follows = "nixpkgs";
+    schizofox.url = "github:schizofox/schizofox/main";
     srvos.inputs.nixpkgs.follows = "nixpkgs";
     srvos.url = "github:nix-community/srvos/main";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
