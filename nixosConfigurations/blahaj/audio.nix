@@ -1,19 +1,12 @@
+{ pkgs, ... }:
 {
-  inputs,
-  pkgs,
-  lib,
-  ...
-}:
-{
-  imports = [ inputs.nix-gaming.nixosModules.pipewireLowLatency ];
-
   services.pipewire = {
-    lowLatency = {
-      enable = true;
-      quantum = 64;
-      rate = 48000;
+    extraConfig = {
+      client."99-resample"."stream.properties"."resample.quality" = 10;
+      client-rt."99-resample"."stream.properties"."resample.quality" = 10;
+      pipewire-pulse."99-resample"."stream.properties"."resample.quality" = 10;
+      pipewire."99-allowed-rates"."context.properties"."default.clock.allowed-rates" = [ 48000 ];
     };
-    extraConfig.pipewire."99-lowlatency".context.stream.properties.resample.quality = lib.mkForce 10;
     wireplumber.configPackages = [
       (pkgs.writeTextDir "share/wireplumber/main.lua.d/99-e205u.lua" ''
         table.insert(alsa_monitor.rules, {

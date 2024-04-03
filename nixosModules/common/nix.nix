@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 {
   # Nix/nixpkgs                                                                                                                                                                                                                                                                          
   imports = [
@@ -9,6 +9,7 @@
   nixpkgs.config.allowUnfree = true;
 
   nix = {
+    package = pkgs.nixUnstable;
     checkConfig = false;
     registry = {
       nixpkgs.flake = inputs.nixpkgs;

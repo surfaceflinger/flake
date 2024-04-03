@@ -26,12 +26,10 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:surfaceflinger/home-manager/amberol-init";
     impermanence.url = "github:nix-community/impermanence/master";
-    nix-gaming.inputs.nixpkgs.follows = "nixpkgs";
-    nix-gaming.url = "github:fufexan/nix-gaming/master";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     nix-index-database.url = "github:nix-community/nix-index-database/main";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixpkgs.url = "github:NixOS/nixpkgs/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     srvos.inputs.nixpkgs.follows = "nixpkgs";
     srvos.url = "github:nix-community/srvos/main";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
