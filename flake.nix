@@ -1,21 +1,6 @@
 {
   description = "nat's nix flake (:";
 
-  # nixConfig = {
-  #   extra-substituters = [
-  #     "https://cache.garnix.io"
-  #     "https://cache.nixos.org"
-  #     "https://nix-community.cachix.org"
-  #     "https://numtide.cachix.org"
-  #   ];
-  #   extra-trusted-public-keys = [
-  #     "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
-  #     "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-  #     "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-  #     "numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE="
-  #   ];
-  # };
-
   inputs = {
     agenix.inputs.nixpkgs.follows = "nixpkgs";
     agenix.url = "github:ryantm/agenix/main";
@@ -30,6 +15,8 @@
     nix-index-database.url = "github:nix-community/nix-index-database/main";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nyx.inputs.nixpkgs.follows = "nixpkgs";
+    nyx.url = "github:chaotic-cx/nyx/main";
     schizofox.inputs.nixpkgs.follows = "nixpkgs";
     schizofox.url = "github:schizofox/schizofox/main";
     srvos.inputs.nixpkgs.follows = "nixpkgs";
