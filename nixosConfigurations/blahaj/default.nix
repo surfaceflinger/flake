@@ -35,7 +35,9 @@
     kernelModules = [ "kvm-amd" ];
     zfs.package = inputs.nyx.packages.${pkgs.system}.pkgsAMD64Microarchs.znver3.zfs_cachyos;
     #zfs.package = pkgs.zfs_unstable;
-    kernelPackages = lib.mkForce inputs.nyx.packages.${pkgs.system}.pkgsAMD64Microarchs.znver3.linuxPackages_cachyos;
+    kernelPackages =
+      lib.mkForce
+        inputs.nyx.packages.${pkgs.system}.pkgsAMD64Microarchs.znver3.linuxPackages_cachyos;
   };
 
   # GCC arch
