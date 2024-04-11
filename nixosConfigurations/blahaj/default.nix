@@ -33,8 +33,9 @@
       "xhci_pci"
     ];
     kernelModules = [ "kvm-amd" ];
-    zfs.package = pkgs.zfs_unstable;
-    kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
+    zfs.package = inputs.nyx.packages.${pkgs.system}.pkgsAMD64Microarchs.znver3.zfs_cachyos;
+    #zfs.package = pkgs.zfs_unstable;
+    kernelPackages = lib.mkForce inputs.nyx.packages.${pkgs.system}.pkgsAMD64Microarchs.znver3.linuxPackages_cachyos;
   };
 
   # need this for correct gpu work (maxing out at 220W TDP so let's max out the power limit:3)
