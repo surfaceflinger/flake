@@ -10,12 +10,17 @@
 
     settings = {
       "browser.download.useDownloadDir" = true;
+      "browser.tabs.loadDivertedInBackground" = true;
+      "browser.tabs.loadInBackground" = true;
       "browser.uidensity" = 0;
+      "dom.webgpu.enabled" = true;
       "gnomeTheme.activeTabContrast" = true;
       "gnomeTheme.normalWidthTabs" = true;
+      "image.jxl.enabled" = true;
       "layers.acceleration.force-enabled" = true;
       "media.ffmpeg.vaapi.enabled" = true;
       "privacy.resistFingerprinting" = false;
+      "toolkit.tabbox.switchByScrolling" = true;
     };
 
     extensions = {
