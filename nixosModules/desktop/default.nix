@@ -4,7 +4,6 @@
     inputs.self.nixosModules.common
     inputs.srvos.nixosModules.desktop
     ./bluetooth.nix
-    ./chromium.nix
     ./gnome.nix
     ./logitech.nix
     ./pipewire.nix

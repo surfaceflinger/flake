@@ -117,6 +117,7 @@ with lib.hm.gvariant;
         "google-chrome.desktop"
         "google-chrome-beta.desktop"
         "google-chrome-unstable.desktop"
+        "Schizofox.desktop"
         "org.telegram.desktop.desktop"
         "discord.desktop"
         "discord-canary.desktop"

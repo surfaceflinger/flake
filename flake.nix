@@ -18,7 +18,7 @@
     nyx.inputs.nixpkgs.follows = "nixpkgs";
     nyx.url = "github:chaotic-cx/nyx/main";
     schizofox.inputs.nixpkgs.follows = "nixpkgs";
-    schizofox.url = "github:schizofox/schizofox/main";
+    schizofox.url = "github:surfaceflinger/schizofox/firefox-sync";
     srvos.inputs.nixpkgs.follows = "nixpkgs";
     srvos.url = "github:nix-community/srvos/main";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";

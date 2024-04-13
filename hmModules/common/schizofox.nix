@@ -1,0 +1,67 @@
+{
+  lib,
+  inputs,
+  pkgs,
+  ...
+}:
+{
+  programs.schizofox = {
+    enable = true;
+
+    settings = {
+      "browser.download.useDownloadDir" = true;
+      "browser.uidensity" = 0;
+      "gnomeTheme.activeTabContrast" = true;
+      "gnomeTheme.normalWidthTabs" = true;
+      "layers.acceleration.force-enabled" = true;
+      "media.ffmpeg.vaapi.enabled" = true;
+      "privacy.resistFingerprinting" = false;
+    };
+
+    extensions = {
+      defaultExtensions = lib.mkForce {
+        "{1be309c5-3e4f-4b99-927d-bb500eb4fa88}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/augmented-steam/latest.xpi";
+        "{446900e4-71c2-419f-a6a7-df9c091e268b}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
+        "{74145f27-f039-47ce-a470-a662b129930a}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/clearurls/latest.xpi";
+        "{762f9885-5a13-4abd-9c77-433dcd38b8fd}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/return-youtube-dislikes/latest.xpi";
+        "{9063c2e9-e07c-4c2c-9646-cfe7ca8d0498}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/old-reddit-redirect/latest.xpi";
+        "{a4c4eda4-fb84-4a84-b4a1-f7c1cbf2a1ad}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/refined-github-/latest.xpi";
+        "addon@darkreader.org".install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
+        "addon@fastforward.team".install_url = "https://addons.mozilla.org/firefox/downloads/latest/fastforwardteam/latest.xpi";
+        "{aecec67f-0d10-4fa7-b7c7-609a2db280cf}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/violentmonkey/latest.xpi";
+        "{b5501fd1-7084-45c5-9aa6-567c2fcf5dc6}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/ruffle_rs/latest.xpi";
+        "cliget@zaidabdulla.com".install_url = "https://addons.mozilla.org/firefox/downloads/latest/cliget/latest.xpi";
+        "deArrow@ajay.app".install_url = "https://addons.mozilla.org/firefox/downloads/latest/dearrow/latest.xpi";
+        "idcac-pub@guus.ninja".install_url = "https://addons.mozilla.org/firefox/downloads/latest/istilldontcareaboutcookies/latest.xpi";
+        "jid1-D7momAzRw417Ag@jetpack".install_url = "https://addons.mozilla.org/firefox/downloads/latest/wikiwand-wikipedia-modernized/latest.xpi";
+        "sponsorBlocker@ajay.app".install_url = "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
+        "uBlock0@raymondhill.net".install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+      };
+      darkreader.enable = false;
+      simplefox.enable = false;
+    };
+
+    misc = {
+      disableWebgl = false;
+      displayBookmarksInToolbar = "always";
+      drm.enable = true;
+      firefoxSync = true;
+    };
+
+    search = {
+      defaultSearchEngine = "Searx";
+      searxUrl = "https://search.inetol.net";
+    };
+
+    theme = {
+      defaultUserChrome.enable = false;
+      defaultUserContent.enable = false;
+      extraUserContent = ''
+        @import "${inputs.self.packages.${pkgs.system}.firefox-gnome-theme}/userContent.css";
+      '';
+      extraUserChrome = ''
+        @import "${inputs.self.packages.${pkgs.system}.firefox-gnome-theme}/userChrome.css";
+      '';
+    };
+  };
+}

@@ -13,9 +13,11 @@
     ]
     ++ lib.optionals osConfig.services.xserver.enable [
       ./amberol.nix
-      ./gtk.nix
       ./easyeffects.nix
+      ./gtk.nix
+      inputs.schizofox.homeManagerModule
       ./mpv.nix
+      ./schizofox.nix
     ];
 
   home.stateVersion = "24.05";

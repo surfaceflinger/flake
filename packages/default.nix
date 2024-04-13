@@ -6,6 +6,7 @@
       packages = {
         # re-export our packages
         inherit (pkgs)
+          firefox-gnome-theme
           gnome-gravatar
           gnome-weather-set
           gpucache
@@ -28,6 +29,7 @@
 
   flake.overlays.default = _final: prev: {
     # Custom packages
+    firefox-gnome-theme = prev.callPackage ./firefox-gnome-theme { };
     gnome-gravatar = prev.callPackage ./gnome-gravatar { };
     gnome-weather-set = prev.callPackage ./gnome-weather-set { };
     gpucache = prev.callPackage ./gpucache { };
