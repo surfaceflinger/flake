@@ -13,6 +13,8 @@
       "browser.tabs.loadDivertedInBackground" = true;
       "browser.tabs.loadInBackground" = true;
       "browser.uidensity" = 0;
+      "dom.event.clipboardevents.enabled" = true;
+      "dom.event.contextmenu.enabled" = true;
       "dom.webgpu.enabled" = true;
       "gnomeTheme.activeTabContrast" = true;
       "gnomeTheme.normalWidthTabs" = true;
