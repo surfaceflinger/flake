@@ -24,23 +24,30 @@ in
     package = inputs.conduit.packages.${pkgs.system}.default;
     settings.global = {
       inherit server_name;
-      allow_device_name_federation = true;
-      allow_incoming_presence = true;
-      allow_local_presence = true;
-      allow_outgoing_presence = true;
-      allow_public_room_directory_over_federation = true;
-      allow_registration = false;
+      # rocksdb
       database_backend = "rocksdb";
-      enable_lightning_bolt = false;
+      db_cache_capacity_mb = 1024;
+      rocksdb_bottommost_compression = true;
+
+      # Compression
+      brotli_compression = true;
+      gzip_compression = true;
       zstd_compression = true;
+
+      # Misc
+      allow_device_name_federation = true;
+      allow_public_room_directory_over_federation = true;
+      max_concurrent_requests = 1000;
+      new_user_displayname_suffix = "";
+      sentry = true;
+
       trusted_servers = [
-        "matrix.org"
-        "nixos.org"
-        "nixos.dev"
-        "monero.social"
         "grapheneos.org"
+        "matrix.org"
+        "monero.social"
         "nerdsin.space"
-        "midov.pl"
+        "nixos.dev"
+        "nixos.org"
       ];
     };
   };
@@ -55,23 +62,5 @@ in
   services.caddy.virtualHosts."${matrix_hostname}".extraConfig = ''
     redir / https://${server_name}
     reverse_proxy [::1]:${toString config.services.matrix-conduit.settings.global.port}
-  '';
-
-  services.caddy.virtualHosts."element.${server_name}".extraConfig = ''
-    header {
-      Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
-      X-Content-Type-Options "nosniff"
-      Referrer-Policy "no-referrer"
-      Cross-Origin-Opener-Policy "same-origin"
-      Cross-Origin-Embedder-Policy "require-corp"
-      Origin-Agent-Cluster "?1"
-      Permissions-Policy "interest-cohort=()"
-      Cross-Origin-Resource-Policy "cross-origin"
-      Content-Security-Policy "font-src 'self'; manifest-src 'self'; object-src 'none'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; frame-ancestors 'self'"
-      X-Frame-Options "SAMEORIGIN"
-      X-Robots-Tag "none"
-    }
-
-    file_server { root ${pkgs.element-web.override { inherit conf; }} }
   '';
 }

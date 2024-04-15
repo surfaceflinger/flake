@@ -12,7 +12,6 @@
       INVITATIONS_ALLOWED = false;
       USER_ATTACHMENT_LIMIT = 1048576;
       ORG_ATTACHMENT_LIMIT = 1048576;
-      PASSWORD_ITERATIONS = 600000;
       DOMAIN = "https://vault.nekopon.pl";
       EMERGENCY_ACCESS_ALLOWED = false;
       ROCKET_ADDRESS = "::1";
