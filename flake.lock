@@ -580,11 +580,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1711900512,
-        "narHash": "sha256-TaFA09l5HXYTtzLXdtFBYUt5a/F48mPZ/9fnHUgmnBM=",
+        "lastModified": 1713152681,
+        "narHash": "sha256-LYX7ZP6MGQWi8nWLLAF7Hn7ZqsDmyx8GSfqJbIXq5mE=",
         "owner": "surfaceflinger",
         "repo": "home-manager",
-        "rev": "fb827e4bf786722b3033365092d9e17acbd9a16e",
+        "rev": "986bacf2dfc18608924fab19d7af426279729781",
         "type": "github"
       },
       "original": {
