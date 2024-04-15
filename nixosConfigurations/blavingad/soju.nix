@@ -2,10 +2,6 @@ _: {
   services.soju = {
     enable = true;
     hostName = "soylent";
-    listen = [
-      "irc+insecure://:6667"
-      "unix+admin:///run/soju/admin"
-    ];
+    listen = [ "irc+insecure://:6667" ];
   };
-  systemd.services.soju.serviceConfig.RuntimeDirectory = "soju";
 }
