@@ -67,7 +67,7 @@
   # ollama
   services.ollama = {
     enable = true;
-    acceleration = "rocm";
+    #acceleration = "rocm";
   };
 
   # OBS with GStreamer and vkcapture
