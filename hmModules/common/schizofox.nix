@@ -8,9 +8,13 @@
   programs.schizofox = {
     enable = true;
 
+    security.userAgent = "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0";
+
     settings = {
       "browser.download.useDownloadDir" = true;
-      "browser.tabs.loadDivertedInBackground" = true;
+      "browser.search.context.loadInBackground" = true;
+      "browser.tabs.loadBookmarksInBackground" = true;
+      "browser.tabs.loadDivertedInBackground" = false;
       "browser.tabs.loadInBackground" = true;
       "browser.uidensity" = 0;
       "dom.event.clipboardevents.enabled" = true;
@@ -39,6 +43,7 @@
         "{b5501fd1-7084-45c5-9aa6-567c2fcf5dc6}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/ruffle_rs/latest.xpi";
         "cliget@zaidabdulla.com".install_url = "https://addons.mozilla.org/firefox/downloads/latest/cliget/latest.xpi";
         "deArrow@ajay.app".install_url = "https://addons.mozilla.org/firefox/downloads/latest/dearrow/latest.xpi";
+        "firefox-extension@deepl.com".install_url = "https://addons.mozilla.org/firefox/downloads/latest/deepl-translate/latest.xpi";
         "idcac-pub@guus.ninja".install_url = "https://addons.mozilla.org/firefox/downloads/latest/istilldontcareaboutcookies/latest.xpi";
         "jid1-D7momAzRw417Ag@jetpack".install_url = "https://addons.mozilla.org/firefox/downloads/latest/wikiwand-wikipedia-modernized/latest.xpi";
         "sponsorBlocker@ajay.app".install_url = "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
