@@ -1,9 +1,4 @@
-{
-  config,
-  inputs,
-  pkgs,
-  ...
-}:
+_:
 let
   int_addy = "[::1]:5232";
 in
@@ -12,9 +7,7 @@ in
     enable = true;
     settings = {
       server = {
-        hosts = [
-          int_addy
-        ];
+        hosts = [ int_addy ];
       };
       auth = {
         type = "htpasswd";

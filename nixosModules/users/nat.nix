@@ -39,9 +39,10 @@
         tuba
         vesktop
 
-        # Crypto
+        # crypto/fin
         feather
         ledger-live-desktop
+        rates
       ];
   };
 

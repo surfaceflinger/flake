@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   boot.kernelParams = [
     # Remove artificial penalties for split locks, which is useful for games run
@@ -9,10 +9,12 @@
 
   # packs
   environment.systemPackages = with pkgs; [
+    inputs.self.packages.${pkgs.system}.steamtinkerlaunch
     jazz2 # I maintain this, ok?
     lunar-client # Minecraft with spyware
     mangohud # temps etc
-    #pcsx2 # PS2 emu
+    pcsx2 # PS2 emu
+    steamguard-cli # Steam MFA
     (prismlauncher.override {
       glfw = glfw-wayland-minecraft;
       jdks = [
@@ -20,8 +22,6 @@
         temurin-bin-21
       ];
     }) # Minecraft
-    steamguard-cli # Steam MFA
-    steamtinkerlaunch
   ];
 
   # Gamescope

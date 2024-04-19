@@ -14,9 +14,7 @@
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     nix-index-database.url = "github:nix-community/nix-index-database/main";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
-    nyx.inputs.nixpkgs.follows = "nixpkgs";
-    nyx.url = "github:chaotic-cx/nyx/main";
+    nixpkgs.url = "github:NixOS/nixpkgs/master";
     schizofox.inputs.nixpkgs.follows = "nixpkgs";
     schizofox.url = "github:surfaceflinger/schizofox/firefox-sync";
     srvos.inputs.nixpkgs.follows = "nixpkgs";

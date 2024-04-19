@@ -33,20 +33,9 @@
       "xhci_pci"
     ];
     kernelModules = [ "kvm-amd" ];
-    zfs.package = inputs.nyx.packages.${pkgs.system}.pkgsAMD64Microarchs.znver3.zfs_cachyos;
-    kernelPackages =
-      lib.mkForce
-        inputs.nyx.packages.${pkgs.system}.pkgsAMD64Microarchs.znver3.linuxPackages_cachyos;
+    zfs.package = pkgs.zfs_unstable;
+    kernelPackages = lib.mkForce pkgs.linuxPackages_xanmod_latest;
   };
-
-  # GCC arch
-  nix.settings.system-features = [
-    "benchmark"
-    "big-parallel"
-    "gccarch-znver3"
-    "kvm"
-    "nixos-test"
-  ];
 
   # need this for correct gpu work (maxing out at 220W TDP so let's max out the power limit:3)
   # also undervolt
@@ -67,7 +56,7 @@
   # ollama
   services.ollama = {
     enable = true;
-    #acceleration = "rocm";
+    acceleration = "rocm";
   };
 
   # OBS with GStreamer and vkcapture

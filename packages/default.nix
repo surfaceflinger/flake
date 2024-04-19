@@ -13,6 +13,7 @@
           gradience
           krisp-patch
           rasdaemon
+          steamtinkerlaunch
           swift-backup
           timedoctor-desktop
           ;
@@ -36,6 +37,7 @@
     gradience = prev.callPackage ./gradience { };
     krisp-patch = prev.callPackage ./krisp-patch { };
     rasdaemon = prev.callPackage ./rasdaemon { };
+    steamtinkerlaunch = prev.callPackage ./steamtinkerlaunch { };
     swift-backup = prev.callPackage ./swift-backup { };
     timedoctor-desktop = prev.callPackage ./timedoctor-desktop { };
   };

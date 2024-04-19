@@ -62,7 +62,23 @@
 
     search = {
       defaultSearchEngine = "Searx";
-      searxUrl = "https://search.inetol.net";
+      searxUrl = "https://searx.be";
+      addEngines = [
+        {
+          Name = "Googol";
+          Description = "When Searx stops working during important shit";
+          Alias = "!goog";
+          Method = "GET";
+          URLTemplate = "https://google.com/search?q={searchTerms}";
+        }
+        {
+          Name = "Parcels";
+          Description = "drugs tracking";
+          Alias = "!track";
+          Method = "GET";
+          URLTemplate = "https://parcelsapp.com/en/tracking/{searchTerms}";
+        }
+      ];
     };
 
     theme = {
