@@ -597,16 +597,16 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1713542819,
-        "narHash": "sha256-ls3rOgVelrQGHrxWeUpXBVWN+5Q80riLayHo3p3YAao=",
-        "owner": "NixOS",
+        "lastModified": 1713561428,
+        "narHash": "sha256-SpToEjnEoYdqTrMF7K5Jej7X9dNcI0jPQ2eWcCL2GJo=",
+        "owner": "surfaceflinger",
         "repo": "nixpkgs",
-        "rev": "2f71bd6e73943de1aea75349f9acc86492876e3d",
+        "rev": "a6ea4bc4a2ecae0c24727720551bba354afc43a1",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "master",
+        "owner": "surfaceflinger",
+        "ref": "natpkgs",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -658,16 +658,16 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1713151934,
-        "narHash": "sha256-wgKDF0aKUJk11eSOW33S4Dlor3t9oB2qHBEiws/fR9o=",
-        "owner": "surfaceflinger",
+        "lastModified": 1713551575,
+        "narHash": "sha256-6XVKzjdTgPreYApjWMBEWr8ew6IaM1dLDsJNNEdeOFs=",
+        "owner": "schizofox",
         "repo": "schizofox",
-        "rev": "6403009693be22d83345704b42b70a82a5533098",
+        "rev": "6e006ab97adcf1492d9080793d7abc787eb5f738",
         "type": "github"
       },
       "original": {
-        "owner": "surfaceflinger",
-        "ref": "firefox-sync",
+        "owner": "schizofox",
+        "ref": "main",
         "repo": "schizofox",
         "type": "github"
       }
