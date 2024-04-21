@@ -27,6 +27,7 @@
       ]
       ++ lib.optionals config.services.xserver.enable [
         # Random desktop software
+        bavarder
         burpsuite
         diebahn
         fractal

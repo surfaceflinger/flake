@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 {
   boot.kernelParams = [
     # Remove artificial penalties for split locks, which is useful for games run
@@ -9,7 +9,6 @@
 
   # packs
   environment.systemPackages = with pkgs; [
-    inputs.self.packages.${pkgs.system}.steamtinkerlaunch
     jazz2 # I maintain this, ok?
     lunar-client # Minecraft with spyware
     mangohud # temps etc
@@ -35,10 +34,11 @@
     enable = true;
     dedicatedServer.openFirewall = true;
     extest.enable = true;
+    extraCompatPackages = [ pkgs.proton-ge-bin ];
     gamescopeSession.enable = true;
     localNetworkGameTransfers.openFirewall = true;
+    package = pkgs.steam.override { extraPkgs = _pkgs: [ _pkgs.steamtinkerlaunch ]; };
     remotePlay.openFirewall = true;
-    extraCompatPackages = [ pkgs.proton-ge-bin ];
   };
 
   # Controller rules
