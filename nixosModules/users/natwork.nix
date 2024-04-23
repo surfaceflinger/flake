@@ -27,6 +27,7 @@
         kubernetes
         kubernetes-helm
         linkerd
+        mysql
         ssm-session-manager-plugin
         step-cli
       ]
