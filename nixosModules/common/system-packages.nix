@@ -24,6 +24,7 @@
       nixpkgs-fmt
       nix-tree
       ouch
+      pv
       rage
       ripgrep
       shellcheck
