@@ -7,19 +7,21 @@
   };
 
   # Enable DHCP on all physical ethernet interfaces
-  systemd.network.networks."10-eth-dhcp" = lib.mkIf (!config.services.cloud-init.network.enable) {
-    # Match every ether type
-    matchConfig.Type = "ether";
-    # These are usually managed by VPNs, Hypervisors etc.
-    matchConfig.Driver = "!tun";
-    matchConfig.Name = "!veth* !vnet*";
-    # Enable DHCP and routing
-    networkConfig = {
-      DHCP = "yes";
-      IPForward = "yes";
-      IPv6PrivacyExtensions = "kernel";
-    };
-  };
+  systemd.network.networks."10-eth-dhcp" =
+    lib.mkIf (!(config.services.cloud-init.enable && config.services.cloud-init.network.enable))
+      {
+        # Match every ether type
+        matchConfig.Type = "ether";
+        # These are usually managed by VPNs, Hypervisors etc.
+        matchConfig.Driver = "!tun";
+        matchConfig.Name = "!veth* !vnet*";
+        # Enable DHCP and routing
+        networkConfig = {
+          DHCP = "yes";
+          IPForward = "yes";
+          IPv6PrivacyExtensions = "kernel";
+        };
+      };
 
   # Desktop networking
   networking.networkmanager = {

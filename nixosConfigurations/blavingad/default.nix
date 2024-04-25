@@ -33,7 +33,6 @@
   # networking
   networking.hostName = "blavingad";
   services.cloud-init.enable = false;
-  services.cloud-init.network.enable = false;
 
   # netcup doesn't provide dhcp
   # and their metadata service bugs cloud-init out.
