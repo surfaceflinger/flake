@@ -1,4 +1,4 @@
-{ inputs, osConfig, ... }:
+{ inputs, ... }:
 {
   imports = [
     ./amberol.nix
