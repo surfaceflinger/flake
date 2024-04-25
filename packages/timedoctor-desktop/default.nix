@@ -36,7 +36,6 @@ appimageTools.wrapType2 rec {
   ];
 
   extraInstallCommands = ''
-    mv $out/bin/{${pname}-${version},${pname}}
     install -Dm444 ${appimageContents}/timedoctor-desktop.desktop -t $out/share/applications
     install -Dm444 ${appimageContents}/timedoctor-desktop.png -t $out/share/pixmaps
     substituteInPlace $out/share/applications/timedoctor-desktop.desktop \
