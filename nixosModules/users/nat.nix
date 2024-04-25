@@ -50,7 +50,9 @@
   home-manager.users.nat =
     { ... }:
     {
-      imports = [ inputs.self.homeManagerModules.common ];
+      imports = [
+        inputs.self.homeManagerModules.common
+      ] ++ lib.optionals config.services.xserver.enable [ inputs.self.homeManagerModules.desktop ];
 
       programs.git = {
         userEmail = "nat@nekopon.pl";

@@ -43,7 +43,9 @@
   home-manager.users.natwork =
     { ... }:
     {
-      imports = [ inputs.self.homeManagerModules.common ];
+      imports = [
+        inputs.self.homeManagerModules.common
+      ] ++ lib.optionals config.services.xserver.enable [ inputs.self.homeManagerModules.desktop ];
     };
 
   nix.settings.trusted-users = [ "natwork" ];
