@@ -1,11 +1,13 @@
 _: {
-  boot.supportedFilesystems = [ "zfs" ];
-  networking.hostId = "0f8a54ac";
-
   ephemereal = true;
+  networking.hostId = "0f8a54ac";
+  boot = {
+    supportedFilesystems = [ "zfs" ];
+    zfs.devNodes = "/dev/disk/by-partuuid";
+  };
 
   fileSystems."/boot" = {
-    device = "/dev/sda1";
+    device = "/dev/vda1";
     fsType = "vfat";
   };
 

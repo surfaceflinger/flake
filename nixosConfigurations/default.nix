@@ -29,8 +29,8 @@ in
       modules = [ ./knorrig ];
     };
     blavingad = nixosSystem {
-      # CAX31 Hetzner
-      system = "aarch64-linux";
+      # netcup RS 1000 G11
+      system = "x86_64-linux";
       modules = [ ./blavingad ];
     };
     work-vm = nixosSystem {

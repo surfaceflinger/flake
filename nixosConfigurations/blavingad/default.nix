@@ -1,14 +1,16 @@
 {
   config,
-  pkgs,
   inputs,
+  modulesPath,
+  pkgs,
   ...
 }:
 {
   imports = [
+    "${modulesPath}/profiles/qemu-guest.nix"
     inputs.self.nixosModules.nat
     inputs.self.nixosModules.vps
-    inputs.srvos.nixosModules.hardware-hetzner-cloud-arm
+    inputs.srvos.nixosModules.mixins-cloud-init
     inputs.xkomhotshot.nixosModules.default
     ./gotosocial.nix
     ./matrix.nix
@@ -20,30 +22,55 @@
     ./vaultwarden.nix
     ./www.nix
   ];
+  boot.initrd.availableKernelModules = [
+    "ata_piix"
+    "sr_mod"
+    "uhci_hcd"
+    "virtio_blk"
+    "virtio_pci"
+  ];
 
-  # Networking
+  # networking
   networking.hostName = "blavingad";
+  services.cloud-init.enable = false;
+  services.cloud-init.network.enable = false;
 
-  # Other software
-  environment.systemPackages = with pkgs; [ ArchiSteamFarm ];
+  # netcup doesn't provide dhcp
+  # and their metadata service bugs cloud-init out.
+  systemd.network.networks."1-wan" = {
+    matchConfig.Name = "ens3";
+    address = [
+      "2a03:4000:21:215::1/64"
+      "94.16.120.239/22"
+    ];
+    routes = [
+      { routeConfig.Gateway = "fe80::1"; }
+      { routeConfig.Gateway = "94.16.120.1"; }
+    ];
+    # make the routes on this interface a dependency for network-online.target
+    linkConfig.RequiredForOnline = "routable";
+  };
 
   # xkom telegram bot
-  age.secrets.xkomhotshot.file = ../../secrets/xkomhotshot.age;
   services.xkomhotshot = {
     enable = true;
     environmentFile = config.age.secrets.xkomhotshot.path;
   };
 
-  # swift secret
+  # tor snowflake proxy
+  services.snowflake-proxy = {
+    enable = true;
+    capacity = 100;
+  };
+
+  # other software
+  environment.systemPackages = with pkgs; [ ArchiSteamFarm ];
+
+  # secrets
   age.secrets.googlebackup = {
     file = ../../secrets/googlebackup.age;
     mode = "500";
     owner = "nat";
   };
-
-  # TOR Snowflake proxy
-  services.snowflake-proxy = {
-    enable = true;
-    capacity = 100;
-  };
+  age.secrets.xkomhotshot.file = ../../secrets/xkomhotshot.age;
 }
