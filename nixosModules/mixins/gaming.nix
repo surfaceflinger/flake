@@ -15,7 +15,6 @@
     pcsx2 # PS2 emu
     steamguard-cli # Steam MFA
     (prismlauncher.override {
-      glfw = glfw-wayland-minecraft;
       jdks = [
         temurin-bin-8
         temurin-bin-21
