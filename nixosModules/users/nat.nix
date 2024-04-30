@@ -31,12 +31,12 @@
         burpsuite
         diebahn
         fractal
+        fragments
         gnome-podcasts
         halloy
         newsflash
         signal-desktop
         telegram-desktop
-        transmission_4-gtk
         tuba
         vesktop
 

@@ -6,10 +6,32 @@ with lib.hm.gvariant;
 {
   dconf.settings = {
     "com/raggesilver/BlackBox" = {
-      font = "Cascadia Code PL 11";
+      font = "Cascadia Mono PL 11";
+      fill-tabs = true;
       headerbar-drag-area = true;
       pretty = false;
+      scrollback-lines = mkUint32 10000;
       show-headerbar = true;
+      terminal-padding = mkTuple [
+        (mkUint32 3)
+        (mkUint32 3)
+        (mkUint32 3)
+        (mkUint32 3)
+      ];
+    };
+
+    "org/gnome/Connections" = {
+      first-run = false;
+    };
+
+    "org/gnome/TextEditor" = {
+      discover-settings = true;
+      highlight-current-line = true;
+      indent-style = "space";
+      restore-session = false;
+      show-line-numbers = true;
+      tab-width = mkUint32 2;
+      wrap-text = false;
     };
 
     "org/gnome/desktop/app-folders" = {
@@ -32,8 +54,13 @@ with lib.hm.gvariant;
     "org/gnome/desktop/interface" = {
       clock-show-weekday = true;
       color-scheme = "prefer-dark";
+      document-font-name = "Inter Variable 11";
+      font-hinting = "none";
+      font-name = "Inter Variable 11";
+      gtk-enable-primary-paste = false;
       gtk-theme = "adw-gtk3-dark";
       icon-theme = "Papirus";
+      monospace-font-name = "Cascadia Mono PL 10";
       show-battery-percentage = true;
     };
 
@@ -41,12 +68,12 @@ with lib.hm.gvariant;
       autorun-never = true;
     };
 
-    "org/gnome/desktop/peripherals/mouse" = {
-      accel-profile = "flat";
+    "org/gnome/desktop/notifications" = {
+      show-in-lock-screen = false;
     };
 
-    "org/gnome/desktop/peripherals/touchpad" = {
-      disable-while-typing = false;
+    "org/gnome/desktop/peripherals/mouse" = {
+      accel-profile = "flat";
     };
 
     "org/gnome/desktop/privacy" = {
@@ -60,10 +87,6 @@ with lib.hm.gvariant;
       idle-delay = mkUint32 300;
     };
 
-    "org/gnome/settings-daemon/plugins/power" = {
-      sleep-inactive-ac-type = "suspend";
-    };
-
     "org/gnome/desktop/wm/preferences" = {
       resize-with-right-button = true;
     };
@@ -75,19 +98,14 @@ with lib.hm.gvariant;
     "org/gnome/mutter" = {
       dynamic-workspaces = true;
       edge-tiling = true;
-    };
-
-    "org/gnome/nautilus/icon-view" = {
-      captions = [
-        "date_modified"
-        "size"
-        "none"
-      ];
+      experimental-features = [ "variable-refresh-rate" ];
+      workspaces-only-on-primary = true;
     };
 
     "org/gnome/settings-daemon/plugins/color" = {
       night-light-enabled = true;
-      night-light-schedule-automatic = true;
+      night-light-schedule-automatic = false;
+      night-light-schedule-from = 22.0;
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -103,7 +121,18 @@ with lib.hm.gvariant;
       name = "Start terminal";
     };
 
+    "org/gnome/settings-daemon/plugins/power" = {
+      power-button-action = "nothing";
+      sleep-inactive-ac-timeout = 1200;
+      sleep-inactive-ac-type = "suspend";
+    };
+
+    "org/gnome/desktop/peripherals/touchpad" = {
+      disable-while-typing = false;
+    };
+
     "org/gnome/shell" = {
+      disable-extension-version-validation = true;
       app-picker-layout = [ "" ];
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
@@ -114,36 +143,29 @@ with lib.hm.gvariant;
       favorite-apps = [
         "org.gnome.Nautilus.desktop"
         "com.raggesilver.BlackBox.desktop"
-        "google-chrome.desktop"
-        "google-chrome-beta.desktop"
-        "google-chrome-unstable.desktop"
         "Schizofox.desktop"
         "org.telegram.desktop.desktop"
-        "discord.desktop"
-        "discord-canary.desktop"
         "vesktop.desktop"
-        "armcord.desktop"
         "slack.desktop"
         "org.gnome.Fractal.desktop"
         "org.squidowl.halloy.desktop"
         "dev.geopjr.Tuba.desktop"
         "timedoctor-desktop.desktop"
         "org.gnome.Geary.desktop"
-        "org.gnome.Lollypop.desktop"
         "io.bassi.Amberol.desktop"
         "code.desktop"
         "io.gitlab.news_flash.NewsFlash.desktop"
-        "org.gabmus.gfeeds.desktop"
         "org.prismlauncher.PrismLauncher.desktop"
         "lunar-client.desktop"
         "steam.desktop"
         "pavucontrol.desktop"
         "com.github.wwmm.easyeffects.desktop"
         "virt-manager.desktop"
-        "transmission-gtk.desktop"
+        "de.haeckerfelix.Fragments.desktop"
         "org.qbittorrent.qBittorrent.desktop"
         "bitwarden.desktop"
       ];
+      welcome-dialog-last-shown-version = "46.1";
     };
 
     "org/gnome/shell/extensions/appindicator" = {
@@ -176,6 +198,20 @@ with lib.hm.gvariant;
       show-extensions-notice = false;
     };
 
+    "org/gtk/gtk4/settings/file-chooser" = {
+      show-hidden = true;
+      sort-column = "name";
+      sort-directories-first = true;
+      sort-order = "ascending";
+    };
+
+    "org/gtk/settings/file-chooser" = {
+      show-hidden = true;
+      sort-column = "name";
+      sort-directories-first = true;
+      sort-order = "ascending";
+    };
+
     "org/virt-manager/virt-manager" = {
       xmleditor-enabled = true;
     };
@@ -193,11 +229,11 @@ with lib.hm.gvariant;
 
     "org/virt-manager/virt-manager/console" = {
       auto-redirect = false;
-      resize-guest = 1;
     };
 
     "org/virt-manager/virt-manager/new-vm" = {
       cpu-default = "host-passthrough";
+      firmware = "uefi";
       graphics-type = "system";
     };
   };

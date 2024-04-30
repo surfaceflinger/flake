@@ -5,7 +5,12 @@
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables = {
+    # nicer font rendering
+    FREETYPE_PROPERTIES = "cff:no-stem-darkening=0 autofitter:no-stem-darkening=0";
+    # wayland in (most) electron apps
+    NIXOS_OZONE_WL = "1";
+  };
 
   # Debloat
   environment.gnome.excludePackages =
@@ -18,7 +23,6 @@
     ])
     ++ (with pkgs.gnome; [
       baobab
-      cheese
       epiphany
       evince
       gnome-clocks
@@ -64,13 +68,13 @@
 
   fonts = {
     fontconfig.defaultFonts = {
-      monospace = [ "Cascadia Code PL" ];
-      sansSerif = [ "IBM Plex Sans" ];
-      serif = [ "IBM Plex Serif" ];
+      monospace = [ "Cascadia Mono PL" ];
+      sansSerif = [ "Inter Variable" ];
+      serif = [ "Inter Variable" ];
     };
     packages = with pkgs; [
       cascadia-code
-      ibm-plex
+      inter
     ];
   };
 
