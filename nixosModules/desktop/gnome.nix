@@ -42,10 +42,14 @@
   environment.systemPackages = with pkgs; [
     # GNOME
     blackbox-terminal
+    ffmpegthumbnailer
     gnomeExtensions.appindicator
     gnomeExtensions.auto-move-windows
     gnomeExtensions.caffeine
+    gnomeExtensions.tailscale-qs
+    gnomeExtensions.user-avatar-in-quick-settings
     gnomeExtensions.user-themes
+    gnomeExtensions.window-is-ready-remover
     gnome.gnome-session
     gnome.gnome-tweaks
 

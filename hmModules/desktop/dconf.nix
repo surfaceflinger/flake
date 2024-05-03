@@ -138,7 +138,10 @@ with lib.hm.gvariant;
         "appindicatorsupport@rgcjonas.gmail.com"
         "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
         "caffeine@patapon.info"
+        "quick-settings-avatar@d-go"
+        "tailscale@joaophi.github.com"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
+        "windowIsReady_Remover@nunofarruca@gmail.com"
       ];
       favorite-apps = [
         "org.gnome.Nautilus.desktop"
@@ -192,6 +195,10 @@ with lib.hm.gvariant;
 
     "org/gnome/shell/extensions/user-theme" = {
       name = "gradience-shell";
+    };
+
+    "org/gnome/shell/extensions/quick-settings-avatar" = {
+      avatar-position = 1;
     };
 
     "org/gnome/tweaks" = {
