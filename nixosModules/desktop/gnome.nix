@@ -92,4 +92,17 @@
     platformTheme = "gnome";
     style = "adwaita-dark";
   };
+
+  #  Dynamic triple/double buffering (v4)
+  nixpkgs.overlays = [
+    (_final: prev: {
+      gnome = prev.gnome.overrideScope (
+        _gfinal: _gprev: {
+          mutter = _gprev.mutter.overrideAttrs (oldAttrs: {
+            patches = [ ./mr1441.patch ] ++ (oldAttrs.patches or [ ]);
+          });
+        }
+      );
+    })
+  ];
 }

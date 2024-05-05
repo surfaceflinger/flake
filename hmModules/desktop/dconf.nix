@@ -173,6 +173,7 @@ with lib.hm.gvariant;
 
     "org/gnome/shell/extensions/appindicator" = {
       icon-saturation = 1.0;
+      legacy-tray-enabled = false;
     };
 
     "org/gnome/shell/extensions/auto-move-windows" = {
