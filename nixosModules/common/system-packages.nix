@@ -37,8 +37,8 @@
       # System utilities
       bottom
       config.boot.kernelPackages.cpupower
+      fastfetch
       pciutils
-      pfetch-rs
       psmisc
       usbutils
 
