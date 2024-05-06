@@ -79,11 +79,11 @@
         "rocksdb": "rocksdb"
       },
       "locked": {
-        "lastModified": 1714717104,
-        "narHash": "sha256-c+LnBnWKPQxNK6ebEe9RYlvGDkhEKJbSO6n0pZrKjdY=",
+        "lastModified": 1714981510,
+        "narHash": "sha256-5+/XUDuqqtmFuHspgShYFsX1gYRhLK0La6D8i31djwQ=",
         "owner": "girlbossceo",
         "repo": "conduwuit",
-        "rev": "42e3567153f20ace6f287d46fff2d7c070b68840",
+        "rev": "7b25ef2e6c828f4c541b63706d8651b03e4c896d",
         "type": "github"
       },
       "original": {
@@ -420,11 +420,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1714900398,
-        "narHash": "sha256-H7XYHpjk1G6dkA3AnbYrKtaTFjcCE7ul6nUVlVQxtsA=",
+        "lastModified": 1714981474,
+        "narHash": "sha256-b3/U21CJjCjJKmA9WqUbZGZgCvospO3ArOUTgJugkOY=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "fdaaf543bad047639ef0b356ea2e6caec2f1215c",
+        "rev": "6ebe7be2e67be7b9b54d61ce5704f6fb466c536f",
         "type": "github"
       },
       "original": {
@@ -510,11 +510,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1714885415,
-        "narHash": "sha256-LG+2IVqVi1fy724rSDAkgqae+f47fGGko4cJhtkN8PE=",
+        "lastModified": 1714984131,
+        "narHash": "sha256-kjIvFbbKb6RGIJyOgcF+BBWHNzhNSNqRTxX/SkrkRno=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "753176b57b3fcddb140c1c012868e62c025120bd",
+        "rev": "e148ccbecbd2fe4dc4768fba67f6db828466ad06",
         "type": "github"
       },
       "original": {
@@ -614,11 +614,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1714906279,
-        "narHash": "sha256-g9jCzwm1YIqiwRt2hfx0O0uG6bOMJOfoRYjrIifffwc=",
+        "lastModified": 1715009029,
+        "narHash": "sha256-sJ/TiP869zIUhG8u0xEzWcf33Lqx/gnZ/rwEGJUcwc8=",
         "owner": "surfaceflinger",
         "repo": "nixpkgs",
-        "rev": "a68324742ec5b139ec64d11a30d30e1181fbacec",
+        "rev": "253cc9eec29802436140de53a38e3f1f065729e1",
         "type": "github"
       },
       "original": {
@@ -631,15 +631,15 @@
     "rocksdb": {
       "flake": false,
       "locked": {
-        "lastModified": 1713810944,
-        "narHash": "sha256-/Xf0bzNJPclH9IP80QNaABfhj4IAR5LycYET18VFCXc=",
-        "owner": "facebook",
+        "lastModified": 1714770052,
+        "narHash": "sha256-NCPYF2wYBsB9OHEkZSOYoPlxjC9BBMhJp8EM5M1o3Mc=",
+        "owner": "girlbossceo",
         "repo": "rocksdb",
-        "rev": "6f7cabeac80a3a6150be2c8a8369fcecb107bf43",
+        "rev": "db6df0b185774778457dabfcbd822cb81760cade",
         "type": "github"
       },
       "original": {
-        "owner": "facebook",
+        "owner": "girlbossceo",
         "ref": "v9.1.1",
         "repo": "rocksdb",
         "type": "github"
@@ -736,11 +736,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1714611022,
-        "narHash": "sha256-Cneh2G54TO1eVQBxLZp0JlW8LWbTE/N1WjcE2W+F3pI=",
+        "lastModified": 1714956769,
+        "narHash": "sha256-49DQpGvr5N0l7rsFMP8zSwHeSa7f9N3NiY4mgdOwPn8=",
         "owner": "nix-community",
         "repo": "srvos",
-        "rev": "1fa90a0a81fec38c117397fde79733cc78f12815",
+        "rev": "885d705a55f5a9bd5a85cb6869358a1e5c522009",
         "type": "github"
       },
       "original": {
