@@ -5,19 +5,19 @@ with lib.hm.gvariant;
 
 {
   dconf.settings = {
-    "com/raggesilver/BlackBox" = {
-      font = "Cascadia Mono PL 11";
-      fill-tabs = true;
-      headerbar-drag-area = true;
-      pretty = false;
-      scrollback-lines = mkUint32 10000;
-      show-headerbar = true;
-      terminal-padding = mkTuple [
-        (mkUint32 3)
-        (mkUint32 3)
-        (mkUint32 3)
-        (mkUint32 3)
-      ];
+    "org/gnome/Ptyxis" = {
+      cursor-shape = "ibeam";
+      default-profile-uuid = "6558e70a00b73616061537c7663760c0";
+      font-name = "Cascadia Mono PL 11";
+      profile-uuids = [ "6558e70a00b73616061537c7663760c0" ];
+      restore-session = false;
+      restore-window-size = false;
+      use-system-font = false;
+    };
+
+    "org/gnome/Ptyxis/Profiles/6558e70a00b73616061537c7663760c0" = {
+      label = "home-manager";
+      scrollback-lines = 20000;
     };
 
     "org/gnome/Connections" = {
@@ -117,7 +117,7 @@ with lib.hm.gvariant;
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Super>r";
-      command = "blackbox";
+      command = "ptyxis --new-window";
       name = "Start terminal";
     };
 
@@ -145,7 +145,7 @@ with lib.hm.gvariant;
       ];
       favorite-apps = [
         "org.gnome.Nautilus.desktop"
-        "com.raggesilver.BlackBox.desktop"
+        "org.gnome.Ptyxis.desktop"
         "Schizofox.desktop"
         "org.telegram.desktop.desktop"
         "vesktop.desktop"

@@ -41,7 +41,6 @@
   # Other software
   environment.systemPackages = with pkgs; [
     # GNOME
-    blackbox-terminal
     ffmpegthumbnailer
     gnomeExtensions.appindicator
     gnomeExtensions.auto-move-windows
@@ -52,6 +51,7 @@
     gnomeExtensions.window-is-ready-remover
     gnome.gnome-session
     gnome.gnome-tweaks
+    ptyxis
 
     # Theming
     adw-gtk3
