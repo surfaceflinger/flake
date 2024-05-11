@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   # Enable systemd-networkd instead of NixOS scripts
   networking = {
@@ -72,6 +77,18 @@
     enable = true;
     openFirewall = true;
     useRoutingFeatures = "both";
+  };
+
+  ## https://github.com/tailscale/tailscale/issues/8223
+  systemd.services."whytailscalewhy" = {
+    description = "Tailscale restart on resume";
+    wantedBy = [ "post-resume.target" ];
+    after = [ "post-resume.target" ];
+    script = ''
+      . /etc/profile;
+      ${pkgs.systemd}/bin/systemctl restart tailscaled.service
+    '';
+    serviceConfig.Type = "oneshot";
   };
 
   # kernel tuning
