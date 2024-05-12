@@ -12,15 +12,12 @@
     ./networking.nix
     ./nix.nix
     ./openssh.nix
+    ./regional.nix
     ./system-packages.nix
     ./zfs.nix
     ./zram.nix
     ./zsh.nix
   ];
-
-  # Regional
-  i18n.defaultLocale = "en_US.UTF-8";
-  console.keyMap = "pl";
 
   # firmware updates
   services.fwupd.enable = true;
