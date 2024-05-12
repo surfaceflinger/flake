@@ -59,7 +59,7 @@ with lib.hm.gvariant;
       font-name = "Inter Variable 11";
       gtk-enable-primary-paste = false;
       gtk-theme = "adw-gtk3-dark";
-      icon-theme = "Papirus";
+      icon-theme = "MoreWaita";
       monospace-font-name = "Cascadia Mono PL 10";
       show-battery-percentage = true;
     };
