@@ -138,6 +138,7 @@ with lib.hm.gvariant;
         "appindicatorsupport@rgcjonas.gmail.com"
         "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
         "caffeine@patapon.info"
+        "pip-on-top@rafostar.github.com"
         "quick-settings-avatar@d-go"
         "tailscale@joaophi.github.com"
         "user-theme@gnome-shell-extensions.gcampax.github.com"

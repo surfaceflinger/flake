@@ -45,6 +45,7 @@
     gnomeExtensions.appindicator
     gnomeExtensions.auto-move-windows
     gnomeExtensions.caffeine
+    gnomeExtensions.pip-on-top
     gnomeExtensions.tailscale-qs
     gnomeExtensions.user-avatar-in-quick-settings
     gnomeExtensions.user-themes
