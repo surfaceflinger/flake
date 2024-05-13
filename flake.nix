@@ -11,6 +11,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager/master";
     impermanence.url = "github:nix-community/impermanence/master";
+    mutter.flake = false;
+    mutter.url = "git+https://gitlab.gnome.org/Community/Ubuntu/mutter.git?ref=triple-buffering-v4-46";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     nix-index-database.url = "github:nix-community/nix-index-database/main";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
