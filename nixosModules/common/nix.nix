@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 {
   # Nix/nixpkgs                                                                                                                                                                                                                                                                          
   imports = [
@@ -10,6 +10,7 @@
 
   nix = {
     checkConfig = false;
+    package = pkgs.lix;
     registry = {
       nixpkgs.flake = inputs.nixpkgs;
       self.flake = inputs.self;
