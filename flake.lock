@@ -50,11 +50,11 @@
     "complement": {
       "flake": false,
       "locked": {
-        "lastModified": 1714661560,
-        "narHash": "sha256-E1ZiUbOgo7rWo8zt2M2vzCVSykCxK0Ot2dUAxTL6cpU=",
+        "lastModified": 1715700731,
+        "narHash": "sha256-cie+b5N/TQAFD8vF/XbqfyFJkFU0qUPDbtJQDm/TfQc=",
         "owner": "matrix-org",
         "repo": "complement",
-        "rev": "370a014dca0f720614e0c8f68b9a3e66ecf7f516",
+        "rev": "8587fb3cbe746754b2c883ff6c818ca4d987d0a5",
         "type": "github"
       },
       "original": {
@@ -79,11 +79,11 @@
         "rocksdb": "rocksdb"
       },
       "locked": {
-        "lastModified": 1715543662,
-        "narHash": "sha256-Y+Joq1pMcbVi7qhAyExmd2KRmU0SYx8osUCOy1XnB3s=",
+        "lastModified": 1715798361,
+        "narHash": "sha256-NkUaW/o2oVLkD+DSgS8ktFP2H2w6cLrakiwheu3vCaM=",
         "owner": "girlbossceo",
         "repo": "conduwuit",
-        "rev": "434b5118cc41b3359b502794bf3d39583d5f9e26",
+        "rev": "4389e086868cc10b97a464478e88c03dc4f2e00a",
         "type": "github"
       },
       "original": {
@@ -631,11 +631,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1715634483,
-        "narHash": "sha256-gyNpZ/D0+ppJtqjbAxglwMC3dLPvR9bd0ucz02s/CSs=",
+        "lastModified": 1715801708,
+        "narHash": "sha256-edW/5eQEXG0SU0t9UeyEQaxI3A6f+kdqbzwaHnUPlyo=",
         "owner": "surfaceflinger",
         "repo": "nixpkgs",
-        "rev": "60a5ac83dafcfdcbd639ef217c1b675b621350c7",
+        "rev": "1b437bb3ef7cc9db1d18ecfff92efac284b3f17b",
         "type": "github"
       },
       "original": {
