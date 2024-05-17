@@ -78,6 +78,20 @@
           Method = "GET";
           URLTemplate = "https://parcelsapp.com/en/tracking/{searchTerms}";
         }
+        {
+          Name = "Anna's Archive";
+          Description = "The largest truly open library in human history.";
+          Alias = "!anna";
+          Method = "GET";
+          URLTemplate = "https://annas-archive.org/search?q={searchTerms}";
+        }
+        {
+          Name = "TorrentGalaxy";
+          Description = "torrents yeah";
+          Alias = "!galaxy";
+          Method = "GET";
+          URLTemplate = "https://torrentgalaxy.to/torrents.php?search={searchTerms}";
+        }
       ];
     };
 
