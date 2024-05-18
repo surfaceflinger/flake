@@ -6,6 +6,7 @@
     inputs.self.nixosModules.laptop
     inputs.self.nixosModules.nat
     inputs.self.nixosModules.natwork
+    inputs.self.nixosModules.tpm12
     ./storage.nix
   ];
 
