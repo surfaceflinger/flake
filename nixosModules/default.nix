@@ -11,6 +11,7 @@ _: {
     gaming = ./mixins/gaming.nix;
     iwlwifi = ./mixins/iwlwifi.nix;
     mitigations-off = ./mixins/mitigations-off.nix;
+    ryzen = ./mixins/ryzen.nix;
     virtualisation = ./mixins/virtualisation.nix;
 
     # Users

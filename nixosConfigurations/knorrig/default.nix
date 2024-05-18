@@ -1,7 +1,6 @@
 { inputs, ... }:
 {
   imports = [
-    inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     inputs.nixos-hardware.nixosModules.common-pc-laptop
     inputs.nixos-hardware.nixosModules.common-pc-laptop-acpi_call
@@ -9,6 +8,7 @@
     inputs.self.nixosModules.laptop
     inputs.self.nixosModules.nat
     inputs.self.nixosModules.natwork
+    inputs.self.nixosModules.ryzen
     inputs.self.nixosModules.virtualisation
     ./storage.nix
   ];
