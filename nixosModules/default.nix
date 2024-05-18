@@ -12,6 +12,7 @@ _: {
     iwlwifi = ./mixins/iwlwifi.nix;
     mitigations-off = ./mixins/mitigations-off.nix;
     ryzen = ./mixins/ryzen.nix;
+    tpm20 = ./mixins/tpm20.nix;
     virtualisation = ./mixins/virtualisation.nix;
 
     # Users

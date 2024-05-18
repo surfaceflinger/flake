@@ -9,6 +9,7 @@
     inputs.self.nixosModules.nat
     inputs.self.nixosModules.natwork
     inputs.self.nixosModules.ryzen
+    inputs.self.nixosModules.tpm20
     inputs.self.nixosModules.virtualisation
     ./storage.nix
   ];

@@ -15,6 +15,7 @@
     inputs.self.nixosModules.iwlwifi
     inputs.self.nixosModules.nat
     inputs.self.nixosModules.ryzen
+    inputs.self.nixosModules.tpm20
     inputs.self.nixosModules.virtualisation
     ./media.nix
     ./storage.nix

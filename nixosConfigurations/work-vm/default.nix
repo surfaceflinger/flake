@@ -9,7 +9,7 @@
     "${modulesPath}/profiles/qemu-guest.nix"
     inputs.self.nixosModules.desktop
     inputs.self.nixosModules.natwork
-    inputs.self.nixosModules.virtualisation
+    inputs.self.nixosModules.tpm20
     ./storage.nix
   ];
 
