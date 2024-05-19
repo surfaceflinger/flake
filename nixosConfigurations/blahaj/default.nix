@@ -61,6 +61,15 @@
     environmentVariables.HSA_OVERRIDE_GFX_VERSION = "11.0.0";
   };
 
+  # harmonia binary cache
+  networking.firewall.allowedTCPPorts = [ 30909 ];
+  services.harmonia = {
+    enable = true;
+    settings = {
+      bind = "[::]:30909";
+    };
+  };
+
   # OBS with GStreamer and vkcapture
   environment.systemPackages = [
     (pkgs.wrapOBS {
