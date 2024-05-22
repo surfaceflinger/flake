@@ -74,14 +74,46 @@
   ];
 
   fonts = {
-    fontconfig.defaultFonts = {
-      monospace = [ "Cascadia Mono PL" ];
-      sansSerif = [ "Inter Variable" ];
-      serif = [ "Inter Variable" ];
+    fontconfig = {
+      cache32Bit = true;
+      defaultFonts = {
+        monospace = [
+          "Cascadia Mono PL"
+          "Noto Sans Mono"
+          "Noto Sans Mono CJK HK"
+          "Noto Sans Mono CJK JP"
+          "Noto Sans Mono CJK KR"
+          "Noto Sans Mono CJK SC"
+          "Noto Sans Mono CJK TC"
+        ];
+        sansSerif = [
+          "Inter Variable"
+          "Inter"
+          "Noto Sans"
+          "Noto Sans CJK HK"
+          "Noto Sans CJK JP"
+          "Noto Sans CJK KR"
+          "Noto Sans CJK SC"
+          "Noto Sans CJK TC"
+        ];
+        serif = [
+          "Merriweather"
+          "Noto Serif"
+          "Noto Serif CJK HK"
+          "Noto Serif CJK JP"
+          "Noto Serif CJK KR"
+          "Noto Serif CJK SC"
+          "Noto Serif CJK TC"
+        ];
+      };
     };
     packages = with pkgs; [
       cascadia-code
       inter
+      merriweather
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
     ];
   };
 

@@ -54,7 +54,7 @@ with lib.hm.gvariant;
     "org/gnome/desktop/interface" = {
       clock-show-weekday = true;
       color-scheme = "prefer-dark";
-      document-font-name = "Inter Variable 11";
+      document-font-name = "Merriweather 11";
       font-hinting = "none";
       font-name = "Inter Variable 11";
       gtk-enable-primary-paste = false;
