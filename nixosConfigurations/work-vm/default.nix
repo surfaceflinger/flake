@@ -9,6 +9,7 @@
     "${modulesPath}/profiles/qemu-guest.nix"
     inputs.self.nixosModules.desktop
     inputs.self.nixosModules.natwork
+    inputs.self.nixosModules.ryzen
     inputs.self.nixosModules.tpm20
     ./storage.nix
   ];
@@ -24,7 +25,6 @@
     "virtio_pci"
     "xhci_pci"
   ];
-  boot.kernelModules = [ "kvm-amd" ];
   services = {
     qemuGuest.enable = true;
     spice-autorandr.enable = true;

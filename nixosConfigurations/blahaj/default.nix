@@ -33,7 +33,6 @@
       "usbhid"
       "xhci_pci"
     ];
-    kernelModules = [ "kvm-amd" ];
     zfs.package = pkgs.zfs_unstable;
     kernelPackages = lib.mkForce pkgs.linuxPackages_xanmod_latest;
   };
@@ -49,10 +48,7 @@
   boot.kernelParams = [ "video=2560x1440@144" ];
 
   # OpenRGB
-  services.hardware.openrgb = {
-    enable = true;
-    motherboard = "amd";
-  };
+  services.hardware.openrgb.enable = true;
 
   # ollama
   services.ollama = {

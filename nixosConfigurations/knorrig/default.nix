@@ -24,5 +24,4 @@
     "usb_storage"
     "sd_mod"
   ];
-  boot.kernelModules = [ "kvm-amd" ];
 }
