@@ -23,11 +23,13 @@
         eksctl
         gnumake
         google-cloud-sdk
+        inputs.tf.packages.${pkgs.system}.default
         k9s
         kubernetes
         kubernetes-helm
         linkerd
         mysql
+        opentofu
         ssm-session-manager-plugin
         step-cli
       ]
