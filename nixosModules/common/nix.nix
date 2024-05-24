@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, ... }:
 {
   # Nix/nixpkgs                                                                                                                                                                                                                                                                          
   imports = [
