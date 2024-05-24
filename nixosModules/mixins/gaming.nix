@@ -12,7 +12,6 @@
     furmark # upalarnia pl
     jazz2 # I maintain this, ok?
     lunar-client # Minecraft with spyware
-    mangohud # temps etc
     pcsx2 # PS2 emu
     rpcs3 # ps3 emu
     steamguard-cli # Steam MFA
