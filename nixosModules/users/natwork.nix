@@ -23,7 +23,7 @@
         eksctl
         gnumake
         google-cloud-sdk
-        inputs.tf.packages.${pkgs.system}.default
+        inputs.tf.packages.${pkgs.system}."1.8.4"
         k9s
         kubernetes
         kubernetes-helm
