@@ -35,9 +35,13 @@
     dedicatedServer.openFirewall = true;
     extest.enable = true;
     extraCompatPackages = [ pkgs.proton-ge-bin ];
+    extraPackages = with pkgs; [
+      steamtinkerlaunch
+      protontricks
+      winetricks
+    ];
     gamescopeSession.enable = true;
     localNetworkGameTransfers.openFirewall = true;
-    package = pkgs.steam.override { extraPkgs = _pkgs: [ _pkgs.steamtinkerlaunch ]; };
     remotePlay.openFirewall = true;
   };
 
