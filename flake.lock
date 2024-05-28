@@ -1021,11 +1021,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1710624321,
-        "narHash": "sha256-2OXf4q2/pxBu+o3p2oC3OcYM7Q3GEcxohDU6tVQHR2k=",
+        "lastModified": 1716939548,
+        "narHash": "sha256-HmxvcXuErDbz5ml4CWI7oVlEFueZmy+0NC2WbItunEA=",
         "owner": "surfaceflinger",
         "repo": "xkomhotshot",
-        "rev": "589b59766cd70835cb91117366494819c95b682e",
+        "rev": "a8d817bd7b405e12978ccbad9948b0287a49a8e9",
         "type": "github"
       },
       "original": {
