@@ -4,10 +4,10 @@
   inputs = {
     agenix.inputs.nixpkgs.follows = "nixpkgs";
     agenix.url = "github:ryantm/agenix/main";
+    blueprint.inputs.nixpkgs.follows = "nixpkgs";
+    blueprint.url = "github:numtide/blueprint/main";
     conduit.inputs.nixpkgs.follows = "nixpkgs";
     conduit.url = "github:girlbossceo/conduwuit/main";
-    flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
-    flake-parts.url = "github:hercules-ci/flake-parts/main";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager/master";
     impermanence.url = "github:nix-community/impermanence/master";
@@ -34,23 +34,5 @@
     xkomhotshot.url = "github:surfaceflinger/xkomhotshot/master";
   };
 
-  outputs =
-    inputs@{ flake-parts, systems, ... }:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [
-        "aarch64-linux"
-        "riscv64-linux"
-        "x86_64-linux"
-      ];
-
-      imports = [
-        ./hmModules
-        ./nixosConfigurations
-        ./nixosModules
-        ./packages
-        inputs.treefmt-nix.flakeModule
-      ];
-
-      perSystem.treefmt.imports = [ ./treefmt.nix ];
-    };
+  outputs = inputs: inputs.blueprint { inherit inputs; };
 }
