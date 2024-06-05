@@ -25,6 +25,7 @@
       "image.jxl.enabled" = true;
       "layers.acceleration.force-enabled" = true;
       "media.ffmpeg.vaapi.enabled" = true;
+      "places.history.enabled" = false;
       "privacy.resistFingerprinting" = false;
       "toolkit.tabbox.switchByScrolling" = true;
     };
