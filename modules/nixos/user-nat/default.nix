@@ -59,5 +59,7 @@
         userEmail = "nat@nekopon.pl";
         userName = "nat";
       };
+
+      systemd.user.tmpfiles.rules = [ "D %h/Downloads 0700 - - -" ];
     };
 }
