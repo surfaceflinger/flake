@@ -6,6 +6,7 @@
     inputs.nixos-hardware.nixosModules.common-pc-laptop-acpi_call
     inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
     inputs.self.nixosModules.laptop
+    inputs.self.nixosModules.mixin-gaming
     inputs.self.nixosModules.mixin-ryzen
     inputs.self.nixosModules.mixin-tpm20
     inputs.self.nixosModules.mixin-virtualisation
