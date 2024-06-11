@@ -38,13 +38,11 @@
         "{762f9885-5a13-4abd-9c77-433dcd38b8fd}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/return-youtube-dislikes/latest.xpi";
         "{9063c2e9-e07c-4c2c-9646-cfe7ca8d0498}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/old-reddit-redirect/latest.xpi";
         "{a4c4eda4-fb84-4a84-b4a1-f7c1cbf2a1ad}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/refined-github-/latest.xpi";
-        "addon@darkreader.org".install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
         "addon@fastforward.team".install_url = "https://addons.mozilla.org/firefox/downloads/latest/fastforwardteam/latest.xpi";
         "{aecec67f-0d10-4fa7-b7c7-609a2db280cf}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/violentmonkey/latest.xpi";
         "{b5501fd1-7084-45c5-9aa6-567c2fcf5dc6}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/ruffle_rs/latest.xpi";
         "cliget@zaidabdulla.com".install_url = "https://addons.mozilla.org/firefox/downloads/latest/cliget/latest.xpi";
         "deArrow@ajay.app".install_url = "https://addons.mozilla.org/firefox/downloads/latest/dearrow/latest.xpi";
-        "firefox-extension@deepl.com".install_url = "https://addons.mozilla.org/firefox/downloads/latest/deepl-translate/latest.xpi";
         "idcac-pub@guus.ninja".install_url = "https://addons.mozilla.org/firefox/downloads/latest/istilldontcareaboutcookies/latest.xpi";
         "jid1-D7momAzRw417Ag@jetpack".install_url = "https://addons.mozilla.org/firefox/downloads/latest/wikiwand-wikipedia-modernized/latest.xpi";
         "sponsorBlocker@ajay.app".install_url = "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
