@@ -36,8 +36,7 @@
   };
   services.undervolt = {
     enable = true;
-    coreOffset = -90;
-    gpuOffset = -80;
-    uncoreOffset = -250;
+    coreOffset = -60;
+    uncoreOffset = -200;
   };
 }

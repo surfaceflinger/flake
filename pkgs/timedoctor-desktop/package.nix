@@ -55,7 +55,6 @@ appimageTools.wrapType2 rec {
   meta = with lib; {
     description = "Employee time tracking software (Time Doctor Classic)";
     homepage = "https://www.timedoctor.com";
-    license = licenses.unfree;
     platforms = [ "x86_64-linux" ];
     maintainers = with maintainers; [ surfaceflinger ];
   };
