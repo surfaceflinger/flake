@@ -16,7 +16,7 @@
   networking.hostName = "djungelskog";
   nixpkgs.hostPlatform = "x86_64-linux";
 
-  # Bootloader/Kernel/Modules
+  # bootloader/kernel/modules
   boot = {
     loader = {
       grub.enable = true;
@@ -34,10 +34,22 @@
     kernelModules = [ "kvm-intel" ];
   };
 
-  # Power management
+  # power management
   boot.kernelParams = [ "intel_pstate=passive" ];
   services.tlp.settings = {
     CPU_SCALING_GOVERNOR_ON_AC = "schedutil";
     CPU_SCALING_GOVERNOR_ON_BAT = "conservative";
+  };
+
+  # disable these fucking pgup/pgdown around arrow up - who came up with this?
+  services.keyd = {
+    enable = true;
+    keyboards."liteon" = {
+      ids = [ "0001:0001" ];
+      settings.main = {
+        pageup = "noop";
+        pagedown = "noop";
+      };
+    };
   };
 }
