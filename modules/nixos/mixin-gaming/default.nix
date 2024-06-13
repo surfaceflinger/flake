@@ -17,8 +17,8 @@
     steamguard-cli # Steam MFA
     (prismlauncher.override {
       jdks = [
-        temurin-bin-8
-        temurin-bin-21
+        jdk8
+        jdk21
       ];
     }) # Minecraft
   ];

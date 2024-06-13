@@ -11,7 +11,7 @@ in
     grub = {
       enable = lib.mkDefault (!hasEfi);
       efiSupport = lib.mkDefault false;
-      device = "nodev";
+      device = lib.mkDefault "nodev";
       fsIdentifier = "label";
     };
     systemd-boot = {

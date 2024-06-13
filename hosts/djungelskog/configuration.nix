@@ -4,6 +4,8 @@
     inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t440p
     inputs.self.nixosModules.laptop
+    inputs.self.nixosModules.mixin-gaming
+    inputs.self.nixosModules.mixin-mitigations-off
     inputs.self.nixosModules.mixin-tpm12
     inputs.self.nixosModules.user-nat
     inputs.self.nixosModules.user-natwork
@@ -16,6 +18,10 @@
 
   # Bootloader/Kernel/Modules
   boot = {
+    loader = {
+      grub.enable = true;
+      systemd-boot.enable = false;
+    };
     initrd.availableKernelModules = [
       "xhci_pci"
       "ehci_pci"
@@ -29,14 +35,9 @@
   };
 
   # Power management
-  boot.kernelParams = [ "intel_pstate=active" ];
+  boot.kernelParams = [ "intel_pstate=passive" ];
   services.tlp.settings = {
-    CPU_SCALING_GOVERNOR_ON_AC = "performance";
-    CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-  };
-  services.undervolt = {
-    enable = true;
-    coreOffset = -60;
-    uncoreOffset = -200;
+    CPU_SCALING_GOVERNOR_ON_AC = "schedutil";
+    CPU_SCALING_GOVERNOR_ON_BAT = "conservative";
   };
 }
