@@ -41,6 +41,64 @@
     CPU_SCALING_GOVERNOR_ON_BAT = "conservative";
   };
 
+  # thinkfan
+  services = {
+    thinkfan = {
+      enable = true;
+      levels = [
+        [
+          0
+          0
+          65
+        ]
+        [
+          1
+          65
+          75
+        ]
+        [
+          3
+          75
+          80
+        ]
+        [
+          7
+          80
+          90
+        ]
+        [
+          "level disengaged"
+          90
+          32767
+        ]
+      ];
+      sensors = [
+        {
+          query = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input";
+          type = "hwmon";
+        }
+        {
+          query = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp2_input";
+          type = "hwmon";
+        }
+        {
+          query = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp3_input";
+          type = "hwmon";
+        }
+        {
+          query = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp4_input";
+          type = "hwmon";
+        }
+        {
+          query = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp5_input";
+          type = "hwmon";
+        }
+      ];
+    };
+  };
+
+  services.ollama.enable = true;
+
   # disable these fucking pgup/pgdown around arrow up - who came up with this?
   services.keyd = {
     enable = true;
