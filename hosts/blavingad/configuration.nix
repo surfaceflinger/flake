@@ -46,8 +46,8 @@
       "94.16.120.239/22"
     ];
     routes = [
-      { routeConfig.Gateway = "fe80::1"; }
-      { routeConfig.Gateway = "94.16.120.1"; }
+      { Gateway = "fe80::1"; }
+      { Gateway = "94.16.120.1"; }
     ];
     # make the routes on this interface a dependency for network-online.target
     linkConfig.RequiredForOnline = "routable";
