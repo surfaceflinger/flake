@@ -1,4 +1,5 @@
 {
+  config,
   inputs,
   lib,
   pkgs,
@@ -16,6 +17,7 @@
     inputs.self.nixosModules.mixin-ryzen
     inputs.self.nixosModules.mixin-tpm20
     inputs.self.nixosModules.mixin-virtualisation
+    inputs.self.nixosModules.mixin-www
     inputs.self.nixosModules.user-nat
     ./media.nix
     ./storage.nix
@@ -63,9 +65,17 @@
   services.harmonia = {
     enable = true;
     settings = {
-      bind = "[::]:30909";
+      bind = "[::1]:30908";
     };
   };
+  services.caddy.virtualHosts.":30909".extraConfig = ''
+    encode zstd gzip {
+      match {
+        header Content-Type application/x-nix-archive
+      }
+    }
+    reverse_proxy ${config.services.harmonia.settings.bind}
+  '';
 
   # obs with gstreamer and vkcapture
   environment.systemPackages = [

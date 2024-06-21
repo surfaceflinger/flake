@@ -9,6 +9,7 @@
   imports = [
     "${modulesPath}/profiles/qemu-guest.nix"
     ./gotosocial.nix
+    inputs.self.nixosModules.mixin-www
     inputs.self.nixosModules.user-nat
     inputs.self.nixosModules.vps
     inputs.srvos.nixosModules.mixins-cloud-init
