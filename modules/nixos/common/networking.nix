@@ -11,6 +11,9 @@
     useNetworkd = lib.mkForce true;
   };
 
+  # Make firewall use nftables instead of iptables
+  networking.nftables.enable = true;
+
   # Enable DHCP on all physical ethernet interfaces
   systemd.network.networks."10-eth-dhcp" =
     lib.mkIf (!(config.services.cloud-init.enable && config.services.cloud-init.network.enable))
@@ -143,7 +146,6 @@
     "net.ipv4.tcp_rfc1337" = 1;
 
     # Packet source validation
-    "net.ipv4.conf.all.rp_filter" = 1;
     "net.ipv4.conf.default.rp_filter" = 1;
 
     # Disable accepting ICMP redirects
