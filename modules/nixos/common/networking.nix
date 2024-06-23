@@ -80,6 +80,7 @@
     enable = true;
     openFirewall = true;
     useRoutingFeatures = "both";
+    extraDaemonFlags = "--no-logs-no-support";
   };
 
   ## https://github.com/tailscale/tailscale/issues/8223
