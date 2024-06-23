@@ -19,12 +19,12 @@ in
       db_cache_capacity_mb = 1024;
       rocksdb_bottommost_compression = true;
 
-      # Compression
+      # compression
       brotli_compression = true;
       gzip_compression = true;
       zstd_compression = true;
 
-      # Misc
+      # misc
       allow_device_name_federation = true;
       allow_public_room_directory_over_federation = true;
       max_concurrent_requests = 1000;

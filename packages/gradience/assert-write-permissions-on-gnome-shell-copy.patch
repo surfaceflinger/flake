@@ -36,4 +36,4 @@ index 18e7890f..fc83eb3f 100644
 +            copy_function=copy_function
          )
  
-         # TODO: Allow user to use different name than "gradience-shell" (also, with default name, we should append "-light" suffix when generated from light preset)
+         # todo: allow user to use different name than "gradience-shell" (also, with default name, we should append "-light" suffix when generated from light preset)

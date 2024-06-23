@@ -28,7 +28,7 @@
         inputs.self.packages.${pkgs.system}.swift-backup
       ]
       ++ lib.optionals config.services.xserver.enable [
-        # Random desktop software
+        # random desktop software
         burpsuite
         diebahn
         fractal

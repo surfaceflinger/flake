@@ -21,7 +21,7 @@
   };
   networking.firewall.allowedTCPPorts = [ 9090 ];
 
-  # Allow both darkhttpd and minidlna to see media files.
+  # allow both darkhttpd and minidlna to see media files.
   systemd.tmpfiles.rules = [
     "d /vol/ikea 0755 nat root - -"
     "d /vol/ikea/Media 0755 nat root - -"

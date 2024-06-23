@@ -14,7 +14,7 @@
     BROWSER = "schizofox";
   };
 
-  # Debloat
+  # debloat
   environment.gnome.excludePackages =
     (with pkgs; [
       gnome-console
@@ -40,9 +40,9 @@
       yelp
     ]);
 
-  # Other software
+  # other software
   environment.systemPackages = with pkgs; [
-    # GNOME
+    # gnome
     ffmpegthumbnailer
     gnomeExtensions.appindicator
     gnomeExtensions.auto-move-windows
@@ -56,17 +56,17 @@
     gnome.gnome-tweaks
     ptyxis
 
-    # Theming
+    # theming
     adw-gtk3
     morewaita-icon-theme
 
-    # Tool to fix Mesa 23.0+ trolls
+    # tool to fix mesa 23.0+ trolls
     inputs.self.packages.${pkgs.system}.gpucache
 
-    # Fetch gravatar and install as ~/.face
+    # fetch gravatar and install as ~/.face
     inputs.self.packages.${pkgs.system}.gnome-gravatar
 
-    # The way Weather works in GNOME is terrible :(
+    # the way weather works in gnome is terrible :(
     inputs.self.packages.${pkgs.system}.gnome-weather-set
 
     # show dconf nicely
@@ -121,14 +121,14 @@
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
   programs.gamemode.enable = true;
 
-  # QT GNOME styling
+  # qt gnome styling
   qt = {
     enable = true;
     platformTheme = "gnome";
     style = "adwaita-dark";
   };
 
-  #  Dynamic triple/double buffering (v4)
+  #  dynamic triple/double buffering (v4)
   nixpkgs.overlays = [
     (_self: super: {
       gnome = super.gnome.overrideScope (

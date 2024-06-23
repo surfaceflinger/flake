@@ -1,9 +1,9 @@
 { pkgs, ... }:
 {
   boot.kernelParams = [
-    # Remove artificial penalties for split locks, which is useful for games run
-    # through Proton.
-    # https://www.phoronix.com/news/Linux-Splitlock-Hurts-Gaming
+    # remove artificial penalties for split locks, which is useful for games run
+    # through proton.
+    # https://www.phoronix.com/news/linux-splitlock-hurts-gaming
     "split_lock_detect=off"
   ];
 
@@ -23,13 +23,13 @@
     }) # Minecraft
   ];
 
-  # Gamescope
+  # gamescope
   programs.gamescope = {
     enable = true;
     capSysNice = true;
   };
 
-  # Steam
+  # steam
   programs.steam = {
     enable = true;
     dedicatedServer.openFirewall = true;
@@ -45,7 +45,7 @@
     remotePlay.openFirewall = true;
   };
 
-  # Controller rules
+  # controller rules
   hardware.steam-hardware.enable = true;
   services.udev.packages = with pkgs; [ game-devices-udev-rules ];
 }

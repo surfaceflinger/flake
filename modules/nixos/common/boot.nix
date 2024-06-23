@@ -3,9 +3,9 @@ let
   hasEfi = (config.fileSystems."/boot".fsType or "") == "vfat";
 in
 {
-  # Bootloader
+  # bootloader
   boot.loader = {
-    # The number of seconds for user intervention before the default boot option is selected.
+    # the number of seconds for user intervention before the default boot option is selected.
     timeout = lib.mkDefault 3;
     efi.canTouchEfiVariables = lib.mkForce false;
     grub = {
@@ -16,11 +16,11 @@ in
     };
     systemd-boot = {
       enable = lib.mkDefault hasEfi;
-      # The resolution of the console. A higher resolution displays more entries.
+      # the resolution of the console. a higher resolution displays more entries.
       consoleMode = "max";
     };
   };
 
-  # Enable all firmware
+  # enable all firmware
   hardware.enableAllFirmware = true;
 }

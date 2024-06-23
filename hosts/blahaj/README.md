@@ -1,6 +1,6 @@
-# Blahaj.
+# blahaj.
 
-## Create encrypted pool with stripe:
+## create encrypted pool with stripe:
 
 ```
 zpool create -f \
@@ -24,7 +24,7 @@ zpool create -f \
   /dev/disk/by-id/ata-CT250MX500SSD1_2141E5D95F83-part2 /dev/disk/by-id/ata-CT250MX500SSD1_2141E5D95F96
 ```
 
-## Create datasets which are going to persist directories.
+## create datasets which are going to persist directories.
 
 ```
 zfs create -o canmount=off -o mountpoint=/ blahaj/NixOS
@@ -39,6 +39,6 @@ zfs create -o canmount=on                  blahaj/NixOS/var/log
 zfs create -o canmount=on                  blahaj/NixOS/vol/Games
 ```
 
-## Permissions
+## permissions
 
 `systemd-tmpfiles` is used to declaratively enforce owners and permission bits. (`storage.nix` + `media.nix` use it.)

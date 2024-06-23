@@ -5,11 +5,11 @@
   ...
 }:
 {
-  # Other software
+  # other software
   environment.systemPackages =
     with pkgs;
     [
-      # CLI/TUI tools
+      # cli/tui tools
       _7zz
       abduco
       bat
@@ -34,7 +34,7 @@
       (writeScriptBin "jq" ''exec gojq "$@"'')
       yq
 
-      # System utilities
+      # system utilities
       bottom
       config.boot.kernelPackages.cpupower
       fastfetch
@@ -42,7 +42,7 @@
       psmisc
       usbutils
 
-      # Network
+      # network
       doggo
       goaccess
       inetutils
@@ -50,13 +50,13 @@
       rustscan
     ]
     ++ lib.optionals config.services.xserver.enable [
-      # Desktop software
+      # desktop software
       curtail
       gnome-obfuscate
       lorem
       warp
 
-      # Media
+      # media
       krita
       (mpv.override {
         scripts = [
@@ -67,7 +67,7 @@
       })
       yt-dlp
 
-      # System utilities
+      # system utilities
       glxinfo
       libva-utils
       (nvtopPackages.full.override { nvidia = false; })

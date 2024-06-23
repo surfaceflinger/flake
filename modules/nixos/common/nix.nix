@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  # Nix/nixpkgs                                                                                                                                                                                                                                                                          
+  # nix/nixpkgs
   imports = [
     inputs.lix-module.nixosModules.default
     inputs.srvos.nixosModules.mixins-nix-experimental

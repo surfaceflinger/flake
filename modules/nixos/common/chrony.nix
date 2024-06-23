@@ -13,7 +13,7 @@ _: {
     '';
   };
   networking.timeServers = [
-    # Sorted by TLDs to avoid
+    # sorted by tlds to avoid
     # using multiple servers
     # from the same provider
     "ntp.nanosrvr.cloud"

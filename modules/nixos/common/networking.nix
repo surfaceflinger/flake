@@ -5,25 +5,25 @@
   ...
 }:
 {
-  # Enable systemd-networkd instead of NixOS scripts
+  # enable systemd-networkd instead of nixos scripts
   networking = {
     useDHCP = lib.mkForce false;
     useNetworkd = lib.mkForce true;
   };
 
-  # Make firewall use nftables instead of iptables
+  # make firewall use nftables instead of iptables
   networking.nftables.enable = true;
 
-  # Enable DHCP on all physical ethernet interfaces
+  # enable dhcp on all physical ethernet interfaces
   systemd.network.networks."10-eth-dhcp" =
     lib.mkIf (!(config.services.cloud-init.enable && config.services.cloud-init.network.enable))
       {
-        # Match every ether type
+        # match every ether type
         matchConfig.Type = "ether";
-        # These are usually managed by VPNs, Hypervisors etc.
+        # these are usually managed by vpns, hypervisors etc.
         matchConfig.Driver = "!tun";
         matchConfig.Name = "!veth* !vnet*";
-        # Enable DHCP and routing
+        # enable dhcp and routing
         networkConfig = {
           DHCP = "yes";
           IPForward = "yes";
@@ -31,7 +31,7 @@
         };
       };
 
-  # Desktop networking
+  # desktop networking
   networking.networkmanager = {
     inherit (config.services.xserver) enable;
   };
@@ -40,7 +40,7 @@
   ) [ "/etc/NetworkManager/system-connections" ];
   hardware.usb-modeswitch.enable = config.networking.networkmanager.enable;
 
-  # mDNS
+  # mdns
   services.avahi = {
     inherit (config.services.xserver) enable;
     nssmdns4 = true;
@@ -50,7 +50,7 @@
     };
   };
 
-  # DNS
+  # dns
   services.resolved = {
     enable = true;
     llmnr = "false";
@@ -74,7 +74,7 @@
     '';
   };
 
-  # Tailscale
+  # tailscale
   networking.firewall.trustedInterfaces = [ config.services.tailscale.interfaceName ];
   services.tailscale = {
     enable = true;
@@ -97,7 +97,7 @@
   # kernel tuning
   boot.kernelModules = [ "tcp_bbr" ];
   boot.kernel.sysctl = {
-    # BBR (v1 or v3 depends on if we use stock or something fancier like xanmod)
+    # bbr (v1 or v3 depends on if we use stock or something fancier like xanmod)
     "net.ipv4.tcp_congestion_control" = lib.mkForce "bbr";
     "net.core.default_qdisc" = lib.mkForce "cake";
 
@@ -130,25 +130,25 @@
     "net.ipv4.tcp_keepalive_intvl" = 10;
     "net.ipv4.tcp_keepalive_probes" = 6;
 
-    # MTU probing
+    # mtu probing
     "net.ipv4.tcp_mtu_probing" = 1;
 
-    ## A martian packet is a one with a source address which is blatantly wrong
-    ## Recommended to keep a log of these to identify these suspicious packets
+    ## a martian packet is a one with a source address which is blatantly wrong
+    ## recommended to keep a log of these to identify these suspicious packets
     "net.ipv4.conf.all.log_martians" = 1;
     "net.ipv4.conf.default.log_martians" = 1;
 
-    # Prevent SYN flood attacks
+    # prevent syn flood attacks
     "net.ipv4.tcp_syncookies" = 1;
 
-    # Protect against time-wait assassination by dropping RST packets for sockets
+    # protect against time-wait assassination by dropping rst packets for sockets
     # in the time-wait state
     "net.ipv4.tcp_rfc1337" = 1;
 
-    # Packet source validation
+    # packet source validation
     "net.ipv4.conf.default.rp_filter" = 1;
 
-    # Disable accepting ICMP redirects
+    # disable accepting icmp redirects
     "net.ipv4.conf.all.accept_redirects" = 0;
     "net.ipv4.conf.default.accept_redirects" = 0;
     "net.ipv4.conf.all.secure_redirects" = 0;
@@ -156,33 +156,33 @@
     "net.ipv6.conf.all.accept_redirects" = 0;
     "net.ipv6.conf.default.accept_redirects" = 0;
 
-    # Disable ICMP redirect sending
+    # disable icmp redirect sending
     "net.ipv4.conf.all.send_redirects" = 0;
     "net.ipv4.conf.default.send_redirects" = 0;
 
-    # Ignore bogus ICMP error responses
+    # ignore bogus icmp error responses
     "net.ipv4.icmp_ignore_bogus_error_responses" = 1;
 
-    # Disable source routing
+    # disable source routing
     "net.ipv4.conf.all.accept_source_route" = 0;
     "net.ipv4.conf.default.accept_source_route" = 0;
     "net.ipv6.conf.all.accept_source_route" = 0;
     "net.ipv6.conf.default.accept_source_route" = 0;
 
-    # Disable accepting IPv6 router advertisements
+    # disable accepting ipv6 router advertisements
     "net.ipv6.conf.all.accept_ra" = 0;
     "net.ipv6.default.accept_ra" = 0;
 
-    # IPv6 privacy extensions
+    # ipv6 privacy extensions
     "net.ipv6.conf.all.use_tempaddr" = 2;
 
-    # Disable TCP SACK. SACK is commonly exploited and unnecessary for many
+    # disable tcp sack. sack is commonly exploited and unnecessary for many
     # circumstances so it should be disabled if you don't require it
     "net.ipv4.tcp_sack" = 0;
     "net.ipv4.tcp_dsack" = 0;
     "net.ipv4.tcp_fack" = 0;
 
-    # Avoid leaking system time with TCP timestamps
+    # avoid leaking system time with tcp timestamps
     "net.ipv4.tcp_timestamps" = 0;
   };
 }

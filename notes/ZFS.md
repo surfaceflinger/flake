@@ -1,6 +1,6 @@
-# Blahaj.
+# blahaj.
 
-## Create encrypted pool with stripe:
+## create encrypted pool with stripe:
 
 ```
 zpool create -f \
@@ -27,7 +27,7 @@ Once zpool is imported, every dataset that's marked as canmount=on and has set m
 
 Every `-O` attribute passed to `zpool create` is actually some `-o` setting for dataset. Setting them to zpool will make it so every dataset will have these by default. This includes encryption - zpool isn't encrypted, datasets are. (yeah, this leaks zpool structure)
 
-## Create datasets.
+## create datasets.
 
 ```
 zfs create -o canmount=off -o mountpoint=/ blahaj/NixOS
@@ -48,7 +48,7 @@ If you want to eg. create just `blahaj/NixOS/etc/nixos` without "container" data
 
 In my example it'll just inherit `mountpoint=/` and because it's a "slave" dataset - it'll transparently append `/etc` to the end.
 
-## Example result
+## example result
 
 `# zfs list`
 

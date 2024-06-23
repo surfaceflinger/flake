@@ -5,7 +5,7 @@
   ...
 }:
 #let
-#  isEphemereal = (config.fileSystems."/".fsType or "") == "tmpfs";
+#  isephemereal = (config.filesystems."/".fstype or "") == "tmpfs";
 #in
 {
   imports = [ inputs.impermanence.nixosModule ];

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Confirm user input
+# confirm user input
 confirm() {
   local prompt="$1"
   local answer

@@ -22,16 +22,16 @@
   # firmware updates
   services.fwupd.enable = true;
 
-  # Override srvos changes
+  # override srvos changes
   programs.vim.defaultEditor = false;
 
-  # Configure cloud-init (enabled where needed)
+  # configure cloud-init (enabled where needed)
   systemd.tmpfiles.rules = [ "R /var/lib/cloud" ];
   services.cloud-init.settings = {
     random_seed.file = "/dev/null";
   };
 
-  # Virtual memory
+  # virtual memory
   boot.kernel.sysctl = {
     "vm.dirty_background_bytes" = 134217728;
     "vm.dirty_bytes" = 268435456;
@@ -39,13 +39,13 @@
     "vm.vfs_cache_pressure" = 50;
   };
 
-  # Reliability, Availability and Serviceability
+  # reliability, availability and serviceability
   hardware.rasdaemon.enable = true;
   nixpkgs.overlays = [
     (_final: _prev: { inherit (inputs.self.packages.${_final.stdenv.system}) rasdaemon; })
   ];
 
-  # Configure home-manager
+  # configure home-manager
   home-manager.extraSpecialArgs.inputs = inputs; # forward the inputs
   home-manager.useGlobalPkgs = true; # don't create another instance of nixpkgs
   home-manager.useUserPackages = true; # install user packages directly to the user's profile

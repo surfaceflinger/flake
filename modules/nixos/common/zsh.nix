@@ -38,10 +38,10 @@
       unsetopt PROMPT_SP # Disable empty line before first prompt (BlackBox bug?)
       zstyle ':completion:*' menu select # select-style completions
 
-      # Setup prompt with git and awsume integration
+      # setup prompt with git and awsume integration
       autoload -Uz vcs_info
       precmd() {
-          # Setup colors
+          # setup colors
           local awsume_info
           local awsume_info_color="%F{153}"
           local userhost_color="%F{183}"
@@ -54,17 +54,17 @@
               prompt_symbol="😾"
           fi
 
-          # Setup awsume + vcs
+          # setup awsume + vcs
           if [[ -n "$AWSUME_PROFILE" ]]; then
               awsume_info="$awsume_info_color☁️  $AWSUME_PROFILE%f "
           fi
           zstyle ":vcs_info:git:*" formats "''${vcs_info_color}🌸 %b%f "
           vcs_info
 
-          # Setup prompt
+          # setup prompt
           local BASE="$userhost_color%n@%m %f[$dir_color%~%f] $vcs_info_msg_0_$awsume_info"
 
-          # Don't use colors/emojis on dumb terminals
+          # don't use colors/emojis on dumb terminals
           case $TERM in
           xterm*)
               PS1="$BASE$prompt_symbol ";;

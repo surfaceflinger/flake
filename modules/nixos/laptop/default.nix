@@ -10,7 +10,7 @@
   };
   services.thermald.enable = true;
 
-  # Personal preference on how logind should handle lid switch.
+  # personal preference on how logind should handle lid switch.
   services.logind = {
     lidSwitch = "suspend";
     lidSwitchDocked = "ignore";
