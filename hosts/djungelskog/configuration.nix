@@ -18,10 +18,6 @@
 
   # bootloader/kernel/modules
   boot = {
-    loader = {
-      grub.enable = true;
-      systemd-boot.enable = false;
-    };
     initrd.availableKernelModules = [
       "xhci_pci"
       "ehci_pci"

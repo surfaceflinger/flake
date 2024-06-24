@@ -45,7 +45,7 @@ _: {
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/FBE5-64E3";
+    device = "/dev/disk/by-partlabel/blahajEFI";
     fsType = "vfat";
   };
 
