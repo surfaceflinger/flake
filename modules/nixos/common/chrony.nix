@@ -5,17 +5,11 @@ _: {
     extraConfig = ''
       authselectmode prefer
       cmdport 0
-      dscp 46
-      leapsectz right/UTC
-      makestep 1.0 3
       minsources 3
       nocerttimecheck 1
     '';
   };
   networking.timeServers = [
-    # sorted by tlds to avoid
-    # using multiple servers
-    # from the same provider
     "ntp.nanosrvr.cloud"
     "ptbtime1.ptb.de"
     "www.masters-of-cloud.de"

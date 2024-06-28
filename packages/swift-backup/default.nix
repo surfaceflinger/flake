@@ -1,15 +1,10 @@
-{
-  writeShellApplication,
-  python-swiftclient,
-  rage,
-}:
-
-writeShellApplication {
+{ pkgs, ... }:
+pkgs.writeShellApplication {
   name = "swift-backup";
 
   runtimeInputs = [
-    python-swiftclient
-    rage
+    pkgs.swiftclient
+    pkgs.rage
   ];
 
   text = ''

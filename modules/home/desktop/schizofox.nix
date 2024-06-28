@@ -1,9 +1,4 @@
-{
-  lib,
-  inputs,
-  pkgs,
-  ...
-}:
+{ inputs, pkgs, ... }:
 {
   programs.schizofox = {
     enable = true;
@@ -18,7 +13,6 @@
       "browser.tabs.loadInBackground" = true;
       "browser.uidensity" = 0;
       "dom.event.clipboardevents.enabled" = true;
-      "dom.event.contextmenu.enabled" = true;
       "dom.webgpu.enabled" = true;
       "gnomeTheme.activeTabContrast" = true;
       "gnomeTheme.normalWidthTabs" = true;
@@ -31,7 +25,9 @@
     };
 
     extensions = {
-      defaultExtensions = lib.mkForce {
+      enableDefaultExtensions = false;
+      enableExtraExtensions = true;
+      extraExtensions = {
         "{1be309c5-3e4f-4b99-927d-bb500eb4fa88}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/augmented-steam/latest.xpi";
         "{446900e4-71c2-419f-a6a7-df9c091e268b}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
         "{74145f27-f039-47ce-a470-a662b129930a}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/clearurls/latest.xpi";
@@ -53,6 +49,7 @@
     };
 
     misc = {
+      contextMenu.enable = true;
       disableWebgl = false;
       displayBookmarksInToolbar = "always";
       drm.enable = true;

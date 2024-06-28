@@ -1,7 +1,6 @@
 {
   config,
   inputs,
-  lib,
   pkgs,
   ...
 }:
@@ -28,17 +27,13 @@
   nixpkgs.hostPlatform = "x86_64-linux";
 
   # bootloader/kernel/modules
-  boot = {
-    initrd.availableKernelModules = [
-      "ahci"
-      "nvme"
-      "sd_mod"
-      "usbhid"
-      "xhci_pci"
-    ];
-    zfs.package = pkgs.zfs_unstable;
-    kernelPackages = lib.mkForce pkgs.linuxPackages_xanmod_latest;
-  };
+  boot.initrd.availableKernelModules = [
+    "ahci"
+    "nvme"
+    "sd_mod"
+    "usbhid"
+    "xhci_pci"
+  ];
 
   # need this for correct gpu work (capped at 220w tdp but it can use 280w)
   # also undervolt

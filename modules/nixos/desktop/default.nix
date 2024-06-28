@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, ... }:
 {
   imports = [
     inputs.self.nixosModules.common
@@ -11,7 +11,4 @@
   ];
 
   time.timeZone = "Europe/Warsaw";
-  hardware.ledger.enable = true;
-  boot.kernelPackages = pkgs.linuxPackages;
-  boot.plymouth.enable = true;
 }

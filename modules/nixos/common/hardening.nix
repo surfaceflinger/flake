@@ -95,6 +95,9 @@ _: {
     # making it harder to influence slab cache layout
     "slab_nomerge"
 
+    # disable debugfs
+    "debugfs=off"
+
     # zeroing of memory during allocation and free time
     "init_on_alloc=1"
     "init_on_free=1"
@@ -128,10 +131,6 @@ _: {
 
     # whonix machine-id
     "systemd.machine_id=b08dfa6083e7567a1921a715000001fb"
-
-    # we're waiting for complete secure boot support in nixpkgs :)
-    # "lockdown=confidentiality";
-    # "module.sig_enforce=1";
   ];
 
   boot.blacklistedKernelModules = [

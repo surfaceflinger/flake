@@ -62,4 +62,6 @@
 
       systemd.user.tmpfiles.rules = [ "D %h/Downloads 0700 - - -" ];
     };
+
+  hardware.ledger.enable = true;
 }

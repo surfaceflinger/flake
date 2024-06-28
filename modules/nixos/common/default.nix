@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [
     inputs.home-manager.nixosModules.default
@@ -19,6 +19,9 @@
     ./zsh.nix
   ];
 
+  # use latest kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # firmware updates
   services.fwupd.enable = true;
 
@@ -29,14 +32,6 @@
   systemd.tmpfiles.rules = [ "R /var/lib/cloud" ];
   services.cloud-init.settings = {
     random_seed.file = "/dev/null";
-  };
-
-  # virtual memory
-  boot.kernel.sysctl = {
-    "vm.dirty_background_bytes" = 134217728;
-    "vm.dirty_bytes" = 268435456;
-    "vm.max_map_count" = 2147483642;
-    "vm.vfs_cache_pressure" = 50;
   };
 
   # reliability, availability and serviceability

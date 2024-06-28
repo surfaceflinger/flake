@@ -1,5 +1,5 @@
-{ fetchFromGitHub }:
-fetchFromGitHub {
+{ pkgs, ... }:
+pkgs.fetchFromGitHub {
   owner = "rafaelmardojai";
   repo = "firefox-gnome-theme";
   rev = "v115";

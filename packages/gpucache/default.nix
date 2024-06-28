@@ -1,6 +1,6 @@
-{ writeShellApplication }:
+{ pkgs, ... }:
 
-writeShellApplication {
+pkgs.writeShellApplication {
   name = "gpucache";
 
   text = ''
