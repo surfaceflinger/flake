@@ -141,7 +141,6 @@ with lib.hm.gvariant;
         "pip-on-top@rafostar.github.com"
         "quick-settings-avatar@d-go"
         "tailscale@joaophi.github.com"
-        "user-theme@gnome-shell-extensions.gcampax.github.com"
         "windowIsReady_Remover@nunofarruca@gmail.com"
       ];
       favorite-apps = [
@@ -193,10 +192,6 @@ with lib.hm.gvariant;
     "org/gnome/shell/extensions/caffeine" = {
       screen-blank = "always";
       show-notifications = false;
-    };
-
-    "org/gnome/shell/extensions/user-theme" = {
-      name = "gradience-shell";
     };
 
     "org/gnome/shell/extensions/quick-settings-avatar" = {

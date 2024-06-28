@@ -50,7 +50,6 @@
     gnomeExtensions.pip-on-top
     gnomeExtensions.tailscale-qs
     gnomeExtensions.user-avatar-in-quick-settings
-    gnomeExtensions.user-themes
     gnomeExtensions.window-is-ready-remover
     gnome.gnome-session
     gnome.gnome-tweaks
