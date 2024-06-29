@@ -59,9 +59,6 @@
     adw-gtk3
     morewaita-icon-theme
 
-    # tool to fix mesa 23.0+ trolls
-    inputs.self.packages.${pkgs.system}.gpucache
-
     # fetch gravatar and install as ~/.face
     inputs.self.packages.${pkgs.system}.gnome-gravatar
 

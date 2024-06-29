@@ -79,6 +79,10 @@ _: {
 
     # disable legacy tiocsti
     "dev.tty.legacy_tiocsti" = 0;
+
+    # oops/warns limit instead of panic
+    "kernel.oops_limit" = 100;
+    "kernel.warn_limit" = 100;
   };
 
   boot.kernelParams = [
@@ -113,11 +117,6 @@ _: {
     # target for rop attacks
     "vsyscall=none"
 
-    # sometimes certain kernel exploits will cause what is known as an "oops".
-    # this parameter will cause the kernel to panic on such oopses, thereby
-    # preventing those exploits
-    "oops=panic"
-
     # these parameters prevent information leaks during boot and must be used
     # in combination with the kernel.printk
     "quiet"
@@ -131,6 +130,9 @@ _: {
 
     # whonix machine-id
     "systemd.machine_id=b08dfa6083e7567a1921a715000001fb"
+
+    # disable direct writing to block devices if theyre mounted
+    "bdev_allow_write_mounted=0"
   ];
 
   boot.blacklistedKernelModules = [

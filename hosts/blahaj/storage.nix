@@ -4,16 +4,6 @@ _: {
 
   ephemereal = true;
 
-  # i use the same passphrase for all zpools so let's import all of them at once
-  # then execute zfs load-key -a and feed the passphrase to it with yes
-  # otherwise i have to type the same (quite long) thing multiple times.
-  #  boot.initrd.postdevicecommands = ''
-  #    zpool import -a
-  #    read -s -p "enter passphrase for zpools: " zfspassphrase
-  #    yes "$zfspassphrase" | zfs load-key -a
-  #    unset zfspassphrase
-  #  '';
-
   boot.zfs.extraPools = [
     "smolhaj"
     "ikea"

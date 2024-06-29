@@ -64,4 +64,5 @@
     };
 
   hardware.ledger.enable = true;
+  nix.settings.trusted-users = [ "nat" ];
 }

@@ -12,7 +12,6 @@
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.self.nixosModules.desktop
     inputs.self.nixosModules.mixin-gaming
-    inputs.self.nixosModules.mixin-iwlwifi
     inputs.self.nixosModules.mixin-ryzen
     inputs.self.nixosModules.mixin-tpm20
     inputs.self.nixosModules.mixin-virtualisation

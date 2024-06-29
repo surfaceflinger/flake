@@ -12,13 +12,10 @@
 
   environment.persistence."/persist".directories = [ "/var/cache/minidlna" ];
 
-  services.caddy = {
-    enable = true;
-    virtualHosts.":9090".extraConfig = ''
-      root * /vol/ikea/Media/Videos/
-      file_server browse
-    '';
-  };
+  services.caddy.virtualHosts.":9090".extraConfig = ''
+    root * /vol/ikea/Media/Videos/
+    file_server browse
+  '';
   networking.firewall.allowedTCPPorts = [ 9090 ];
 
   # allow both darkhttpd and minidlna to see media files.

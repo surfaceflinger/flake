@@ -14,16 +14,18 @@
       "audio"
       "libvirtd"
       "networkmanager"
+      "podman"
     ];
     packages =
       with pkgs;
       [
         awscli2
         awsume
+        buildah
+        e1s
         eksctl
         gnumake
         google-cloud-sdk
-        inputs.tf.packages.${pkgs.system}."1.8.4"
         k9s
         kubernetes
         kubernetes-helm
@@ -51,5 +53,11 @@
     };
 
   nix.settings.trusted-users = [ "natwork" ];
-  nixpkgs.config.permittedInsecurePackages = [ "timedoctor-desktop-3.12.16" ];
+
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+    autoPrune.enable = true;
+    dockerSocket.enable = true;
+  };
 }

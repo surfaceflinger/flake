@@ -2,11 +2,11 @@
 {
   imports = [
     inputs.home-manager.nixosModules.default
+    inputs.self.nixosModules.mixin-hardening
     ./agenix.nix
     ./boot.nix
     ./chrony.nix
     ./doas.nix
-    ./hardening.nix
     ./impermanence.nix
     ./nano.nix
     ./networking.nix
