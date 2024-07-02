@@ -5,15 +5,6 @@
   ...
 }:
 {
-  # enable systemd-networkd instead of nixos scripts
-  networking = {
-    useDHCP = lib.mkForce false;
-    useNetworkd = lib.mkForce true;
-  };
-
-  # make firewall use nftables instead of iptables
-  networking.nftables.enable = true;
-
   # enable dhcp on all physical ethernet interfaces
   systemd.network.networks."10-eth-dhcp" =
     lib.mkIf (!(config.services.cloud-init.enable && config.services.cloud-init.network.enable))
@@ -96,12 +87,7 @@
   };
 
   # kernel tuning
-  boot.kernelModules = [ "tcp_bbr" ];
   boot.kernel.sysctl = {
-    # bbr (v1 or v3 depends on if we use stock or something fancier like xanmod)
-    "net.ipv4.tcp_congestion_control" = lib.mkForce "bbr";
-    "net.core.default_qdisc" = lib.mkForce "cake";
-
     # nonlocal bind, helps some "race conditions" with services hosted on vpns etc.
     "net.ipv4.ip_nonlocal_bind" = 1;
     "net.ipv6.ip_nonlocal_bind" = 1;

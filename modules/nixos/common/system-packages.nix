@@ -12,17 +12,16 @@
       # cli/tui tools
       _7zz
       abduco
+      awsume
       bat
       deadnix
       eza
       file
       gojq
       ipgrep
-      libarchive
       nano
       ncdu
       nixpkgs-fmt
-      nix-tree
       ouch
       pv
       rage
@@ -37,8 +36,8 @@
       # system utilities
       bottom
       config.boot.kernelPackages.cpupower
-      fastfetch
       pciutils
+      pfetch-rs
       psmisc
       usbutils
 
@@ -51,10 +50,8 @@
     ]
     ++ lib.optionals config.services.xserver.enable [
       # desktop software
-      curtail
       gnome-obfuscate
       lorem
-      warp
 
       # media
       krita

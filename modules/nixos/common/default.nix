@@ -11,7 +11,6 @@
     ./nano.nix
     ./networking.nix
     ./nix.nix
-    ./openssh.nix
     ./regional.nix
     ./system-packages.nix
     ./zfs.nix
@@ -22,7 +21,7 @@
   # use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # firmware updates
+  # firmware/hardware updates and security status
   services.fwupd.enable = true;
 
   # override srvos changes
@@ -36,6 +35,9 @@
 
   # reliability, availability and serviceability
   hardware.rasdaemon.enable = true;
+
+  # openssh everywhere
+  services.openssh.enable = true;
 
   # configure home-manager
   home-manager.extraSpecialArgs.inputs = inputs; # forward the inputs

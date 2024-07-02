@@ -14,6 +14,6 @@
     systemd-boot.enable = lib.mkForce false;
   };
 
-  # enable all firmware
+  # install firmware for everything, force disabled for vms in other modules
   hardware.enableAllFirmware = true;
 }

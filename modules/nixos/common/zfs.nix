@@ -19,10 +19,7 @@
   '';
 
   services.zfs = {
-    autoScrub = {
-      enable = true;
-      interval = "*-*-10 02:00:00 Europe/Warsaw";
-    };
+    autoScrub.interval = "*-*-10 02:00:00 Europe/Warsaw";
     trim = {
       enable = true;
       interval = "weekly";

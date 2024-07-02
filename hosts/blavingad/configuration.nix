@@ -7,11 +7,11 @@
 }:
 {
   imports = [
-    "${modulesPath}/profiles/qemu-guest.nix"
     ./gotosocial.nix
+    inputs.self.nixosModules.mixin-vm
     inputs.self.nixosModules.mixin-www
+    inputs.self.nixosModules.server
     inputs.self.nixosModules.user-nat
-    inputs.self.nixosModules.vps
     inputs.srvos.nixosModules.mixins-cloud-init
     inputs.xkomhotshot.nixosModules.default
     ./matrix.nix
@@ -27,8 +27,6 @@
     "ata_piix"
     "sr_mod"
     "uhci_hcd"
-    "virtio_blk"
-    "virtio_pci"
   ];
 
   # base

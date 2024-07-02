@@ -12,11 +12,9 @@
   nix = {
     checkConfig = false;
     registry = {
-      nixpkgs.flake = inputs.nixpkgs;
       self.flake = inputs.self;
       tf.flake = inputs.tf;
     };
-    nixPath = [ "nixpkgs=flake:nixpkgs" ];
     gc = {
       automatic = true;
       dates = "weekly";
