@@ -21,15 +21,13 @@
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     nix-index-database.url = "github:nix-community/nix-index-database/main";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixpkgs.url = "github:NixOS/nixpkgs/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     schizofox.inputs.nixpkgs.follows = "nixpkgs";
     schizofox.url = "github:schizofox/schizofox/main";
     srvos.inputs.nixpkgs.follows = "nixpkgs";
     srvos.url = "github:nix-community/srvos/main";
     tf.inputs.nixpkgs.follows = "nixpkgs";
     tf.url = "github:vdesjardins/terraform-overlay/main";
-    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
-    treefmt-nix.url = "github:numtide/treefmt-nix/main";
     xkomhotshot.inputs.nixpkgs.follows = "nixpkgs";
     xkomhotshot.url = "github:surfaceflinger/xkomhotshot/master";
   };
