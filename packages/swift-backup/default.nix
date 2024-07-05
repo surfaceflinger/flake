@@ -3,12 +3,13 @@ pkgs.writeShellApplication {
   name = "swift-backup";
 
   runtimeInputs = [
-    pkgs.swiftclient
+    pkgs.mbuffer
     pkgs.rage
+    pkgs.swiftclient
   ];
 
   text = ''
     FILENAME="$(date +'%Y-%m-%d_%H-%M-%S').age"
-    rage -r "$AGE_PUBLIC_KEY" -R ${../../keys/nat.keys} -o - | swift upload --segment-size 1G -H "X-Delete-After: $EXPIRY" --object-name "$FILENAME" "$BUCKET" -
+    mbuffer -m 2048M | rage -R ${../../keys/nat.keys} -o - | mbuffer -m 2048M | swift upload --segment-size 1G -H "X-Delete-After: $EXPIRY" --object-name "$FILENAME" "$BUCKET" -
   '';
 }
