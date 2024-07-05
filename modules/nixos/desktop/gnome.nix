@@ -17,27 +17,27 @@
   # debloat
   environment.gnome.excludePackages =
     (with pkgs; [
-      gnome-console
-      gnome-photos
-      gnome-tour
-      gnome-user-docs
-      orca
-    ])
-    ++ (with pkgs.gnome; [
       baobab
       epiphany
       evince
+      gnome-console
+      gnome-disk-utility      
+      gnome-photos
+      gnome-system-monitor
+      gnome-themes-extra
+      gnome-tour
+      gnome-user-docs
+      orca
+      totem
+      yelp
+    ])
+    ++ (with pkgs.gnome; [
       gnome-clocks
-      gnome-disk-utility
       gnome-logs
       gnome-maps
       gnome-music
       gnome-shell-extensions
       gnome-software
-      gnome-system-monitor
-      gnome-themes-extra
-      totem
-      yelp
     ]);
 
   # other software
@@ -52,7 +52,7 @@
     gnomeExtensions.user-avatar-in-quick-settings
     gnomeExtensions.window-is-ready-remover
     gnome.gnome-session
-    gnome.gnome-tweaks
+    gnome-tweaks
     ptyxis
 
     # theming
