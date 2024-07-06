@@ -50,8 +50,10 @@
     ]
     ++ lib.optionals config.services.xserver.enable [
       # desktop software
+      buffer
       gnome-obfuscate
       lorem
+      papers
 
       # media
       krita
