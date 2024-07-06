@@ -1,14 +1,15 @@
 _:
 let
   browser = [ "Schizofox.desktop" ];
+  docs = [ "org.gnome.Papers.desktop" ];
   music = [ "io.bassi.Amberol.desktop" ];
   photos = [ "org.gnome.Loupe.desktop" ];
-  vids = [ "mpv.desktop" ];
   steam = [ "steam.desktop" ];
+  vids = [ "mpv.desktop" ];
 
   associations = {
+    # misc
     "application/json" = browser;
-    "application/pdf" = browser;
     "application/x-extension-htm" = browser;
     "application/x-extension-html" = browser;
     "application/x-extension-shtml" = browser;
@@ -21,9 +22,13 @@ let
     "x-scheme-handler/http" = browser;
     "x-scheme-handler/https" = browser;
     "x-scheme-handler/unknown" = browser;
-    "x-scheme-handler/tg" = [ "org.telegram.desktop.desktop" ];
-    "x-scheme-handler/steam" = steam;
+
+    # apps
+    "x-scheme-handler/discord" = [ "vesktop.desktop" ];
+    "x-scheme-handler/slack" = [ "slack.desktop" ];
     "x-scheme-handler/steamlink" = steam;
+    "x-scheme-handler/steam" = steam;
+    "x-scheme-handler/tg" = [ "org.telegram.desktop.desktop" ];
 
     # audio formats
     "audio/aac" = music;
@@ -54,6 +59,9 @@ let
     "video/x-matroska" = vids;
     "video/x-msvideo" = vids;
     "video/x-ms-wmv" = vids;
+
+    # docs
+    "application/pdf" = docs;
   };
 in
 {
