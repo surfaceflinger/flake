@@ -21,7 +21,7 @@
       epiphany
       evince
       gnome-console
-      gnome-disk-utility      
+      gnome-disk-utility
       gnome-photos
       gnome-system-monitor
       gnome-themes-extra

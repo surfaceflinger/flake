@@ -95,6 +95,10 @@ with lib.hm.gvariant;
       temperature-unit = "centigrade";
     };
 
+    "org/gnome/gitlab/cheywood/Buffer" = {
+      font-size = 10;
+    };
+
     "org/gnome/mutter" = {
       dynamic-workspaces = true;
       edge-tiling = true;

@@ -1,8 +1,11 @@
-{ config, inputs, lib, modulesPath, ... }:
 {
-  imports = [
-    "${modulesPath}/profiles/qemu-guest.nix"
-  ];
+  config,
+  lib,
+  modulesPath,
+  ...
+}:
+{
+  imports = [ "${modulesPath}/profiles/qemu-guest.nix" ];
 
   # vms don't need firmware unless for gpu passthrough
   hardware.enableAllFirmware = lib.mkForce false;

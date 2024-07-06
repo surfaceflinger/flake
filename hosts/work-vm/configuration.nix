@@ -1,8 +1,4 @@
-{
-  inputs,
-  modulesPath,
-  ...
-}:
+{ inputs, ... }:
 {
   imports = [
     inputs.self.nixosModules.desktop
