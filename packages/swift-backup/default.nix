@@ -10,6 +10,6 @@ pkgs.writeShellApplication {
 
   text = ''
     FILENAME="$(date +'%Y-%m-%d_%H-%M-%S').age"
-    mbuffer -m 2048M | rage -R ${../../keys/nat.keys} -o - | mbuffer -m 2048M | swift upload --segment-size 1G -H "X-Delete-After: $EXPIRY" --object-name "$FILENAME" "$BUCKET" -
+    mbuffer -m 512M | rage -R ${../../keys/nat.keys} -o - | mbuffer -m 512M | swift upload --segment-size 1G -H "X-Delete-After: $EXPIRY" --object-name "$FILENAME" "$BUCKET" -
   '';
 }
