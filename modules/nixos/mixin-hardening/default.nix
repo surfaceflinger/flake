@@ -99,9 +99,6 @@ _: {
     # making it harder to influence slab cache layout
     "slab_nomerge"
 
-    # disable debugfs
-    "debugfs=off"
-
     # zeroing of memory during allocation and free time
     "init_on_alloc=1"
     "init_on_free=1"
