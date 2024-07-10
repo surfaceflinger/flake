@@ -10,6 +10,7 @@
   nixpkgs.config.allowUnfree = true;
 
   nix = {
+    channel.enable = false;
     checkConfig = false;
     registry = {
       self.flake = inputs.self;
