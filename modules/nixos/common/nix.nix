@@ -23,6 +23,7 @@
     };
     optimise.automatic = true;
     settings = {
+      nix-path = "nixpkgs=flake:nixpkgs";
       extra-substituters = [
         "https://cache.lix.systems"
         "https://nix-community.cachix.org"
