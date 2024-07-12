@@ -1,11 +1,11 @@
 { pkgs, ... }:
 {
-  boot.kernelParams = [
+  boot.kernel.sysctl = {
     # remove artificial penalties for split locks, which is useful for games run
     # through proton.
     # https://www.phoronix.com/news/linux-splitlock-hurts-gaming
-    "split_lock_detect=off"
-  ];
+    "kernel.split_lock_mitigate" = 0;
+  };
 
   # packs
   environment.systemPackages = with pkgs; [

@@ -8,13 +8,13 @@
     ./chrony.nix
     ./doas.nix
     ./impermanence.nix
+    ./memory.nix
     ./nano.nix
     ./networking.nix
     ./nix.nix
     ./regional.nix
     ./system-packages.nix
     ./zfs.nix
-    ./zram.nix
     ./zsh.nix
   ];
 
