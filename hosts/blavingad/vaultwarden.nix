@@ -19,8 +19,7 @@
       PUSH_ENABLED = true;
       SMTP_HOST = "smtp.postmarkapp.com";
       SMTP_FROM = "root@vault.nekopon.pl";
-      SMTP_SECURITY = "starttls";
-      SMTP_PORT = 587;
+      EXPERIMENTAL_CLIENT_FEATURE_FLAGS = "autofill-overlay,autofill-v2,browser-fileless-import,fido2-vault-credentials";
     };
   };
 

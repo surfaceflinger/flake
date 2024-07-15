@@ -16,18 +16,10 @@ in
       inherit server_name;
       # rocksdb
       database_backend = "rocksdb";
-      db_cache_capacity_mb = 1024;
       rocksdb_bottommost_compression = true;
 
-      # compression
-      brotli_compression = true;
-      gzip_compression = true;
-      zstd_compression = true;
-
       # misc
-      allow_device_name_federation = true;
       allow_public_room_directory_over_federation = true;
-      max_concurrent_requests = 1000;
       new_user_displayname_suffix = "";
       sentry = true;
 

@@ -11,9 +11,7 @@ in
       inherit host port account-domain;
       bind-address = "[::1]";
       db-type = "sqlite";
-      media-image-max-size = "20MiB";
-      media-video-max-size = "80MiB";
-      advanced-sender-multiplier = 4;
+      instance-inject-mastodon-version = true;
     };
   };
 
