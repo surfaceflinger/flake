@@ -1,27 +1,41 @@
 { inputs, pkgs, ... }:
 {
+  imports = [ inputs.schizofox.homeManagerModule ];
+
+  home.sessionVariables.BROWSER = "schizofox";
+
   programs.schizofox = {
     enable = true;
+    package = pkgs.firefox-esr-128-unwrapped;
 
-    security.userAgent = "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0";
+    security.userAgent = "Mozilla/5.0 (Windows NT 10.0; rv:128.0) Gecko/20100101 Firefox/128.0";
 
     settings = {
+      # schizofox overrides
       "browser.download.useDownloadDir" = true;
+      "browser.uidensity" = 0;
+      "dom.event.clipboardevents.enabled" = true;
+      "privacy.resistFingerprinting" = false;
+
+      # mine
       "browser.search.context.loadInBackground" = true;
+      "browser.tabs.firefox-view" = false;
       "browser.tabs.loadBookmarksInBackground" = true;
       "browser.tabs.loadDivertedInBackground" = false;
       "browser.tabs.loadInBackground" = true;
-      "browser.uidensity" = 0;
-      "dom.event.clipboardevents.enabled" = true;
-      "dom.webgpu.enabled" = true;
+      "dom.private-attribution.submission.enabled" = false;
+      "places.history.enabled" = false;
+      "toolkit.tabbox.switchByScrolling" = true;
+
+      # mine - gnome theme
       "gnomeTheme.activeTabContrast" = true;
+      "gnomeTheme.hideWebrtcIndicator" = true;
       "gnomeTheme.normalWidthTabs" = true;
-      "image.jxl.enabled" = true;
+      "svg.context-properties.content.enabled" = true;
+
+      # mine - gpu
       "layers.acceleration.force-enabled" = true;
       "media.ffmpeg.vaapi.enabled" = true;
-      "places.history.enabled" = false;
-      "privacy.resistFingerprinting" = false;
-      "toolkit.tabbox.switchByScrolling" = true;
     };
 
     extensions = {
