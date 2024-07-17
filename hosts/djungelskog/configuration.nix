@@ -4,6 +4,7 @@
     inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t440p
     inputs.self.nixosModules.laptop
+    inputs.self.nixosModules.mixin-bdprochot
     inputs.self.nixosModules.mixin-gaming
     inputs.self.nixosModules.mixin-mitigations-off
     inputs.self.nixosModules.mixin-tpm12
