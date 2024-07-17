@@ -26,6 +26,7 @@
         eksctl
         gnumake
         google-cloud-sdk
+        inputs.cfn-changeset-viewer.packages.${pkgs.system}.default
         k9s
         kubernetes
         kubernetes-helm
