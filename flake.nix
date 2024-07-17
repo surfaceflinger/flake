@@ -6,6 +6,8 @@
     agenix.url = "github:ryantm/agenix/main";
     blueprint.inputs.nixpkgs.follows = "nixpkgs";
     blueprint.url = "github:numtide/blueprint/main";
+    cfn-changeset-viewer.inputs.nixpkgs.follows = "nixpkgs";
+    cfn-changeset-viewer.url = "github:surfaceflinger/cfn-changeset-viewer/flake-parts";
     conduit.inputs.nixpkgs.follows = "nixpkgs";
     conduit.url = "github:girlbossceo/conduwuit/main";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
