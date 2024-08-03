@@ -16,8 +16,9 @@
         matchConfig.Name = "!veth* !vnet*";
         # enable dhcp and routing
         networkConfig = {
-          DHCP = "yes";
-          IPForward = "yes";
+          DHCP = true;
+          IPv4Forwarding = true;
+          IPv6Forwarding = true;
           IPv6PrivacyExtensions = "kernel";
         };
       };
