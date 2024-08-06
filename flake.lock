@@ -183,11 +183,11 @@
         "rocksdb": "rocksdb"
       },
       "locked": {
-        "lastModified": 1722519447,
-        "narHash": "sha256-oIR556FykCPo1MvN9z8/B+2bpnkWPMQraAHLDuvo3Ag=",
+        "lastModified": 1722885820,
+        "narHash": "sha256-qD0kFyQx/egwSuUtfg5VdLcgD0XWIUEHWVljb66cAkw=",
         "owner": "girlbossceo",
         "repo": "conduwuit",
-        "rev": "fe0969e7ca89b9ddd7d64349c13b5b557e500a4d",
+        "rev": "69b4ec81b60f6b9b87b5a1161cd0fca0a26e9f76",
         "type": "github"
       },
       "original": {
@@ -781,11 +781,11 @@
     "mutter": {
       "flake": false,
       "locked": {
-        "lastModified": 1720426586,
-        "narHash": "sha256-nz1Enw1NjxLEF3JUG0qknJgf4328W/VvdMjJmoOEMYs=",
+        "lastModified": 1722924508,
+        "narHash": "sha256-C2VfW3ThPEZ37YkX7ejlyumLnWa9oij333d5c4yfZxc=",
         "ref": "triple-buffering-v4-46",
-        "rev": "0d46de978d3dccc3784ba1902cbd9dada61d8a86",
-        "revCount": 31956,
+        "rev": "29a72bfb0bdb060d91196c57dc1940e5049858ed",
+        "revCount": 31966,
         "type": "git",
         "url": "https://gitlab.gnome.org/Community/Ubuntu/mutter.git"
       },
@@ -872,11 +872,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1722136042,
-        "narHash": "sha256-x3FmT4QSyK28itMiR5zfYhUrG5nY+2dv+AIcKfmSp5A=",
+        "lastModified": 1722740924,
+        "narHash": "sha256-UQPgA5d8azLZuDHZMPmvDszhuKF1Ek89SrTRtqsQ4Ss=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "c0ca47e8523b578464014961059999d8eddd4aae",
+        "rev": "97ca0a0fca0391de835f57e44f369a283e37890f",
         "type": "github"
       },
       "original": {
@@ -1115,11 +1115,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1722640603,
-        "narHash": "sha256-TcXjLVNd3VeH1qKPH335Tc4RbFDbZQX+d7rqnDUoRaY=",
+        "lastModified": 1722813957,
+        "narHash": "sha256-IAoYyYnED7P8zrBFMnmp7ydaJfwTnwcnqxUElC1I26Y=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "81610abc161d4021b29199aa464d6a1a521e0cc9",
+        "rev": "cb9a96f23c491c081b38eab96d22fa958043c9fa",
         "type": "github"
       },
       "original": {
@@ -1246,11 +1246,11 @@
         "systems": "systems_5"
       },
       "locked": {
-        "lastModified": 1719058240,
-        "narHash": "sha256-pprpeDB/mvINS5m5FIOq/1I0xpBvO8l7FyWNmmO0Ir0=",
+        "lastModified": 1722689807,
+        "narHash": "sha256-8YZ2T0o2bcSaXmEbuxIhbb7u4MpVSU7BGdgPpLy6RNk=",
         "owner": "schizofox",
         "repo": "schizofox",
-        "rev": "becff9b92a28c3cd6e6a215da7f5f56883d3a304",
+        "rev": "cd6fbdda984644176ad45bfb4ecfb61fd190b95d",
         "type": "github"
       },
       "original": {
