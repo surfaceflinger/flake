@@ -163,7 +163,7 @@ with lib.hm.gvariant;
         "code.desktop"
         "io.gitlab.news_flash.NewsFlash.desktop"
         "org.prismlauncher.PrismLauncher.desktop"
-        "lunar-client.desktop"
+        "lunarclient.desktop"
         "steam.desktop"
         "com.saivert.pwvucontrol.desktop"
         "com.github.wwmm.easyeffects.desktop"
