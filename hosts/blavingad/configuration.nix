@@ -47,6 +47,8 @@
       { Gateway = "fe80::1"; }
       { Gateway = "94.16.120.1"; }
     ];
+    # lldp doesn't work on e1000
+    networkConfig.LLDP = false;
     # make the routes on this interface a dependency for network-online.target
     linkConfig.RequiredForOnline = "routable";
   };
