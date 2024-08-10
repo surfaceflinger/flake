@@ -6,9 +6,6 @@
 
   programs.schizofox = {
     enable = true;
-    package = pkgs.firefox-esr-128-unwrapped;
-
-    security.userAgent = "Mozilla/5.0 (Windows NT 10.0; rv:128.0) Gecko/20100101 Firefox/128.0";
 
     settings = {
       # schizofox overrides
@@ -23,7 +20,6 @@
       "browser.tabs.loadBookmarksInBackground" = true;
       "browser.tabs.loadDivertedInBackground" = false;
       "browser.tabs.loadInBackground" = true;
-      "dom.private-attribution.submission.enabled" = false;
       "places.history.enabled" = false;
       "toolkit.tabbox.switchByScrolling" = true;
 
@@ -71,8 +67,7 @@
     };
 
     search = {
-      defaultSearchEngine = "Searx";
-      searxUrl = "https://searx.be";
+      defaultSearchEngine = "Googol";
       addEngines = [
         {
           Name = "Googol";
