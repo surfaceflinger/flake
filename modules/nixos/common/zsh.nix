@@ -19,11 +19,12 @@
       awsume = ". ${pkgs.awsume}/bin/awsume";
       cat = "${pkgs.bat}/bin/bat";
       grep = "${pkgs.ripgrep}/bin/rg";
-      ls = "${pkgs.eza}/bin/eza --color=auto --group-directories-first --classify";
-      lst = "${ls} --tree";
       la = "${ls} --all";
       ll = "${ls} --all --long --header --group";
       llt = "${ll} --tree";
+      ls = "${pkgs.eza}/bin/eza --color=auto --group-directories-first --classify";
+      lst = "${ls} --tree";
+      sshi = "${pkgs.openssh}/bin/ssh -o IdentitiesOnly=yes";
       tree = "${ls} --tree";
     };
     shellInit = ''
