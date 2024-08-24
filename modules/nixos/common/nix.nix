@@ -2,6 +2,7 @@
 {
   # nix/nixpkgs
   imports = [
+    inputs.lix.nixosModules.lixFromNixpkgs
     inputs.srvos.nixosModules.mixins-nix-experimental
     inputs.srvos.nixosModules.mixins-trusted-nix-caches
   ];
