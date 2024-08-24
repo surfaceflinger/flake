@@ -16,6 +16,7 @@
   config = lib.mkIf config.ephemereal {
     fileSystems."/persist".neededForBoot = true;
     environment.persistence."/persist" = {
+      enableWarnings = false;
       hideMounts = true;
     };
   };
