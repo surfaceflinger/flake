@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 {
   # nix/nixpkgs
   imports = [
@@ -12,6 +12,7 @@
   nix = {
     channel.enable = false;
     checkConfig = false;
+    package = pkgs.nixVersions.stable;
     registry = {
       self.flake = inputs.self;
       tf.flake = inputs.tf;
