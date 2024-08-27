@@ -13,30 +13,27 @@
   };
 
   # debloat
-  environment.gnome.excludePackages =
-    (with pkgs; [
-      baobab
-      epiphany
-      evince
-      gnome-console
-      gnome-disk-utility
-      gnome-photos
-      gnome-system-monitor
-      gnome-themes-extra
-      gnome-tour
-      gnome-user-docs
-      orca
-      totem
-      yelp
-    ])
-    ++ (with pkgs.gnome; [
-      gnome-clocks
-      gnome-logs
-      gnome-maps
-      gnome-music
-      gnome-shell-extensions
-      gnome-software
-    ]);
+  environment.gnome.excludePackages = with pkgs; [
+    baobab
+    epiphany
+    evince
+    gnome-clocks
+    gnome-console
+    gnome-disk-utility
+    gnome-logs
+    gnome-maps
+    gnome-music
+    gnome-photos
+    gnome-shell-extensions
+    gnome-software
+    gnome-system-monitor
+    gnome-themes-extra
+    gnome-tour
+    gnome-user-docs
+    orca
+    totem
+    yelp
+  ];
 
   # other software
   environment.systemPackages = with pkgs; [
