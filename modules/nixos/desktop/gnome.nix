@@ -46,7 +46,7 @@
     gnomeExtensions.tailscale-qs
     gnomeExtensions.user-avatar-in-quick-settings
     gnomeExtensions.window-is-ready-remover
-    gnome.gnome-session
+    gnome-session
     gnome-tweaks
     ptyxis
 
@@ -109,7 +109,7 @@
   };
 
   services.power-profiles-daemon.enable = false;
-  services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+  services.udev.packages = with pkgs; [ gnome-settings-daemon ];
   programs.gamemode.enable = true;
 
   # qt gnome styling
