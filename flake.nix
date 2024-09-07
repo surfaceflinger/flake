@@ -15,8 +15,6 @@
     impermanence.url = "github:nix-community/impermanence/master";
     lix.inputs.nixpkgs.follows = "nixpkgs";
     lix.url = "git+https://git.lix.systems/lix-project/nixos-module.git?ref=main";
-    mutter.flake = false;
-    mutter.url = "git+https://gitlab.gnome.org/Community/Ubuntu/mutter.git?ref=triple-buffering-v4-46";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     nix-index-database.url = "github:nix-community/nix-index-database/main";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";

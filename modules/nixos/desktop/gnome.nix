@@ -118,13 +118,4 @@
     platformTheme = "gnome";
     style = "adwaita-dark";
   };
-
-  #  dynamic triple/double buffering (v4)
-  nixpkgs.overlays = [
-    (_self: super: {
-      gnome = super.gnome.overrideScope (
-        _self: gsuper: { mutter = gsuper.mutter.overrideAttrs { src = inputs.mutter; }; }
-      );
-    })
-  ];
 }
