@@ -1,36 +1,42 @@
 {
-  config,
   inputs,
-  pkgs,
   ...
 }:
 let
   server_name = "nekopon.pl";
   matrix_hostname = "matrix.${server_name}";
+  address = "::1";
+  port = 6167;
 in
 {
-  services.matrix-conduit = {
+  imports = [ inputs.grapevine.nixosModules.default ];
+
+  services.grapevine = {
     enable = true;
-    package = inputs.conduit.packages.${pkgs.system}.default;
-    settings.global = {
+    settings = {
       inherit server_name;
-      # rocksdb
-      database_backend = "rocksdb";
-      rocksdb_bottommost_compression = true;
+      conduit_compat = true;
+
+      # database
+      database.backend = "rocksdb";
+
+      # networking
+      federation.max_concurrent_requests = 10000;
+      max_request_size = 52428800;
+      listen = [
+        {
+          inherit address port;
+          type = "tcp";
+        }
+      ];
+      server_discovery = {
+        client.base_url = "https://${matrix_hostname}";
+        server.authority = "${matrix_hostname}:443";
+      };
 
       # misc
-      allow_public_room_directory_over_federation = true;
-      new_user_displayname_suffix = "";
-      sentry = true;
-
-      trusted_servers = [
-        "grapheneos.org"
-        "matrix.org"
-        "monero.social"
-        "nerdsin.space"
-        "nixos.dev"
-        "nixos.org"
-      ];
+      advertise_buggy_sliding_sync = true;
+      allow_registration = false;
     };
   };
 
@@ -43,6 +49,6 @@ in
 
   services.caddy.virtualHosts."${matrix_hostname}".extraConfig = ''
     redir / https://${server_name}
-    reverse_proxy [::1]:${toString config.services.matrix-conduit.settings.global.port}
+    reverse_proxy [${address}]:${toString port}
   '';
 }

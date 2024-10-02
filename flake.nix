@@ -8,8 +8,8 @@
     blueprint.url = "github:numtide/blueprint/main";
     cfn-changeset-viewer.inputs.nixpkgs.follows = "nixpkgs";
     cfn-changeset-viewer.url = "github:surfaceflinger/cfn-changeset-viewer/flake-parts";
-    conduit.inputs.nixpkgs.follows = "nixpkgs";
-    conduit.url = "github:girlbossceo/conduwuit/main";
+    grapevine.inputs.nixpkgs.follows = "nixpkgs";
+    grapevine.url = "git+https://gitlab.computer.surgery/matrix/grapevine.git?ref=main";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager/master";
     impermanence.url = "github:nix-community/impermanence/master";
