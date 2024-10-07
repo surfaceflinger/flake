@@ -27,6 +27,7 @@
         gnumake
         google-cloud-sdk
         inputs.cfn-changeset-viewer.packages.${pkgs.system}.default
+        inputs.tf.packages.${pkgs.system}."1.5.5"
         k9s
         kubernetes
         kubernetes-helm
