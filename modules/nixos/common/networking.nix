@@ -91,8 +91,8 @@
   # kernel tuning
   boot.kernel.sysctl = {
     # bbr + CAKE
-    "net.core.default_qdisc" = "cake";
-    "net.ipv4.tcp_congestion_control" = "bbr";
+    "net.core.default_qdisc" = lib.mkForce "cake";
+    "net.ipv4.tcp_congestion_control" = lib.mkForce "bbr";
 
     # nonlocal bind, helps some "race conditions" with services hosted on vpns etc.
     "net.ipv4.ip_nonlocal_bind" = 1;
