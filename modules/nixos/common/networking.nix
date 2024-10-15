@@ -26,6 +26,7 @@
   # desktop networking
   networking.networkmanager = {
     inherit (config.services.xserver) enable;
+    wifi.backend = "iwd";
   };
   environment.persistence."/persist".directories = lib.mkIf (
     config.networking.networkmanager.enable && config.ephemereal
@@ -89,6 +90,10 @@
 
   # kernel tuning
   boot.kernel.sysctl = {
+    # bbr + CAKE
+    "net.core.default_qdisc" = "cake";
+    "net.ipv4.tcp_congestion_control" = "bbr";
+
     # nonlocal bind, helps some "race conditions" with services hosted on vpns etc.
     "net.ipv4.ip_nonlocal_bind" = 1;
     "net.ipv6.ip_nonlocal_bind" = 1;
