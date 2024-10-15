@@ -2,6 +2,7 @@
   config,
   inputs,
   lib,
+  perSystem,
   pkgs,
   ...
 }:
@@ -24,8 +25,8 @@
     packages =
       with pkgs;
       [
-        inputs.agenix.packages.${pkgs.system}.default
-        inputs.self.packages.${pkgs.system}.swift-backup
+        perSystem.agenix.default
+        perSystem.self.swift-backup
       ]
       ++ lib.optionals config.services.xserver.enable [
         # random desktop software

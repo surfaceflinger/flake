@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  perSystem,
+  pkgs,
+  ...
+}:
 {
   imports = [
     inputs.home-manager.nixosModules.default
@@ -41,6 +46,7 @@
 
   # configure home-manager
   home-manager.extraSpecialArgs.inputs = inputs; # forward the inputs
+  home-manager.extraSpecialArgs.perSystem = perSystem; # forward blueprint's perSystem
   home-manager.useGlobalPkgs = true; # don't create another instance of nixpkgs
   home-manager.useUserPackages = true; # install user packages directly to the user's profile
 

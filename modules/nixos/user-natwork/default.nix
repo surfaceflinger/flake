@@ -1,8 +1,9 @@
 {
   config,
   inputs,
-  pkgs,
   lib,
+  perSystem,
+  pkgs,
   ...
 }:
 {
@@ -26,14 +27,14 @@
         eksctl
         gnumake
         google-cloud-sdk
-        inputs.cfn-changeset-viewer.packages.${pkgs.system}.default
-        inputs.tf.packages.${pkgs.system}."1.5.5"
         k9s
         kubernetes
         kubernetes-helm
         linkerd
         mysql
         opentofu
+        perSystem.cfn-changeset-viewer.default
+        perSystem.tf."1.5.5"
         ssm-session-manager-plugin
         step-cli
       ]
@@ -41,7 +42,7 @@
         beekeeper-studio
         bitwarden
         freerdp
-        inputs.self.packages.${pkgs.system}.timedoctor-desktop
+        perSystem.self.timedoctor-desktop
         slack
       ];
   };

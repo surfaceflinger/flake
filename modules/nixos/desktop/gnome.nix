@@ -1,4 +1,8 @@
-{ inputs, pkgs, ... }:
+{
+  perSystem,
+  pkgs,
+  ...
+}:
 {
   services.xserver = {
     enable = true;
@@ -55,10 +59,10 @@
     morewaita-icon-theme
 
     # fetch gravatar and install as ~/.face
-    inputs.self.packages.${pkgs.system}.gnome-gravatar
+    perSystem.self.gnome-gravatar
 
     # the way weather works in gnome is terrible :(
-    inputs.self.packages.${pkgs.system}.gnome-weather-set
+    perSystem.self.gnome-weather-set
 
     # show dconf nicely
     (pkgs.writeScriptBin "dconf-dump" ''exec dconf dump / | bat -l toml'')

@@ -1,4 +1,8 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  perSystem,
+  ...
+}:
 {
   imports = [ inputs.schizofox.homeManagerModule ];
 
@@ -104,10 +108,10 @@
       defaultUserChrome.enable = false;
       defaultUserContent.enable = false;
       extraUserContent = ''
-        @import "${inputs.self.packages.${pkgs.system}.firefox-gnome-theme}/userContent.css";
+        @import "${perSystem.self.firefox-gnome-theme}/userContent.css";
       '';
       extraUserChrome = ''
-        @import "${inputs.self.packages.${pkgs.system}.firefox-gnome-theme}/userChrome.css";
+        @import "${perSystem.self.firefox-gnome-theme}/userChrome.css";
       '';
     };
   };
