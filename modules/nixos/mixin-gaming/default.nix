@@ -37,11 +37,11 @@
     extraCompatPackages = [ pkgs.proton-ge-bin ];
     extraPackages = with pkgs; [
       steamtinkerlaunch
-      protontricks
       winetricks
     ];
     gamescopeSession.enable = true;
     localNetworkGameTransfers.openFirewall = true;
+    protontricks.enable = true;
     remotePlay.openFirewall = true;
   };
 
