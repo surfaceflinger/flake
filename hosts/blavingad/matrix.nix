@@ -21,8 +21,11 @@ in
       database.backend = "rocksdb";
 
       # networking
-      federation.max_concurrent_requests = 10000;
       max_request_size = 52428800;
+      federation = {
+        max_concurrent_requests = 10000;
+        self_test = false;
+      };
       listen = [
         {
           inherit address port;
