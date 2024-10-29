@@ -20,7 +20,7 @@
       "wheel"
     ];
     openssh.authorizedKeys.keys = lib.strings.splitString "\n" (
-      builtins.readFile ../../../keys/nat.keys
+      builtins.readFile ../../../keys/nat.ssh.keys
     );
     packages =
       with pkgs;
