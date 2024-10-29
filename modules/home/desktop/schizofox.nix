@@ -54,7 +54,7 @@
         "{b5501fd1-7084-45c5-9aa6-567c2fcf5dc6}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/ruffle_rs/latest.xpi";
         "cliget@zaidabdulla.com".install_url = "https://addons.mozilla.org/firefox/downloads/latest/cliget/latest.xpi";
         "deArrow@ajay.app".install_url = "https://addons.mozilla.org/firefox/downloads/latest/dearrow/latest.xpi";
-        "firefox@betterttv.net".instlall_url = "https://addons.mozilla.org/firefox/downloads/latest/betterttv/latest.xpi";
+        "firefox@betterttv.net".install_url = "https://addons.mozilla.org/firefox/downloads/latest/betterttv/latest.xpi";
         "idcac-pub@guus.ninja".install_url = "https://addons.mozilla.org/firefox/downloads/latest/istilldontcareaboutcookies/latest.xpi";
         "jid1-D7momAzRw417Ag@jetpack".install_url = "https://addons.mozilla.org/firefox/downloads/latest/wikiwand-wikipedia-modernized/latest.xpi";
         "sponsorBlocker@ajay.app".install_url = "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
