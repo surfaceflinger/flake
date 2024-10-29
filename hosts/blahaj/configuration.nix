@@ -34,6 +34,12 @@
     "xhci_pci"
   ];
 
+  # disable wifi powersaving
+  boot.extraModprobeConfig = ''
+    options iwlmvm  power_scheme=1
+    options iwlwifi power_save=0
+  '';
+
   # corefreq
   programs.corefreq.enable = true;
 
