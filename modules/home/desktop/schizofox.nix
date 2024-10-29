@@ -46,6 +46,7 @@
         "{446900e4-71c2-419f-a6a7-df9c091e268b}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
         "{74145f27-f039-47ce-a470-a662b129930a}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/clearurls/latest.xpi";
         "{762f9885-5a13-4abd-9c77-433dcd38b8fd}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/return-youtube-dislikes/latest.xpi";
+        "7esoorv3@alefvanoon.anonaddy.me".install_url = "https://addons.mozilla.org/firefox/downloads/latest/libredirect/latest.xpi";
         "{9063c2e9-e07c-4c2c-9646-cfe7ca8d0498}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/old-reddit-redirect/latest.xpi";
         "{a4c4eda4-fb84-4a84-b4a1-f7c1cbf2a1ad}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/refined-github-/latest.xpi";
         "addon@fastforward.team".install_url = "https://addons.mozilla.org/firefox/downloads/latest/fastforwardteam/latest.xpi";
@@ -53,6 +54,7 @@
         "{b5501fd1-7084-45c5-9aa6-567c2fcf5dc6}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/ruffle_rs/latest.xpi";
         "cliget@zaidabdulla.com".install_url = "https://addons.mozilla.org/firefox/downloads/latest/cliget/latest.xpi";
         "deArrow@ajay.app".install_url = "https://addons.mozilla.org/firefox/downloads/latest/dearrow/latest.xpi";
+        "firefox@betterttv.net".instlall_url = "https://addons.mozilla.org/firefox/downloads/latest/betterttv/latest.xpi";
         "idcac-pub@guus.ninja".install_url = "https://addons.mozilla.org/firefox/downloads/latest/istilldontcareaboutcookies/latest.xpi";
         "jid1-D7momAzRw417Ag@jetpack".install_url = "https://addons.mozilla.org/firefox/downloads/latest/wikiwand-wikipedia-modernized/latest.xpi";
         "sponsorBlocker@ajay.app".install_url = "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
