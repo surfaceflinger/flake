@@ -9,7 +9,7 @@ _: {
       restricted = true;
     };
     limits = {
-      download = 1048576;
+      download = 1024;
       upload = 1048576;
     };
     extraConfig = ''

@@ -14,6 +14,7 @@
     inputs.self.nixosModules.mixin-virtualisation
     inputs.self.nixosModules.server
     inputs.self.nixosModules.user-nat
+    ./monero.nix
     ./storage.nix
   ];
 
