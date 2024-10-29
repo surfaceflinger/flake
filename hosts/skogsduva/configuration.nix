@@ -1,7 +1,5 @@
 {
-  config,
   inputs,
-  pkgs,
   lib,
   ...
 }:
@@ -34,16 +32,12 @@
       "usb_storage"
       "xhci_pci"
     ];
-    kernelModules = [
-      "kvm-intel"
-      "rtw88_8821cu"
-    ];
+    kernelModules = [ "kvm-intel" ];
   };
 
-  # yes this is a server over wifi
-  boot.extraModulePackages = with config.boot.kernelPackages; [ rtw88 ];
+  # yes this is a server over wifi - inb4 dont use networkmanager on a server
+  # and keep the password in agenix with systemd-networkd!!!!!!!!!!!!!!!!!! idc!!
   networking.networkmanager.enable = lib.mkForce true;
-  hardware.usb-modeswitch.enable = lib.mkForce true;
 
   # this is an old intel.
   boot.kernelParams = [ "intel_pstate=passive" ];
