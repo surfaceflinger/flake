@@ -24,6 +24,7 @@
       llt = "${ll} --tree";
       ls = "${pkgs.eza}/bin/eza --color=auto --group-directories-first --classify";
       lst = "${ls} --tree";
+      scpi = "${pkgs.openssh}/bin/scp -o IdentitiesOnly=yes";
       sshi = "${pkgs.openssh}/bin/ssh -o IdentitiesOnly=yes";
       tree = "${ls} --tree";
     };
