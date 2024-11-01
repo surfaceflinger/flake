@@ -64,5 +64,8 @@
     dockerSocket.enable = true;
   };
 
-  services.cloudflare-warp.enable = true;
+  # for now i'm using warp.sh as a replacement
+  # because my vm doesn't pass device posture checks
+  # https://github.com/rany2/warp.sh
+  # services.cloudflare-warp.enable = true;
 }
