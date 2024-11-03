@@ -33,12 +33,14 @@ in
         }
       ];
       server_discovery = {
-        client.base_url = "https://${matrix_hostname}";
         server.authority = "${matrix_hostname}:443";
+        client = {
+          advertise_buggy_sliding_sync = true;
+          base_url = "https://${matrix_hostname}";
+        };
       };
 
       # misc
-      advertise_buggy_sliding_sync = true;
       allow_registration = false;
     };
   };
