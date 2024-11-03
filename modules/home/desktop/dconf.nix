@@ -193,6 +193,17 @@ with lib.hm.gvariant;
       avatar-position = 1;
     };
 
+    "org/gnome/shell/extensions/wintile-beyond" = {
+      delay = 50;
+      distance = 50;
+      use-minimize = false;
+    };
+
+    "org/gnome/shell/extensions/gamemodeshellextension" = {
+      show-icon-only-when-active = true;
+      show-launch-notification = false;
+    };
+
     # terminal/ptyxis
     "org/gnome/Ptyxis" = {
       cursor-shape = "ibeam";
