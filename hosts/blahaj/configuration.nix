@@ -80,14 +80,16 @@
     reverse_proxy ${config.services.harmonia.settings.bind}
   '';
 
-  # obs with gstreamer and vkcapture
-  environment.systemPackages = [
-    (pkgs.wrapOBS {
-      plugins = with pkgs.obs-studio-plugins; [
+  # obs with gstreamer and vkcapture; gpu-screen-recorder
+  programs.gpu-screen-recorder.enable = true;
+  environment.systemPackages = with pkgs; [
+    (wrapOBS {
+      plugins = with obs-studio-plugins; [
         obs-vaapi
         obs-vkcapture
       ];
     })
-    pkgs.obs-studio-plugins.obs-vkcapture
+    gpu-screen-recorder-gtk
+    obs-studio-plugins.obs-vkcapture
   ];
 }

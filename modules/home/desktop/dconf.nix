@@ -1,90 +1,19 @@
-# generated via dconf2nix: https://github.com/gvolpe/dconf2nix
-{ lib, ... }:
+{ lib, osConfig, ... }:
 
 with lib.hm.gvariant;
 
 {
   dconf.settings = {
-    "org/gnome/Ptyxis" = {
-      cursor-shape = "ibeam";
-      default-profile-uuid = "6558e70a00b73616061537c7663760c0";
-      font-name = "Cascadia Mono PL 11";
-      profile-uuids = [ "6558e70a00b73616061537c7663760c0" ];
-      restore-session = false;
-      restore-window-size = false;
-      use-system-font = false;
-    };
-
-    "org/gnome/Ptyxis/Profiles/6558e70a00b73616061537c7663760c0" = {
-      label = "home-manager";
-      scrollback-lines = 20000;
-    };
-
-    "org/gnome/Connections" = {
-      first-run = false;
-    };
-
-    "org/gnome/TextEditor" = {
-      discover-settings = true;
-      highlight-current-line = true;
-      indent-style = "space";
-      restore-session = false;
-      show-line-numbers = true;
-      tab-width = mkUint32 2;
-      wrap-text = false;
-    };
-
+    # gnome
     "org/gnome/desktop/app-folders" = {
       folder-children = [ "" ];
     };
 
-    "org/gnome/desktop/calendar" = {
-      show-weekdate = true;
-    };
-
-    "org/gnome/desktop/input-sources" = {
-      sources = [
-        (mkTuple [
-          "xkb"
-          "pl"
-        ])
-      ];
-    };
-
-    "org/gnome/desktop/interface" = {
-      clock-show-weekday = true;
-      color-scheme = "prefer-dark";
-      document-font-name = "Merriweather 11";
-      font-hinting = "none";
-      font-name = "Inter Variable 11";
-      gtk-enable-primary-paste = false;
-      gtk-theme = "adw-gtk3-dark";
-      icon-theme = "MoreWaita";
-      monospace-font-name = "Cascadia Mono PL 10";
-      show-battery-percentage = true;
-    };
-
-    "org/gnome/desktop/media-handling" = {
-      autorun-never = true;
-    };
-
-    "org/gnome/desktop/notifications" = {
-      show-in-lock-screen = false;
-    };
-
-    "org/gnome/desktop/peripherals/mouse" = {
-      accel-profile = "flat";
-    };
-
-    "org/gnome/desktop/privacy" = {
-      old-files-age = mkUint32 30;
-      recent-files-max-age = -1;
-      remove-old-temp-files = true;
-      remove-old-trash-files = true;
-    };
-
-    "org/gnome/desktop/session" = {
-      idle-delay = mkUint32 300;
+    "org/gnome/mutter" = {
+      dynamic-workspaces = true;
+      edge-tiling = true;
+      experimental-features = [ "variable-refresh-rate" ];
+      workspaces-only-on-primary = true;
     };
 
     "org/gnome/desktop/wm/preferences" = {
@@ -95,58 +24,9 @@ with lib.hm.gvariant;
       temperature-unit = "centigrade";
     };
 
-    "org/gnome/gitlab/cheywood/Buffer" = {
-      font-size = 10;
-    };
-
-    "org/gnome/mutter" = {
-      dynamic-workspaces = true;
-      edge-tiling = true;
-      experimental-features = [ "variable-refresh-rate" ];
-      workspaces-only-on-primary = true;
-    };
-
-    "org/gnome/settings-daemon/plugins/color" = {
-      night-light-enabled = true;
-      night-light-schedule-automatic = false;
-      night-light-schedule-from = 22.0;
-    };
-
-    "org/gnome/settings-daemon/plugins/media-keys" = {
-      custom-keybindings = [
-        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
-      ];
-      mic-mute = [ "<Control>m" ];
-    };
-
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-      binding = "<Super>r";
-      command = "ptyxis --new-window";
-      name = "Start terminal";
-    };
-
-    "org/gnome/settings-daemon/plugins/power" = {
-      power-button-action = "nothing";
-      sleep-inactive-ac-timeout = 1200;
-      sleep-inactive-ac-type = "suspend";
-    };
-
-    "org/gnome/desktop/peripherals/touchpad" = {
-      disable-while-typing = false;
-    };
-
     "org/gnome/shell" = {
       disable-extension-version-validation = true;
       app-picker-layout = [ "" ];
-      enabled-extensions = [
-        "appindicatorsupport@rgcjonas.gmail.com"
-        "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
-        "caffeine@patapon.info"
-        "pip-on-top@rafostar.github.com"
-        "quick-settings-avatar@d-go"
-        "tailscale@joaophi.github.com"
-        "windowIsReady_Remover@nunofarruca@gmail.com"
-      ];
       favorite-apps = [
         "org.gnome.Nautilus.desktop"
         "org.gnome.Ptyxis.desktop"
@@ -172,40 +52,39 @@ with lib.hm.gvariant;
         "org.qbittorrent.qBittorrent.desktop"
         "bitwarden.desktop"
       ];
-      welcome-dialog-last-shown-version = "46.1";
+      welcome-dialog-last-shown-version = "999";
     };
 
-    "org/gnome/shell/extensions/appindicator" = {
-      icon-saturation = 1.0;
-      legacy-tray-enabled = false;
+    "org/gnome/desktop/calendar" = {
+      show-weekdate = true;
     };
 
-    "org/gnome/shell/extensions/auto-move-windows" = {
-      application-list = [
-        "bitwarden.desktop:1"
-        "discord.desktop:1"
-        "org.telegram.desktop.desktop:1"
-        "google-chrome.desktop:2"
-        "org.prismlauncher.PrismLauncher.desktop:3"
-        "slack.desktop:3"
-        "timedoctor-desktop.desktop:3"
-        "steam.desktop:4"
-      ];
+    # interface/theming
+    "org/gnome/desktop/interface" = {
+      accent-color = "pink";
+      clock-show-weekday = true;
+      document-font-name = "Merriweather 11";
+      font-hinting = "none";
+      font-name = "Inter Variable 11";
+      gtk-enable-primary-paste = false;
+      gtk-theme = "adw-gtk3";
+      monospace-font-name = "Cascadia Mono PL 10";
+      show-battery-percentage = true;
     };
 
-    "org/gnome/shell/extensions/caffeine" = {
-      screen-blank = "always";
-      show-notifications = false;
+    "org/gnome/shell/extensions/user-theme-x" = {
+      x-color = "prefer-light";
+      x-color-night = "prefer-dark";
+      x-cursor = "miku-cursor";
+      x-cursor-night = "miku-cursor";
+      x-gtk = "adw-gtk3";
+      x-gtk-night = "adw-gtk3-dark";
+      x-icons = "MoreWaita";
+      x-icons-night = "MoreWaita";
+      x-wallpaper = false;
     };
 
-    "org/gnome/shell/extensions/quick-settings-avatar" = {
-      avatar-position = 1;
-    };
-
-    "org/gnome/tweaks" = {
-      show-extensions-notice = false;
-    };
-
+    # file portals
     "org/gtk/gtk4/settings/file-chooser" = {
       show-hidden = true;
       sort-column = "name";
@@ -220,19 +99,129 @@ with lib.hm.gvariant;
       sort-order = "ascending";
     };
 
-    "org/virt-manager/virt-manager" = {
-      xmleditor-enabled = true;
+    # m/kb
+    "org/gnome/desktop/peripherals/mouse" = {
+      accel-profile = "flat";
     };
 
-    "org/virt-manager/virt-manager/connections" = {
-      autoconnect = [
-        "qemu:///system"
-        "lxc:///"
+    "org/gnome/desktop/peripherals/touchpad" = {
+      disable-while-typing = false;
+    };
+
+    "org/gnome/desktop/input-sources" = {
+      sources = [
+        (mkTuple [
+          "xkb"
+          "pl"
+        ])
       ];
-      uris = [
-        "lxc:///"
-        "qemu:///system"
+    };
+
+    # hotkeys
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      custom-keybindings = [
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
       ];
+      mic-mute = [ "<Control>m" ];
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      binding = "<Super>r";
+      command = "ptyxis --new-window";
+      name = "Start terminal";
+    };
+
+    # night light
+    "org/gnome/settings-daemon/plugins/color" = {
+      night-light-enabled = true;
+      night-light-schedule-automatic = true;
+      night-light-last-coordinates = mkTuple [
+        osConfig.location.latitude
+        osConfig.location.longitude
+      ];
+    };
+
+    "org/gnome/system/location" = {
+      enabled = true;
+    };
+
+    # power management
+    "org/gnome/settings-daemon/plugins/power" = {
+      power-button-action = "nothing";
+      sleep-inactive-ac-timeout = 1200;
+      sleep-inactive-ac-type = "suspend";
+    };
+
+    "org/gnome/desktop/session" = {
+      idle-delay = mkUint32 300;
+    };
+
+    # temporary files
+    "org/gnome/desktop/privacy" = {
+      old-files-age = mkUint32 30;
+      recent-files-max-age = -1;
+      remove-old-temp-files = true;
+      remove-old-trash-files = true;
+    };
+
+    # extensions
+    "org/gnome/shell/extensions/auto-move-windows" = {
+      application-list = [
+        "bitwarden.desktop:1"
+        "org.telegram.desktop.desktop:1"
+        "vesktop.desktop:1"
+        "Schizofox.desktop:2"
+        "lunarclient.desktop:3"
+        "org.prismlauncher.PrismLauncher.desktop:3"
+        "slack.desktop:3"
+        "timedoctor-desktop.desktop:3"
+        "steam.desktop:4"
+      ];
+    };
+
+    "org/gnome/shell/extensions/appindicator" = {
+      icon-saturation = 1.0;
+      legacy-tray-enabled = true;
+    };
+
+    "org/gnome/shell/extensions/caffeine" = {
+      screen-blank = "always";
+      show-notifications = false;
+    };
+
+    "org/gnome/shell/extensions/quick-settings-avatar" = {
+      avatar-position = 1;
+    };
+
+    # terminal/ptyxis
+    "org/gnome/Ptyxis" = {
+      cursor-shape = "ibeam";
+      default-profile-uuid = "6558e70a00b73616061537c7663760c0";
+      font-name = "Cascadia Mono PL 11";
+      interface-style = "dark";
+      profile-uuids = [ "6558e70a00b73616061537c7663760c0" ];
+      restore-session = false;
+      restore-window-size = false;
+      use-system-font = false;
+    };
+
+    "org/gnome/Ptyxis/Profiles/6558e70a00b73616061537c7663760c0" = {
+      label = "home-manager";
+      scrollback-lines = 20000;
+    };
+
+    # random other gnome stuff
+    "org/gnome/desktop/media-handling" = {
+      autorun-never = true;
+    };
+
+    "org/gnome/desktop/notifications" = {
+      show-in-lock-screen = false;
+    };
+
+    # virt-manager
+    "org/virt-manager/virt-manager" = {
+      xmleditor-enabled = true;
     };
 
     "org/virt-manager/virt-manager/console" = {
@@ -243,6 +232,25 @@ with lib.hm.gvariant;
       cpu-default = "host-passthrough";
       firmware = "uefi";
       graphics-type = "system";
+    };
+
+    # random other software
+    "org/gnome/tweaks" = {
+      show-extensions-notice = false;
+    };
+
+    "org/gnome/TextEditor" = {
+      discover-settings = true;
+      highlight-current-line = true;
+      indent-style = "space";
+      restore-session = false;
+      show-line-numbers = true;
+      tab-width = mkUint32 2;
+      wrap-text = false;
+    };
+
+    "org/gnome/gitlab/cheywood/Buffer" = {
+      font-size = 10;
     };
   };
 }

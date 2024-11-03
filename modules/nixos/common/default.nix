@@ -45,12 +45,13 @@
   services.openssh.enable = true;
 
   # configure home-manager
-  home-manager.extraSpecialArgs.inputs = inputs; # forward the inputs
-  home-manager.extraSpecialArgs.perSystem = perSystem; # forward blueprint's perSystem
-  home-manager.useGlobalPkgs = true; # don't create another instance of nixpkgs
-  home-manager.useUserPackages = true; # install user packages directly to the user's profile
-
-  # temporary until someone bumps zfs unstable in nixpkgs
-  # otherwise current unstable works fine
-  nixpkgs.config.allowBroken = true;
+  home-manager = {
+    backupFileExtension = "backup";
+    useGlobalPkgs = true; # don't create another instance of nixpkgs
+    useUserPackages = true; # install user packages directly to the user's profile
+    extraSpecialArgs = {
+      inherit inputs; # forward the inputs
+      inherit perSystem; # forward blueprint's perSystem
+    };
+  };
 }

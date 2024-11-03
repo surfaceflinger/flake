@@ -43,13 +43,6 @@
   environment.systemPackages = with pkgs; [
     # gnome
     ffmpegthumbnailer
-    gnomeExtensions.appindicator
-    gnomeExtensions.auto-move-windows
-    gnomeExtensions.caffeine
-    gnomeExtensions.pip-on-top
-    gnomeExtensions.tailscale-qs
-    gnomeExtensions.user-avatar-in-quick-settings
-    gnomeExtensions.window-is-ready-remover
     gnome-session
     gnome-tweaks
     ptyxis

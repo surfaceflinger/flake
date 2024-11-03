@@ -21,6 +21,7 @@
       with pkgs;
       [
         awscli2
+        aws-rotate-key
         awsume
         buildah
         e1s
