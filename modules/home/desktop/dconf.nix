@@ -204,6 +204,10 @@ with lib.hm.gvariant;
       show-launch-notification = false;
     };
 
+    "org/gnome/shell/extensions/pip-on-top" = {
+      stick = true;
+    };
+
     # terminal/ptyxis
     "org/gnome/Ptyxis" = {
       cursor-shape = "ibeam";
