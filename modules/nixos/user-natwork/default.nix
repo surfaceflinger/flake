@@ -58,6 +58,11 @@
 
   nix.settings.trusted-users = [ "natwork" ];
 
+  programs.zsh.shellAliases = {
+    awsume = ". ${lib.getExe pkgs.awsume}";
+    changeset = "${lib.getExe perSystem.cfn-changeset-viewer.default} --change-set-name";
+  };
+
   virtualisation.podman = {
     enable = true;
     dockerCompat = true;

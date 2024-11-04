@@ -16,7 +16,6 @@
       "prompt_subst" # Substitution in the prompt
     ];
     shellAliases = rec {
-      awsume = ". ${pkgs.awsume}/bin/awsume";
       cat = "${pkgs.bat}/bin/bat";
       grep = "${pkgs.ripgrep}/bin/rg";
       la = "${ls} --all";
