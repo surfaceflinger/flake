@@ -194,8 +194,8 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/shell/extensions/wintile-beyond" = {
-      delay = 50;
-      distance = 50;
+      delay = 1000;
+      distance = 25;
       use-minimize = false;
     };
 
