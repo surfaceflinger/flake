@@ -11,7 +11,7 @@ with lib.hm.gvariant;
 
     "org/gnome/mutter" = {
       dynamic-workspaces = true;
-      edge-tiling = true;
+      edge-tiling = false;
       experimental-features = [ "variable-refresh-rate" ];
       workspaces-only-on-primary = true;
     };
