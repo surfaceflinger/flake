@@ -38,7 +38,7 @@
         halloy
         newsflash
         signal-desktop
-        telegram-desktop
+        (telegram-desktop.override { withWebkit = false; })
         tuba
         vesktop
 
