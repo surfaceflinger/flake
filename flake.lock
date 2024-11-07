@@ -510,11 +510,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1730633670,
-        "narHash": "sha256-ZFJqIXpvVKvzOVFKWNRDyIyAo+GYdmEPaYi1bZB6uf0=",
+        "lastModified": 1730837930,
+        "narHash": "sha256-0kZL4m+bKBJUBQse0HanewWO0g8hDdCvBhudzxgehqc=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "8f6ca7855d409aeebe2a582c6fd6b6a8d0bf5661",
+        "rev": "2f607e07f3ac7e53541120536708e824acccfaa8",
         "type": "github"
       },
       "original": {
@@ -571,16 +571,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1727752861,
-        "narHash": "sha256-jowmo2aEzrEpPSM96IWtajuogdJm7DjAWxFTEb7Ct0s=",
-        "ref": "main",
-        "rev": "fd186f535a4ac7ae35d98c1dd5d79f0a81b7976d",
-        "revCount": 116,
+        "lastModified": 1729360442,
+        "narHash": "sha256-6U0CyPycIBc04hbYy2hBINnVso58n/ZyywY2BD3hu+s=",
+        "ref": "stable",
+        "rev": "2bbdcd73b9a464f8acf45a7100feb979883ba485",
+        "revCount": 110,
         "type": "git",
         "url": "https://git.lix.systems/lix-project/nixos-module.git"
       },
       "original": {
-        "ref": "main",
+        "ref": "stable",
         "type": "git",
         "url": "https://git.lix.systems/lix-project/nixos-module.git"
       }
@@ -588,15 +588,15 @@
     "lix_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1727712632,
-        "narHash": "sha256-7kaZRZCWG8PmxwIDTVKjJo3VtAGDun7mqfAMlucQbdQ=",
-        "rev": "a16ceb9411c57993d811c6bebb517742fe3d34e3",
+        "lastModified": 1729298361,
+        "narHash": "sha256-hiGtfzxFkDc9TSYsb96Whg0vnqBVV7CUxyscZNhed0U=",
+        "rev": "ad9d06f7838a25beec425ff406fe68721fef73be",
         "type": "tarball",
-        "url": "https://git.lix.systems/api/v1/repos/lix-project/lix/archive/a16ceb9411c57993d811c6bebb517742fe3d34e3.tar.gz?rev=a16ceb9411c57993d811c6bebb517742fe3d34e3"
+        "url": "https://git.lix.systems/api/v1/repos/lix-project/lix/archive/ad9d06f7838a25beec425ff406fe68721fef73be.tar.gz?rev=ad9d06f7838a25beec425ff406fe68721fef73be"
       },
       "original": {
         "type": "tarball",
-        "url": "https://git.lix.systems/lix-project/lix/archive/main.tar.gz"
+        "url": "https://git.lix.systems/lix-project/lix/archive/2.91.1.tar.gz"
       }
     },
     "nix-filter": {
@@ -660,11 +660,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1730537918,
-        "narHash": "sha256-GJB1/aaTnAtt9sso/EQ77TAGJ/rt6uvlP0RqZFnWue8=",
+        "lastModified": 1730919458,
+        "narHash": "sha256-yMO0T0QJlmT/x4HEyvrCyigGrdYfIXX3e5gWqB64wLg=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "f6e0cd5c47d150c4718199084e5764f968f1b560",
+        "rev": "e1cc1f6483393634aee94514186d21a4871e78d7",
         "type": "github"
       },
       "original": {
@@ -776,11 +776,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1730658021,
-        "narHash": "sha256-9JIUI8HaZwYArdEmEdypCxBBmLLVfGWR6UoT9dO6Nwk=",
-        "owner": "surfaceflinger",
+        "lastModified": 1730970324,
+        "narHash": "sha256-2yAMEkupi1x/FLH70/2h5KV/MOeuEKcR6UV5f0J683o=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "61129de959c2b4fc1810e9c45d4d8d5cfd60ba05",
+        "rev": "8f3c3f6a0355fa4793b686a3975b56cd7f88d8aa",
         "type": "github"
       },
       "original": {
@@ -911,11 +911,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1730335989,
-        "narHash": "sha256-hG7H+EcNZfNa5tsUzMX+NBYpG4viCTvfRp5t7ZUnKW8=",
+        "lastModified": 1730940990,
+        "narHash": "sha256-FyRDs/jlmaBDL1ryf3tM9rFaOrlYn5wSa1VUr4k2w+4=",
         "owner": "nix-community",
         "repo": "srvos",
-        "rev": "b80b3ffabd20e39b579f45a33e638bbb1b297b60",
+        "rev": "dabae9d2062afd45f343d13d819eea1029d08162",
         "type": "github"
       },
       "original": {
@@ -1009,11 +1009,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1730421780,
-        "narHash": "sha256-AyFZItQzBgUpss6htTYEH+VRNe0PTYwD1+k2DTfgpYI=",
+        "lastModified": 1730939884,
+        "narHash": "sha256-rEbLcv9PlMcxbAa/TWBfb4He15l8ZnHVK+treeghRdU=",
         "owner": "vdesjardins",
         "repo": "terraform-overlay",
-        "rev": "7ee8081f62ac49bfe9225bc162f1ed4697319d4f",
+        "rev": "b5080b2ad2683223e86d8d12f85942e9f3ecd4ed",
         "type": "github"
       },
       "original": {
