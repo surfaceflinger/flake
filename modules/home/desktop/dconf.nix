@@ -45,7 +45,7 @@ with lib.hm.gvariant;
         "org.prismlauncher.PrismLauncher.desktop"
         "lunarclient.desktop"
         "steam.desktop"
-        "com.saivert.pwvucontrol.desktop"
+        "org.pulseaudio.pavucontrol.desktop"
         "com.github.wwmm.easyeffects.desktop"
         "virt-manager.desktop"
         "de.haeckerfelix.Fragments.desktop"

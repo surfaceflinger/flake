@@ -63,7 +63,7 @@
       glxinfo
       libva-utils
       (nvtopPackages.full.override { nvidia = false; })
-      pwvucontrol
+      pavucontrol
     ];
 
   programs = {
