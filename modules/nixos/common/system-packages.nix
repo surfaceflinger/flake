@@ -12,7 +12,6 @@
       # cli/tui tools
       _7zz
       abduco
-      awsume
       bat
       deadnix
       eza
