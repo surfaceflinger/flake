@@ -17,6 +17,7 @@
       "browser.uidensity" = 0;
       "dom.event.clipboardevents.enabled" = true;
       "privacy.resistFingerprinting" = false;
+      "privacy.resistFingerprinting.letterboxing" = false;
 
       # mine
       "browser.search.context.loadInBackground" = true;
