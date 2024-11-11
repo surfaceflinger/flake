@@ -1,4 +1,5 @@
 {
+  config,
   inputs,
   lib,
   ...
@@ -24,6 +25,7 @@
 
   # bootloader/kernel/modules
   boot = {
+    extraModulePackages = [ config.boot.kernelPackages.rtl8821cu ];
     initrd.availableKernelModules = [
       "ahci"
       "ehci_pci"
@@ -33,15 +35,15 @@
       "usb_storage"
       "xhci_pci"
     ];
-    kernelModules = [ "kvm-intel" ];
+    kernelModules = [
+      "8821cu"
+      "kvm-intel"
+    ];
   };
 
   # yes this is a server over wifi - inb4 dont use networkmanager on a server
   # and keep the password in agenix with systemd-networkd!!!!!!!!!!!!!!!!!! idc!!
   networking.networkmanager.enable = lib.mkForce true;
-  boot.extraModprobeConfig = ''
-    options rtw88_core disable_lps_deep=Y
-  '';
 
   # this is an old intel.
   boot.kernelParams = [ "intel_pstate=passive" ];
