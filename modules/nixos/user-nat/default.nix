@@ -46,6 +46,7 @@
         feather
         ledger-live-desktop
         rates
+        wealthfolio
       ];
   };
 
