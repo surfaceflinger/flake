@@ -25,6 +25,7 @@
 
   # bootloader/kernel/modules
   boot = {
+    blacklistedKernelModules = [ "rtw88_8821cu" ];
     extraModulePackages = [ config.boot.kernelPackages.rtl8821cu ];
     initrd.availableKernelModules = [
       "ahci"
