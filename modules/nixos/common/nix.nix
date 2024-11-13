@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 {
   # nix/nixpkgs
   imports = [
@@ -11,8 +16,20 @@
 
   nix = {
     channel.enable = false;
-    checkConfig = false;
     package = pkgs.nixVersions.stable;
+    settings = {
+      use-xdg-base-directories = true;
+      experimental-features = lib.mkForce [
+        "auto-allocate-uids"
+        "ca-derivations"
+        "cgroups"
+        "fetch-closure"
+        "flakes"
+        "nix-command"
+        "recursive-nix"
+        "repl-flake"
+      ];
+    };
     registry = {
       self.flake = inputs.self;
       tf.flake = inputs.tf;
