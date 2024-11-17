@@ -26,6 +26,7 @@
       rage
       ripgrep
       shellcheck
+      speedtest-go
       wget
       (writeScriptBin "7z" ''exec 7zz "$@"'')
       (writeScriptBin "goto-nix" ''cd $(nix build -L --print-out-paths --no-link "$@".out) && $SHELL'')
