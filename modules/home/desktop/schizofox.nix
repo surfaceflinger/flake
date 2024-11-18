@@ -111,10 +111,10 @@
       defaultUserChrome.enable = false;
       defaultUserContent.enable = false;
       extraUserContent = ''
-        @import "${perSystem.self.firefox-gnome-theme}/userContent.css";
+        @import "${inputs.firefox-gnome-theme}/userContent.css";
       '';
       extraUserChrome = ''
-        @import "${perSystem.self.firefox-gnome-theme}/userChrome.css";
+        @import "${inputs.firefox-gnome-theme}/userChrome.css";
       '';
     };
   };
