@@ -1,5 +1,6 @@
 {
   inputs,
+  lib,
   perSystem,
   pkgs,
   ...
@@ -24,7 +25,7 @@
   ];
 
   # use latest kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = lib.warn "linux pinned to 6.11, bump when zfs is ready" pkgs.linuxPackages_6_11;
 
   # firmware/hardware updates and security status
   services.fwupd.enable = true;
