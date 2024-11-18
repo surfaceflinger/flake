@@ -11,7 +11,6 @@ in
       inherit host port account-domain;
       bind-address = "[::1]";
       db-type = "sqlite";
-      instance-inject-mastodon-version = true;
     };
   };
 
