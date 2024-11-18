@@ -8,6 +8,8 @@
     blueprint.url = "github:numtide/blueprint/main";
     cfn-changeset-viewer.inputs.nixpkgs.follows = "nixpkgs";
     cfn-changeset-viewer.url = "github:surfaceflinger/cfn-changeset-viewer/flake-parts";
+    firefox-gnome-theme.flake = false;
+    firefox-gnome-theme.url = "github:rafaelmardojai/firefox-gnome-theme/v132";
     grapevine.inputs.nixpkgs.follows = "nixpkgs";
     grapevine.url = "git+https://gitlab.computer.surgery/matrix/grapevine.git?ref=main";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
