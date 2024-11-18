@@ -18,15 +18,14 @@
       file
       gojq
       ipgrep
-      nano
       ncdu
-      nixpkgs-fmt
+      nixfmt-rfc-style
       ouch
       pv
       rage
       ripgrep
       shellcheck
-      speedtest-go
+      statix
       wget
       (writeScriptBin "7z" ''exec 7zz "$@"'')
       (writeScriptBin "goto-nix" ''cd $(nix build -L --print-out-paths --no-link "$@".out) && $SHELL'')
@@ -36,8 +35,8 @@
       # system utilities
       bottom
       config.boot.kernelPackages.cpupower
+      fastfetch
       pciutils
-      pfetch-rs
       psmisc
       usbutils
 
@@ -47,6 +46,8 @@
       inetutils
       magic-wormhole-rs
       rustscan
+      speedtest-go
+      wavemon
     ]
     ++ lib.optionals config.services.xserver.enable [
       # desktop software

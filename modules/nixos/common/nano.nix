@@ -1,5 +1,6 @@
 _: {
   programs.nano = {
+    enable = true;
     syntaxHighlight = true;
     nanorc = ''
       set autoindent
