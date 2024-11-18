@@ -26,7 +26,6 @@
   # desktop networking
   networking.networkmanager = {
     inherit (config.services.xserver) enable;
-    wifi.backend = "iwd";
   };
   environment.persistence."/persist".directories = lib.mkIf (
     config.networking.networkmanager.enable && config.ephemereal
