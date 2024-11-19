@@ -1,4 +1,4 @@
-{ ... }:
+{ osConfig, ... }:
 {
   imports = [
     ./amberol.nix
@@ -10,5 +10,5 @@
     ./xdg.nix
   ];
 
-  home.stateVersion = "24.05";
+  home.stateVersion = osConfig.system.stateVersion;
 }
