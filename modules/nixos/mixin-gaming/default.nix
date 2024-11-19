@@ -9,6 +9,7 @@
 
   # packs
   environment.systemPackages = with pkgs; [
+    adwsteamgtk
     furmark # upalarnia pl
     jazz2 # I maintain this, ok?
     lunar-client # Minecraft with spyware
