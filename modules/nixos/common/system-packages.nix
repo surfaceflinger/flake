@@ -14,6 +14,7 @@
       abduco
       bat
       deadnix
+      dyff
       eza
       file
       gojq
