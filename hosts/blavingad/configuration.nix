@@ -15,7 +15,6 @@
     inputs.xkomhotshot.nixosModules.default
     ./matrix.nix
     ./microbin.nix
-    ./radicale.nix
     ./soju.nix
     ./storage.nix
     ./vaultwarden.nix
