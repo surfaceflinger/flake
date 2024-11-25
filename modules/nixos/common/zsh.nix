@@ -36,7 +36,6 @@
       autoload -U colors && colors # Enable colors
       HOST=$(${pkgs.inetutils}/bin/hostname) # Fixup for cloud-init sourced hostname
       stty stop undef # Disable ctrl-s to freeze terminal.
-      unsetopt PROMPT_SP # Disable empty line before first prompt (BlackBox bug?)
       zstyle ':completion:*' menu select # select-style completions
 
       # setup prompt with git and awsume integration
