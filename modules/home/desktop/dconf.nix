@@ -11,7 +11,7 @@ with lib.hm.gvariant;
 
     "org/gnome/mutter" = {
       dynamic-workspaces = true;
-      edge-tiling = false;
+      edge-tiling = true;
       experimental-features = [ "variable-refresh-rate" ];
       workspaces-only-on-primary = true;
     };
@@ -191,12 +191,6 @@ with lib.hm.gvariant;
 
     "org/gnome/shell/extensions/quick-settings-avatar" = {
       avatar-position = 1;
-    };
-
-    "org/gnome/shell/extensions/wintile-beyond" = {
-      delay = 1000;
-      distance = 25;
-      use-minimize = false;
     };
 
     "org/gnome/shell/extensions/gamemodeshellextension" = {

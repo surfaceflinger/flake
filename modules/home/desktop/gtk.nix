@@ -30,7 +30,6 @@
       { package = user-avatar-in-quick-settings; }
       { package = user-themes-x; }
       { package = window-is-ready-remover; }
-      { package = wintile-beyond; }
     ];
   };
 }
