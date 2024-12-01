@@ -27,7 +27,6 @@
         "flakes"
         "nix-command"
         "recursive-nix"
-        "repl-flake"
       ];
     };
     registry = {
