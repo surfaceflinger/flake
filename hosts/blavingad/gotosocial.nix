@@ -9,6 +9,7 @@ in
     enable = true;
     settings = {
       inherit host port account-domain;
+      advanced-rate-limit-requests = 1000;
       bind-address = "[::1]";
       db-type = "sqlite";
     };
