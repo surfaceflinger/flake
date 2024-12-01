@@ -1,4 +1,5 @@
 {
+  config,
   inputs,
   lib,
   perSystem,
@@ -25,7 +26,14 @@
   ];
 
   # use latest kernel
-  boot.kernelPackages = lib.warn "linux pinned to 6.11, bump when zfs is ready" pkgs.linuxPackages_6_11;
+  boot.kernelPackages = lib.warn "linux pinned to vanilla 6.12, switch to hardened when ready" pkgs.linuxPackages_6_12;
+  nixpkgs.config.allowBroken = lib.warn "turn off allowBroken when stable zfs 2.3.0 is out" true;
+
+  # sched-ext
+  services.scx = {
+    enable = true;
+    scheduler = if config.services.xserver.enable then "scx_bpfland" else "scx_rusty";
+  };
 
   # firmware/hardware updates and security status
   services.fwupd.enable = true;

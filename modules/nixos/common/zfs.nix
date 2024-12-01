@@ -5,12 +5,7 @@
   ...
 }:
 {
-  boot.zfs.package = pkgs.zfs_unstable;
-
-  boot.kernelParams = [
-    "zfs.metaslab_lba_weighting_enabled=0"
-    "zfs.zfs_abd_scatter_enabled=0"
-  ];
+  boot.zfs.package = lib.warn "switch to stable zfs once 2.3.0 is out" pkgs.zfs_unstable;
 
   boot.postBootCommands = lib.optionalString config.boot.zfs.enabled ''
     # to debug check: journalctl -b | grep stage-2-init
