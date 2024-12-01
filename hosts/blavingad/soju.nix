@@ -1,7 +1,7 @@
 _: {
   services.soju = {
     enable = true;
-    hostName = "soylent";
+    adminSocket.enable = true;
     listen = [ "irc+insecure://:6667" ];
   };
 }
