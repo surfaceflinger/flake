@@ -1,4 +1,9 @@
-_: {
+{ config, ... }:
+let
+  i2p_address = "127.0.0.1";
+  i2p_port = 37189;
+in
+{
   networking.firewall.allowedTCPPorts = [ 18080 ];
 
   services.monero = {
@@ -21,6 +26,20 @@ _: {
       prune-blockchain=1
       rpc-bind-ipv6-address=::
       rpc-use-ipv6=1
+      tx-proxy=i2p,${i2p_address}:${toString i2p_port}
     '';
+  };
+
+  services.i2pd = {
+    enable = true;
+    upnp = {
+      enable = true;
+      name = "I2Pd ${config.networking.hostName}";
+    };
+    proto.socksProxy = {
+      enable = true;
+      address = i2p_address;
+      port = i2p_port;
+    };
   };
 }
