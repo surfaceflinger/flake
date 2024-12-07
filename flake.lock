@@ -56,11 +56,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1731533095,
-        "narHash": "sha256-pygcMp4/86QT0HtXxhgpCOtGjJ5AMPfDoAiM8uIKsaQ=",
+        "lastModified": 1733562445,
+        "narHash": "sha256-gLmqbX40Qos+EeBvmlzvntWB3NrdiDaFxhr3VAmhrf4=",
         "owner": "numtide",
         "repo": "blueprint",
-        "rev": "74abd5643eb9825331b30b55ebc023036c1465bb",
+        "rev": "97ef7fba3a6eec13e12a108ce4b3473602eb424f",
         "type": "github"
       },
       "original": {
@@ -456,11 +456,11 @@
         "rust-manifest": "rust-manifest"
       },
       "locked": {
-        "lastModified": 1732923400,
-        "narHash": "sha256-of6MKM3Ib48vvJBb87pV00/ObQqChdTeJrNmLZQM/Sw=",
+        "lastModified": 1733098685,
+        "narHash": "sha256-6EF0YQcwcDnn6aXDSX5/CkdvywiS5vg6Db8PFzbu+gM=",
         "ref": "main",
-        "rev": "f0e41ade595c41a865e02ae77b0c3d1da727c08d",
-        "revCount": 2726,
+        "rev": "a5fe9129f13844fe1ad67b5aab1d00d4bd7fa9e9",
+        "revCount": 2734,
         "type": "git",
         "url": "https://gitlab.computer.surgery/matrix/grapevine.git"
       },
@@ -525,11 +525,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1732884235,
-        "narHash": "sha256-r8j6R3nrvwbT1aUp4EPQ1KC7gm0pu9VcV1aNaB+XG6Q=",
+        "lastModified": 1733484277,
+        "narHash": "sha256-i5ay20XsvpW91N4URET/nOc0VQWOAd4c4vbqYtcH8Rc=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "819f682269f4e002884702b87e445c82840c68f2",
+        "rev": "d00c6f6d0ad16d598bf7e2956f52c1d9d5de3c3a",
         "type": "github"
       },
       "original": {
@@ -659,11 +659,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1732519917,
-        "narHash": "sha256-AGXhwHdJV0q/WNgqwrR2zriubLr785b02FphaBtyt1Q=",
+        "lastModified": 1733024876,
+        "narHash": "sha256-vy9Q41hBE7Zg0yakF79neVgb3i3PQMSMR7uHPpPywFE=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "f4a5ca5771ba9ca31ad24a62c8d511a405303436",
+        "rev": "6e0b7f81367069589a480b91603a10bcf71f3103",
         "type": "github"
       },
       "original": {
@@ -675,11 +675,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1732483221,
-        "narHash": "sha256-kF6rDeCshoCgmQz+7uiuPdREVFuzhIorGOoPXMalL2U=",
+        "lastModified": 1733481457,
+        "narHash": "sha256-IS3bxa4N1VMSh3/P6vhEAHQZecQ3oAlKCDvzCQSO5Is=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "45348ad6fb8ac0e8415f6e5e96efe47dd7f39405",
+        "rev": "e563803af3526852b6b1d77107a81908c66a9fcf",
         "type": "github"
       },
       "original": {
@@ -807,11 +807,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1733013376,
-        "narHash": "sha256-DnmWQzJnwH7YLG529xyoXhd362Xj73trsPA+m8o1a28=",
+        "lastModified": 1733587841,
+        "narHash": "sha256-ohqZiMiiCzwFr2BsCm+pXE/Hh6jlnBnClfRX2By1Gjw=",
         "owner": "surfaceflinger",
         "repo": "nixpkgs",
-        "rev": "524b8602ffe27d17f8e6a055e40cea9c58c363cc",
+        "rev": "6658e772f30b6b6622ff60aed1e9c5c3b8781f11",
         "type": "github"
       },
       "original": {
@@ -943,11 +943,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1732791727,
-        "narHash": "sha256-E3ki8879tKii42pjibenRpJSDVW0mJFfSWHbci5Ck0s=",
+        "lastModified": 1733365027,
+        "narHash": "sha256-Vl0pOGckECuFoMbiotwj65jjoFE8Mc2yUXNIllttxkI=",
         "owner": "nix-community",
         "repo": "srvos",
-        "rev": "ce61f7168038e4077ed6e27a4aa9f2c3c3500099",
+        "rev": "6047d415ca8dc7eae73dd17c832f7dc08ad544f4",
         "type": "github"
       },
       "original": {
@@ -1041,11 +1041,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1732709819,
-        "narHash": "sha256-9ireIqcjIaEZyoWgP/8ZmXEXr8SoC8wP3J/iLd/YBr4=",
+        "lastModified": 1733314557,
+        "narHash": "sha256-EX2VBFMxTNG/fWnRGmQP7GwbzVONRWgUaYQz5GgGR5U=",
         "owner": "vdesjardins",
         "repo": "terraform-overlay",
-        "rev": "db0f7e57ba895d6e5d5a49942697a8b7ad78fc93",
+        "rev": "56dc71264f41cc7d263414157b469610161d0787",
         "type": "github"
       },
       "original": {
