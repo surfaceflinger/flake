@@ -46,6 +46,9 @@
         feather
         ledger-live-desktop
         rates
+        trezor-agent
+        trezorctl
+        trezor-suite
         wealthfolio
       ];
   };
@@ -65,6 +68,9 @@
       systemd.user.tmpfiles.rules = [ "D %h/Downloads 0700 - - -" ];
     };
 
-  hardware.ledger.enable = true;
+  # crypto hw wallets!
+  hardware.ledger.enable = config.services.xserver.enable;
+  services.trezord.enable = config.services.xserver.enable;
+
   nix.settings.trusted-users = [ "nat" ];
 }
