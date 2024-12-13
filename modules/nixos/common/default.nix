@@ -27,7 +27,6 @@
 
   # use latest kernel
   boot.kernelPackages = lib.warn "linux pinned to vanilla 6.12, switch to hardened when ready" pkgs.linuxPackages_6_12;
-  nixpkgs.config.allowBroken = lib.warn "turn off allowBroken when stable zfs 2.3.0 is out" true;
 
   # sched-ext
   services.scx = {
