@@ -47,9 +47,6 @@
   };
 
   # controller rules
+  hardware.steam-hardware.enable = true;
   services.udev.packages = with pkgs; [ game-devices-udev-rules ];
-  hardware = {
-    steam-hardware.enable = true;
-    xone.enable = true;
-  };
 }
