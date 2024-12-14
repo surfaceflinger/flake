@@ -458,11 +458,11 @@
         "rust-manifest": "rust-manifest"
       },
       "locked": {
-        "lastModified": 1733956663,
-        "narHash": "sha256-cclJgD9l5gmJtAtnPUtQKd3M1QCkF6HH/vxyf2wFK44=",
+        "lastModified": 1734138037,
+        "narHash": "sha256-pN/nJ9tR6ewnpVUUzcF+Z9L/0R0WmtBVePJOqx9rzTk=",
         "ref": "main",
-        "rev": "1e050c898367d273262b99f026291655c426871d",
-        "revCount": 2759,
+        "rev": "8537c0e8ac3eb388500587b035008e5f98204a4b",
+        "revCount": 2768,
         "type": "git",
         "url": "https://gitlab.computer.surgery/matrix/grapevine.git"
       },
@@ -527,11 +527,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1734043726,
-        "narHash": "sha256-e9YAMReFV1fDPcZLFC2pa4k/8TloSXeX0z2VysNMAoA=",
+        "lastModified": 1734093295,
+        "narHash": "sha256-hSwgGpcZtdDsk1dnzA0xj5cNaHgN9A99hRF/mxMtwS4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "3066cc58f552421a2c5414e78407fa5603405b1e",
+        "rev": "66c5d8b62818ec4c1edb3e941f55ef78df8141a8",
         "type": "github"
       },
       "original": {
@@ -793,11 +793,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1734047376,
-        "narHash": "sha256-/G4rnDg7IaVuYuUOoZDLKMKCEuq9Y4LQYI/jUmzizNo=",
-        "owner": "nixos",
+        "lastModified": 1734181529,
+        "narHash": "sha256-OwzvEb7M39Qw6LMJ+noytdIWIDKBSh9vj+8mbGrERbc=",
+        "owner": "surfaceflinger",
         "repo": "nixpkgs",
-        "rev": "906114f272b91e4e1163fc5089c89ac8f23da620",
+        "rev": "5cd1ae9a7934f9937b241f74e24d66e0e8cdfccf",
         "type": "github"
       },
       "original": {
