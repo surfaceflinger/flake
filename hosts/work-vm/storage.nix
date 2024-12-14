@@ -18,16 +18,19 @@ _: {
   fileSystems."/nix" = {
     device = "work-vm/NixOS/nix";
     fsType = "zfs";
+    options = [ "zfsutil" ];
   };
 
   fileSystems."/etc/ssh" = {
     device = "work-vm/NixOS/etc/ssh";
     fsType = "zfs";
+    options = [ "zfsutil" ];
   };
 
   fileSystems."/persist" = {
     device = "work-vm/NixOS/persist";
     fsType = "zfs";
+    options = [ "zfsutil" ];
   };
 
   fileSystems."/boot" = {

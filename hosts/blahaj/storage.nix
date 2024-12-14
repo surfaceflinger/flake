@@ -22,16 +22,19 @@ _: {
   fileSystems."/nix" = {
     device = "blahaj/NixOS/nix";
     fsType = "zfs";
+    options = [ "zfsutil" ];
   };
 
   fileSystems."/etc/ssh" = {
     device = "blahaj/NixOS/etc/ssh";
     fsType = "zfs";
+    options = [ "zfsutil" ];
   };
 
   fileSystems."/persist" = {
     device = "blahaj/NixOS/persist";
     fsType = "zfs";
+    options = [ "zfsutil" ];
   };
 
   fileSystems."/boot" = {

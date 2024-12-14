@@ -1,5 +1,4 @@
-_:
-{
+_: {
   # https://github.com/pop-os/default-settings/blob/041cd94158142d6a34d2e684c847ac239a5ba086/etc/sysctl.d/10-pop-default-settings.conf
   zramSwap = {
     enable = true;

@@ -17,16 +17,19 @@ _: {
   fileSystems."/nix" = {
     device = "skogsduva/NixOS/nix";
     fsType = "zfs";
+    options = [ "zfsutil" ];
   };
 
   fileSystems."/etc/ssh" = {
     device = "skogsduva/NixOS/etc/ssh";
     fsType = "zfs";
+    options = [ "zfsutil" ];
   };
 
   fileSystems."/persist" = {
     device = "skogsduva/NixOS/persist";
     fsType = "zfs";
+    options = [ "zfsutil" ];
   };
 
   fileSystems."/boot" = {

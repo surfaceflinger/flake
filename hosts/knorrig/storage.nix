@@ -17,16 +17,19 @@ _: {
   fileSystems."/nix" = {
     device = "knorrig/NixOS/nix";
     fsType = "zfs";
+    options = [ "zfsutil" ];
   };
 
   fileSystems."/etc/ssh" = {
     device = "knorrig/NixOS/etc/ssh";
     fsType = "zfs";
+    options = [ "zfsutil" ];
   };
 
   fileSystems."/persist" = {
     device = "knorrig/NixOS/persist";
     fsType = "zfs";
+    options = [ "zfsutil" ];
   };
 
   fileSystems."/boot" = {

@@ -17,16 +17,19 @@ _: {
   fileSystems."/nix" = {
     device = "djungelskog/NixOS/nix";
     fsType = "zfs";
+    options = [ "zfsutil" ];
   };
 
   fileSystems."/etc/ssh" = {
     device = "djungelskog/NixOS/etc/ssh";
     fsType = "zfs";
+    options = [ "zfsutil" ];
   };
 
   fileSystems."/persist" = {
     device = "djungelskog/NixOS/persist";
     fsType = "zfs";
+    options = [ "zfsutil" ];
   };
 
   fileSystems."/boot" = {

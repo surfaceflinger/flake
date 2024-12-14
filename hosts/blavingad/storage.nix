@@ -24,15 +24,18 @@ _: {
   fileSystems."/nix" = {
     device = "blavingad/NixOS/nix";
     fsType = "zfs";
+    options = [ "zfsutil" ];
   };
 
   fileSystems."/etc/ssh" = {
     device = "blavingad/NixOS/etc/ssh";
     fsType = "zfs";
+    options = [ "zfsutil" ];
   };
 
   fileSystems."/persist" = {
     device = "blavingad/NixOS/persist";
     fsType = "zfs";
+    options = [ "zfsutil" ];
   };
 }
