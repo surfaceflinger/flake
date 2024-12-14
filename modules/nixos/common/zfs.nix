@@ -10,4 +10,10 @@
     echo Mounting all zfs filesystems
     ${pkgs.zfs}/bin/zfs mount -a
   '';
+
+  # fix unmounting /var/log (implicit zfs native mountpoint) on shutdown
+  systemd.services.systemd-journal-flush = {
+    before = [ "shutdown.target" ];
+    conflicts = [ "shutdown.target" ];
+  };
 }
