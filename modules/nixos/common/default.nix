@@ -26,7 +26,10 @@
   ];
 
   # use latest kernel
-  boot.kernelPackages = lib.warn "linux pinned to vanilla 6.12, switch to hardened when ready" pkgs.linuxPackages_6_12;
+  boot.kernelPackages = pkgs.linuxPackages_6_12_hardened;
+
+  # allow unprivileged userns
+  security.unprivilegedUsernsClone = true;
 
   # sched-ext
   services.scx = {

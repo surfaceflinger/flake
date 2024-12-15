@@ -8,12 +8,11 @@ _: {
     "root"
   ];
 
-  # jitterentropy
-  boot.initrd.kernelModules = [ "jitterentropy_rng" ];
-  services.jitterentropy-rngd.enable = true;
-
   # block root login
-  environment.etc.securetty.text = "";
+  environment.etc = {
+    securetty.text = "";
+    machine-id.text = "b08dfa6083e7567a1921a715000001fb";
+  };
 
   # restrict /boot access
   fileSystems."/boot".options = [ "umask=0077" ];
@@ -23,15 +22,11 @@ _: {
   boot.kernel.sysctl = {
     "kernel.kptr_restrict" = 2;
 
-    # cap_syslog
-    "kernel.dmesg_restrict" = 1;
-
     # prevent boot console kernel log information leaks
     "kernel.printk" = "3 3 3 3";
 
     # restrict ebpf memes
     "kernel.unprivileged_bpf_disabled" = 1;
-    "net.core.bpf_jit_harden" = 2;
 
     # disable asynchronous i/o for all processes.
     # https://forums.whonix.org/t/io-uring-security-vulnerabilties/16890/6
@@ -42,30 +37,9 @@ _: {
     # the tiocsetd ioctl
     "dev.tty.ldisc_autoload" = 0;
 
-    # restrict userfaultfd()
-    "vm.unprivileged_userfaultfd" = 0;
-
-    # cap_perfmon
-    "kernel.perf_event_paranoid" = 3;
-
     # the sysrq key exposes a lot of potentially dangerous debugging functionality
     # to unprivileged users
     "kernel.sysrq" = 0;
-
-    # restrict usage of ptrace to only processes with the cap_sys_ptrace
-    # capability
-    "kernel.yama.ptrace_scope" = 1;
-
-    # increase bits of entropy used for mmap aslr
-    "vm.mmap_rnd_bits" = 32;
-    "vm.mmap_rnd_compat_bits" = 16;
-
-    # permit symlinks to be followed when outside of a world-writable sticky directory,
-    # when the owner of the symlink and follower match or when the directory owner
-    # matches the symlink's owner. this also prevents hardlinks from being created
-    # by users that do not have read/write access to the source file.
-    "fs.protected_symlinks" = 1;
-    "fs.protected_hardlinks" = 1;
 
     # prevent creating files in potentially attacker-controlled environments such
     # as world-writable directories to make data spoofing attacks more difficult
@@ -74,11 +48,7 @@ _: {
 
     # disable core dumps
     "fs.suid_dumpable" = 0;
-    "kernel.core_uses_pid" = 1;
     "kernel.core_pattern" = "|/bin/false";
-
-    # disable legacy tiocsti
-    "dev.tty.legacy_tiocsti" = 0;
 
     # oops/warns limit instead of panic
     "kernel.oops_limit" = 100;
@@ -87,49 +57,22 @@ _: {
 
   boot.kernelParams = [
     # enable full strict iommu
-    "amd_iommu=force_isolation"
-    "intel_iommu=on"
     "iommu=force"
-    "iommu.passthrough=0"
-    "iommu.strict=1"
     "efi=disable_early_pci_dma"
-
-    # disable slab merging which significantly increases the difficulty of heap
-    # exploitation by preventing overwriting objects from merged caches and by
-    # making it harder to influence slab cache layout
-    "slab_nomerge"
-
-    # zeroing of memory during allocation and free time
-    "init_on_alloc=1"
-    "init_on_free=1"
 
     # randomise page allocator freelists, improving security by making page allocations less predictable
     "page_alloc.shuffle=1"
-
-    # randomise the kernel stack offset on each syscall
-    "randomize_kstack_offset=on"
-
-    # disable vsyscalls as they are obsolete and have been replaced with vdso.
-    # vsyscalls are also at fixed addresses in memory, making them a potential
-    # target for rop attacks
-    "vsyscall=none"
 
     # these parameters prevent information leaks during boot and must be used
     # in combination with the kernel.printk
     "quiet"
 
-    # disable cpu rdrand and random seed sourced from bootloader
-    "random.trust_cpu=off"
-    "random.trust_bootloader=off"
-
     # why would you?
     "nohibernate"
 
-    # whonix machine-id
-    "systemd.machine_id=b08dfa6083e7567a1921a715000001fb"
-
     # disable direct writing to block devices if theyre mounted
     "bdev_allow_write_mounted=0"
+    "cfi"
   ];
 
   boot.blacklistedKernelModules = [
