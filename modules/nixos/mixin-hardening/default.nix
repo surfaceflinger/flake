@@ -72,7 +72,9 @@ _: {
 
     # disable direct writing to block devices if theyre mounted
     "bdev_allow_write_mounted=0"
-    "cfi"
+
+    # kernel control flow integrity
+    "cfi=kcfi"
   ];
 
   boot.blacklistedKernelModules = [
