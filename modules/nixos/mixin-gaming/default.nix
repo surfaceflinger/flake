@@ -11,17 +11,18 @@
   environment.systemPackages = with pkgs; [
     adwsteamgtk
     furmark # upalarnia pl
-    jazz2 # I maintain this, ok?
-    lunar-client # Minecraft with spyware
-    pcsx2 # PS2 emu
+    jazz2 # i maintain this, ok?
+    lunar-client # minecraft with spyware
+    mcpelauncher-ui-qt # minecraft with more spyware
+    pcsx2 # ps2 emu
     rpcs3 # ps3 emu
-    steamguard-cli # Steam MFA
+    steamguard-cli # steam MFA
     (prismlauncher.override {
       jdks = [
         jdk8
         jdk21
       ];
-    }) # Minecraft
+    }) # minecraft (good one)
   ];
 
   # gamescope
