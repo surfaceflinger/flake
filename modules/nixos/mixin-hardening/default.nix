@@ -1,3 +1,4 @@
+# todo: switch to nix-mineral
 _: {
   # fixup for building
   services.logrotate.checkConfig = false;
@@ -17,7 +18,12 @@ _: {
   # restrict /boot access
   fileSystems."/boot".options = [ "umask=0077" ];
 
-  security.protectKernelImage = true;
+  security = {
+    protectKernelImage = true;
+    forcePageTableIsolation = true;
+    virtualisation.flushL1DataCache = "always";
+  };
+
   boot.consoleLogLevel = 0;
   boot.kernel.sysctl = {
     "kernel.kptr_restrict" = 2;
@@ -73,8 +79,14 @@ _: {
     # disable direct writing to block devices if theyre mounted
     "bdev_allow_write_mounted=0"
 
-    # kernel control flow integrity
+    # kernel control flow integrity (wont work with gcc builds anyway)
     "cfi=kcfi"
+
+    # more strict mitigations, disable smt if necessary
+    "mitigations=auto,nosmt"
+
+    # disable tsx extensions since theyre pmuch useless nowadays
+    "tsx=off"
   ];
 
   boot.blacklistedKernelModules = [

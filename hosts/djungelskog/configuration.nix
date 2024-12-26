@@ -6,7 +6,6 @@
     inputs.self.nixosModules.laptop
     inputs.self.nixosModules.mixin-bdprochot
     inputs.self.nixosModules.mixin-gaming
-    inputs.self.nixosModules.mixin-mitigations-off
     inputs.self.nixosModules.mixin-tpm12
     inputs.self.nixosModules.user-nat
     inputs.self.nixosModules.user-natwork
