@@ -146,14 +146,5 @@
 
     # ipv6 privacy extensions
     "net.ipv6.conf.all.use_tempaddr" = 2;
-
-    # disable tcp sack. sack is commonly exploited and unnecessary for many
-    # circumstances so it should be disabled if you don't require it
-    "net.ipv4.tcp_sack" = 0;
-    "net.ipv4.tcp_dsack" = 0;
-    "net.ipv4.tcp_fack" = 0;
-
-    # avoid leaking system time with tcp timestamps
-    "net.ipv4.tcp_timestamps" = 0;
   };
 }
