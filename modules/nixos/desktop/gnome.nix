@@ -43,6 +43,7 @@
   environment.systemPackages = with pkgs; [
     # gnome
     ffmpegthumbnailer
+    ghostty
     gnome-session
     gnome-tweaks
     ptyxis
@@ -56,9 +57,17 @@
 
     # the way weather works in gnome is terrible :(
     perSystem.self.gnome-weather-set
+  ];
 
-    # show dconf nicely
-    (pkgs.writeScriptBin "dconf-dump" ''exec dconf dump / | bat -l toml'')
+  # make ghostty run without io_uring
+  nixpkgs.overlays = [
+    (_self: super: {
+      ghostty = super.ghostty.overrideAttrs (_oldAttrs: {
+        patchPhase = ''
+          find . -name "*.zig" -exec sh -c 'echo "Patching: $1"; sed -i "s/^const xev = @import(\"xev\");$/const xev = @import(\"xev\").Epoll;/" "$1"' _ {} \;
+        '';
+      });
+    })
   ];
 
   fonts = {

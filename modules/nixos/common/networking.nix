@@ -23,25 +23,6 @@
         };
       };
 
-  # desktop networking
-  networking.networkmanager = {
-    inherit (config.services.xserver) enable;
-  };
-  environment.persistence."/persist".directories = lib.mkIf (
-    config.networking.networkmanager.enable && config.ephemereal
-  ) [ "/etc/NetworkManager/system-connections" ];
-  hardware.usb-modeswitch.enable = config.networking.networkmanager.enable;
-
-  # mdns
-  services.avahi = {
-    inherit (config.services.xserver) enable;
-    nssmdns4 = true;
-    publish = {
-      enable = true;
-      userServices = true;
-    };
-  };
-
   # dns
   services.resolved = {
     enable = true;
