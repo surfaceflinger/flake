@@ -4,7 +4,7 @@
   ...
 }:
 {
-  hardware.cpu.x86.msr.enable = lib.mkDefault true;
+  hardware.cpu.x86.msr.enable = true;
 
   systemd.services.bdprochot = {
     description = "Keep BD PROCHOT disabled";
@@ -29,7 +29,7 @@
     wantedBy = [ "multi-user.target" ];
     timerConfig = {
       OnBootSec = "2min";
-      OnUnitActiveSec = "30";
+      OnUnitActiveSec = "10min";
     };
   };
 }
