@@ -25,7 +25,11 @@
   ];
 
   # use latest kernel
-  boot.kernelPackages = pkgs.linuxPackages_6_12_hardened;
+  boot.kernelPackages =
+    if config.services.xserver.enable then
+      pkgs.linuxPackages_xanmod_stable
+    else
+      pkgs.linuxPackages_6_12_hardened;
 
   # allow unprivileged userns
   security.unprivilegedUsernsClone = true;
