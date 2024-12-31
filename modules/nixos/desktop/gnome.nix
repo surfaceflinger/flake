@@ -59,17 +59,6 @@
     perSystem.self.gnome-weather-set
   ];
 
-  # make ghostty run without io_uring
-  nixpkgs.overlays = [
-    (_self: super: {
-      ghostty = super.ghostty.overrideAttrs (_oldAttrs: {
-        patchPhase = ''
-          find . -name "*.zig" -exec sh -c 'echo "Patching: $1"; sed -i "s/^const xev = @import(\"xev\");$/const xev = @import(\"xev\").Epoll;/" "$1"' _ {} \;
-        '';
-      });
-    })
-  ];
-
   fonts = {
     fontconfig = {
       cache32Bit = true;

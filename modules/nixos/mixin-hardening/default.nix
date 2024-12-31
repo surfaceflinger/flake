@@ -196,4 +196,16 @@ _: {
     "vt8623fb"
     "udlfb"
   ];
+
+  # fixes
+  nixpkgs.overlays = [
+    (_self: super: {
+      # make ghostty run without io_uring
+      ghostty = super.ghostty.overrideAttrs (_oldAttrs: {
+        patchPhase = ''
+          find . -name "*.zig" -exec sh -c 'echo "Patching: $1"; sed -i "s/^const xev = @import(\"xev\");$/const xev = @import(\"xev\").Epoll;/" "$1"' _ {} \;
+        '';
+      });
+    })
+  ];
 }
