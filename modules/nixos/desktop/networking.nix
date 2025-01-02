@@ -8,7 +8,7 @@
   networking.networkmanager.enable = true;
   hardware.usb-modeswitch.enable = true;
 
-  environment.persistence."/persist".directories = lib.mkIf config.ephemereal [
+  environment.persistence."/persist".directories = lib.mkIf config.ephemeral [
     "/etc/NetworkManager/system-connections"
   ];
 
