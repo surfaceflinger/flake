@@ -1,5 +1,5 @@
 _: {
-  ephemereal = true;
+  ephemeral = true;
   networking.hostId = "0f8a54ac";
   boot = {
     supportedFilesystems = [ "zfs" ];

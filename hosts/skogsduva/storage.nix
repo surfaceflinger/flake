@@ -2,7 +2,7 @@ _: {
   boot.supportedFilesystems = [ "zfs" ];
   networking.hostId = "17c1a92a";
 
-  ephemereal = true;
+  ephemeral = true;
 
   fileSystems."/" = {
     device = "none";

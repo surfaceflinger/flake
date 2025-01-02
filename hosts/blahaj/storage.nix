@@ -2,7 +2,7 @@ _: {
   boot.supportedFilesystems = [ "zfs" ];
   networking.hostId = "b84cacfe";
 
-  ephemereal = true;
+  ephemeral = true;
 
   boot.zfs.extraPools = [
     "smolhaj"
