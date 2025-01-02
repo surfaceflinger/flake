@@ -9,6 +9,7 @@
     inputs.pop-os-default-settings + /etc/sysctl.d/10-pop-default-settings.conf;
 
   boot.kernel.sysctl = {
+    "vm.page-cluster" = 0;
     "vm.swappiness" = 180;
   };
 }
