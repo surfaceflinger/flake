@@ -807,6 +807,23 @@
         "type": "github"
       }
     },
+    "pop-os-default-settings": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1730822893,
+        "narHash": "sha256-dcsxfLCKNozIoGIAEz/wqGLA8EbNGQANE2CiEgyG2GQ=",
+        "owner": "pop-os",
+        "repo": "default-settings",
+        "rev": "7adda3868b7d95461f9e39b28c0166d95ff88e66",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pop-os",
+        "ref": "master_noble",
+        "repo": "default-settings",
+        "type": "github"
+      }
+    },
     "rocksdb": {
       "flake": false,
       "locked": {
@@ -837,6 +854,7 @@
         "nix-index-database": "nix-index-database",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
+        "pop-os-default-settings": "pop-os-default-settings",
         "schizofox": "schizofox",
         "srvos": "srvos",
         "tf": "tf",

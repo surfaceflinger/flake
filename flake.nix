@@ -21,6 +21,8 @@
     nix-index-database.url = "github:nix-community/nix-index-database/main";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    pop-os-default-settings.url = "github:pop-os/default-settings/master_noble";
+    pop-os-default-settings.flake = false;
     schizofox.inputs.nixpkgs.follows = "nixpkgs";
     schizofox.url = "github:schizofox/schizofox/main";
     srvos.inputs.nixpkgs.follows = "nixpkgs";
