@@ -49,7 +49,7 @@
         trezor-agent
         trezorctl
         trezor-suite
-        wealthfolio
+        #wealthfolio
       ];
   };
 
