@@ -29,7 +29,7 @@ with lib.hm.gvariant;
       app-picker-layout = [ "" ];
       favorite-apps = [
         "org.gnome.Nautilus.desktop"
-        "org.gnome.Ptyxis.desktop"
+        "com.mitchellh.ghostty.desktop"
         "Schizofox.desktop"
         "org.telegram.desktop.desktop"
         "vesktop.desktop"
@@ -127,7 +127,7 @@ with lib.hm.gvariant;
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Super>r";
-      command = "ptyxis --new-window";
+      command = "ghostty";
       name = "Start terminal";
     };
 
@@ -200,23 +200,6 @@ with lib.hm.gvariant;
 
     "org/gnome/shell/extensions/pip-on-top" = {
       stick = true;
-    };
-
-    # terminal/ptyxis
-    "org/gnome/Ptyxis" = {
-      cursor-shape = "ibeam";
-      default-profile-uuid = "6558e70a00b73616061537c7663760c0";
-      font-name = "Cascadia Mono PL 11";
-      interface-style = "dark";
-      profile-uuids = [ "6558e70a00b73616061537c7663760c0" ];
-      restore-session = false;
-      restore-window-size = false;
-      use-system-font = false;
-    };
-
-    "org/gnome/Ptyxis/Profiles/6558e70a00b73616061537c7663760c0" = {
-      label = "home-manager";
-      scrollback-lines = 20000;
     };
 
     # random other gnome stuff

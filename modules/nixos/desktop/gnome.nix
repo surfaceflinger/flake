@@ -43,10 +43,8 @@
   environment.systemPackages = with pkgs; [
     # gnome
     ffmpegthumbnailer
-    ghostty
     gnome-session
     gnome-tweaks
-    ptyxis
 
     # theming
     adw-gtk3
