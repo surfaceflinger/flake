@@ -2,11 +2,18 @@ _: {
   services.chrony = {
     enable = true;
     enableNTS = true;
+    extraFlags = [ "-F 1" ];
+    enableRTCTrimming = false;
     extraConfig = ''
       authselectmode prefer
       cmdport 0
+      dscp 46
+      makestep 1.0 3
       minsources 3
       nocerttimecheck 1
+      noclientlog
+      rtconutc
+      rtcsync
     '';
   };
   networking.timeServers = [

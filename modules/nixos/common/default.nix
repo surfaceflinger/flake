@@ -8,11 +8,11 @@
 {
   imports = [
     inputs.home-manager.nixosModules.default
-    inputs.self.nixosModules.mixin-hardening
     ./agenix.nix
     ./boot.nix
     ./chrony.nix
     ./doas.nix
+    ./hardening.nix
     ./impermanence.nix
     ./memory.nix
     ./nano.nix
@@ -30,9 +30,6 @@
       pkgs.linuxPackages_xanmod_stable
     else
       pkgs.linuxPackages_6_12_hardened;
-
-  # allow unprivileged userns
-  security.unprivilegedUsernsClone = true;
 
   # sched-ext
   services.scx = {

@@ -1,6 +1,12 @@
-_: {
+{ pkgs, ... }:
+{
   programs.ghostty = {
     enable = true;
+    package = pkgs.ghostty.overrideAttrs (_oldAttrs: {
+      patchPhase = ''
+        find . -name "*.zig" -exec sh -c 'echo "Patching: $1"; sed -i "s/^const xev = @import(\"xev\");$/const xev = @import(\"xev\").Epoll;/" "$1"' _ {} \;
+      '';
+    });
     settings = {
       cursor-style = "bar";
       font-family = "Cascadia Mono PL";

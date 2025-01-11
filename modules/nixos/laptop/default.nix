@@ -2,6 +2,8 @@
 {
   imports = [ inputs.self.nixosModules.desktop ];
 
+  nix-mineral.overrides.performance.no-mitigations = true;
+
   services.tlp = {
     settings = {
       CPU_BOOST_ON_AC = 1;

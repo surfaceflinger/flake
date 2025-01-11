@@ -19,10 +19,14 @@
     lix.url = "git+https://git.lix.systems/lix-project/nixos-module.git?ref=stable";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     nix-index-database.url = "github:nix-community/nix-index-database/main";
+    nix-mineral.flake = false;
+    nix-mineral.url = "github:cynicsketch/nix-mineral/main";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     schizofox.inputs.nixpkgs.follows = "nixpkgs";
     schizofox.url = "github:schizofox/schizofox/main";
+    security-misc.flake = false;
+    security-misc.url = "github:Kicksecure/security-misc/master";
     srvos.inputs.nixpkgs.follows = "nixpkgs";
     srvos.url = "github:nix-community/srvos/main";
     tf.inputs.nixpkgs.follows = "nixpkgs";

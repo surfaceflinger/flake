@@ -11,6 +11,7 @@
     ./pipewire.nix
     ./printing.nix
     ./system-packages.nix
+    ./unharden.nix
   ];
 
   time.timeZone = "Europe/Warsaw";

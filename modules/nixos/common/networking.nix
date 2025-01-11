@@ -19,7 +19,6 @@
           DHCP = true;
           IPv4Forwarding = true;
           IPv6Forwarding = true;
-          IPv6PrivacyExtensions = "kernel";
         };
       };
 
@@ -65,7 +64,7 @@
 
   # kernel tuning
   boot.kernel.sysctl = {
-    # bbr + CAKE
+    # bbr + cake
     "net.core.default_qdisc" = lib.mkForce "cake";
     "net.ipv4.tcp_congestion_control" = lib.mkForce "bbr";
 
@@ -85,47 +84,19 @@
     # mtu probing
     "net.ipv4.tcp_mtu_probing" = 1;
 
-    ## a martian packet is a one with a source address which is blatantly wrong
-    ## recommended to keep a log of these to identify these suspicious packets
-    "net.ipv4.conf.all.log_martians" = 1;
-    "net.ipv4.conf.default.log_martians" = 1;
-
-    # prevent syn flood attacks
-    "net.ipv4.tcp_syncookies" = 1;
-
-    # protect against time-wait assassination by dropping rst packets for sockets
-    # in the time-wait state
-    "net.ipv4.tcp_rfc1337" = 1;
-
-    # packet source validation
-    "net.ipv4.conf.default.rp_filter" = 1;
-
-    # disable accepting icmp redirects
-    "net.ipv4.conf.all.accept_redirects" = 0;
-    "net.ipv4.conf.default.accept_redirects" = 0;
-    "net.ipv4.conf.all.secure_redirects" = 0;
-    "net.ipv4.conf.default.secure_redirects" = 0;
-    "net.ipv6.conf.all.accept_redirects" = 0;
-    "net.ipv6.conf.default.accept_redirects" = 0;
-
-    # disable icmp redirect sending
-    "net.ipv4.conf.all.send_redirects" = 0;
-    "net.ipv4.conf.default.send_redirects" = 0;
-
-    # ignore bogus icmp error responses
-    "net.ipv4.icmp_ignore_bogus_error_responses" = 1;
-
-    # disable source routing
-    "net.ipv4.conf.all.accept_source_route" = 0;
-    "net.ipv4.conf.default.accept_source_route" = 0;
-    "net.ipv6.conf.all.accept_source_route" = 0;
-    "net.ipv6.conf.default.accept_source_route" = 0;
-
-    # disable accepting ipv6 router advertisements
-    "net.ipv6.conf.all.accept_ra" = 0;
-    "net.ipv6.default.accept_ra" = 0;
-
-    # ipv6 privacy extensions
-    "net.ipv6.conf.all.use_tempaddr" = 2;
+    # random shit from k4yt3x
+    "net.core.netdev_max_backlog" = 250000;
+    "net.core.rmem_default" = 8388608;
+    "net.core.wmem_default" = 8388608;
+    "net.core.rmem_max" = 536870912;
+    "net.core.wmem_max" = 536870912;
+    "net.core.optmem_max" = 40960;
+    "net.ipv4.tcp_synack_retries" = 5;
+    "net.ipv4.ip_local_port_range" = "1024 65535";
+    "net.ipv4.tcp_base_mss" = 1024;
+    "net.ipv4.tcp_rmem" = "8192 262144 536870912";
+    "net.ipv4.tcp_wmem" = "4096 16384 536870912";
+    "net.ipv4.tcp_adv_win_scale" = "-2";
+    "net.ipv4.tcp_notsent_lowat" = 131072;
   };
 }
