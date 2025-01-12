@@ -94,11 +94,18 @@
     };
 
     search = {
-      defaultSearchEngine = "Googol";
+      defaultSearchEngine = "Kagi";
       addEngines = [
         {
+          Name = "Kagi";
+          Description = "Search";
+          Alias = "!kagi";
+          Method = "GET";
+          URLTemplate = "https://kagi.com/search?q={searchTerms}";
+        }
+        {
           Name = "Googol";
-          Description = "When Searx stops working during important shit";
+          Description = "Not worth using anymore tbh";
           Alias = "!goog";
           Method = "GET";
           URLTemplate = "https://google.com/search?q={searchTerms}";
