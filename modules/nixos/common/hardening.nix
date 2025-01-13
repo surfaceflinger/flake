@@ -33,6 +33,7 @@
   boot.kernelParams = [
     "bdev_allow_write_mounted=0"
     "cfi=kcfi" # won't work anyway
+    "debugfs=on" # reenable debugfs for some weird drivers and eg. rasdaemon
   ];
 
   # fixup for building
