@@ -35,7 +35,7 @@
         mariadb
         opentofu
         perSystem.cfn-changeset-viewer.default
-        perSystem.tf."1.5.5"
+        perSystem.tf."1.5.7"
         ssm-session-manager-plugin
         step-cli
       ]
