@@ -80,6 +80,8 @@
           "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
         "uBlock0@raymondhill.net".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+        "search@kagi.com".install_url =
+          "https://addons.mozilla.org/firefox/downloads/latest/kagi-search-for-firefox/latest.xpi";
       };
       darkreader.enable = false;
       simplefox.enable = false;
