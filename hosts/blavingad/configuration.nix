@@ -13,6 +13,7 @@
     inputs.self.nixosModules.user-nat
     inputs.srvos.nixosModules.mixins-cloud-init
     inputs.xkomhotshot.nixosModules.default
+    ./ipfs.nix
     ./matrix.nix
     ./microbin.nix
     ./soju.nix
