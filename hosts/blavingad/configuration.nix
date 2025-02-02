@@ -1,5 +1,4 @@
 {
-  config,
   inputs,
   pkgs,
   ...
@@ -12,7 +11,6 @@
     inputs.self.nixosModules.server
     inputs.self.nixosModules.user-nat
     inputs.srvos.nixosModules.mixins-cloud-init
-    inputs.xkomhotshot.nixosModules.default
     ./ipfs.nix
     ./matrix.nix
     ./microbin.nix
@@ -52,12 +50,6 @@
     linkConfig.RequiredForOnline = "routable";
   };
 
-  # xkom telegram bot
-  services.xkomhotshot = {
-    enable = true;
-    environmentFile = config.age.secrets.xkomhotshot.path;
-  };
-
   # tor snowflake proxy
   services.snowflake-proxy = {
     enable = true;
@@ -73,5 +65,4 @@
     mode = "500";
     owner = "nat";
   };
-  age.secrets.xkomhotshot.file = ../../secrets/xkomhotshot.age;
 }

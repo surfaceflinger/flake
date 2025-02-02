@@ -1,7 +1,6 @@
 {
   config,
   inputs,
-  lib,
   ...
 }:
 {
@@ -14,6 +13,7 @@
     inputs.self.nixosModules.mixin-virtualisation
     inputs.self.nixosModules.server
     inputs.self.nixosModules.user-nat
+    inputs.xkomhotshot.nixosModules.default
     ../../modules/nixos/desktop/networking.nix
     ./monero.nix
     ./storage.nix
@@ -48,4 +48,11 @@
 
   # this is an old intel.
   boot.kernelParams = [ "intel_pstate=passive" ];
+
+  # xkom telegram bot
+  age.secrets.xkomhotshot.file = ../../secrets/xkomhotshot.age;
+  services.xkomhotshot = {
+    enable = true;
+    environmentFile = config.age.secrets.xkomhotshot.path;
+  };
 }
