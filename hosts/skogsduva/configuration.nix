@@ -14,6 +14,7 @@
     inputs.self.nixosModules.mixin-virtualisation
     inputs.self.nixosModules.server
     inputs.self.nixosModules.user-nat
+    ../../modules/nixos/desktop/networking.nix
     ./monero.nix
     ./storage.nix
   ];
@@ -43,7 +44,7 @@
 
   # yes this is a server over wifi - inb4 dont use networkmanager on a server
   # and keep the password in agenix with systemd-networkd!!!!!!!!!!!!!!!!!! idc!!
-  networking.networkmanager.enable = lib.mkForce true;
+  nix-mineral.overrides.desktop.disable-usbguard = true;
 
   # this is an old intel.
   boot.kernelParams = [ "intel_pstate=passive" ];
