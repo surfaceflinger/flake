@@ -29,7 +29,7 @@
     if config.services.xserver.enable then
       pkgs.linuxPackages_xanmod_stable
     else
-      pkgs.linuxPackages_6_12_hardened;
+      pkgs.linuxPackages_hardened;
 
   # sched-ext
   services.scx = {
