@@ -59,7 +59,7 @@
   # ollama
   services.ollama = {
     enable = true;
-    #acceleration = "rocm";
+    acceleration = "rocm";
     rocmOverrideGfx = "11.0.0";
   };
 
