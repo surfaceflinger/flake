@@ -7,9 +7,7 @@ _: {
     enableGC = true;
     settings = {
       Adresses.API = [ ];
-      AutoTLS.Enabled = false;
       Discovery.MDNS.Enabled = false;
-      Routing.AcceleratedDHTClient = true;
     };
   };
 
