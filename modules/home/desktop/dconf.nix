@@ -181,12 +181,6 @@ with lib.hm.gvariant;
 
     "org/gnome/shell/extensions/appindicator" = {
       icon-saturation = 1.0;
-      legacy-tray-enabled = true;
-    };
-
-    "org/gnome/shell/extensions/caffeine" = {
-      screen-blank = "always";
-      show-notifications = false;
     };
 
     "org/gnome/shell/extensions/quick-settings-avatar" = {

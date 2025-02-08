@@ -20,12 +20,10 @@
     extensions = with pkgs.gnomeExtensions; [
       { package = appindicator; }
       { package = auto-move-windows; }
-      { package = caffeine; }
       { package = gamemode-shell-extension; }
       { package = luminus-shell; }
       { package = media-progress; }
       { package = pip-on-top; }
-      { package = rounded-window-corners-reborn; }
       { package = tailscale-qs; }
       { package = user-avatar-in-quick-settings; }
       { package = user-themes-x; }

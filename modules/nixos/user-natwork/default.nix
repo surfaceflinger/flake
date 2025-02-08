@@ -54,6 +54,8 @@
       imports = [
         inputs.self.homeModules.common
       ] ++ lib.optionals config.services.xserver.enable [ inputs.self.homeModules.desktop ];
+
+      dconf.settings."org/gnome/shell/extensions/appindicator".legacy-tray-enabled = true;
     };
 
   nix.settings.trusted-users = [ "natwork" ];
