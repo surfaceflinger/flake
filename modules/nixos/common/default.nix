@@ -26,10 +26,7 @@
 
   # use latest kernel
   boot.kernelPackages =
-    if config.services.xserver.enable then
-      pkgs.linuxPackages_xanmod_stable
-    else
-      pkgs.linuxPackages_hardened;
+    if config.services.xserver.enable then pkgs.linuxPackages_xanmod else pkgs.linuxPackages_hardened;
 
   # sched-ext
   services.scx = {
