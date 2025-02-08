@@ -11,6 +11,7 @@
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.self.nixosModules.mixin-tpm12
     inputs.self.nixosModules.mixin-virtualisation
+    inputs.self.nixosModules.mixin-www
     inputs.self.nixosModules.server
     inputs.self.nixosModules.user-nat
     inputs.xkomhotshot.nixosModules.default
@@ -42,10 +43,6 @@
     ];
   };
 
-  # yes this is a server over wifi - inb4 dont use networkmanager on a server
-  # and keep the password in agenix with systemd-networkd!!!!!!!!!!!!!!!!!! idc!!
-  nix-mineral.overrides.desktop.disable-usbguard = true;
-
   # this is an old intel.
   boot.kernelParams = [ "intel_pstate=passive" ];
 
@@ -55,4 +52,11 @@
     enable = true;
     environmentFile = config.age.secrets.xkomhotshot.path;
   };
+
+  # reverse proxy my printer so its accessible over tailscale
+  # if needed:
+  # lpadmin -p biblioteka -E -v ipp://skogsduva:631/ipp -m everywhere
+  services.caddy.virtualHosts.":631".extraConfig = ''
+    reverse_proxy BRN3C2AF400C594.lan:631
+  '';
 }

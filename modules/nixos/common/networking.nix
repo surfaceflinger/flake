@@ -17,9 +17,12 @@
         # enable dhcp and routing
         networkConfig = {
           DHCP = true;
+          Domains = [ "~lan" ];
           IPv4Forwarding = true;
+          IPv6AcceptRA = false;
           IPv6Forwarding = true;
         };
+        dhcpV6Config.WithoutRA = "solicit";
       };
 
   # dns
