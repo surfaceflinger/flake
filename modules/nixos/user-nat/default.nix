@@ -51,6 +51,10 @@
         trezorctl
         trezor-suite
         wealthfolio
+
+        # ops
+        opentofu
+        scaleway-cli
       ];
   };
 
