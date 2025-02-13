@@ -1,7 +1,4 @@
-{
-  inputs,
-  ...
-}:
+{ inputs, ... }:
 {
   imports = [ inputs.schizofox.homeManagerModule ];
 
@@ -54,14 +51,14 @@
           "https://addons.mozilla.org/firefox/downloads/latest/clearurls/latest.xpi";
         "{762f9885-5a13-4abd-9c77-433dcd38b8fd}".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/return-youtube-dislikes/latest.xpi";
+        "{77e2c00b-e173-4604-863d-01645d8d2826}".install_url =
+          "https://www.cookie-dialog-monster.com/releases/mozilla/latest.xpi";
         "7esoorv3@alefvanoon.anonaddy.me".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/libredirect/latest.xpi";
         "{9063c2e9-e07c-4c2c-9646-cfe7ca8d0498}".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/old-reddit-redirect/latest.xpi";
         "{a4c4eda4-fb84-4a84-b4a1-f7c1cbf2a1ad}".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/refined-github-/latest.xpi";
-        "addon@fastforward.team".install_url =
-          "https://addons.mozilla.org/firefox/downloads/latest/fastforwardteam/latest.xpi";
         "{aecec67f-0d10-4fa7-b7c7-609a2db280cf}".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/violentmonkey/latest.xpi";
         "{b5501fd1-7084-45c5-9aa6-567c2fcf5dc6}".install_url =
@@ -72,16 +69,16 @@
           "https://addons.mozilla.org/firefox/downloads/latest/dearrow/latest.xpi";
         "firefox@betterttv.net".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/betterttv/latest.xpi";
-        "idcac-pub@guus.ninja".install_url =
-          "https://addons.mozilla.org/firefox/downloads/latest/istilldontcareaboutcookies/latest.xpi";
         "jid1-D7momAzRw417Ag@jetpack".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/wikiwand-wikipedia-modernized/latest.xpi";
+        "privacypass@kagi.com".install_url =
+          "https://addons.mozilla.org/firefox/downloads/latest/kagi-privacy-pass/latest.xpi";
+        "search@kagi.com".install_url =
+          "https://addons.mozilla.org/firefox/downloads/latest/kagi-search-for-firefox/latest.xpi";
         "sponsorBlocker@ajay.app".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
         "uBlock0@raymondhill.net".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-        "search@kagi.com".install_url =
-          "https://addons.mozilla.org/firefox/downloads/latest/kagi-search-for-firefox/latest.xpi";
       };
       darkreader.enable = false;
       simplefox.enable = false;
