@@ -167,6 +167,22 @@
         "type": "github"
       }
     },
+    "dont-track-me": {
+      "locked": {
+        "lastModified": 1739635732,
+        "narHash": "sha256-TmuudCA9411E+byPJS87E0/7XwFVHYRvXdMvBKXv8mM=",
+        "owner": "dtomvan",
+        "repo": "dont-track-me.nix",
+        "rev": "79fddc997fccf7643a0d2b15849aa5bd07a18e82",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dtomvan",
+        "ref": "main",
+        "repo": "dont-track-me.nix",
+        "type": "github"
+      }
+    },
     "fenix": {
       "inputs": {
         "nixpkgs": [
@@ -833,6 +849,7 @@
         "agenix": "agenix",
         "blueprint": "blueprint",
         "cfn-changeset-viewer": "cfn-changeset-viewer",
+        "dont-track-me": "dont-track-me",
         "firefox-gnome-theme": "firefox-gnome-theme",
         "grapevine": "grapevine",
         "home-manager": "home-manager_2",
