@@ -520,11 +520,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1739470101,
-        "narHash": "sha256-NxNe32VB4XI/xIXrsKmIfrcgtEx5r/5s52pL3CpEcA4=",
+        "lastModified": 1739571712,
+        "narHash": "sha256-0UdSDV/TBY+GuxXLbrLq3l2Fq02ciyKCIMy4qmnfJXQ=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "5031c6d2978109336637977c165f82aa49fa16a7",
+        "rev": "6d3163aea47fdb1fe19744e91306a2ea4f602292",
         "type": "github"
       },
       "original": {
@@ -671,11 +671,11 @@
     "nix-mineral": {
       "flake": false,
       "locked": {
-        "lastModified": 1737503172,
-        "narHash": "sha256-VbSIq3I2s7imBDf6JJ4WAnwVYhRN8oyoaOp444+YliQ=",
+        "lastModified": 1739508060,
+        "narHash": "sha256-H13V7BVk5SU0YBOtPPErpT4BptlHKnuQrIoGM82FK/Y=",
         "owner": "cynicsketch",
         "repo": "nix-mineral",
-        "rev": "46bb9ac8b69c6afa86063d52298598db4a5d9bc0",
+        "rev": "b5ee08a228c2023e67f2fbe2022b62e51bd8e863",
         "type": "github"
       },
       "original": {
@@ -797,11 +797,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1739478914,
-        "narHash": "sha256-qljqSeAWOFbd6HNg8Ey28RdZYdVN8bMb6HJK7uqCKZ0=",
+        "lastModified": 1739580444,
+        "narHash": "sha256-+/bSz4EAVbqz8/HsIGLroF8aNaO8bLRL7WfACN+24g4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "6f9b8ea84c04411c48ab5aab4620ab204936d9fc",
+        "rev": "8bb37161a0488b89830168b81c48aed11569cb93",
         "type": "github"
       },
       "original": {
@@ -891,11 +891,11 @@
         "systems": "systems_5"
       },
       "locked": {
-        "lastModified": 1736458904,
-        "narHash": "sha256-TKYzgZArl/EpcSAT44xSZhWMWa3id63sEVWZNDtjo1A=",
+        "lastModified": 1739487683,
+        "narHash": "sha256-QVLiye8gfM4o+BnufTJGh0v0U5/bH610RGKO90nHTu0=",
         "owner": "schizofox",
         "repo": "schizofox",
-        "rev": "cdf69b2a445ff12680657a3bd44ce7c406bf2ae6",
+        "rev": "e87058a27e226e0ab9adc1a5e5b5fffbe5bb151f",
         "type": "github"
       },
       "original": {
@@ -1050,11 +1050,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1739407201,
-        "narHash": "sha256-3Iu6c6lUn74tuZXAr6bRyomL/LmoK89qdjrWGIy5YMw=",
+        "lastModified": 1739493528,
+        "narHash": "sha256-YqWbTfOOmEzzLdigx+TPbipdDBUx3enx4LE06qpP7TY=",
         "owner": "vdesjardins",
         "repo": "terraform-overlay",
-        "rev": "0b68e07fce7c9e29543f64275b867cc0531dd799",
+        "rev": "cfc4d782a5a5cb292cb03d33ff0ef30f576bc4e7",
         "type": "github"
       },
       "original": {
