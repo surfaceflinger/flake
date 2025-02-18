@@ -20,6 +20,7 @@
     packages =
       with pkgs;
       [
+        argocd
         awscli2
         aws-rotate-key
         awsume
