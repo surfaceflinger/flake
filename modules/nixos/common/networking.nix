@@ -26,16 +26,17 @@
       };
 
   # dns
+  networking.nameservers = [
+    "149.112.112.11#dns11.quad9.net"
+    "2620:fe::11#dns11.quad9.net"
+    "2620:fe::fe:11#dns11.quad9.net"
+    "9.9.9.11#dns11.quad9.net"
+  ];
+
   services.resolved = {
     enable = true;
     dnssec = "false"; # causes resolves to fail way too often
     llmnr = "false";
-    fallbackDns = [
-      "149.112.112.11#dns11.quad9.net"
-      "2620:fe::11#dns11.quad9.net"
-      "2620:fe::fe:11#dns11.quad9.net"
-      "9.9.9.11#dns11.quad9.net"
-    ];
     extraConfig = ''
       Cache=no-negative
       DNSOverTLS=opportunistic
