@@ -1,4 +1,8 @@
-{ inputs, lib, ... }:
+{
+  inputs,
+  lib,
+  ...
+}:
 {
   imports = [
     "${inputs.nix-mineral}/nix-mineral.nix"

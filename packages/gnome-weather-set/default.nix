@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 pkgs.writeShellApplication {
   name = "gnome-weather-set";
   runtimeInputs = [

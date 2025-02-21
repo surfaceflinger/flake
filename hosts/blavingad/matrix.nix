@@ -1,7 +1,4 @@
-{
-  inputs,
-  ...
-}:
+{ inputs, ... }:
 let
   server_name = "nekopon.pl";
   matrix_hostname = "matrix.${server_name}";

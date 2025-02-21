@@ -1,4 +1,8 @@
-{ perSystem, pkgs, ... }:
+{
+  perSystem,
+  pkgs,
+  ...
+}:
 {
   imports = [ ./dconf.nix ];
 

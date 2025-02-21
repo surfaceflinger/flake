@@ -1,4 +1,9 @@
-{ inputs, osConfig, ... }:
+{
+  inputs,
+  osConfig,
+  perSystem,
+  ...
+}:
 {
   imports = [
     ./git.nix
@@ -12,4 +17,8 @@
     enable = true;
     enableAll = true;
   };
+
+  home.packages = [
+    perSystem.self.safe-rm
+  ];
 }

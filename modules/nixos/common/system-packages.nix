@@ -1,5 +1,6 @@
 {
   config,
+  perSystem,
   pkgs,
   ...
 }:
@@ -19,6 +20,7 @@
     ncdu
     nixfmt-rfc-style
     ouch
+    perSystem.self.safe-rm
     pv
     rage
     ripgrep
