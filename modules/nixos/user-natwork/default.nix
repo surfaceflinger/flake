@@ -40,6 +40,7 @@
         postgresql
         ssm-session-manager-plugin
         step-cli
+        teleport
       ]
       ++ lib.optionals config.services.xserver.enable [
         beekeeper-studio
