@@ -47,6 +47,7 @@
         bitwarden
         freerdp
         perSystem.self.timedoctor-desktop
+        seabird
         slack
       ];
   };
