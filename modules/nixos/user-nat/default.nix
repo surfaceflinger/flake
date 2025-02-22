@@ -55,6 +55,9 @@
         # ops
         opentofu
         scaleway-cli
+
+        # misc
+        binsider
       ];
   };
 
