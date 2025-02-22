@@ -17,6 +17,7 @@
     file
     gojq
     ipgrep
+    lurk
     ncdu
     nixfmt-rfc-style
     ouch
