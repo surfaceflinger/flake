@@ -59,4 +59,7 @@
   services.caddy.virtualHosts.":631".extraConfig = ''
     reverse_proxy BRN3C2AF400C594.lan:631
   '';
+
+  # fix building
+  nix-mineral.overrides.desktop.allow-multilib = true;
 }
