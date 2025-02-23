@@ -13,10 +13,10 @@
     inputs.srvos.nixosModules.mixins-cloud-init
     ./ipfs.nix
     ./matrix.nix
-    ./microbin.nix
     ./soju.nix
     ./storage.nix
     ./vaultwarden.nix
+    ./wastebin.nix
     ./www.nix
   ];
   boot.initrd.availableKernelModules = [

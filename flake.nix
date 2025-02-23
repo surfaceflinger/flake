@@ -4,6 +4,8 @@
   inputs = {
     agenix.inputs.nixpkgs.follows = "nixpkgs";
     agenix.url = "github:ryantm/agenix/main";
+    blahajpl-homepage.flake = false;
+    blahajpl-homepage.url = "github:blahaj-pl/homepage/main";
     blueprint.inputs.nixpkgs.follows = "nixpkgs";
     blueprint.url = "github:numtide/blueprint/main";
     cfn-changeset-viewer.inputs.nixpkgs.follows = "nixpkgs";

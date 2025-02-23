@@ -1,4 +1,5 @@
-_: {
+{ inputs, ... }:
+{
   services.caddy = {
     virtualHosts."natalia.ovh".extraConfig = "redir https://nekopon.pl";
     virtualHosts."nekopon.pl".extraConfig = ''
@@ -7,6 +8,11 @@ _: {
         rewrite * /nekopon.pl{uri}
         reverse_proxy https://surfaceflinger.github.io { header_up Host {upstream_hostport} }
       }
+    '';
+
+    virtualHosts."blahaj.pl".extraConfig = ''
+      root * ${inputs.blahajpl-homepage}
+      file_server
     '';
   };
 }

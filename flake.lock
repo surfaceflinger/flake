@@ -48,6 +48,23 @@
         "type": "github"
       }
     },
+    "blahajpl-homepage": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1740337819,
+        "narHash": "sha256-GFD33vlwBZO2AXOIa0HRLirRD+X+OK7Zi5GiqvfPuIA=",
+        "owner": "blahaj-pl",
+        "repo": "homepage",
+        "rev": "c4dd9546590b139781988b05845e223246cd6919",
+        "type": "github"
+      },
+      "original": {
+        "owner": "blahaj-pl",
+        "ref": "main",
+        "repo": "homepage",
+        "type": "github"
+      }
+    },
     "blueprint": {
       "inputs": {
         "nixpkgs": [
@@ -847,6 +864,7 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
+        "blahajpl-homepage": "blahajpl-homepage",
         "blueprint": "blueprint",
         "cfn-changeset-viewer": "cfn-changeset-viewer",
         "dont-track-me": "dont-track-me",
