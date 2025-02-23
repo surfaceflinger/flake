@@ -7,6 +7,7 @@
 {
   imports = [
     ./audio.nix
+    ./ddc.nix
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     inputs.nixos-hardware.nixosModules.common-pc
     inputs.nixos-hardware.nixosModules.common-pc-ssd
