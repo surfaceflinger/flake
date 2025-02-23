@@ -15,4 +15,8 @@ in {
     host-blavingad
     user-nat-blahaj
   ];
+  "wastebin.age".publicKeys = [
+    host-blavingad
+    user-nat-blahaj
+  ];
 }
