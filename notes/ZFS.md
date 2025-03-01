@@ -1,22 +1,20 @@
-# blahaj.
-
 ## create encrypted pool with stripe:
 
 ```
 zpool create -f \
-  -o ashift=12 \
-  -o autotrim=on \
+  -o ashift=13 \
   -O acltype=posixacl \
-  -O relatime=on \
+  -O checksum=blake3 \
+  -O atime=off \
   -O xattr=sa \
   -O dnodesize=auto \
-  -O normalization=formD \
-  -O utf8only=on \
   -O devices=off \
-  -O compression=lz4 \
+  -O compression=zstd \
+  \
   -O encryption=aes-256-gcm \
   -O keyformat=passphrase \
   -O keylocation=prompt \
+  \
   -R /mnt \
   -O mountpoint=none \
   blahaj \
