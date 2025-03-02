@@ -60,6 +60,9 @@
     reverse_proxy BRN3C2AF400C594.lan:631
   '';
 
+  # tor snowflake proxy
+  services.snowflake-proxy.enable = true;
+
   # fix building
   nix-mineral.overrides.desktop.allow-multilib = true;
 }
