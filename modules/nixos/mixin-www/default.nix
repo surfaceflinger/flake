@@ -13,5 +13,9 @@ _: {
   services.caddy = {
     enable = true;
     email = "ssl@nekopon.pl";
+    enableReload = false;
+    globalConfig = ''
+      admin off
+    '';
   };
 }
