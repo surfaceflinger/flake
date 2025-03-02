@@ -21,8 +21,11 @@ in
     redir /.well-known/nodeinfo*  https://${host}{uri} permanent
   '';
 
-  services.caddy.virtualHosts."${host}".extraConfig = ''
-    encode zstd gzip
-    reverse_proxy * http://[::1]:${toString port} { flush_interval -1 }
-  '';
+  services.caddy.virtualHosts."${host}" = {
+    logFormat = "output discard";
+    extraConfig = ''
+      encode zstd gzip
+      reverse_proxy * http://[::1]:${toString port} { flush_interval -1 }
+    '';
+  };
 }

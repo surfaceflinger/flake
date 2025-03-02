@@ -23,18 +23,21 @@
     };
   };
 
-  services.caddy.virtualHosts."vault.nekopon.pl".extraConfig = ''
-    header {
-      Strict-Transport-Security "max-age=31536000;"
-      X-XSS-Protection "1; mode=block"
-      X-Frame-Options "DENY"
-      X-Robots-Tag "noindex, nofollow"
-      X-Content-Type-Options "nosniff"
-      -Server
-      -X-Powered-By
-      -Last-Modified
-    }
+  services.caddy.virtualHosts."vault.nekopon.pl" = {
+    logFormat = "output discard";
+    extraConfig = ''
+      header {
+        Strict-Transport-Security "max-age=31536000;"
+        X-XSS-Protection "1; mode=block"
+        X-Frame-Options "DENY"
+        X-Robots-Tag "noindex, nofollow"
+        X-Content-Type-Options "nosniff"
+        -Server
+        -X-Powered-By
+        -Last-Modified
+      }
 
-    reverse_proxy [::1]:9500 { header_up X-Real-IP {remote_host} }
-  '';
+      reverse_proxy [::1]:9500 { header_up X-Real-IP {remote_host} }
+    '';
+  };
 }
