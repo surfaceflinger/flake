@@ -30,7 +30,7 @@
 
   # sched-ext
   services.scx = {
-    enable = true;
+    enable = !pkgs.stdenv.isAarch64;
     scheduler = if config.services.xserver.enable then "scx_bpfland" else "scx_rusty";
   };
 
