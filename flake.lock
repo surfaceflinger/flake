@@ -482,16 +482,16 @@
         "rust-manifest": "rust-manifest"
       },
       "locked": {
-        "lastModified": 1739898368,
-        "narHash": "sha256-yRU+aE0p0WSkMVwe+QHvDwqrdCILHS9Ahfq0fJaVNUU=",
-        "ref": "main",
-        "rev": "65ec500d75a669a17058de5ccfd0a67e6d6bdeb9",
-        "revCount": 2779,
+        "lastModified": 1740907251,
+        "narHash": "sha256-UrWUXxjYVMBr79xZxsLYi44+MNdDtkLc3mPNtpzpgSQ=",
+        "ref": "olivia/fix-aarch64",
+        "rev": "57c79b1999821e94751651d60767aa9c7e9ace6e",
+        "revCount": 2780,
         "type": "git",
         "url": "https://gitlab.computer.surgery/matrix/grapevine.git"
       },
       "original": {
-        "ref": "main",
+        "ref": "olivia/fix-aarch64",
         "type": "git",
         "url": "https://gitlab.computer.surgery/matrix/grapevine.git"
       }
@@ -685,11 +685,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1740281615,
-        "narHash": "sha256-dZWcbAQ1sF8oVv+zjSKkPVY0ebwENQEkz5vc6muXbKY=",
+        "lastModified": 1740886574,
+        "narHash": "sha256-jN6kJ41B6jUVDTebIWeebTvrKP6YiLd1/wMej4uq4Sk=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "465792533d03e6bb9dc849d58ab9d5e31fac9023",
+        "rev": "26a0f969549cf4d56f6e9046b9e0418b3f3b94a5",
         "type": "github"
       },
       "original": {
@@ -844,11 +844,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1740695751,
-        "narHash": "sha256-D+R+kFxy1KsheiIzkkx/6L63wEHBYX21OIwlFV8JvDs=",
+        "lastModified": 1740828860,
+        "narHash": "sha256-cjbHI+zUzK5CPsQZqMhE3npTyYFt9tJ3+ohcfaOF/WM=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "6313551cd05425cd5b3e63fe47dbc324eabb15e4",
+        "rev": "303bd8071377433a2d8f76e684ec773d70c5b642",
         "type": "github"
       },
       "original": {

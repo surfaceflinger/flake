@@ -13,7 +13,7 @@
     dont-track-me.url = "github:dtomvan/dont-track-me.nix/main";
     firefox-gnome-theme.flake = false;
     firefox-gnome-theme.url = "github:rafaelmardojai/firefox-gnome-theme/v132";
-    grapevine.url = "git+https://gitlab.computer.surgery/matrix/grapevine.git?ref=main";
+    grapevine.url = "git+https://gitlab.computer.surgery/matrix/grapevine.git?ref=olivia/fix-aarch64";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager/master";
     impermanence.url = "github:nix-community/impermanence/master";
