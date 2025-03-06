@@ -20,4 +20,8 @@ in
     host-jattelik
     user-nat-blahaj
   ];
+  "litestream-jattelik.age".publicKeys = [
+    host-jattelik
+    user-nat-blahaj
+  ];
 }
