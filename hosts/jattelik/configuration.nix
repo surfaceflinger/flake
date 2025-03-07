@@ -12,6 +12,7 @@
     inputs.self.nixosModules.mixin-www
     inputs.self.nixosModules.server
     inputs.self.nixosModules.user-nat
+    ./litestream.nix
     ./personal/ipfs.nix
     ./personal/matrix.nix
     ./personal/soju.nix
