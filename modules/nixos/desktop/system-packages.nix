@@ -6,6 +6,7 @@
     buffer
     gnome-obfuscate
     lorem
+    metadata-cleaner
     papers
 
     # media
