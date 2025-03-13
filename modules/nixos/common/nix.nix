@@ -16,7 +16,7 @@
 
   nix = {
     channel.enable = false;
-    package = pkgs.nixVersions.stable;
+    package = pkgs.nix;
     settings = {
       use-xdg-base-directories = true;
       experimental-features = lib.mkForce [
