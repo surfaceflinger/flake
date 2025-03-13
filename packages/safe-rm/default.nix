@@ -10,6 +10,7 @@ pkgs.symlinkJoin {
   name = "safe-rm";
   paths = [ safe-rm ];
   postBuild = ''
+    mkdir -p $out/bin
     ln -s ${safe-rm}/bin/safe-rm $out/bin/rm
   '';
 }
