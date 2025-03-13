@@ -3,9 +3,8 @@
   services.pipewire = {
     extraConfig = {
       client."99-resample"."stream.properties"."resample.quality" = 10;
-      client-rt."99-resample"."stream.properties"."resample.quality" = 10;
-      pipewire-pulse."99-resample"."stream.properties"."resample.quality" = 10;
       pipewire."99-allowed-rates"."context.properties"."default.clock.allowed-rates" = [ 48000 ];
+      pipewire-pulse."99-resample"."stream.properties"."resample.quality" = 10;
     };
     wireplumber.configPackages = [
       (pkgs.writeTextDir "share/wireplumber/main.lua.d/99-e205u.lua" ''
