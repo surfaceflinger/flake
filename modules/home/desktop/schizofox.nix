@@ -7,6 +7,8 @@
   programs.schizofox = {
     enable = true;
 
+    security.sandbox.enable = false;
+
     settings = {
       # schizofox overrides
       "browser.download.useDownloadDir" = true;
