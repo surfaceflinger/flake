@@ -12,6 +12,8 @@
     inputs.srvos.nixosModules.mixins-trusted-nix-caches
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   nix = {
     channel.enable = false;
     package = pkgs.nix;
