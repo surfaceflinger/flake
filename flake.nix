@@ -37,15 +37,8 @@
     xkomhotshot.url = "github:surfaceflinger/xkomhotshot/master";
   };
 
-  outputs =
-    inputs:
-    inputs.blueprint {
-      inherit inputs;
-      nixpkgs.config = {
-        allowUnfree = true;
-        permittedInsecurePackages = [
-          "litestream-0.3.13"
-        ];
-      };
-    };
+  outputs = inputs: inputs.blueprint {
+    inherit inputs;
+    nixpkgs.config.allowUnfree = true;
+  };
 }

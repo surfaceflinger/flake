@@ -3,6 +3,11 @@ let
   bucket = "jattelik-litestream-qxhvhtiw.s3.fr-par.scw.cloud";
 in
 {
+  # we aren't using sftp so it's fine
+  nixpkgs.config.permittedInsecurePackages = [
+    "litestream-0.3.13"
+  ];
+
   # cope
   systemd.services.litestream.serviceConfig.User = lib.mkForce "root";
 
