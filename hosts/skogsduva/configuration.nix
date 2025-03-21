@@ -25,9 +25,8 @@
   nixpkgs.hostPlatform = "x86_64-linux";
 
   # bootloader/kernel/modules
+  hardware.enableRedistributableFirmware = true;
   boot = {
-    blacklistedKernelModules = [ "rtw88_8821cu" ];
-    extraModulePackages = [ config.boot.kernelPackages.rtl8821cu ];
     initrd.availableKernelModules = [
       "ahci"
       "ehci_pci"
@@ -38,7 +37,6 @@
       "xhci_pci"
     ];
     kernelModules = [
-      "8821cu"
       "kvm-intel"
     ];
   };

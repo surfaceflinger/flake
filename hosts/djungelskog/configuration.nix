@@ -17,6 +17,7 @@
   nixpkgs.hostPlatform = "x86_64-linux";
 
   # bootloader/kernel/modules
+  hardware.enableRedistributableFirmware = true;
   boot = {
     initrd.availableKernelModules = [
       "xhci_pci"
