@@ -7,7 +7,6 @@
 {
   # nix/nixpkgs
   imports = [
-    inputs.lix.nixosModules.lixFromNixpkgs
     inputs.srvos.nixosModules.mixins-nix-experimental
     inputs.srvos.nixosModules.mixins-trusted-nix-caches
   ];
@@ -16,7 +15,7 @@
 
   nix = {
     channel.enable = false;
-    package = pkgs.nix;
+    package = pkgs.lixPackageSets.stable.lix;
     settings = {
       use-xdg-base-directories = true;
       experimental-features = lib.mkForce [
