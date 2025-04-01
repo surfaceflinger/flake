@@ -33,7 +33,7 @@ pkgs.appimageTools.wrapType2 rec {
     install -Dm444 ${appimageContents}/timedoctor-desktop.desktop -t $out/share/applications
     install -Dm444 ${appimageContents}/timedoctor-desktop.png -t $out/share/pixmaps
     substituteInPlace $out/share/applications/timedoctor-desktop.desktop \
-      --replace 'Exec=AppRun' 'Exec=timedoctor-desktop'
+      --replace-fail 'Exec=AppRun' 'Exec=timedoctor-desktop'
     source "${pkgs.makeWrapper}/nix-support/setup-hook"
     wrapProgram "$out/bin/timedoctor-desktop" \
       --add-flags "--disable-gpu --disable-accelerated-video-encode --disable-features=VizDisplayCompositor" \
