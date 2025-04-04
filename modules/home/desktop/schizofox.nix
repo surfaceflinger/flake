@@ -61,14 +61,14 @@
           "https://addons.mozilla.org/firefox/downloads/latest/violentmonkey/latest.xpi";
         "{b5501fd1-7084-45c5-9aa6-567c2fcf5dc6}".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/ruffle_rs/latest.xpi";
+        "{cb31ec5d-c49a-4e5a-b240-16c767444f62}".install_url =
+          "https://addons.mozilla.org/firefox/downloads/latest/indie-wiki-buddy/latest.xpi";
         "cliget@zaidabdulla.com".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/cliget/latest.xpi";
         "deArrow@ajay.app".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/dearrow/latest.xpi";
         "firefox@betterttv.net".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/betterttv/latest.xpi";
-        "jid1-D7momAzRw417Ag@jetpack".install_url =
-          "https://addons.mozilla.org/firefox/downloads/latest/wikiwand-wikipedia-modernized/latest.xpi";
         "privacypass@kagi.com".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/kagi-privacy-pass/latest.xpi";
         "search@kagi.com".install_url =
