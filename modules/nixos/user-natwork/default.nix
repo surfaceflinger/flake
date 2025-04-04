@@ -25,6 +25,7 @@
         aws-rotate-key
         awsume
         buildah
+        cfn-nag
         e1s
         eksctl
         gnumake
@@ -38,6 +39,7 @@
         perSystem.cfn-changeset-viewer.default
         perSystem.tf."1.5.7"
         postgresql
+        siege
         ssm-session-manager-plugin
         step-cli
         teleport
@@ -45,7 +47,9 @@
       ++ lib.optionals config.services.xserver.enable [
         beekeeper-studio
         bitwarden
+        brave
         freerdp
+        obs-studio
         perSystem.self.timedoctor-desktop
         seabird
         slack
