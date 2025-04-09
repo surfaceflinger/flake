@@ -73,11 +73,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1743008896,
-        "narHash": "sha256-mU0WYwrgN8Sus4ktBsSzkvs0++vAKrhNE0A0vWo8AzY=",
+        "lastModified": 1744122991,
+        "narHash": "sha256-Mk7dW932hmuvtSzyJJgjqF8/7YgDgV0nc3Ju4QtIzXs=",
         "owner": "numtide",
         "repo": "blueprint",
-        "rev": "7ae2142c8b5a47bed6d403fdd5f5a1215961e10c",
+        "rev": "ce2b3370b6915bc457b669e53d04f0231b66b60f",
         "type": "github"
       },
       "original": {
@@ -448,11 +448,11 @@
         "rocksdb": "rocksdb"
       },
       "locked": {
-        "lastModified": 1743378486,
-        "narHash": "sha256-OX4sPrEDoTO/qZklcBMhqwjMpUWjPmSFW5LWoYSJezE=",
+        "lastModified": 1743995200,
+        "narHash": "sha256-2DZXuk8jBWdMIPdyt575d0kmce1UX3T/yoOASCISLjs=",
         "ref": "main",
-        "rev": "6bcc4e310e26f742dd2e8508271b93bb9b61edce",
-        "revCount": 2805,
+        "rev": "1529d60a6a0428e87abcf35cca29ee6b03b3f4d8",
+        "revCount": 2807,
         "type": "git",
         "url": "https://gitlab.computer.surgery/matrix/grapevine.git"
       },
@@ -517,11 +517,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1743781299,
-        "narHash": "sha256-wLz6pjEVMXAb8EGDbXtyW98GQ8vm9cEyKhZTf/TTu24=",
+        "lastModified": 1744208565,
+        "narHash": "sha256-vG3JJOar/r8ognz7wuwMtOJ8Knu1MMlOzHB1N6R2MbY=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "a802defb16dcdcc7fd0ff5a2d7be913ce2fe79e7",
+        "rev": "542efdf2dfac351498f534eb71671525b9bd45ed",
         "type": "github"
       },
       "original": {
@@ -613,11 +613,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1743306489,
-        "narHash": "sha256-LROaIjSLo347cwcHRfSpqzEOa2FoLSeJwU4dOrGm55E=",
+        "lastModified": 1743911143,
+        "narHash": "sha256-4j4JPwr0TXHH4ZyorXN5yIcmqIQr0WYacsuPA4ktONo=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "b3696bfb6c24aa61428839a99e8b40c53ac3a82d",
+        "rev": "a36f6a7148aec2c77d78e4466215cceb2f5f4bfb",
         "type": "github"
       },
       "original": {
@@ -772,11 +772,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1743782063,
-        "narHash": "sha256-2bHGwGGtarn9MyKrmVni+Kfp2gsCFEWKSqqITdy4QRk=",
-        "owner": "nixos",
+        "lastModified": 1744098102,
+        "narHash": "sha256-tzCdyIJj9AjysC3OuKA+tMD/kDEDAF9mICPDU7ix0JA=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "05cf75375ecbb6cda7c41c812c45e117a25cdb8f",
+        "rev": "c8cd81426f45942bb2906d5ed2fe21d2f19d95b7",
         "type": "github"
       },
       "original": {
@@ -895,11 +895,11 @@
     "security-misc": {
       "flake": false,
       "locked": {
-        "lastModified": 1740999638,
-        "narHash": "sha256-qDPE1gU8M47GPXKR5KpHrEQvmXaYCpKfkSaalhAm9Xs=",
+        "lastModified": 1744211760,
+        "narHash": "sha256-UyZKiDx6iLIOCZO1XccSFjeMxBeihQo3V8eviWrKSBc=",
         "owner": "Kicksecure",
         "repo": "security-misc",
-        "rev": "d927fe238cc5369f7fe1632a4173fe4bdf0ffdfb",
+        "rev": "da9dd3c3f14103701ad82af775b4fb547f5b3e2e",
         "type": "github"
       },
       "original": {
