@@ -36,6 +36,7 @@
         linkerd
         mariadb
         opentofu
+        packer
         perSystem.cfn-changeset-viewer.default
         perSystem.tf."1.5.7"
         postgresql
