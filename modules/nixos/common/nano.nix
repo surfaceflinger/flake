@@ -1,4 +1,5 @@
-_: {
+{ inputs, lib, ... }:
+{
   programs.nano = {
     enable = true;
     syntaxHighlight = true;
@@ -15,4 +16,5 @@ _: {
       set titlecolor normal,normal
     '';
   };
+  environment.etc.nanorc.text = lib.mkBefore "include ${inputs.nano-syntax-highlighting}/*.nanorc";
 }
