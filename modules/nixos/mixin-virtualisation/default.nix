@@ -4,10 +4,10 @@
   ...
 }:
 {
-  programs.virt-manager.enable = config.services.xserver.enable;
+  programs.virt-manager.enable = config.isDesktop;
 
   virtualisation = {
-    spiceUSBRedirection.enable = config.services.xserver.enable;
+    spiceUSBRedirection.enable = config.isDesktop;
     libvirtd = {
       enable = true;
       qemu = {

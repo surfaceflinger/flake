@@ -7,13 +7,14 @@
 }:
 {
   imports = [
-    inputs.home-manager.nixosModules.default
     ./agenix.nix
     ./boot.nix
     ./chrony.nix
+    ./conditions.nix
     ./doas.nix
     ./hardening.nix
     ./impermanence.nix
+    inputs.home-manager.nixosModules.default
     ./memory.nix
     ./nano.nix
     ./networking.nix
@@ -26,12 +27,12 @@
 
   # use latest kernel
   boot.kernelPackages =
-    if config.services.xserver.enable then pkgs.linuxPackages_xanmod else pkgs.linuxPackages_hardened;
+    if config.isDesktop then pkgs.linuxPackages_xanmod else pkgs.linuxPackages_hardened;
 
   # sched-ext
   services.scx = {
     enable = !pkgs.stdenv.isAarch64;
-    scheduler = if config.services.xserver.enable then "scx_bpfland" else "scx_rusty";
+    scheduler = if config.isDesktop then "scx_bpfland" else "scx_rusty";
   };
 
   # firmware/hardware updates and security status

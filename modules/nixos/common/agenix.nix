@@ -5,5 +5,5 @@
 }:
 {
   imports = [ inputs.agenix.nixosModules.default ];
-  fileSystems."/etc/ssh".neededForBoot = config.ephemeral;
+  fileSystems."/etc/ssh".neededForBoot = config.isEphemeral;
 }

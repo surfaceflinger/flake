@@ -45,7 +45,7 @@
         step-cli
         teleport
       ]
-      ++ lib.optionals config.services.xserver.enable [
+      ++ lib.optionals config.isDesktop [
         beekeeper-studio
         bitwarden
         brave
@@ -62,7 +62,7 @@
     {
       imports = [
         inputs.self.homeModules.common
-      ] ++ lib.optionals config.services.xserver.enable [ inputs.self.homeModules.desktop ];
+      ] ++ lib.optionals config.isDesktop [ inputs.self.homeModules.desktop ];
 
       dconf.settings."org/gnome/shell/extensions/appindicator".legacy-tray-enabled = true;
     };

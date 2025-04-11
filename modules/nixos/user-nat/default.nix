@@ -28,7 +28,7 @@
         perSystem.agenix.default
         perSystem.self.swift-backup
       ]
-      ++ lib.optionals config.services.xserver.enable [
+      ++ lib.optionals config.isDesktop [
         # random desktop software
         brave
         burpsuite
@@ -66,7 +66,7 @@
     {
       imports = [
         inputs.self.homeModules.common
-      ] ++ lib.optionals config.services.xserver.enable [ inputs.self.homeModules.desktop ];
+      ] ++ lib.optionals config.isDesktop [ inputs.self.homeModules.desktop ];
 
       programs.git = {
         userEmail = "nat@nekopon.pl";
@@ -75,7 +75,7 @@
 
       systemd.user.tmpfiles.rules = [ "D %h/Downloads 0700 - - -" ];
 
-      home.file = lib.optionals config.services.xserver.enable {
+      home.file = lib.optionals config.isDesktop {
         ".config/halloy/config.toml".source = ./halloy/config.toml;
         ".config/halloy/themes/dark.toml".source = ./halloy/dark.toml;
         ".config/halloy/themes/light.toml".source = ./halloy/light.toml;
@@ -83,8 +83,8 @@
     };
 
   # crypto hw wallets!
-  hardware.ledger.enable = config.services.xserver.enable;
-  services.trezord.enable = config.services.xserver.enable;
+  hardware.ledger.enable = config.isDesktop;
+  services.trezord.enable = config.isDesktop;
 
   nix.settings.trusted-users = [ "nat" ];
 }
