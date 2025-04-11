@@ -74,6 +74,12 @@
       };
 
       systemd.user.tmpfiles.rules = [ "D %h/Downloads 0700 - - -" ];
+
+      home.file = lib.optionals config.services.xserver.enable {
+        ".config/halloy/config.toml".source = ./halloy/config.toml;
+        ".config/halloy/themes/dark.toml".source = ./halloy/dark.toml;
+        ".config/halloy/themes/light.toml".source = ./halloy/light.toml;
+      };
     };
 
   # crypto hw wallets!

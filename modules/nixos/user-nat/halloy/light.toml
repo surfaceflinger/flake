@@ -1,0 +1,47 @@
+## Base16 Catppuccin Latte
+# Author: https://github.com/catppuccin/catppuccin
+[general]
+background = "#eff1f5"
+border = "#7287fd"
+horizontal_rule = "#ccd0da"
+unread_indicator = "#df8e1d"
+
+[text]
+primary = "#4c4f69"
+secondary = "#acb0be"
+tertiary = "#df8e1d"
+success = "#40a02b"
+error = "#d20f39"
+
+[buffer]
+action = "#40a02b"
+background = "#eff1f5"
+background_text_input = "#e6e9ef"
+background_title_bar = "#e6e9ef"
+border = "#bcc0cc"
+border_selected = "#7287fd"
+code = "#8839ef"
+highlight = "#e6e9ef"
+nickname = "#179299"
+selection = "#ccd0da"
+timestamp = "#4c4f69"
+topic = "#acb0be"
+url = "#1e66f5"
+
+[buffer.server_messages]
+join = "#40a02b"
+part = "#d20f39"
+quit = "#d20f39"
+default = "#179299"
+
+[buttons.primary]
+background = "#eff1f5"
+background_hover = "#ccd0da"
+background_selected = "#bcc0cc"
+background_selected_hover = "#acb0be"
+
+[buttons.secondary]
+background = "#e6e9ef"
+background_hover = "#ccd0da"
+background_selected = "#bcc0cc"
+background_selected_hover = "#acb0be"

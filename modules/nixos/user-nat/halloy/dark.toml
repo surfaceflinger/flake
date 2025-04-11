@@ -1,0 +1,47 @@
+## Base16 Catppuccin Mocha
+# Author: https://github.com/catppuccin/catppuccin
+[general]
+background = "#1e1e2e"
+border = "#b4befe"
+horizontal_rule = "#313244"
+unread_indicator = "#f9e2af"
+
+[text]
+primary = "#cdd6f4"
+secondary = "#585b70"
+tertiary = "#f9e2af"
+success = "#a6e3a1"
+error = "#f38ba8"
+
+[buffer]
+action = "#a6e3a1"
+background = "#1e1e2e"
+background_text_input = "#181825"
+background_title_bar = "#181825"
+border = "#45475a"
+border_selected = "#b4befe"
+code = "#cba6f7"
+highlight = "#181825"
+nickname = "#94e2d5"
+selection = "#313244"
+timestamp = "#cdd6f4"
+topic = "#585b70"
+url = "#89b4fa"
+
+[buffer.server_messages]
+join = "#a6e3a1"
+part = "#f38ba8"
+quit = "#f38ba8"
+default = "#94e2d5"
+
+[buttons.primary]
+background = "#1e1e2e"
+background_hover = "#313244"
+background_selected = "#45475a"
+background_selected_hover = "#585b70"
+
+[buttons.secondary]
+background = "#181825"
+background_hover = "#313244"
+background_selected = "#45475a"
+background_selected_hover = "#585b70"

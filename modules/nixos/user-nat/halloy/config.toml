@@ -1,0 +1,81 @@
+# theme
+[theme]
+dark = "dark"
+light = "light"
+
+# servers
+[servers.soju-libera]
+nickname = "nat"
+username = "nat/irc.libera.chat"
+password_file = ".config/halloy/soju-libera.passwd"
+server = "jattelik"
+port = 6667
+use_tls = false
+chathistory = true
+
+# font
+[font]
+family = "Cascadia Mono PL"
+size = 15
+
+# actions
+[actions.sidebar]
+buffer = "replace-pane"
+focused_buffer = "close-pane"
+
+# buffer
+## server_messages
+[buffer.server_messages.topic]
+enabled = false
+
+[buffer.server_messages.join]
+smart = 180
+
+[buffer.server_messages.part]
+smart = 180
+
+[buffer.server_messages.quit]
+smart = 180
+
+## nicknames
+[buffer.nickname.brackets]
+left = ""
+right = ":"
+
+## timestamps
+[buffer.timestamp]
+format = "%T"
+
+[buffer.timestamp.brackets]
+left = "["
+right = "]"
+
+## nicklist
+[buffer.channel.nicklist]
+alignment = "left"
+
+## topic
+[buffer.channel.topic]
+enabled = true
+
+# highlights
+# i don't want notifications about someone setting up nat
+[highlights.nickname]
+exclude = ["*"]
+
+[[highlights.match]]
+words = ["nat:"]
+case_insensitive = true
+
+# notifications
+[notifications.direct_message]
+show_toast = true
+delay = 5
+
+[notifications.highlight]
+show_toast = true
+delay = 5
+
+[notifications.file_transfer_request]
+show_toast = true
+delay = 5
