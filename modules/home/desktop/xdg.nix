@@ -5,6 +5,7 @@ let
   music = [ "io.bassi.Amberol.desktop" ];
   photos = [ "org.gnome.Loupe.desktop" ];
   steam = [ "steam.desktop" ];
+  text = [ "org.gnome.TextEditor.desktop" ];
   vids = [ "mpv.desktop" ];
 
   associations = {
@@ -62,6 +63,7 @@ let
 
     # docs
     "application/pdf" = docs;
+    "text/csv" = text;
   };
 in
 {
