@@ -11,6 +11,7 @@
       cursor-style = "bar";
       font-family = "Cascadia Mono PL";
       font-size = 11;
+      grapheme-width-method = "legacy";
       term = "xterm-256color";
       theme = "adwaitadark";
       window-padding-x = 4;
