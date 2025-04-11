@@ -517,11 +517,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1744223888,
-        "narHash": "sha256-reYpe0J1J+wH34JFs7KKp0G5nP7+XSQ5z0ZLFJcfJr8=",
+        "lastModified": 1744380363,
+        "narHash": "sha256-cXjAUuAfQDPSLSsckZuTioQ986iqSPTzx8D7dLAcC+Q=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "79461936709b12e17adb9c91dd02d1c66d577f09",
+        "rev": "e43c6bcb101ba3301522439c459288c4a248f624",
         "type": "github"
       },
       "original": {
@@ -663,11 +663,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1743420942,
-        "narHash": "sha256-b/exDDQSLmENZZgbAEI3qi9yHkuXAXCPbormD8CSJXo=",
+        "lastModified": 1744366945,
+        "narHash": "sha256-OuLhysErPHl53BBifhesrRumJNhrlSgQDfYOTXfgIMg=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "de6fc5551121c59c01e2a3d45b277a6d05077bc4",
+        "rev": "1fe3cc2bc5d2dc9c81cb4e63d2f67c1543340df1",
         "type": "github"
       },
       "original": {
@@ -789,11 +789,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1744098102,
-        "narHash": "sha256-tzCdyIJj9AjysC3OuKA+tMD/kDEDAF9mICPDU7ix0JA=",
-        "owner": "NixOS",
+        "lastModified": 1744399633,
+        "narHash": "sha256-NRdEMhkAdyi2/lazOlZo0rR0CWj8iA67ixRyP0DO504=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "c8cd81426f45942bb2906d5ed2fe21d2f19d95b7",
+        "rev": "bdf7bfeb9a8d1be31ba8ace9a2aedf59dfd59036",
         "type": "github"
       },
       "original": {
@@ -913,11 +913,11 @@
     "security-misc": {
       "flake": false,
       "locked": {
-        "lastModified": 1744211760,
-        "narHash": "sha256-UyZKiDx6iLIOCZO1XccSFjeMxBeihQo3V8eviWrKSBc=",
+        "lastModified": 1744285097,
+        "narHash": "sha256-62Y95T9vBrmROxTKZqCSmOFWaTzJ9Y4DrN3EFSBckXk=",
         "owner": "Kicksecure",
         "repo": "security-misc",
-        "rev": "da9dd3c3f14103701ad82af775b4fb547f5b3e2e",
+        "rev": "5e88dfe809a762aeebf62ea2de131cfbdea9ae32",
         "type": "github"
       },
       "original": {
@@ -1017,11 +1017,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1743640916,
-        "narHash": "sha256-zxfCYq5tqrjSFAm0aR0eOYW97yjDN4Hwg+37lgWYjd8=",
+        "lastModified": 1744245727,
+        "narHash": "sha256-Z2/2qYbZKiIYT2eNkUv2otZGSoU26VNFZECt3IEeGEY=",
         "owner": "vdesjardins",
         "repo": "terraform-overlay",
-        "rev": "3de5a736170ca9dd5fd1c51eeb8241c81d961c08",
+        "rev": "f6c78745ee6157bc82cd49af0bbeef275b8e481c",
         "type": "github"
       },
       "original": {
