@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   environment.shells = [ pkgs.zsh ];
   users.defaultUserShell = pkgs.zsh;
@@ -15,28 +15,25 @@
       "interactive_comments" # Comments in the shell
       "prompt_subst" # Substitution in the prompt
     ];
-    shellAliases = rec {
-      cat = "${pkgs.bat}/bin/bat";
-      grep = "${pkgs.ripgrep}/bin/rg";
-      la = "${ls} --all";
-      ll = "${ls} --all --long --header --group";
-      llt = "${ll} --tree";
-      ls = "${pkgs.eza}/bin/eza --color=auto --group-directories-first --classify";
-      lst = "${ls} --tree";
-      scpi = "${pkgs.openssh}/bin/scp -o IdentitiesOnly=yes";
-      sshi = "${pkgs.openssh}/bin/ssh -o IdentitiesOnly=yes";
-      tree = "${ls} --tree";
+    shellAliases = with pkgs; rec {
+      cat = "${lib.getExe bat}";
+      ls = "ls --color=auto --group-directories-first --classify=auto";
+      scpi = "${lib.getExe' openssh "scp"} -o IdentitiesOnly=yes";
+      sshi = "${lib.getExe' openssh "ssh"} -o IdentitiesOnly=yes";
+      tree = "${lib.getExe tre-command}";
     };
     shellInit = ''
       mkdir -p "$HOME/.config/zsh" && touch "$HOME/.config/zsh/history"
       zsh-newuser-install () {}
-      lk () {cd "$(${pkgs.walk}/bin/walk "$@")"}
+      lk () {cd "$(${lib.getExe pkgs.walk} "$@")"}
     '';
     promptInit = ''
       autoload -U colors && colors # Enable colors
-      HOST=$(${pkgs.inetutils}/bin/hostname) # Fixup for cloud-init sourced hostname
+      HOST=$(${lib.getExe' pkgs.inetutils "hostname"}) # Fixup for cloud-init sourced hostname
       stty stop undef # Disable ctrl-s to freeze terminal.
       zstyle ':completion:*' menu select # select-style completions
+
+      LS_COLORS=$(${lib.getExe pkgs.vivid} generate catppuccin-mocha)
 
       # setup prompt with git and awsume integration
       autoload -Uz vcs_info

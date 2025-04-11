@@ -13,32 +13,30 @@
     bat
     deadnix
     dyff
-    eza
     file
-    gojq
+    flow-control
     ipgrep
     lurk
     ncdu
     nixfmt-rfc-style
-    ouch
     perSystem.self.safe-rm
     pv
     rage
     ripgrep
     shellcheck
     statix
+    tre
     wget
     (writeScriptBin "7z" ''exec 7zz "$@"'')
-    (writeScriptBin "goto-nix" ''cd $(nix build -L --print-out-paths --no-link "$@".out) && $SHELL'')
-    (writeScriptBin "jq" ''exec gojq "$@"'')
+    (writeScriptBin "jq" ''exec yq "$@"'')
     yq-go
 
     # system utilities
     bottom
     config.boot.kernelPackages.cpupower
-    fastfetch
     pciutils
     psmisc
+    systemctl-tui
     usbutils
 
     # network
