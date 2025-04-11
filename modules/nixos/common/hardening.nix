@@ -25,12 +25,11 @@
     };
   };
 
-  environment.etc.gitconfig.source = lib.mkForce "${inputs.security-misc}/etc/gitconfig";
+  environment.etc.gitconfig.text = lib.mkForce "";
 
   # stuff that's isn't yet included in nix-mineral
   boot.kernel.sysctl = {
     "dev.tty.legacy_tiocsti" = 0;
-    "kernel.oops_limit" = 100;
     "kernel.warn_limit" = 100;
   };
 

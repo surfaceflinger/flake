@@ -27,8 +27,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     schizofox.inputs.nixpkgs.follows = "nixpkgs";
     schizofox.url = "github:schizofox/schizofox/main";
-    security-misc.flake = false;
-    security-misc.url = "github:Kicksecure/security-misc/master";
     srvos.inputs.nixpkgs.follows = "nixpkgs";
     srvos.url = "github:nix-community/srvos/main";
     tf.inputs.nixpkgs.follows = "nixpkgs";

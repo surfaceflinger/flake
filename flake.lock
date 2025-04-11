@@ -837,7 +837,6 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_3",
         "schizofox": "schizofox",
-        "security-misc": "security-misc",
         "srvos": "srvos",
         "tf": "tf",
         "xkomhotshot": "xkomhotshot"
@@ -907,23 +906,6 @@
       "original": {
         "owner": "schizofox",
         "repo": "searx-randomizer",
-        "type": "github"
-      }
-    },
-    "security-misc": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1744285097,
-        "narHash": "sha256-62Y95T9vBrmROxTKZqCSmOFWaTzJ9Y4DrN3EFSBckXk=",
-        "owner": "Kicksecure",
-        "repo": "security-misc",
-        "rev": "5e88dfe809a762aeebf62ea2de131cfbdea9ae32",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Kicksecure",
-        "ref": "master",
-        "repo": "security-misc",
         "type": "github"
       }
     },
