@@ -53,8 +53,6 @@
           "https://www.cookie-dialog-monster.com/releases/mozilla/latest.xpi";
         "7esoorv3@alefvanoon.anonaddy.me".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/libredirect/latest.xpi";
-        "{9063c2e9-e07c-4c2c-9646-cfe7ca8d0498}".install_url =
-          "https://addons.mozilla.org/firefox/downloads/latest/old-reddit-redirect/latest.xpi";
         "{a4c4eda4-fb84-4a84-b4a1-f7c1cbf2a1ad}".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/refined-github-/latest.xpi";
         "{aecec67f-0d10-4fa7-b7c7-609a2db280cf}".install_url =
@@ -67,8 +65,6 @@
           "https://addons.mozilla.org/firefox/downloads/latest/cliget/latest.xpi";
         "deArrow@ajay.app".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/dearrow/latest.xpi";
-        "firefox@betterttv.net".install_url =
-          "https://addons.mozilla.org/firefox/downloads/latest/betterttv/latest.xpi";
         "privacypass@kagi.com".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/kagi-privacy-pass/latest.xpi";
         "search@kagi.com".install_url =
