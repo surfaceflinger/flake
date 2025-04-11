@@ -23,6 +23,7 @@
       "browser.tabs.loadBookmarksInBackground" = true;
       "browser.tabs.loadDivertedInBackground" = false;
       "browser.tabs.loadInBackground" = true;
+      "media.webrtc.camera.allow-pipewire" = true;
       "places.history.enabled" = false;
       "toolkit.tabbox.switchByScrolling" = true;
 
