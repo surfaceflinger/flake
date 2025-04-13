@@ -56,10 +56,14 @@
           "https://addons.mozilla.org/firefox/downloads/latest/libredirect/latest.xpi";
         "{a4c4eda4-fb84-4a84-b4a1-f7c1cbf2a1ad}".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/refined-github-/latest.xpi";
+        "adnauseam@rednoise.org".install_url =
+          "https://addons.mozilla.org/firefox/downloads/latest/adnauseam/latest.xpi";
         "{aecec67f-0d10-4fa7-b7c7-609a2db280cf}".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/violentmonkey/latest.xpi";
         "{b5501fd1-7084-45c5-9aa6-567c2fcf5dc6}".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/ruffle_rs/latest.xpi";
+        "{b86e4813-687a-43e6-ab65-0bde4ab75758}".install_url =
+          "https://addons.mozilla.org/firefox/downloads/latest/localcdn-fork-of-decentraleyes/latest.xpi";
         "{cb31ec5d-c49a-4e5a-b240-16c767444f62}".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/indie-wiki-buddy/latest.xpi";
         "cliget@zaidabdulla.com".install_url =
@@ -72,8 +76,6 @@
           "https://addons.mozilla.org/firefox/downloads/latest/kagi-search-for-firefox/latest.xpi";
         "sponsorBlocker@ajay.app".install_url =
           "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
-        "uBlock0@raymondhill.net".install_url =
-          "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
       };
       darkreader.enable = false;
       simplefox.enable = false;
