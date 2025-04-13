@@ -4,10 +4,28 @@ dark = "dark"
 light = "light"
 
 # servers
-[servers.soju-libera]
+[servers.LiberaChat]
 nickname = "nat"
-username = "nat/irc.libera.chat"
-password_file = ".config/halloy/soju-libera.passwd"
+username = "nat/irc.libera.chat@halloy-@hostname@"
+password_file = ".config/halloy/soju-jattelik.passwd"
+server = "jattelik"
+port = 6667
+use_tls = false
+chathistory = true
+
+[servers.Rizon]
+nickname = "nat"
+username = "nat/irc.rizon.net@halloy-@hostname@"
+password_file = ".config/halloy/soju-jattelik.passwd"
+server = "jattelik"
+port = 6667
+use_tls = false
+chathistory = true
+
+[servers.OFTC]
+nickname = "nat"
+username = "nat/irc.oftc.net@halloy-@hostname@"
+password_file = ".config/halloy/soju-jattelik.passwd"
 server = "jattelik"
 port = 6667
 use_tls = false
@@ -59,12 +77,12 @@ alignment = "left"
 enabled = true
 
 # highlights
-# i don't want notifications about someone setting up nat
+## i don't want notifications about someone setting up nat
 [highlights.nickname]
 exclude = ["*"]
 
 [[highlights.match]]
-words = ["nat:"]
+words = ["nat:", "@nat", "nat1337"]
 case_insensitive = true
 
 # notifications

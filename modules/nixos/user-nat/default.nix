@@ -76,7 +76,12 @@
       systemd.user.tmpfiles.rules = [ "D %h/Downloads 0700 - - -" ];
 
       home.file = lib.mkIf config.isDesktop {
-        ".config/halloy/config.toml".source = ./halloy/config.toml;
+        ".config/halloy/config.toml".source = pkgs.substituteAll {
+          src = ./halloy/config.toml;
+          env = {
+            hostname = config.networking.hostName;
+          };
+        };
         ".config/halloy/themes/dark.toml".source = ./halloy/dark.toml;
         ".config/halloy/themes/light.toml".source = ./halloy/light.toml;
       };
