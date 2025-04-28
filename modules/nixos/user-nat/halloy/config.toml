@@ -4,6 +4,15 @@ dark = "dark"
 light = "light"
 
 # servers
+[servers.RizonAlt]
+nickname = "nat"
+username = "nat/RizonAlt@halloy-@hostname@"
+password_file = ".config/halloy/soju-jattelik.passwd"
+server = "jattelik"
+port = 6667
+use_tls = false
+chathistory = true
+
 [servers.LiberaChat]
 nickname = "nat"
 username = "nat/irc.libera.chat@halloy-@hostname@"
