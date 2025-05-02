@@ -9,7 +9,7 @@
     blueprint.inputs.nixpkgs.follows = "nixpkgs";
     blueprint.url = "github:numtide/blueprint/main";
     cfn-changeset-viewer.inputs.nixpkgs.follows = "nixpkgs";
-    cfn-changeset-viewer.url = "github:surfaceflinger/cfn-changeset-viewer/flake-parts";
+    cfn-changeset-viewer.url = "github:trek10inc/cfn-changeset-viewer/main";
     dont-track-me.url = "github:dtomvan/dont-track-me.nix/main";
     firefox-gnome-theme.flake = false;
     firefox-gnome-theme.url = "github:rafaelmardojai/firefox-gnome-theme/v132";
