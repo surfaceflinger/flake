@@ -35,9 +35,6 @@
     scheduler = if config.isDesktop then "scx_bpfland" else "scx_rusty";
   };
 
-  # firmware/hardware updates and security status
-  services.fwupd.enable = true;
-
   # override srvos changes
   programs.vim.defaultEditor = false;
 
