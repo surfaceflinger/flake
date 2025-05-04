@@ -12,7 +12,6 @@
     abduco
     bat
     deadnix
-    dyff
     file
     flow-control
     ipgrep
@@ -36,7 +35,6 @@
     config.boot.kernelPackages.cpupower
     pciutils
     psmisc
-    systemctl-tui
     usbutils
 
     # network
@@ -48,9 +46,4 @@
     speedtest-go
     wavemon
   ];
-
-  programs = {
-    git.enable = true;
-    gnupg.agent.enable = true;
-  };
 }
