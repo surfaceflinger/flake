@@ -31,6 +31,8 @@
     srvos.url = "github:nix-community/srvos/main";
     tf.inputs.nixpkgs.follows = "nixpkgs";
     tf.url = "github:vdesjardins/terraform-overlay/main";
+    tgexpiry.inputs.nixpkgs.follows = "nixpkgs";
+    tgexpiry.url = "github:surfaceflinger/tgexpiry/main";
     xkomhotshot.inputs.nixpkgs.follows = "nixpkgs";
     xkomhotshot.url = "github:surfaceflinger/xkomhotshot/master";
   };

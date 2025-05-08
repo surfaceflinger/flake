@@ -28,13 +28,16 @@
 
   # bootloader/kernel/modules
   hardware.enableRedistributableFirmware = true;
-  boot.initrd.availableKernelModules = [
-    "ahci"
-    "nvme"
-    "sd_mod"
-    "usbhid"
-    "xhci_pci"
-  ];
+  boot = {
+    blacklistedKernelModules = [ "uvcvideo" ];
+    initrd.availableKernelModules = [
+      "ahci"
+      "nvme"
+      "sd_mod"
+      "usbhid"
+      "xhci_pci"
+    ];
+  };
 
   # disable wifi powersaving
   boot.extraModprobeConfig = ''
@@ -95,4 +98,15 @@
     gpu-screen-recorder-gtk
     obs-studio-plugins.obs-vkcapture
   ];
+
+  # tgexpiry
+  home-manager.users.nat =
+    { ... }:
+    {
+      imports = [
+        inputs.tgexpiry.homeModules.tgexpiry
+      ];
+
+      services.tgexpiry.enable = true;
+    };
 }
