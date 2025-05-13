@@ -1,16 +1,12 @@
-{ lib, ... }:
-{
-  # bootloader
+_: {
+  # bootloader - hybrid limine installation
   boot.loader = {
-    timeout = 3;
-    efi.canTouchEfiVariables = lib.mkForce false;
-    grub = {
+    efi.canTouchEfiVariables = false;
+    limine = {
       enable = true;
-      device = lib.mkDefault "nodev";
-      efiInstallAsRemovable = true;
+      biosSupport = true;
       efiSupport = true;
-      fsIdentifier = "label";
+      enableEditor = true;
     };
-    systemd-boot.enable = lib.mkForce false;
   };
 }
