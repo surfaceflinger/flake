@@ -1,10 +1,11 @@
-_: {
+{ pkgs, ... }:
+{
   # bootloader - hybrid limine installation
   boot.loader = {
     efi.canTouchEfiVariables = false;
     limine = {
       enable = true;
-      biosSupport = true;
+      biosSupport = pkgs.stdenv.hostPlatform.isx86;
       efiSupport = true;
       enableEditor = true;
     };
