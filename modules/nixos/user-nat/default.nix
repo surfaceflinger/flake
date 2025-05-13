@@ -36,7 +36,6 @@
         fractal
         fragments
         gnome-podcasts
-        halloy
         newsflash
         signal-desktop
         (telegram-desktop.override { withWebkit = false; })
@@ -64,9 +63,14 @@
   home-manager.users.nat =
     { ... }:
     {
-      imports = [
-        inputs.self.homeModules.common
-      ] ++ lib.optionals config.isDesktop [ inputs.self.homeModules.desktop ];
+      imports =
+        [
+          inputs.self.homeModules.common
+        ]
+        ++ lib.optionals config.isDesktop [
+          inputs.self.homeModules.desktop
+          ./halloy.nix
+        ];
 
       programs.git = {
         userEmail = "nat@nekopon.pl";
@@ -74,14 +78,6 @@
       };
 
       systemd.user.tmpfiles.rules = [ "D %h/Downloads 0700 - - -" ];
-
-      home.file = lib.mkIf config.isDesktop {
-        ".config/halloy/config.toml".source = pkgs.replaceVars ./halloy/config.toml {
-          hostname = config.networking.hostName;
-        };
-        ".config/halloy/themes/dark.toml".source = ./halloy/dark.toml;
-        ".config/halloy/themes/light.toml".source = ./halloy/light.toml;
-      };
     };
 
   # crypto hw wallets!

@@ -41,50 +41,48 @@
   };
 
   # thinkfan
-  services = {
-    thinkfan = {
-      enable = true;
-      levels = [
-        [
-          0
-          0
-          65
-        ]
-        [
+  services.thinkfan = {
+    enable = true;
+    levels = [
+      [
+        0
+        0
+        65
+      ]
+      [
+        1
+        65
+        75
+      ]
+      [
+        3
+        75
+        80
+      ]
+      [
+        7
+        80
+        90
+      ]
+      [
+        "level disengaged"
+        90
+        32767
+      ]
+    ];
+    sensors = [
+      {
+        query = "/sys/devices/platform/coretemp.0/hwmon/";
+        indices = [
           1
-          65
-          75
-        ]
-        [
+          2
           3
-          75
-          80
-        ]
-        [
-          7
-          80
-          90
-        ]
-        [
-          "level disengaged"
-          90
-          32767
-        ]
-      ];
-      sensors = [
-        {
-          query = "/sys/devices/platform/coretemp.0/hwmon/";
-          indices = [
-            1
-            2
-            3
-            4
-            5
-          ];
-          type = "hwmon";
-        }
-      ];
-    };
+          4
+          5
+        ];
+        type = "hwmon";
+      }
+    ];
   };
 
   services.ollama.enable = true;
