@@ -27,6 +27,7 @@
   # bootloader/kernel/modules
   hardware.enableRedistributableFirmware = true;
   boot = {
+    loader.limine.biosDevice = "/dev/sda";
     initrd.availableKernelModules = [
       "ahci"
       "ehci_pci"
