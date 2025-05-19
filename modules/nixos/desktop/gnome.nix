@@ -11,14 +11,18 @@
   };
   environment.sessionVariables = {
     # nicer font rendering
-    FREETYPE_PROPERTIES = "cff:no-stem-darkening=0 autofitter:no-stem-darkening=0";
+    FREETYPE_PROPERTIES = "autofitter:no-stem-darkening=0 autofitter:darkening-parameters=500,0,1000,500,2500,500,4000,0 cff:no-stem-darkening=0 type1:no-stem-darkening=0 t1cid:no-stem-darkening=0";
+    QT_NO_SYNTHESIZED_BOLD = 1;
     # wayland in (most) electron apps
     NIXOS_OZONE_WL = "1";
+    # qt gnome styling
+    QT_WAYLAND_DECORATION = "adwaita";
   };
 
   # debloat
   environment.gnome.excludePackages = with pkgs; [
     baobab
+    decibels
     epiphany
     evince
     gnome-clocks
@@ -27,14 +31,12 @@
     gnome-logs
     gnome-maps
     gnome-music
-    gnome-photos
-    gnome-shell-extensions
-    gnome-software
     gnome-system-monitor
-    gnome-themes-extra
     gnome-tour
     gnome-user-docs
     orca
+    snapshot
+    sushi
     totem
     yelp
   ];
@@ -49,6 +51,8 @@
     # theming
     adw-gtk3
     morewaita-icon-theme
+    qadwaitadecorations
+    qadwaitadecorations-qt6
 
     # fetch gravatar and install as ~/.face
     perSystem.self.gnome-gravatar
@@ -61,18 +65,10 @@
     fontconfig.cache32Bit = true;
     packages = with pkgs; [
       cascadia-code
-      inter
       merriweather
     ];
   };
 
   services.power-profiles-daemon.enable = false;
   programs.gamemode.enable = true;
-
-  # qt gnome styling
-  qt = {
-    enable = true;
-    platformTheme = "gnome";
-    style = "adwaita-dark";
-  };
 }

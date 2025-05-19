@@ -4,7 +4,6 @@
     inputs.self.nixosModules.common
     inputs.srvos.nixosModules.desktop
     ./bluetooth.nix
-    ./geolocation.nix
     ./gnome.nix
     ./logitech.nix
     ./networking.nix
@@ -16,4 +15,5 @@
 
   isDesktop = true;
   time.timeZone = "Europe/Warsaw";
+  location.provider = "geoclue2";
 }

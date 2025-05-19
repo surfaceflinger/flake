@@ -1,5 +1,4 @@
 {
-  config,
   lib,
   ...
 }:
@@ -18,15 +17,5 @@
     security = {
       disable-bluetooth-kmodules = lib.mkForce false;
     };
-  };
-
-  boot.specialFileSystems."/proc" = {
-    options = lib.mkForce [
-      "nosuid"
-      "nodev"
-      "noexec"
-      "hidepid=0"
-      "gid=${toString config.users.groups.proc.gid}"
-    ];
   };
 }

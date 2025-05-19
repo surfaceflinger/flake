@@ -16,6 +16,7 @@
         allow-unsigned-modules = true;
         no-lockdown = true;
       };
+      desktop.hideproc-off = true;
       performance.allow-smt = true;
       security = {
         disable-bluetooth-kmodules = true;

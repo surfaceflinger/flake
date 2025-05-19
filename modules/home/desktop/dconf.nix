@@ -1,6 +1,5 @@
 {
   lib,
-  osConfig,
   ...
 }:
 with lib.hm.gvariant;
@@ -67,7 +66,6 @@ with lib.hm.gvariant;
       clock-show-weekday = true;
       document-font-name = "Merriweather 11";
       font-hinting = "none";
-      font-name = "Inter Variable 11";
       gtk-enable-primary-paste = false;
       gtk-theme = "adw-gtk3";
       monospace-font-name = "Cascadia Mono PL 10";
@@ -137,10 +135,6 @@ with lib.hm.gvariant;
     "org/gnome/settings-daemon/plugins/color" = {
       night-light-enabled = true;
       night-light-schedule-automatic = true;
-      night-light-last-coordinates = mkTuple [
-        osConfig.location.latitude
-        osConfig.location.longitude
-      ];
     };
 
     "org/gnome/system/location" = {
