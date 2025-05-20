@@ -73,15 +73,12 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/shell/extensions/user-theme-x" = {
-      x-color = "prefer-light";
-      x-color-night = "prefer-dark";
-      x-cursor = "miku-cursor";
-      x-cursor-night = "miku-cursor";
-      x-gtk = "adw-gtk3";
-      x-gtk-night = "adw-gtk3-dark";
-      x-icons = "MoreWaita";
-      x-icons-night = "MoreWaita";
-      x-wallpaper = false;
+      gtk = true;
+      style = true;
+      light-gtk = "adw-gtk3";
+      light-style = "prefer-light";
+      dark-gtk = "adw-gtk3-dark";
+      dark-style = "prefer-dark";
     };
 
     # file portals
