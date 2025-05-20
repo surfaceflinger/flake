@@ -25,7 +25,7 @@
       { package = appindicator; }
       { package = auto-move-windows; }
       { package = gamemode-shell-extension; }
-      { package = luminus-shell; }
+      { package = luminus-desktop; }
       { package = media-progress; }
       { package = pip-on-top; }
       { package = tailscale-qs; }
