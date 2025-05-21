@@ -18,7 +18,10 @@
   # bootloader/kernel/modules
   hardware.enableRedistributableFirmware = true;
   boot = {
-    loader.limine.biosDevice = "/dev/sda";
+    loader.limine = {
+      biosDevice = "/dev/sda";
+      biosSupport = true;
+    };
     initrd.availableKernelModules = [
       "xhci_pci"
       "ehci_pci"
