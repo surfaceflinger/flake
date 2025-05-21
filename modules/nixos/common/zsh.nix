@@ -16,7 +16,7 @@
       "prompt_subst" # Substitution in the prompt
     ];
     shellAliases = with pkgs; rec {
-      cat = lib.getExe bat;
+      cat = "${lib.getExe bat} -Pp";
       ls = "ls --color=auto --group-directories-first --classify=auto";
       scpi = "${lib.getExe' openssh "scp"} -o IdentitiesOnly=yes";
       sshi = "${lib.getExe' openssh "ssh"} -o IdentitiesOnly=yes";

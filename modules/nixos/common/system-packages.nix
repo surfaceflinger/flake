@@ -27,7 +27,7 @@
     tre
     wget
     (writeScriptBin "7z" ''exec 7zz "$@"'')
-    (writeScriptBin "jq" ''exec yq "$@"'')
+    (writeScriptBin "jq" ''exec yq -Po json "$@"'')
     yq-go
 
     # system utilities
