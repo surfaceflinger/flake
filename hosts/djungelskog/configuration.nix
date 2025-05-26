@@ -88,8 +88,6 @@
     ];
   };
 
-  services.ollama.enable = true;
-
   # disable these fucking pgup/pgdown around arrow up - who came up with this?
   services.keyd = {
     enable = true;
