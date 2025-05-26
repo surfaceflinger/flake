@@ -7,6 +7,12 @@
     "kernel.split_lock_mitigate" = 0;
   };
 
+  environment.sessionVariables = {
+    # enable wine wayland and hdr
+    PROTON_ENABLE_HDR = 1;
+    PROTON_ENABLE_WAYLAND = 1;
+  };
+
   # packs
   environment.systemPackages = with pkgs; [
     furmark # upalarnia pl

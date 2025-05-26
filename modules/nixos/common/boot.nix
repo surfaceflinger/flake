@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+_: {
   # bootloader - hybrid limine installation
   boot.loader = {
     efi.canTouchEfiVariables = false;
