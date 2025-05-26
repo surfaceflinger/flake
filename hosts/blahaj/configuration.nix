@@ -44,9 +44,6 @@
     options iwlwifi power_save=0
   '';
 
-  # corefreq
-  programs.corefreq.enable = true;
-
   # need this for correct gpu work (capped at 220w tdp but it can use 280w)
   # also undervolt
   programs.corectrl = {
