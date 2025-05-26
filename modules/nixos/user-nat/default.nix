@@ -49,7 +49,6 @@
         trezor-agent
         trezorctl
         trezor-suite
-        wealthfolio
 
         # ops
         opentofu
@@ -83,6 +82,4 @@
   # crypto hw wallets!
   hardware.ledger.enable = config.isDesktop;
   services.trezord.enable = config.isDesktop;
-
-  nix.settings.trusted-users = [ "nat" ];
 }

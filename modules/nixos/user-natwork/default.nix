@@ -22,27 +22,22 @@
       [
         argocd
         awscli2
-        aws-rotate-key
         awsume
         buildah
         cfn-nag
-        e1s
         eksctl
         gnumake
         (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
         k9s
-        kubernetes
+        kubectl
         kubernetes-helm
-        linkerd
         mariadb
         opentofu
-        packer
         perSystem.cfn-changeset-viewer.default
         perSystem.tf."1.5.7"
         postgresql
         siege
         ssm-session-manager-plugin
-        step-cli
         teleport
       ]
       ++ lib.optionals config.isDesktop [
@@ -52,7 +47,6 @@
         freerdp
         obs-studio
         perSystem.self.timedoctor-desktop
-        seabird
         slack
       ];
   };
@@ -65,24 +59,12 @@
       ] ++ lib.optionals config.isDesktop [ inputs.self.homeModules.desktop ];
 
       dconf.settings."org/gnome/shell/extensions/appindicator".legacy-tray-enabled = true;
-    };
 
-  nix.settings.trusted-users = [ "natwork" ];
+      services.podman.enable = true;
+    };
 
   programs.zsh.shellAliases = {
     awsume = ". ${lib.getExe pkgs.awsume}";
     changeset = "${lib.getExe perSystem.cfn-changeset-viewer.default} --change-set-name";
   };
-
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-    autoPrune.enable = true;
-    dockerSocket.enable = true;
-  };
-
-  # for now i'm using warp.sh as a replacement
-  # because my vm doesn't pass device posture checks
-  # https://github.com/rany2/warp.sh
-  # services.cloudflare-warp.enable = true;
 }
