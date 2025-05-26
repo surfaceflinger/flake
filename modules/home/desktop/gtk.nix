@@ -29,7 +29,6 @@
       { package = media-progress; }
       { package = pip-on-top; }
       { package = tailscale-qs; }
-      { package = user-avatar-in-quick-settings; }
       { package = user-themes-x; }
       { package = window-is-ready-remover; }
     ];

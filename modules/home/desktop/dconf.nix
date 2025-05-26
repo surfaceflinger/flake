@@ -176,10 +176,6 @@ with lib.hm.gvariant;
       icon-saturation = 1.0;
     };
 
-    "org/gnome/shell/extensions/quick-settings-avatar" = {
-      avatar-position = 1;
-    };
-
     "org/gnome/shell/extensions/gamemodeshellextension" = {
       show-icon-only-when-active = true;
       show-launch-notification = false;
