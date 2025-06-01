@@ -9,6 +9,7 @@
     papers
 
     # media
+    ffmpeg-full
     krita
     yt-dlp
 
@@ -19,7 +20,5 @@
     pavucontrol
   ];
 
-  programs = {
-    adb.enable = true;
-  };
+  programs.adb.enable = true;
 }
