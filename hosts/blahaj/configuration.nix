@@ -46,10 +46,8 @@
 
   # need this for correct gpu work (capped at 220w tdp but it can use 280w)
   # also undervolt
-  programs.corectrl = {
-    enable = true;
-    gpuOverclock.enable = true;
-  };
+  hardware.amdgpu.overdrive.enable = true;
+  services.lact.enable = true;
 
   # rx7800xt is still pretty much fucked in latest mainline and default 165hz is flickering
   boot.kernelParams = [ "video=2560x1440@144" ];
