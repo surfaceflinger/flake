@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, inputs, ... }:
 let
   i2p_address = "127.0.0.1";
   i2p_port = 37189;
@@ -8,6 +8,7 @@ in
 
   services.monero = {
     enable = true;
+    banlist = "${inputs.monero-banlist}/block.txt";
     rpc = {
       address = "0.0.0.0";
       port = 18089;

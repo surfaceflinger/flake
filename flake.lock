@@ -590,6 +590,23 @@
         "type": "github"
       }
     },
+    "monero-banlist": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1748739721,
+        "narHash": "sha256-g+EYSMlMjOHhIBW239sPGW+L4pu4E6MWhgik6fofmrQ=",
+        "owner": "rblaine95",
+        "repo": "monero-banlist",
+        "rev": "364a0b18b1e2b5915868bebef3ec0247bf702f68",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rblaine95",
+        "ref": "master",
+        "repo": "monero-banlist",
+        "type": "github"
+      }
+    },
     "nano-syntax-highlighting": {
       "flake": false,
       "locked": {
@@ -856,6 +873,7 @@
         "grapevine": "grapevine",
         "home-manager": "home-manager_2",
         "impermanence": "impermanence",
+        "monero-banlist": "monero-banlist",
         "nano-syntax-highlighting": "nano-syntax-highlighting",
         "nix-index-database": "nix-index-database",
         "nix-mineral": "nix-mineral",

@@ -17,6 +17,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager/master";
     impermanence.url = "github:nix-community/impermanence/master";
+    monero-banlist.flake = false;
+    monero-banlist.url = "github:rblaine95/monero-banlist/master";
     nano-syntax-highlighting.flake = false;
     nano-syntax-highlighting.url = "github:galenguyer/nano-syntax-highlighting/master";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
