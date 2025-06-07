@@ -1,4 +1,5 @@
 {
+  config,
   inputs,
   lib,
   ...
@@ -28,9 +29,9 @@
 
   environment.etc.gitconfig.text = lib.mkForce "";
 
-  # stuff that's isn't yet included in nix-mineral
   boot.kernel.sysctl = {
     "dev.tty.legacy_tiocsti" = 0;
+    "kernel.unprivileged_userns_clone" = if config.isDesktop then 1 else 0;
     "kernel.warn_limit" = 100;
   };
 
