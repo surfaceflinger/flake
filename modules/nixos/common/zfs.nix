@@ -5,6 +5,12 @@
   ...
 }:
 {
+  services.zfs.autoSnapshot = {
+    enable = true;
+    flags = "-k -p -u -v";
+    monthly = 2;
+  };
+
   boot.postBootCommands = lib.optionalString config.boot.zfs.enabled ''
     # to debug check: journalctl -b | grep stage-2-init
     echo Mounting all zfs filesystems
