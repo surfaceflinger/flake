@@ -4,6 +4,8 @@
   inputs = {
     agenix.inputs.nixpkgs.follows = "nixpkgs";
     agenix.url = "github:ryantm/agenix/main";
+    artcnn.flake = false;
+    artcnn.url = "github:Artoriuz/ArtCNN/main";
     blahajpl-homepage.flake = false;
     blahajpl-homepage.url = "github:blahaj-pl/homepage/main";
     blueprint.inputs.nixpkgs.follows = "nixpkgs";

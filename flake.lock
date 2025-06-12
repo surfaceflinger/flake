@@ -24,6 +24,23 @@
         "type": "github"
       }
     },
+    "artcnn": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1748470755,
+        "narHash": "sha256-cRI54c2TxBiJdnq6LJSRYxV+1b9CxMCdFBbHA+6LmZo=",
+        "owner": "Artoriuz",
+        "repo": "ArtCNN",
+        "rev": "bf3a3948a7654550ca86ba0f5a588202ba62b900",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Artoriuz",
+        "ref": "main",
+        "repo": "ArtCNN",
+        "type": "github"
+      }
+    },
     "attic": {
       "inputs": {
         "crane": "crane",
@@ -865,6 +882,7 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
+        "artcnn": "artcnn",
         "blahajpl-homepage": "blahajpl-homepage",
         "blueprint": "blueprint",
         "cfn-changeset-viewer": "cfn-changeset-viewer",
